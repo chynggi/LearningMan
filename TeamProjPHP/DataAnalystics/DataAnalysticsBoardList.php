@@ -49,7 +49,7 @@
 
         // board 테이블을 조회해서 board_no, board_title, board_user, board_date 필드 값을 내림차순으로 정렬하여 모두 가져 오는 쿼리
         // 입력된 begin값과 rowPerPage 값에 따라 가져오는 행의 시작과 갯수가 달라지는 쿼리
-        $sql = "SELECT board_no, board_title, board_user,board_date FROM board order by board_no desc limit " . $begin . "," . $rowPerPage . "";
+        $sql = "SELECT board_no, board_title, board_user, board_date FROM board order by board_no desc limit " . $begin . "," . $rowPerPage . "";
 
         // 1페이지 limit 0,5 만약 10페이지 limit 45,5
         $result = mysqli_query($conn, $sql);
@@ -124,8 +124,7 @@
             
             // 이전 버튼이 클릭될때 GET방식으로 currentPage변수 값에
             // 1을 뺀 값이 넘어가도록 함
-            echo "<a class='btn btn-primary2' 
-                    href ='./board_list.php?currentPage=" . ($currentPage - 1) . "'>이전</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            echo "<a class='btn btn-primary2' href ='./board_list.php?currentPage=" . ($currentPage - 1) . "'>이전</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
         }
         
         $lastPage = ($totalRowNum - 1) / $rowPerPage;
@@ -140,8 +139,7 @@
 
             // 다음 버튼이 클릭될때 GET방식으로 currentPage변수 값에
             // 1을 더한 값이 넘어가도록 함
-            echo "<a class='btn btn-primary2' 
-                href='./board_list.php?currentPage=" . ($currentPage + 1) . "'>다음</a>";
+            echo "<a class='btn btn-primary2' href='./board_list.php?currentPage=" . ($currentPage + 1) . "'>다음</a>";
         }
 
         mysqli_close($conn); // 중요: 디비서버의 메모리를 효율적으로 운영
