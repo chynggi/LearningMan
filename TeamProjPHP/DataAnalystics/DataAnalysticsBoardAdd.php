@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>게시글 작성</title>
+		<title>데이터 분석 게시글 작성</title>
 		<link rel="stylesheet" href="./css/bootstrap.css">
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel = "stylesheet" href = "./css/bootstrap.css">
@@ -15,7 +15,7 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    		
 	</head>
 	<body>
-		<form class = "form-horizontal" action = "./boardAddAction.php" method = "post">
+		<form class = "form-horizontal" action = "./DataAnalysticsBoardAddAction.php" method = "post">
 		
 		<table class="table table-bordered" align = "center" style="width:50%">
                 <tr>

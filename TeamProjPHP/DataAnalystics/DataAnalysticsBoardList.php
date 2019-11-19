@@ -121,39 +121,7 @@
             		?>
             	</td>           	
             </tr>
-            <?php 
-            echo ("<tr>");
-            echo ("<td align = 'center' colspan = '6'>");
-
-            if ($conn) {
-                echo "연결 성공<br>";
-            }
-            else {
-                die("연결 실패 : " . mysqli_error());
-            }
-
-            if ($rowCount = mysqli_fetch_array($resultCount)) {
-                
-            }
             
-            if ($resultCount) {
-                echo "행 갯수 조회 성공 : " . $totalRowNum . "<br>";
-            }
-            else {
-                echo "결과 없음: " . mysqli_error($conn);
-            }
-
-            if ($result) {
-                echo "조회 성공";
-                
-            }
-            else {
-                echo "결과 없음: " . mysqli_error($conn);
-            }
-            
-            echo ("</td>");
-            echo ("</tr>");
-            ?>
         </table>
         
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
