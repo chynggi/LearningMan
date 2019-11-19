@@ -1,4 +1,4 @@
-# RuningMan
+# LearningMan
 
 
 주제: 학습내용 정리한 사이트 만들기
