@@ -4,7 +4,7 @@
         <title>게시글 입력 시스템</title>
     </head>
     <body>
-        <h1>board_insert_action.php</h1>
+        <h1>데이터 분석 게시판 입력</h1>
         <?php
         require 'BoardDaoFunction.php';
         insert();

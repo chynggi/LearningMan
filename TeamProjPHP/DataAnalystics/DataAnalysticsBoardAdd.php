@@ -112,7 +112,4 @@
 		</script>
 		<br>		
 	</body>
-
-<?php
-?>
 </html>

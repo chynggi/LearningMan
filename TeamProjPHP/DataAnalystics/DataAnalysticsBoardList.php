@@ -120,35 +120,20 @@
             			echo "<a class='btn btn-primary2' href='./DataAnalysticsBoardList.php?currentPage=" . ($currentPage + 1) . "'>다음 페이지</a>&nbsp;&nbsp;";
             		?>
             	</td>           	
-            </tr>
-            
+            </tr>           
         </table>
         
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <?php
-
-        // PAGENATION 부분 : 중요
-        // currentPage 변수가 1보다 클때만 이전 버튼이 활성화 되도록 함
         if ($currentPage > 1) {
-            
-            // 이전 버튼이 클릭될때 GET방식으로 currentPage변수 값에
-            // 1을 뺀 값이 넘어가도록 함
-         //   echo "<a class='btn btn-primary2' href ='./board_list.php?currentPage=" . ($currentPage - 1) . "'>이전</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-        }
-        
+        }      
         $lastPage = ($totalRowNum - 1) / $rowPerPage;
         
         if (($totalRowNum - 1) % $rowPerPage != 0) {
             $lastPage += 1;
         }
 
-        // lastPage변수가 currentPage 변수보다 클때만
-        // 다음 버튼이 활성화 되도록 함
-        if ($currentPage < $lastPage) {
-
-            // 다음 버튼이 클릭될때 GET방식으로 currentPage변수 값에
-            // 1을 더한 값이 넘어가도록 함
-          //  echo "<a class='btn btn-primary2' href='./board_list.php?currentPage=" . ($currentPage + 1) . "'>다음</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+        if ($currentPage < $lastPage) {     
         }
         mysqli_close($conn); // 중요: 디비서버의 메모리를 효율적으로 운영        
         ?>	
