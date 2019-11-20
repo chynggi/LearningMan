@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.BuserDAO">
+<resultMap id="result" type="buser">
+	<result property = "id" column = "ID"/>
+	<result property = "name" column = "NAME"/>
+	<result property = "password" column = "PASSWORD"/>
+</resultMap>
+<select id = "selectAll" resultMap="result">
+<![CDATA[
+	SELECT * FROM buser
+	]]>
+</select>
+<insert id = "insert" parameterType="buser"
+	>
+	<![CDATA[
+	INSERT INTO buser (MID,MNAME,MPASSWORD) 
+	VALUES(#{mid},#{mname},#{mpassword})
+	]]>
+
+</insert>
+<update id = "update" parameterType="buser">
+	UPDATE buser SET
+	 MNAME = #{mname}, MPASSWORD = #{mpassword}
+	 WHERE MID = #{mid}
+</update>
+<delete id = "delete" parameterType="String">
+	DELETE FROM buser WHERE MID = #{id}
+
+</delete>
+<select id = "selectById" parameterType="String" resultMap="result">
+<![CDATA[
+	SELECT * FROM buser WHERE MID = #{id}
+	]]>
+</select>
+
+
+
+
+
+</mapper>
