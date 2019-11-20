@@ -49,8 +49,7 @@ function delete(){
     // board테이블에서 입력된 글 번호와, 글 비밀번호가 일치하는 행 삭제 쿼리
     try {
         // 삭제대상자료가 있는 지 확인
-        $selectSql = "SELECT * FROM board WHERE board_pw='" . $board_pw
-        . "' AND board_no=" . $board_no . "";
+        $selectSql = "SELECT * FROM board WHERE board_pw='" . $board_pw . "' AND board_no=" . $board_no . "";
         $result = mysqli_query($conn, $selectSql);
         // 패스워드가 맞는 해당 자료가 있으면
         if ($row = mysqli_fetch_array($result)) {

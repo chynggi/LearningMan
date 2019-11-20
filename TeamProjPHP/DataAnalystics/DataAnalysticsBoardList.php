@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>데이터 분석 게시판 리스트</title>
+<title>러닝맨 데이터 분석 게시판 리스트</title>
 <link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
 <link href="./css/boost.css" rel='stylesheet' type='text/css'>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -34,14 +34,14 @@
          ?>       		
 		<tr>
 			<td align = "center" bgcolor = "#3e5baa" style="width:10%;"><font color = "white">번호</font></td>
-			<td align = "center" bgcolor = "#3e5baa" style="width:55%;"><font color = "white">제목</font></td>
+			<td align = "center" bgcolor = "#3e5baa" style="width:65%;"><font color = "white">제목</font></td>
 			<td align = "center" bgcolor = "#3e5baa" style="width:13%;"><font color = "white">작성자</font></td>
 			<td align = "center" bgcolor = "#3e5baa" style="width:12%;"><font color = "white">작성일</font></td>			
 		</tr>
 			<tr>            	
             	<td align = "center" colspan = "20">
             		<?php
-            			echo "<a class='btn btn-primary2' href ='./DataAnalysticsBoardList.php?currentPage=" . ($currentPage - 1) . "'>◁</a>&nbsp;&nbsp;";           		    
+            			echo "<a class='btn btn-primary2' href='./DataAnalysticsBoardList.php?currentPage=" . ($currentPage - 1) . "'>◁</a>&nbsp;&nbsp;";           		    
             			echo "<a class='btn btn-primary2' href='./DataAnalysticsBoardList.php?currentPage=" . ($currentPage + 1) . "'>▷</a>&nbsp;&nbsp;";
             		?>
             		<a class="btn btn-primary2" href="./DataAnalysticsBoardAdd.php" >
