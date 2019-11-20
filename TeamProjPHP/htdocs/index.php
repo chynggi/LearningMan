@@ -128,7 +128,7 @@
             		<a href="#">DBMS</a>
             	</p>
             	<p>
-            		<a href="#">Server side</a>
+            		<a href="./DataAnalysticsMain.php">Server side</a>
             	</p>	
             </div>
             
