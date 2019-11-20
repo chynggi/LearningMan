@@ -33,10 +33,10 @@
         $currentPage = 1;
          ?>       		
 		<tr>
-			<td align = "center" bgcolor = "#3e5baa" style="width:7%;"><font color = "white">번호</font></td>
-			<td align = "center" bgcolor = "#3e5baa" style="width:53%;"><font color = "white">제목</font></td>
-			<td align = "center" bgcolor = "#3e5baa" style="width:15%;"><font color = "white">작성자</font></td>
-			<td align = "center" bgcolor = "#3e5baa" style="width:11%;"><font color = "white">작성일</font></td>			
+			<td align = "center" bgcolor = "#3e5baa" style="width:10%;"><font color = "white">번호</font></td>
+			<td align = "center" bgcolor = "#3e5baa" style="width:55%;"><font color = "white">제목</font></td>
+			<td align = "center" bgcolor = "#3e5baa" style="width:13%;"><font color = "white">작성자</font></td>
+			<td align = "center" bgcolor = "#3e5baa" style="width:12%;"><font color = "white">작성일</font></td>			
 		</tr>
 			<tr>            	
             	<td align = "center" colspan = "20">
