@@ -74,27 +74,27 @@ WSGI_APPLICATION = 'TeamProjDjango.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 '''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
         'NAME': 'xe',
         'USER':'team',
         'PASSWORD':'team',
-        'HOST':'192.168.0.17',
+        'HOST':'192.168.0.18',
         'PORT':'1521',
         
     }
 }
-'''
+
 
 
 # Password validation
