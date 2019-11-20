@@ -171,7 +171,11 @@
 
 			</div>
 		</div>
-
+		<div class="col-sm-8 col-sm-offset-2">
+        				<div class="footer-border"></div>
+        				<p>Login/Register form Originally Made by Anli Zaimi at <a href="http://azmind.com" target="_blank"><strong>AZMIND</strong></a> 
+        					having a lot of fun. <i class="fa fa-smile-o"></i></p>
+        			</div>
 	</div>
 
 	<!-- Footer -->
