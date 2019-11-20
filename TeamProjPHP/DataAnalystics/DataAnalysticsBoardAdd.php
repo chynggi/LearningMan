@@ -21,25 +21,25 @@
                 <tr>
                     <td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">작성자</font></td>
                     <td style="width:50%">
-                    	<input class = "form-control" type="text" name="boardUser" id = "name" placeholder = "작성자를 입력하시오">
+                    	<input class = "form-control" type="text" name="board_user" id = "name">
                     </td>
                 </tr>               
                 <tr>
                     <td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">비밀번호</font></td>
                     <td style="width:50%">
-                    	<input class = "form-control" type="password" name="boardPw" id = "password" placeholder = "비밀번호를 입력하시오">
+                    	<input class = "form-control" type="password" name="board_pw" id = "password">
                     </td>
                 </tr>
                 <tr>
                     <td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">제목</font></td>
                     <td style="width:50%">
-                    	<input class = "form-control" type="text" name="boardTitle" id = "Title" placeholder = "제목을 입력하시오">
+                    	<input class = "form-control" type="text" name="board_title" id = "title" placeholder = "제목을 입력하시오">
                     </td>
                 </tr> 
                 <tr>
                     <td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">내용</font></td>
                     <td style="width:50%">
-                    	<textarea class = "form-control" name = "boardContent" id = "content" rows = "5" cols = "50" placeholder = "내용을 입력하시오"></textarea>
+                    	<textarea class = "form-control" name = "board_content" id = "content" rows = "5" cols = "50" placeholder = "내용을 입력하시오"></textarea>
                     </td>
                 </tr> 
                 
@@ -60,8 +60,8 @@
 			$("#password").change(function(){ // id일 경우 # class일 경우 .
 				checkPassword($('#password').val());
 			});
-			$("#Title").change(function(){
-				checkTitle($('#Title').val());
+			$("#title").change(function(){
+				checkTitle($('#title').val());
 			});
 			$("#content").change(function(){
 				checkContent($('#content').val());
@@ -80,10 +80,10 @@
 				}
 			}
 
-			function checkTitle(Title){
-				if(Title.length < 2){
+			function checkTitle(title){
+				if(title.length < 2){
 					alert("제목을 2자 이상 설정하시오");
-					$('#Title').val('').focus();
+					$('#title').val('').focus();
 					return false;
 				} else {
 					return true;

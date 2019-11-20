@@ -31,20 +31,18 @@
      <table class="table table-bordered" border="1" align = "center" style="width:60%;">
         <?php
         $currentPage = 1;
-         ?>
-        		
+         ?>       		
 		<tr>
 			<td align = "center" bgcolor = "#3e5baa" style="width:7%;"><font color = "white">번호</font></td>
 			<td align = "center" bgcolor = "#3e5baa" style="width:53%;"><font color = "white">제목</font></td>
 			<td align = "center" bgcolor = "#3e5baa" style="width:15%;"><font color = "white">작성자</font></td>
 			<td align = "center" bgcolor = "#3e5baa" style="width:11%;"><font color = "white">작성일</font></td>			
 		</tr>
-
 			<tr>            	
             	<td align = "center" colspan = "20">
             		<?php
-            			echo "<a class='btn btn-primary2' href ='./DataAnalysticsBoardList.php?currentPage=" . ($currentPage - 1) . "'>이전 페이지</a>&nbsp;&nbsp;";           		    
-            			echo "<a class='btn btn-primary2' href='./DataAnalysticsBoardList.php?currentPage=" . ($currentPage + 1) . "'>다음 페이지</a>&nbsp;&nbsp;";
+            			echo "<a class='btn btn-primary2' href ='./DataAnalysticsBoardList.php?currentPage=" . ($currentPage - 1) . "'>◁</a>&nbsp;&nbsp;";           		    
+            			echo "<a class='btn btn-primary2' href='./DataAnalysticsBoardList.php?currentPage=" . ($currentPage + 1) . "'>▷</a>&nbsp;&nbsp;";
             		?>
             		<a class="btn btn-primary2" href="./DataAnalysticsBoardAdd.php" >
   					<img src="./DataAnalysticsImg/글쓰기.png" width="30" height="30" title = "글쓰기" alt="글쓰기 로고">
@@ -52,8 +50,7 @@
             	</td>           	
             </tr>           
         </table>     
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
 	<br>
 </body>
 </html>
