@@ -3,11 +3,9 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.apache.org/dtd/mybatis-3-config.dtd"> 
 <configuration> 
-   <typeAliases>
-   	<typeAlias type="vo.HomeBook" alias="homebook"/>
-   	<typeAlias type="vo.Member" alias="member"/>
-   	<typeAlias type="vo.Board" alias="board"/>
-   	<typeAlias type="vo.TotalVO" alias="totalvo"/>
+  	<typeAliases>	
+	<typeAlias type="dto.Buser" alias="buser"/>
+	<typeAlias type="dto.Board" alias="board"/>
    	</typeAliases>
    
    <environments default = "development">
@@ -22,10 +20,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
    </environment>
 
    <mappers>
-      <mapper resource = "mapper/Member.xml"/>
-      <mapper resource = "mapper/HomeBook.xml"/>
-      <mapper resource = "mapper/Board.xml"/>
-      <mapper resource = "mapper/Service.xml"/>
+	<mapper resource = "mapper/Buser.xml"/>
+	<mapper resource = "mapper/DBMSBoard.xml"/>
     </mappers>
    
 </configuration>
