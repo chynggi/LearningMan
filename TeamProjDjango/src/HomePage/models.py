@@ -10,6 +10,74 @@ from __future__ import unicode_literals
 from django.db import models
 
 
+
+class Frboard(models.Model):
+    no = models.FloatField(primary_key=True)
+    title = models.CharField(max_length=100, blank=True, null=True)
+    contens = models.CharField(max_length=3000, blank=True, null=True)
+    id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
+    xdate = models.DateField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'frboard'
+
+
+class Ssboard(models.Model):
+    no = models.FloatField(primary_key=True)
+    title = models.CharField(max_length=100, blank=True, null=True)
+    contens = models.CharField(max_length=3000, blank=True, null=True)
+    id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
+    xdate = models.DateField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ssboard'
+        
+        
+        
+class Oopboard(models.Model):
+    no = models.FloatField(primary_key=True)
+    title = models.CharField(max_length=100, blank=True, null=True)
+    contens = models.CharField(max_length=3000, blank=True, null=True)
+    id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
+    xdate = models.DateField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'oopboard'
+
+
+class Daboard(models.Model):
+    no = models.FloatField(primary_key=True)
+    title = models.CharField(max_length=100, blank=True, null=True)
+    contens = models.CharField(max_length=3000, blank=True, null=True)
+    id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
+    xdate = models.DateField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'daboard'
+
+
+class Dbmsboard(models.Model):
+    no = models.FloatField(primary_key=True)
+    title = models.CharField(max_length=100, blank=True, null=True)
+    contens = models.CharField(max_length=3000, blank=True, null=True)
+    id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
+    xdate = models.DateField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'dbmsboard'
+
+
+
+
+
+
+
+
 class Board(models.Model):
     no = models.FloatField(primary_key=True)
     title = models.CharField(max_length=100, blank=True, null=True)
