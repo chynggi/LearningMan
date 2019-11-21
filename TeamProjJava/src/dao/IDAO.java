@@ -8,6 +8,5 @@ public interface IDAO<T, K> {
 	public void insert(T vo);
 	public void update(T vo);
 	public int delete(K key);
-	public T selectById(K key);
 	public long maxIdNum();
 }

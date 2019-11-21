@@ -1,6 +1,6 @@
 package dao;
 
-import dto.Buser;
+import vo.Buser;
 
 public interface BuserDAO extends IDAO<Buser, String> {
 

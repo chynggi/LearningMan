@@ -17,11 +17,11 @@
 <body>
 	<%
 		request.setCharacterEncoding("utf-8");
-		String id=(String)session.getAttribute("id");
+		String id= (String)session.getAttribute("id");
 		response.setContentType("text/html;charset=UTF-8");
 		SqlSession sqlSession  = MBUtils.getSession(); 
 		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
-		List<Board> data =  dao.selectAllById(id); // ????
+		List<Board> data =  dao.selectById(id);
 		sqlSession.close();
 	%>
 	
