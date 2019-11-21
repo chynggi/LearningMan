@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<!--Interface DAO를 사용하는 경우 -->
+<!--아래 태그의 ID는 인터페이스의 추상메소드명과 일치시켜야 ! -->
+<mapper namespace="com.ssy.dao.BUserDAO"> 
+<resultMap id ="result" type="buser"> 
+
+	<result property = "id" column = "ID"/> 
+	<result property = "name" column = "NAME"/> 
+	<result property = "pw" column = "PW"/> 
+	
+</resultMap>
+
+<select id = "selectAll" resultMap="result">
+	SELECT * FROM BUSER
+</select>
+
+<insert id = "insert" parameterType="buser">
+	<![CDATA[ 
+	INSERT INTO BUSER 
+	(ID,NAME,PW)
+	VALUES
+	(#{id},#{name},#{pw})
+	]]>
+</insert>
+
+<update id ="update" parameterType="buser">
+	UPDATE BUSER SET 
+		NAME=#{name},
+		PW=#{pw},
+	WHERE ID = #{id} 
+</update>
+
+<delete id="delete" parameterType="string">
+	DELETE FROM BUSER WHERE ID=#{id}
+</delete>
+
+<select id = "selectById" parameterType="string" resultMap="result">
+	SELECT * FROM BUSER 
+	WHERE ID=#{id}
+</select>
+
+</mapper> 

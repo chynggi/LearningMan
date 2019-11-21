@@ -276,32 +276,42 @@ header.masthead .post-heading .meta a {
   color: #0085A1;
 }
 
-.post-preview > a > .post-title {
-  font-size: 30px;
+.post-preview > .post-title {
+	text-align:center;
+  font-size: 50px;
   margin-top: 30px;
   margin-bottom: 10px;
 }
 
-.post-preview > a > .post-subtitle {
+.post-preview > .post-subtitle {
+	text-align:center;
   font-weight: 300;
-  margin: 0 0 10px;
+  margin: 0 0 100px;
 }
 
-.post-preview > .post-meta {
-  font-size: 18px;
-  font-style: italic;
-  margin-top: 0;
-  color: #868e96;
+.post-preview > .post-mtitle {
+	text-align:center;
+	font-weight: 300;
+	margin: 0 0 30px;
 }
 
-.post-preview > .post-meta > a {
-  text-decoration: none;
-  color: #212529;
+.post-preview > div > p {
+	width:auto;
+	height:auto;
+	text-align:center;
+	vertical-align: middle;
+	margin:20px;
+	display: inline-block;
 }
 
-.post-preview > .post-meta > a:focus, .post-preview > .post-meta > a:hover {
-  text-decoration: underline;
-  color: #0085A1;
+.post-preview > div > p > a{
+	width:auto;
+	height:auto;
+	padding:100px 50px;
+	text-align:center;
+	vertical-align: middle;
+	text-decoration: none;
+	border: 1px solid #000;
 }
 
 @media only screen and (min-width: 768px) {
