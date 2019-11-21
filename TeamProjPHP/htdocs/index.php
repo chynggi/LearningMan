@@ -50,6 +50,16 @@
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Frame Works</a>
           </li>
+          <li class="nav-item dropdown dmenu" >
+      		<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="background-color: #3e5baa; color: #ffffff">
+     	 	Data Analystics
+      		</a>
+      		<div class="dropdown-menu sm-menu">
+        		<a class="dropdown-item" href="profile.php">프로필</a>
+        		<a class="dropdown-item" href="career.php">주요 이력</a>
+      			<a class="dropdown-item" href="proficiency.php">기술 숙련도</a>
+      		</div>
+     	  </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Data Analystics</a>
           </li>

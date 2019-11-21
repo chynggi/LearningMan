@@ -1,7 +1,7 @@
 <?php
 function dbConnect(){
     // mysql 커넥션 객체 생성
-    $conn = mysqli_connect("localhost", "root", "", "test");
+    $conn = mysqli_connect("localhost", "root", "", "team");
     // 커넥션 객체 생성 여부 확인
     if ($conn) {
         echo "연결 성공<br>";
@@ -70,7 +70,7 @@ function delete(){
     
     mysqli_close($conn);
     // 헤더함수를 이용하여 리스트 페이지로 리다이렉션 -> 테스트후에는 아랫줄 주석을 해제 합니다.
-    header("Location: ./board_list.php");
+    header("Location: ./DataAnalysticsBoardList.php");
 }
 function update(){
     //board_update_form.php에서 POST 방식으로 넘어온 값 저장 및 출력
@@ -87,7 +87,7 @@ function update(){
             dbConfirm($result);
             mysqli_close($conn);
             //헤더를 이용한 리다이렉션 구현
-            header("Location: ./board_list.php");
+            header("Location: ./DataAnalysticsBoardList.php");
 }
 function selectAll(){
     $conn = dbConnect();
