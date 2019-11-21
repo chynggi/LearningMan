@@ -31,13 +31,56 @@
      <table class="table table-bordered" border="1" align = "center" style="width:60%;">
         <?php
         $currentPage = 1;
-         ?>       		
+        
+        if (isset($_GET["currentPage"])) { // get 방식으로 전달되온상관 배열의 "currentPage" 값이 있으면
+            $currentPage = $_GET["currentPage"];
+        }
+        $conn = mysqli_connect("localhost", "root", "", "team");        // mysqli_connect()함수로 커넥션 객체 생성
+
+        $sqlCount = "SELECT count(*) FROM board";
+        $resultCount = mysqli_query($conn, $sqlCount); // resultSet과유사
+        
+        if ($rowCount = mysqli_fetch_array($resultCount)) {
+            $totalRowNum = $rowCount["count(*)"]; // php는 지역 변수를 밖에서 사용 가능.
+        }
+
+        $rowPerPage = 20;      
+        $begin = ($currentPage - 1) * $rowPerPage;
+        $sql = "SELECT board_no, board_title, board_user, board_date FROM board order by board_no desc limit " . $begin . "," . $rowPerPage . "";
+        $result = mysqli_query($conn, $sql);        
+        ?>    				
 		<tr>
 			<td align = "center" bgcolor = "#3e5baa" style="width:10%;"><font color = "white">번호</font></td>
 			<td align = "center" bgcolor = "#3e5baa" style="width:65%;"><font color = "white">제목</font></td>
 			<td align = "center" bgcolor = "#3e5baa" style="width:13%;"><font color = "white">작성자</font></td>
 			<td align = "center" bgcolor = "#3e5baa" style="width:12%;"><font color = "white">작성일</font></td>			
 		</tr>
+		<?php while ($row = mysqli_fetch_array($result)) { ?>	
+			<tr>
+				<td align = "center" bgcolor = "#e6ebfa">
+                    <?php
+                    echo $row["board_no"];
+                    ?>
+                </td>
+				<td>
+    				<?php
+                    echo "<a href='./DataAnalysticsBoardDetail.php?board_no=" . $row["board_no"] . "'>";
+                    echo $row["board_title"];
+                    echo "</a>";
+                    ?>
+                </td>
+				<td align = "center">
+                    <?php
+                    echo $row["board_user"];
+                    ?>
+                </td>
+				<td align = "center">
+                    <?php
+                    echo $row["board_date"];
+                    ?>
+                </td >						
+               </tr>
+            <?php } ?>		
 			<tr>            	
             	<td align = "center" colspan = "20">
             		<?php
@@ -53,4 +96,5 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
 	<br>
 </body>
+
 </html>

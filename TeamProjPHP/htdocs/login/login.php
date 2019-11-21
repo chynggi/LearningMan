@@ -50,9 +50,15 @@
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Frame Works</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Data Analystics</a>
-          </li>
+          <li class="nav-item dropdown dmenu" >
+      		<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+     	 	Data Analystics
+      		</a>
+      		<div class="dropdown-menu sm-menu">
+        		<a class="dropdown-item" href="../DataAnalysticsMain.php">데이터 분석이란?</a>
+        		<a class="dropdown-item" href="../DataAnalysticsBoardList.php">질문 게시판</a>     			
+      		</div>
+     	  </li> 
         </ul>
       </div>
     </div>
@@ -83,13 +89,13 @@
             </h2>
         </div>
         <hr>
-		<form action="#" method="post" style="text-align: center;">
+		<form action="loginAction.php" method="post" style="text-align: center;">
 			<div>
-				<label for="id">ID</label>&nbsp;&nbsp;&nbsp;
+				<label for="id" id="board_user" text = "text">ID</label>&nbsp;&nbsp;&nbsp;
 				<input type="text" name="id">
 			</div>
 			<div>
-				<label for="pw">PW</label>&nbsp;
+				<label for="pw" id="board_pw" text = "password">PW</label>&nbsp;
 				<input type="text" name="pw">
 			</div>
 			<div style="margin-left: 206px;">
