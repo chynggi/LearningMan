@@ -9,18 +9,17 @@
     <body>
         <h1 class="display-4">데이터 분석 게시판 게시글 삭제</h1>
         <?php 
-            $board_no = $_GET["board_no"];
-            echo $board_no."번째 글 삭제 페이지<br>";
+            $NO = $_GET["NO"];
+            echo $NO."번째 글 삭제 페이지<br>";
         ?>
-        <!-- board_delete_action.php 페이지로 post방식을 이용하여 값 전송 -->
         <form action="./DataAnalysticsBoardDeleteAction.php" method="post">
             <table class="table table-bordered" style="width:10%">
                 <tr>
                     <td>게시글을 삭제하려면 비밀 번호를 입력하세요.</td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="board_pw">
-                        <input type="hidden" name="board_no" value="<?php echo $board_no ?>">
+                    <td><input type="text" name="PW">
+                        <input type="hidden" name="NO" value="<?php echo $NO ?>">
                     </td>
                 </tr>
                 <tr>

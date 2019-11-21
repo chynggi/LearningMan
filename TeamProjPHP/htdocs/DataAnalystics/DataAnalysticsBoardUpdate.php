@@ -24,10 +24,10 @@
             } else {
                 die("연결 실패 : " .mysqli_error());
             }
-            $board_no = $_GET["board_no"];
-            echo $board_no."번째 글 수정 페이지<br>";
-            //board 테이블을 조회하여 board_no의 값이 일치하는 행의 board_no, board_title, board_content, board_user, board_date 필드의 값을 가져오는 쿼리
-            $sql = "SELECT board_no, board_title, board_content, board_user, board_date FROM board WHERE board_no = '".$board_no."'";
+            $NO = $_GET["NO"];
+            echo $NO."번째 글 수정 페이지<br>";
+            //board 테이블을 조회하여 NO의 값이 일치하는 행의 NO, Title, Content, ID, XDate 필드의 값을 가져오는 쿼리
+            $sql = "SELECT NO, Title, Content, ID, XDate FROM board WHERE NO = '".$NO."'";
             $result = mysqli_query($conn,$sql);
             if($row = mysqli_fetch_array($result)){
         ?>
@@ -36,16 +36,16 @@
             <table class="table table-bordered" style="width:50%">
                 <tr>
                     <td style="width:10%">번호</td>
-                    <td style="width:20%"><input type="text" name="board_no" value="<?php echo $row["board_no"]?>" readonly></td>
+                    <td style="width:20%"><input type="text" name="NO" value="<?php echo $row["NO"]?>" readonly></td>
                 </tr>         
                 <tr>
                     <td style="width:10%">제목</td>
-                    <td style="width:20%"><input type="text" name="board_title" value="<?php echo $row["board_title"]?>"></td>
+                    <td style="width:20%"><input type="text" name="Title" value="<?php echo $row["Title"]?>"></td>
                 </tr>
                 <tr>
                     <td style="width:10%">내용</td>
                     <td style="width:20%">
-                    <textarea name="board_content"  id = "content" rows = "5" cols = "50" wrap = "hard"><?php echo trim($row["board_content"])?></textarea>
+                    <textarea name="Content"  id = "content" rows = "5" cols = "50" wrap = "hard"><?php echo trim($row["Content"])?></textarea>
                     </td>
                 </tr>
             </table>

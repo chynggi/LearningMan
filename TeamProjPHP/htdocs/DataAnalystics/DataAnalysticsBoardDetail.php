@@ -30,10 +30,10 @@
         } else {
             die("연결 실패 - ".mysqli_error());
         }
-        $board_no = $_GET["board_no"];
-        echo $board_no."번재 글 내용<br>";
+        $NO = $_GET["NO"];
+        echo $NO."번재 글 내용<br>";
         
-        $sql = "SELECT board_no, board_title, board_content, board_user, board_date FROM board WHERE board_no = '".$board_no."'";
+        $sql = "SELECT NO, Title, Content, ID, XDate FROM board WHERE NO = '".$NO."'";
         $result = mysqli_query($conn, $sql);
         
         if($result){
@@ -50,7 +50,7 @@
                 <td style="width:5%">작성자</td>
                 <td style="width:40%" colspan="5">
                     <?php
-                        echo $row["board_user"];
+                        echo $row["ID"];
                     ?>
                 </td>
             </tr>
@@ -58,26 +58,26 @@
                 <td style="width:5%">글 제목</td>
                 <td style="width:24%">
                     <?php
-                        echo $row["board_title"];
+                        echo $row["Title"];
                     ?>
                 </td>
                 <td style="width:5%">글 번호</td>
                 <td style="width:3%">
                         <?php
-                            echo $row["board_no"];
+                            echo $row["NO"];
                         ?>
                 </td>
                 <td  style="width:5%">작성 일자</td>
                 <td  style="width:3%">
                     <?php
-                        echo $row["board_date"];
+                        echo $row["XDate"];
                     ?>
                 </td>
                 
             </tr>
             <tr>
                 <td colspan="6">
-                    <?=$row["board_content"]?>
+                    <?=$row["Content"]?>
                 </td>
             </tr>
             <?php
@@ -87,8 +87,8 @@
         </table>
         <br>
         &nbsp;&nbsp;&nbsp;
-        <a href='./DataAnalysticsBoardUpdate.php?board_no=<?=$row["board_no"]?>'>수정</a>
-		<a href='./DataAnalysticsBoardDelete.php?board_no=<?=$row["board_no"]?>'>삭제</a>
+        <a href='./DataAnalysticsBoardUpdate.php?NO=<?=$row["NO"]?>'>수정</a>
+		<a href='./DataAnalysticsBoardDelete.php?NO=<?=$row["NO"]?>'>삭제</a>
         <a class="btn btn-primary" href="./DataAnalysticsBoardList.php">
         	리스트로 돌아가기
         </a>

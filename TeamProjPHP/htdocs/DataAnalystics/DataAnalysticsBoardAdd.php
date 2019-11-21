@@ -21,25 +21,25 @@
                 <tr>
                     <td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">작성자</font></td>
                     <td style="width:50%">
-                    	<input class = "form-control" type="text" name="board_user" id = "name">
+                    	<input class = "form-control" type="text" name="ID" id = "name">
                     </td>
                 </tr>               
                 <tr>
                     <td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">비밀번호</font></td>
                     <td style="width:50%">
-                    	<input class = "form-control" type="password" name="board_pw" id = "password">
+                    	<input class = "form-control" type="password" name="PW" id = "password">
                     </td>
                 </tr>
                 <tr>
                     <td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">제목</font></td>
                     <td style="width:50%">
-                    	<input class = "form-control" type="text" name="board_title" id = "title" placeholder = "제목을 입력하시오">
+                    	<input class = "form-control" type="text" name="Title" id = "title" placeholder = "제목을 입력하시오">
                     </td>
                 </tr> 
                 <tr>
                     <td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">내용</font></td>
                     <td style="width:50%">
-                    	<textarea class = "form-control" name = "board_content" id = "content" rows = "5" cols = "50" placeholder = "내용을 입력하시오"></textarea>
+                    	<textarea class = "form-control" name = "Content" id = "content" rows = "5" cols = "50" placeholder = "내용을 입력하시오"></textarea>
                     </td>
                 </tr> 
                 
@@ -57,53 +57,53 @@
 		</form>
 	
 		<script type = "text/javascript">
-			$("#board_pw").change(function(){ // id일 경우 # class일 경우 .
-				checkPassword($('#board_pw').val());
+			$("#PW").change(function(){ // id일 경우 # class일 경우 .
+				checkPassword($('#PW').val());
 			});
-			$("#board_title").change(function(){
-				checkTitle($('#board_title').val());
+			$("#Title").change(function(){
+				checkTitle($('#Title').val());
 			});
-			$("#board_content").change(function(){
-				checkContent($('#board_content').val());
+			$("#Content").change(function(){
+				checkContent($('#Content').val());
 			});
-			$("#board_user").change(function(){
-				checkName($('#board_user').val());
+			$("#ID").change(function(){
+				checkName($('#ID').val());
 			});
 
-			function checkPassword(board_pw){
-				if(board_pw.length < 5){
+			function checkPassword(PW){
+				if(PW.length < 5){
 					alert("비밀번호를 5자 이상 설정하시오");
-					$('#board_pw').val('').focus();
+					$('#PW').val('').focus();
 					return false;
 				} else {
 					return true;
 				}
 			}
 
-			function checkTitle(board_title){
-				if(board_title.length < 2){
+			function checkTitle(Title){
+				if(Title.length < 2){
 					alert("제목을 2자 이상 설정하시오");
-					$('#board_title').val('').focus();
+					$('#Title').val('').focus();
 					return false;
 				} else {
 					return true;
 				}
 			}
 
-			function checkContent(board_content){
-				if(board_content.length < 2){
+			function checkContent(Content){
+				if(Content.length < 2){
 					alert("내용을 2자 이상 설정하시오");
-					$('#board_content').val('').focus();
+					$('#Content').val('').focus();
 					return false;
 				} else {
 					return true;
 				}
 			}
 
-			function checkName(board_user){
-				if(board_user.length < 2){
+			function checkName(ID){
+				if(ID.length < 2){
 					alert("작성자명을 2자 이상 설정하시오");
-					$('#board_user').val('').focus();
+					$('#ID').val('').focus();
 					return false;
 				} else {
 					return true;

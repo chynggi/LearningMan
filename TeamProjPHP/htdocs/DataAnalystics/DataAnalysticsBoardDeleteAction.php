@@ -1,14 +1,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>러닝맨</title>
+<title>러닝맨 데이터 분석 게시판 게시글 삭제 시스템</title>
 </head>
 <body>
 	<?php
-        $board_no = $_POST["board_no"];
-        $board_pw = $_POST["board_pw"];
-        echo "board_no : " . $board_no . "<br>";
-        echo "board_pw : " . $board_pw . "<br>";
+        $NO = $_POST["NO"];
+        $PW = $_POST["PW"];
+        echo "NO : " . $NO . "<br>";
+        echo "PW : " . $PW . "<br>";
 
         // mysql 커넥션 객체 생성
         $conn = mysqli_connect("localhost", "root", "", "team");
@@ -24,14 +24,14 @@
         try {
 
             // 삭제대상자료가 있는 지 확인 
-            $selectSql = "SELECT * FROM board WHERE board_pw='" . $board_pw . "' AND board_no=" . $board_no . "";
+            $selectSql = "SELECT * FROM board WHERE PW='" . $PW . "' AND NO=" . $NO . "";
             $result = mysqli_query($conn, $selectSql);
 
             // 패스워드가 맞는 해당 자료가 있으면 
             if ($row = mysqli_fetch_array($result)) {
 
                 // 지우는 작업
-                $deleteSql = "DELETE FROM board WHERE board_pw='" . $board_pw . "' AND board_no=" . $board_no . "";
+                $deleteSql = "DELETE FROM board WHERE PW='" . $PW . "' AND NO=" . $NO . "";
                 $res = mysqli_query($conn, $deleteSql);
                 echo "삭제 성공: " . $deleteSql . ":" . "실행";
             } 

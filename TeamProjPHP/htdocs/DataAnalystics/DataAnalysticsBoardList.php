@@ -48,19 +48,46 @@
 
         $rowPerPage = 20; // 페이지당 보여줄 게시물 행의 수        
         $begin = ($currentPage - 1) * $rowPerPage;
-        $sql = "SELECT board_no, board_title, board_user, board_date FROM board order by board_no desc limit " . $begin . "," . $rowPerPage . "";
+        $sql = "SELECT NO, Title, ID, XDate FROM board order by NO desc limit " . $begin . "," . $rowPerPage . "";
         $result = mysqli_query($conn, $sql);        
         ?>    
         <?php while ($row = mysqli_fetch_array($result)) {         
         }?>		
-		<tr>
+				<tr>
 			<td align = "center" bgcolor = "#3e5baa" style="width:10%;"><font color = "white">번호</font></td>
 			<td align = "center" bgcolor = "#3e5baa" style="width:65%;"><font color = "white">제목</font></td>
 			<td align = "center" bgcolor = "#3e5baa" style="width:13%;"><font color = "white">작성자</font></td>
 			<td align = "center" bgcolor = "#3e5baa" style="width:12%;"><font color = "white">작성일</font></td>			
 		</tr>
+		<?php while ($row = mysqli_fetch_array($result)) { ?>	
+			<tr>
+				<td align = "center" bgcolor = "#e6ebfa">
+                    <?php
+                    echo $row["NO"];
+                    ?>
+                </td>
+				<td>
+    				<?php
+                    echo "<a href='./DataAnalysticsBoardDetail.php?NO=" . $row["NO"] . "'>";
+                    echo $row["Title"];
+                    echo "</a>";
+                    ?>
+                </td>
+				<td align = "center">
+                    <?php
+                    echo $row["ID"];
+                    ?>
+                </td>
+				<td align = "center">
+                    <?php
+                    echo $row["XDate"];
+                    ?>
+                </td >						
+               </tr>
+            <?php } ?>		
 			<tr>            	
             	<td align = "center" colspan = "20">
+            		<a class="btn btn-primary2" href="./DataAnalysticsBoardAdd.php" >글쓰기</a>
             		<?php
             			echo "<a class='btn btn-primary2' href='./DataAnalysticsBoardList.php?currentPage=" . ($currentPage - 1) . "'>◁</a>&nbsp;&nbsp;";           		    
             			echo "<a class='btn btn-primary2' href='./DataAnalysticsBoardList.php?currentPage=" . ($currentPage + 1) . "'>▷</a>&nbsp;&nbsp;";
@@ -74,4 +101,5 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
 	<br>
 </body>
+
 </html>

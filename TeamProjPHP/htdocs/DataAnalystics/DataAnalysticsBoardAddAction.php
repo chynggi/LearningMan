@@ -7,14 +7,14 @@
         <h1>데이터 분석 게시판 글 등록하기 액션</h1>
         <?php
             //board_delete_form.php 페이지에서 넘어온 글 번호값 저장 및 출력
-            $board_pw       = $_POST["board_pw"];
-            $board_title    = $_POST["board_title"];
-            $board_content  = $_POST["board_content"];
-            $board_user     = $_POST["board_user"];            
-            echo "board_pw : "      . $board_pw . "<br>";
-            echo "board_title : "   . $board_title . "<br>";
-            echo "board_content : " . $board_content . "<br>";
-            echo "board_user : "    . $board_user . "<br>";
+            $PW       = $_POST["PW"];
+            $Title    = $_POST["Title"];
+            $Content  = $_POST["Content"];
+            $ID       = $_POST["ID"];            
+            echo "PW : "      . $PW .      "<br>";
+            echo "Title : "   . $Title .   "<br>";
+            echo "Content : " . $Content . "<br>";
+            echo "ID : "      . $ID .      "<br>";
             //mysql 커넥션 객체 생성
             $conn = mysqli_connect("localhost", "root", "","team");
             
@@ -26,8 +26,8 @@
             }
             //board테이블에서 입력된 글 번호와, 글 비밀번호가 일치하는 행 삭제 쿼리
            
-            $sql = "INSERT INTO board (board_pw, board_title, board_content, board_user, board_date)
-            values('".$board_pw."','".$board_title."','".$board_content."','".$board_user."',now())";
+            $sql = "INSERT INTO board (PW, Title, Content, ID, XDate)
+            values('".$PW."','".$Title."','".$Content."','".$ID."',now())";
             
             $result = mysqli_query($conn,$sql);
             //쿼리 실행 여부 확인
