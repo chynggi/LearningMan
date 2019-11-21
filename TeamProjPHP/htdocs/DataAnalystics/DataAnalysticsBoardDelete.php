@@ -16,7 +16,7 @@
         <form action="./DataAnalysticsBoardDeleteAction.php" method="post">
             <table class="table table-bordered" style="width:10%">
                 <tr>
-                    <td>글 비밀 번호를 입력하세요.</td>
+                    <td>게시글을 삭제하려면 비밀 번호를 입력하세요.</td>
                 </tr>
                 <tr>
                     <td><input type="text" name="board_pw">
@@ -24,7 +24,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><button class="btn btn-primary" type="submit">삭제</td>
+                    <td><button class="btn btn-primary" type="submit">삭제</button></td>
+                    <td><a class="btn btn-primary" href="./DataAnalysticsBoardList.php">취소</a></td>
                 </tr>
             </table>
         </form>      

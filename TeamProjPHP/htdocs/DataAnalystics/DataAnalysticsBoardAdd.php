@@ -57,53 +57,53 @@
 		</form>
 	
 		<script type = "text/javascript">
-			$("#password").change(function(){ // id일 경우 # class일 경우 .
-				checkPassword($('#password').val());
+			$("#board_pw").change(function(){ // id일 경우 # class일 경우 .
+				checkPassword($('#board_pw').val());
 			});
-			$("#title").change(function(){
-				checkTitle($('#title').val());
+			$("#board_title").change(function(){
+				checkTitle($('#board_title').val());
 			});
-			$("#content").change(function(){
-				checkContent($('#content').val());
+			$("#board_content").change(function(){
+				checkContent($('#board_content').val());
 			});
-			$("#name").change(function(){
-				checkName($('#name').val());
+			$("#board_user").change(function(){
+				checkName($('#board_user').val());
 			});
 
-			function checkPassword(password){
-				if(password.length < 5){
+			function checkPassword(board_pw){
+				if(board_pw.length < 5){
 					alert("비밀번호를 5자 이상 설정하시오");
-					$('#password').val('').focus();
+					$('#board_pw').val('').focus();
 					return false;
 				} else {
 					return true;
 				}
 			}
 
-			function checkTitle(title){
-				if(title.length < 2){
+			function checkTitle(board_title){
+				if(board_title.length < 2){
 					alert("제목을 2자 이상 설정하시오");
-					$('#title').val('').focus();
+					$('#board_title').val('').focus();
 					return false;
 				} else {
 					return true;
 				}
 			}
 
-			function checkContent(content){
-				if(content.length < 2){
+			function checkContent(board_content){
+				if(board_content.length < 2){
 					alert("내용을 2자 이상 설정하시오");
-					$('#content').val('').focus();
+					$('#board_content').val('').focus();
 					return false;
 				} else {
 					return true;
 				}
 			}
 
-			function checkName(name){
-				if(name.length < 2){
+			function checkName(board_user){
+				if(board_user.length < 2){
 					alert("작성자명을 2자 이상 설정하시오");
-					$('#name').val('').focus();
+					$('#board_user').val('').focus();
 					return false;
 				} else {
 					return true;

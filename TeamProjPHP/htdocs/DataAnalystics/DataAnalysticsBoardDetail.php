@@ -23,16 +23,29 @@
     <body>
         <h1 class="display-4">데이터 분석 게시판 게시글 내용</h1>
         <?php
-            require_once('DataAnalysticsBoardDaoFunction.php');
-            $key = $_GET["board_no"];
-            echo $key."번째 글 내용<br>";
-            $oneRow = selectOne($key);
-        ?>
+	   $conn = mysqli_connect("localhost","root","","team"); // mysqli 커넥션 객체 생성
+        
+	   if($conn){ // 커넥션 객체 생성 여부 확인
+            echo "연결 성공<br>";	    
+        } else {
+            die("연결 실패 - ".mysqli_error());
+        }
+        $board_no = $_GET["board_no"];
+        echo $board_no."번재 글 내용<br>";
+        
+        $sql = "SELECT board_no, board_title, board_content, board_user, board_date FROM board WHERE board_no = '".$board_no."'";
+        $result = mysqli_query($conn, $sql);
+        
+        if($result){
+            echo "조회 성공<br>";            
+        } else {
+            echo "조회 실패 - ".mysqli_error($conn);
+        }        
+    ?>
         <table class="table table-bordered" style="width:50%">
             <?php
-                //result 변수에 담긴 값을 row 변수에 저장하여 테이블에 출력
-            if($row = mysqli_fetch_array($oneRow)) {
-            ?>
+		      if($row = mysqli_fetch_array($result)){ // resilt 변수에 담긴 값을 row 값에 저장하여 테이블에 출력
+		      ?>
             <tr>
                 <td style="width:5%">작성자</td>
                 <td style="width:40%" colspan="5">
