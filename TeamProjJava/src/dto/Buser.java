@@ -13,6 +13,12 @@ public class Buser {
 	public String getName() {
 		return name;
 	}
+	public Buser(String id, String name, String password) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.password = password;
+	}
 	public void setName(String name) {
 		this.name = name;
 	}
