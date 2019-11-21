@@ -83,6 +83,7 @@
             <?php } ?>		
 			<tr>            	
             	<td align = "center" colspan = "20">
+            		<a class="btn btn-primary2" href="./DataAnalysticsBoardAdd.php" >글쓰기</a>
             		<?php
             			echo "<a class='btn btn-primary2' href='./DataAnalysticsBoardList.php?currentPage=" . ($currentPage - 1) . "'>◁</a>&nbsp;&nbsp;";           		    
             			echo "<a class='btn btn-primary2' href='./DataAnalysticsBoardList.php?currentPage=" . ($currentPage + 1) . "'>▷</a>&nbsp;&nbsp;";
