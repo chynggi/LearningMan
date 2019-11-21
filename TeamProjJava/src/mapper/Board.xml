@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<!--Interface DAO를 사용하는 경우 -->
+<!--아래 태그의 ID는 인터페이스의 추상메소드명과 일치시켜야 ! -->
+<mapper namespace="com.ssy.dao.BoardDAO"> 
+<cache/>
+<sql id = "BaseColumns">
+	NO,TITLE,CONTENS,ID,XDATE
+</sql>
+
+<resultMap id ="result" type="board"> 
+	<result property = "no" column = "NO"/> <!--번호 -->
+	<result property = "title" column = "TITLE"/> <!-- 제목 -->
+	<result property = "content" column = "CONTENT"/> <!-- 내용 -->
+	<result property = "id" column = "ID"/> <!-- 아이디 -->
+	<result property = "xdate" column = "XDATE"/> <!-- 날짜 -->
+</resultMap>
+
+<select id = "selectAll" resultMap="result">
+	SELECT
+	<include refid="BaseColumns"/> 
+	FROM BOARD
+</select>
+
+<insert id = "insert" parameterType="board">
+	<![CDATA[ 
+	INSERT INTO BOARD 
+	(NO,TITLE,CONTENT,ID,XDATE)
+	VALUES
+	(BOARD_SEQ.NEXTVAL,#{title},#{content},#{id},#{xdate})
+	]]>
+</insert>
+
+<update id ="update" parameterType="board">
+	UPDATE BOARD SET 
+		ID=#{id},
+		TITLE=#{title},
+		CONTENT=#{content},
+		XDATE=#{xbdate},
+	WHERE NO = #{no} 
+</update>
+
+<delete id="delete" parameterType="long">
+	DELETE FROM BOARD WHERE NO=#{no}
+</delete>
+
+<select id = "selectById" parameterType="long" resultMap="result">
+	SELECT * FROM BOARD WHERE NO=#{no}
+</select>
+
+<select id = "countRows" resultType="long">
+	SELECT COUNT(*) FROM BOARD
+</select>
+
+<select id = "maxIdNum" resultType="long">
+	SELECT Max(NO) FROM BOARD
+</select>
+
+</mapper> 
