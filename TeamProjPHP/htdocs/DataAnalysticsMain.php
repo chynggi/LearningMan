@@ -94,7 +94,7 @@
         <br>
         
         <h3>구분하는 기준은?</h3>
-        <p>Schema형태의 유무, 쉽게 말해 형태가 있는지 없는지로 우선 분류하며, 형태가 있으면서 연산(Calculable)가능한 것인가 불가능한 것인가에 따라 기준이 나뉜다.</p>
+        <p>데이터 구조, 표현 방법, 데이터간 관계 형식언어(Schema)형태의 유무, 쉽게 말해 형태가 있는지 없는지로 우선 분류하며, 형태가 있으면서 연산(Calculable)가능한 것인가 불가능한 것인가에 따라 기준이 나뉜다.</p>
         <p>형태가 있으면서 연산이 가능한 것이 정형 데이터, 형태는 있지만 연산이 불가능한 것이 반정형 데이터, 형태도 없고 연산도 불가능하면 비정형 데이터로 구분한다.</p>
         <br>
         
@@ -105,16 +105,19 @@
         <br>
         
         <h3>데이터 분석 실습</h3>
-        <p>교육은 R언어로 진행되어 2019년 신년사 텍스트 데이터를 Crawling을 활용해 Word Cloud를 표를 나타냈다.</p>
         <table align = "center">
-	        <tr>
+	        <tr colspan = "3">
     		    <td>
-        			<img src="./DataAnalysticsImg/텍스트데이터분석워드클라우딩.jpg" width="500" height="500" title = "워드클라우드" alt="워드클라우드">        
+        			<img src="./DataAnalysticsImg/텍스트데이터분석워드클라우딩.jpg" style="max-width: 100%; height: auto;">        
         		</td>
+        		<td>
+        			<img src="./DataAnalysticsImg/텍스트데이터분석원형그래프.png" style="max-width: 100%; height: auto;">        
+        		</td>       	      		
         	</tr>
         </table>
+        <p>교육은 R언어로 진행되어 2019년 신년사 텍스트 데이터, 제주특별자치도의 인기 여행지를 Crawling을 활용해 Word Cloud와 그래프를 나타냈다.</p>        
+        <p>당연히 미리 조사해둔 Excel파일 및 csv파일등을 이용해서도 데이터 분석을 이행 할 수 있다.</p>              
         <br>
-        
         <div class="container">
     		<div class="row">
       			<div class="col-lg-8 col-md-10 mx-auto" align = "center">
@@ -180,7 +183,5 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/clean-blog.min.js"></script>
-
 </body>
-
 </html>
