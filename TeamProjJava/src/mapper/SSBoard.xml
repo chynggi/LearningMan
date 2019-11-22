@@ -9,19 +9,19 @@
 	<result property = "date" column = "DATE"/>	
 </resultMap>
 <sql id="basecolumns">
-NO,TITLE,CONTENT,ID,DATE
+	NO,TITLE,CONTENT,ID,DATE
 </sql>
 
 <select id = "selectAll" resultMap="result">
 
-	SELECT <include refid= "basecolumns"></include> FROM BOARD
+	SELECT <include refid= "basecolumns"></include> FROM SSBOARD
 
 </select>
 <insert id = "insert" parameterType="board"
 	>
 	
-	INSERT INTO BOARD (<include refid= "basecolumns"></include>) 
-	VALUES(BOARD_SEQ.NEXTVAL,#{title},#{content},#{id},#{date})
+	INSERT INTO SSBOARD (<include refid= "basecolumns"></include>) 
+	VALUES(SSBOARD_SEQ.NEXTVAL,#{title},#{content},#{id},#{date})
 	
 
 </insert>
@@ -31,18 +31,18 @@ NO,TITLE,CONTENT,ID,DATE
 	 WHERE NO = #{no}
 </update>
 <delete id = "delete" parameterType="long">
-	DELETE FROM BOARD WHERE NO = #{id}
+	DELETE FROM SSBOARD WHERE NO = #{id}
 
 </delete>
-<select id = "selectById" parameterType="long" resultMap="result">
+<select id = "info" parameterType="long" resultType="board">
 <![CDATA[
-	SELECT * FROM BOARD WHERE NO = #{id}
+	SELECT * FROM SSBOARD WHERE NO = #{id}
 	]]>
 </select>
 <select id = "countofcontents" resultType="long">
 
 <![CDATA[
-	SELECT COUNT(*) FROM BOARD
+	SELECT COUNT(*) FROM SSBOARD
 	]]>
 </select>
 

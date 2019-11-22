@@ -12,6 +12,17 @@ public class Board implements Serializable {
 	public String toString() {
 		return "Board [no=" + no + ", id=" + id + ", title=" + title + ", content=" + content + ", date=" + date + "]";
 	}
+	public Board(long no, String id, String title, String content, String date) {
+		super();
+		this.no = no;
+		this.id = id;
+		this.title = title;
+		this.content = content;
+		this.date = date;
+	}
+	public Board() {
+		super();
+	}
 	public long getNo() {
 		return no;
 	}
