@@ -1,31 +1,28 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% load staticfiles %} {% block content %}
 
- <!-- Post Content -->
-  <article>
-    <div class="container">
-	
+
+<!-- Main Content -->
+<div class="container">
+	<form action="" method="POST">
 		<div class="input-group mb-3">
 			<div class="input-group-prepend">
 				<span class="input-group-text" id="inputGroup-sizing-default">제목</span>
 			</div>
 			<input type="text" name = "title" class="form-control"
 				aria-label="Sizing example input"
-				aria-describedby="inputGroup-sizing-default" readonly value="post.title">
+				aria-describedby="inputGroup-sizing-default">
 		</div>
 		<div class="input-group">
   <div class="input-group-prepend">
     <span class="input-group-text">내용</span>
   </div>
-  <textarea name = "content" class="form-control" aria-label="With textarea" >{{ post.content }}</textarea>
+  <textarea name = "content" class="form-control" aria-label="With textarea"></textarea>
 </div>
-	
+	<input type="hidden" name = "id" value="{{user.id}}">
+	</form>
 
 </div>
 
 <hr>
-  </article>
-
-  <hr>
 
 {% endblock content %}

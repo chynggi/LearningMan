@@ -12,11 +12,11 @@ from django.db import models
 
 
 class Frboard(models.Model):
-    no = models.FloatField(primary_key=True)
+    no = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, blank=True, null=True)
-    contens = models.CharField(max_length=3000, blank=True, null=True)
+    content = models.CharField(max_length=3000, blank=True, null=True)
     id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
-    xdate = models.DateField(blank=True, null=True)
+    xdate = models.DateField(blank=True, null=True,auto_now_add=True)
 
     class Meta:
         managed = False
@@ -24,11 +24,11 @@ class Frboard(models.Model):
 
 
 class Ssboard(models.Model):
-    no = models.FloatField(primary_key=True)
+    no = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, blank=True, null=True)
-    contens = models.CharField(max_length=3000, blank=True, null=True)
+    content = models.CharField(max_length=3000, blank=True, null=True)
     id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
-    xdate = models.DateField(blank=True, null=True)
+    xdate = models.DateField(blank=True, null=True,auto_now_add=True)
 
     class Meta:
         managed = False
@@ -37,11 +37,11 @@ class Ssboard(models.Model):
         
         
 class Oopboard(models.Model):
-    no = models.FloatField(primary_key=True)
+    no = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, blank=True, null=True)
-    contens = models.CharField(max_length=3000, blank=True, null=True)
+    content = models.CharField(max_length=3000, blank=True, null=True)
     id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
-    xdate = models.DateField(blank=True, null=True)
+    xdate = models.DateField(blank=True, null=True,auto_now_add=True)
 
     class Meta:
         managed = False
@@ -49,11 +49,11 @@ class Oopboard(models.Model):
 
 
 class Daboard(models.Model):
-    no = models.FloatField(primary_key=True)
+    no = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, blank=True, null=True)
-    contens = models.CharField(max_length=3000, blank=True, null=True)
+    content = models.CharField(max_length=3000, blank=True, null=True)
     id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
-    xdate = models.DateField(blank=True, null=True)
+    xdate = models.DateField(blank=True, null=True,auto_now_add=True)
 
     class Meta:
         managed = False
@@ -61,11 +61,11 @@ class Daboard(models.Model):
 
 
 class Dbmsboard(models.Model):
-    no = models.FloatField(primary_key=True)
+    no = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, blank=True, null=True)
-    contens = models.CharField(max_length=3000, blank=True, null=True)
+    content = models.CharField(max_length=3000, blank=True, null=True)
     id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
-    xdate = models.DateField(blank=True, null=True)
+    xdate = models.DateField(blank=True, null=True,auto_now_add=True)
 
     class Meta:
         managed = False
@@ -79,11 +79,11 @@ class Dbmsboard(models.Model):
 
 
 class Board(models.Model):
-    no = models.FloatField(primary_key=True)
+    no = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, blank=True, null=True)
-    contens = models.CharField(max_length=3000, blank=True, null=True)
+    content = models.CharField(max_length=3000, blank=True, null=True)
     id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
-    xdate = models.DateField(blank=True, null=True)
+    xdate = models.DateField(blank=True, null=True,auto_now_add=True)
 
     class Meta:
         managed = False
