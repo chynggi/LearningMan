@@ -34,8 +34,5 @@ public class Buser {
 	}
 	public Buser() {
 		super();
-	}
-	
-	
-	
+	}	
 }

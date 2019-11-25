@@ -1,5 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="dto.Board"%>
+<%@ page import="dao.BoardDAO"%>
+<%@ page import="dao.IDAO"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="java.util.*"%>
+<%@ page import="org.apache.ibatis.session.SqlSession"%>
+<%@ page import="common.MBUtils"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,6 +46,16 @@
 </head>
 
 <body>
+<%
+	request.setCharacterEncoding("utf-8");
+		String id= (String)session.getAttribute("id");
+		response.setContentType("text/html;charset=UTF-8");
+		SqlSession sqlSession  = MBUtils.getSession(); 
+		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
+		List<Board> data = dao.selectById(id);
+		sqlSession.close();
+%>
+
 	<jsp:include page="header.jsp"></jsp:include>
      <table class="table table-bordered" border="1" align = "center" style="width:60%;">
         	
@@ -52,16 +68,20 @@
 			
 			<tr>
 				<td align = "center" bgcolor = "#e6ebfa">
-                    글번호
+				<%=x.getNo()%>
+
                 </td>
 				<td>
-    		제목1		
+				<td><%=x.getTitle()%></td>
+	
                 </td>
 				<td align = "center">
-                작성자1    
+				<td><%=x.getId()%></td>
+   
                 </td>
 				<td align = "center">
-            작성일1        
+				<td><%=x.getXdate()%></td>
+        
                 </td >						
                </tr>
             		
