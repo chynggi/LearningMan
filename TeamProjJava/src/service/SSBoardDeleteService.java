@@ -13,25 +13,25 @@ import dao.BoardDAO;
 public class SSBoardDeleteService implements Service{
 	@Override
 	public boolean execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("Board Adjusting");
+		System.out.println("게시글 삭제");
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();		
-		String id = request.getParameter("id");
-		long no = Long.parseLong(request.getParameter("no"));
 		
-		SqlSession sqlSession = MBUtils.getSession();
-		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
+		PrintWriter out 		= response.getWriter();		
+		String id 				= request.getParameter("id");
+		long no 				= Long.parseLong(request.getParameter("no"));
+		SqlSession sqlSession 	= MBUtils.getSession();
+		BoardDAO dao 			= sqlSession.getMapper(BoardDAO.class);
 
 		int res = 0;
 		try {
 			res = dao.delete(no);
 			if (res > 0) {
 				sqlSession.commit();
-				out.print("Data Delete Success! 삭제 성공");
+				out.print("삭제 성공");
 			} else {
 				sqlSession.rollback();
-				out.print("Data Delete Failed! 삭제 실패");
+				out.print("삭제 실패");
 				return false;
 			}
 		} catch (Exception e) {
@@ -40,7 +40,7 @@ public class SSBoardDeleteService implements Service{
 			return false;
 		}
 
-		out.print("<a href=\"form_Board.jsp\">계속 작업</a>");
+		out.print("<a href=\"DataAnalysticsAdd.jsp\">계속 작업</a>");
 		out.print("<button type=\"button\" onclick=\"location.href='datadisp.jsp'\">입력자료출력</button>");
 
 		return true;

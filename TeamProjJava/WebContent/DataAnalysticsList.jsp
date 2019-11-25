@@ -57,42 +57,33 @@
 %>
 
 	<jsp:include page="header.jsp"></jsp:include>
-     <table class="table table-bordered" border="1" align = "center" style="width:60%;">
-        	
-				<tr>
+     <table class="table table-bordered" border="1" align = "center" style="width:60%;">	
+		<tr>
 			<td align = "center" bgcolor = "#3e5baa" style="width:10%;"><font color = "white">번호</font></td>
 			<td align = "center" bgcolor = "#3e5baa" style="width:65%;"><font color = "white">제목</font></td>
-			<td align = "center" bgcolor = "#3e5baa" style="width:13%;"><font color = "white">작성자</font></td>
+			<td align = "center" bgcolor = "#3e5baa" style="width:13%;"><font color = "white">아이디</font></td>
 			<td align = "center" bgcolor = "#3e5baa" style="width:12%;"><font color = "white">작성일</font></td>			
-		</tr>
-			
-			<tr>
-				<td align = "center" bgcolor = "#e6ebfa">
-				<%=x.getNo()%>
-
-                </td>
-				<td>
-				<td><%=x.getTitle()%></td>
-	
-                </td>
-				<td align = "center">
-				<td><%=x.getId()%></td>
-   
-                </td>
-				<td align = "center">
-				<td><%=x.getXdate()%></td>
-        
-                </td >						
-               </tr>
-            		
-			<tr>            	
-            	<td align = "center" colspan = "20">
-            		<a class="btn btn-primary2" href="./DataAnalysticsBoardAdd.jsp" >글쓰기</a>
-            		
-            		
-            	</td>           	
-            </tr>           
-        </table>     
+		</tr>			
+		<tr>
+			<td align = "center" bgcolor = "#e6ebfa">
+			<%= x.getNo() %>
+            </td>
+			<td align = "center">
+			<%= x.getTitle() %>
+			</td>	
+			<td align = "center">
+			<%= x.getId() %>
+			</td>   
+			<td align = "center">
+			<%= x.getXdate() %>
+			</td>              						
+        </tr>           		
+		<tr>            	
+            <td align = "center" colspan = "20">
+            	<a class="btn btn-primary2" href="./DataAnalysticsAdd.jsp" >글쓰기</a>
+            </td>           	
+        </tr>           
+     </table>     
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
 	<br>
 	<jsp:include page="footer.jsp"></jsp:include>
