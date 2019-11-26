@@ -1,17 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="dto.Board"%>
-<%@ page import="dao.BoardDAO"%>
-<%@ page import="dao.IDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="java.io.PrintWriter"%>
+<%@ page import="dao.*"%>
+<%@ page import="common.*"%>
+<%@ page import="dto.*"%>
+<%@ page import="mapper.*"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.io.*"%>
 <%@ page import="java.sql.*"%>
 <%@ page import="java.util.*"%>
 <%@ page import="org.apache.ibatis.session.SqlSession"%>
-<%@ page import="common.MBUtils"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>러닝맨 데이터 분석 게시판 리스트</title>
-		<meta charset="utf-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   		<meta name="description" content="">
   		<meta name="author" content="">
@@ -44,60 +49,70 @@
       }
 </style>
 
+<% 
+request.setCharacterEncoding("utf-8");
+SqlSession sqlSession  = MBUtils.getSession(); 
+BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
 
+List<Board> boardList = null;
 
+String id = (String)session.getAttribute("id");
+response.setContentType("text/html;charset=UTF-8");
+
+try {
+	boardList = dao.selectAll();
+} catch (Exception e) {
+	e.printStackTrace();
+}
+
+sqlSession.close();
+%>
 </head>
 
 <body>
-<%
-	request.setCharacterEncoding("utf-8");
-		String id= (String)session.getAttribute("id");
-		response.setContentType("text/html;charset=UTF-8");
-		SqlSession sqlSession  = MBUtils.getSession(); 
-		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
-		List<Board> data = dao.selectById(id);		
-		
-		sqlSession.close();
-%>
+<jsp:include page="header.jsp"></jsp:include>
+<c:set var="boardlist" value="<%=boardList%>" />
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <table class="table table-striped" style="text-align: center; border: 1xp solid #dddddd">
+        	<thead>
+        		<tr>
+        			<th style="background-color: #3e5baa; text-align: center;"><font color = "white">번호</font></th>
+        			<th style="background-color: #3e5baa; text-align: center;"><font color = "white">제목</font></th>
+        			<th style="background-color: #3e5baa; text-align: center;"><font color = "white">작성자</font></th>
+        			<th style="background-color: #3e5baa; text-align: center;"><font color = "white">날짜</font></th>
+         		</tr>
+         	</thead>
+         	<tbody>
+			<c:forEach var="x" items="${boardlist}">
+				<tr>
+					<td>${x.getNo()}</td>
+					<td>${x.getTitle()}</td>
+					<td>${x.getId()}</td>		
+					<td>${x.getDate()}</td>			
+				</tr>
+			</c:forEach>
+		</tbody>
+         </table>
+         <a href="dbms_Board.html" class="btn btn-primary pull-right">글쓰기</a>
+        </div>
+      </div>
+    </div>
+  </article>
 
-	<jsp:include page="header.jsp"></jsp:include>
-     <table class="table table-bordered" border="1" align = "center" style="width:60%;">	
-		<tr>
-			<td align = "center" bgcolor = "#3e5baa" style="width:10%;"><font color = "white">번호</font></td>
-			<td align = "center" bgcolor = "#3e5baa" style="width:65%;"><font color = "white">제목</font></td>
-			<td align = "center" bgcolor = "#3e5baa" style="width:13%;"><font color = "white">아이디</font></td>
-			<td align = "center" bgcolor = "#3e5baa" style="width:12%;"><font color = "white">작성일</font></td>			
-		</tr>			
-		<tr>
-				
-			
-			
-			<td align = "center" bgcolor = "#e6ebfa">
-			<!--  	<input type="text" name="No" id="No" tabindex="3" class="form-control" value="<%= x.getNo() %>"> -->
-				${x.getNo()}
-            </td>
-			<td align = "center">
-			<!--	<input type="text" name="Title" id="Title" tabindex="3" class="form-control" value="<%= x.getTitle() %>"> -->
-				${x.getTitle()}
-			</td>	
-			<td align = "center">
-			<!--	<input type="text" name="Id" id="Id" tabindex="3" class="form-control" value="<%= x.getId() %>"> -->
-				${x.getId()}
-			</td>   
-			<td align = "center">
-			<!--	<input type="text" name="Xdate" id="Xdate" tabindex="3" class="form-control" value="<%= x.getXdate() %>"> -->
-				${x.getXdate()}
-			</td>              						
-        </tr>           		
-		<tr>            	
-            <td align = "center" colspan = "20">
-            	<a class="btn btn-primary2" href="./DataAnalysticsAdd.jsp" >글쓰기</a>
-            </td>           	
-        </tr>           
-     </table>     
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
-	<br>
-	<jsp:include page="footer.jsp"></jsp:include>
+  <hr>
+
+  
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+  <jsp:include page="footer.jsp"></jsp:include>
 </body>
 
 </html>
