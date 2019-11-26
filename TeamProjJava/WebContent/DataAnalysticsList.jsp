@@ -98,7 +98,7 @@ sqlSession.close();
 			</c:forEach>
 		</tbody>
          </table>
-         <a href="DataAnalysticsAdd" class="btn btn-primary pull-right">글쓰기</a>
+         <a href="DataAnalysticsAdd.jsp" class="btn btn-primary pull-right">글쓰기</a>
         </div>
       </div>    
   </article>
