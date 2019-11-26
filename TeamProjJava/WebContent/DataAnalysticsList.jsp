@@ -83,7 +83,7 @@ sqlSession.close();
         			<th style="background-color: #3e5baa; text-align: center;"><font color = "white">번호</font></th>
         			<th style="background-color: #3e5baa; text-align: center;"><font color = "white">제목</font></th>
         			<th style="background-color: #3e5baa; text-align: center;"><font color = "white">작성자</font></th>
-        			<th style="background-color: #3e5baa; text-align: center;"><font color = "white">날짜</font></th>
+        			<th style="background-color: #3e5baa; text-align: center;"><font color = "white">작성일</font></th>
          		</tr>
          	</thead>
          	<tbody>
