@@ -57,7 +57,7 @@ try {
 sqlSession.close();
 %>
 <c:set var = "boardupdate" value="<%=boardUpdate%>" />
-<form action="./BoardInsert.do" method="post">
+<form action="./Update.do" method="post">
 <c:forEach var="x" items="${boardupdate}">
      <table class="table table-bordered" style="width:50%">
           <tr>

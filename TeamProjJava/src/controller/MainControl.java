@@ -62,7 +62,7 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/user/MemberInfo.do":
+		case "/MemberInfo.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new MemberInfoService();
@@ -72,7 +72,7 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/user/confirmId.do":
+		case "/confirmId.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				boolean res = new ConfirmIdService().execute(request, response);
@@ -82,7 +82,7 @@ public class MainControl extends HttpServlet {
 			}
 			break;
 			
-		case "/user/BoardInsert.do":
+		case "/Insert.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				boolean res = new SSBoardInsertService().execute(request, response);
@@ -92,7 +92,7 @@ public class MainControl extends HttpServlet {
 			}
 			break;
 			
-		case "/user/MemberInfoAdjust.do":
+		case "/MemberInfoAdjust.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new MemberInfoAdjustService();
@@ -112,7 +112,7 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/user/memberList.do":
+		case "/memberList.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new AllMemberListService();
@@ -132,10 +132,10 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/SSBoard/new.do":
+		case "/SSBoard/Update.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
-				service = new SSBoardInsertService();
+				service = new SSBoardUpdateService();
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
@@ -173,7 +173,7 @@ public class MainControl extends HttpServlet {
 		case "/SSBoard/adjust.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
-				boolean res = new SSBoardAdjustService().execute(request, response);
+				boolean res = new SSBoardInsertService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
 				e.printStackTrace();

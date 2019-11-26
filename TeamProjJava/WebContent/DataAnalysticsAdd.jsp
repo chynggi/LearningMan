@@ -41,7 +41,7 @@
 %>
   <div class="container">
       <div class="row">
-      <form method="post" action="new.do" style="width:100%; height: 100%;">
+      <form method="post" action="./Insert.do" style="width:100%; height: 100%;">
 		
 		<table class="table table-bordered" style="text-align: center; border: 1xp solid #dddddd" style="width:50%">
 			<tr>
