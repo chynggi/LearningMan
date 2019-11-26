@@ -53,14 +53,14 @@
 <body>
 
 <%
-request.setCharacterEncoding("utf-8");
+// request.setCharacterEncoding("utf-8");
 SqlSession sqlSession = MBUtils.getSession(); 
 BoardDAO dao 		  = sqlSession.getMapper(BoardDAO.class);
 
 List<Board> boardDetail = null;
 
 String id = (String)session.getAttribute("id");
-response.setContentType("text/html;charset=UTF-8");
+// response.setContentType("text/html;charset=UTF-8");
 
 try {
 	boardDetail = dao.selectAll();
@@ -70,9 +70,9 @@ try {
 
 sqlSession.close();
 %>
-<c:set var="boarddetail" value="<%=boardDetail%>" />
-<jsp:include page="header.jsp"></jsp:include>
-<table class="table table-bordered" style="width:50%">
+<c:set var = "boarddetail" value="<%=boardDetail%>" />
+<jsp:include page = "header.jsp"></jsp:include>
+<table class = "table table-bordered" style="width:50%">
 
 		    <c:forEach var="x" items="${boarddetail}">
 			<tbody>  	          
@@ -89,7 +89,7 @@ sqlSession.close();
                 </td>
                 <td style="width:5%">글 번호</td>
                 <td style="width:3%">
-                        ${x.getNo()}
+                    ${x.getNo()}
                 </td>
                 <td  style="width:5%">작성 일자</td>
                 <td  style="width:3%">
