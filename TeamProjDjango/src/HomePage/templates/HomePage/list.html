@@ -4,11 +4,12 @@
 <!-- Main Content -->
 <div class="container">
 	<form action="" method="POST">
+	{% csrf_token %}
 		<div class="input-group mb-3">
 			<div class="input-group-prepend">
 				<span class="input-group-text" id="inputGroup-sizing-default">제목</span>
 			</div>
-			<input type="text" name = "title" class="form-control"
+			<input type="text" id="title" name = "title" class="form-control"
 				aria-label="Sizing example input"
 				aria-describedby="inputGroup-sizing-default">
 		</div>
@@ -16,13 +17,25 @@
   <div class="input-group-prepend">
     <span class="input-group-text">내용</span>
   </div>
-  <textarea name = "content" class="form-control" aria-label="With textarea"></textarea>
+  <textarea rows="20" id = "content" name = "content" class="form-control" aria-label="With textarea">
+  
+  
+  </textarea>
+  
 </div>
+<br>
 	<input type="hidden" name = "id" value="{{user.id}}">
+	<button class="btn btn-success" type="submit">저장</button>
 	</form>
 
 </div>
-
+{% if post %}
+<script>
+document.getElementById('title').value = "{{post.title}}";
+document.getElementById('content').value = "{{post.content}}";
+</script>
+  {% else %}
+  
+  {% endif %}
 <hr>
-
 {% endblock content %}

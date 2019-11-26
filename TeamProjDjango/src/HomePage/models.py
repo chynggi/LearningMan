@@ -12,7 +12,7 @@ from django.db import models
 
 
 class Frboard(models.Model):
-    no = models.AutoField(primary_key=True)
+    no = models.FloatField(primary_key=True, serialize=False)
     title = models.CharField(max_length=100, blank=True, null=True)
     content = models.CharField(max_length=3000, blank=True, null=True)
     id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
@@ -24,7 +24,7 @@ class Frboard(models.Model):
 
 
 class Ssboard(models.Model):
-    no = models.AutoField(primary_key=True)
+    no = models.FloatField(primary_key=True, serialize=False)
     title = models.CharField(max_length=100, blank=True, null=True)
     content = models.CharField(max_length=3000, blank=True, null=True)
     id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
@@ -37,7 +37,7 @@ class Ssboard(models.Model):
         
         
 class Oopboard(models.Model):
-    no = models.AutoField(primary_key=True)
+    no = models.FloatField(primary_key=True, serialize=False)
     title = models.CharField(max_length=100, blank=True, null=True)
     content = models.CharField(max_length=3000, blank=True, null=True)
     id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
@@ -49,7 +49,7 @@ class Oopboard(models.Model):
 
 
 class Daboard(models.Model):
-    no = models.AutoField(primary_key=True)
+    no = models.FloatField(primary_key=True, serialize=False)
     title = models.CharField(max_length=100, blank=True, null=True)
     content = models.CharField(max_length=3000, blank=True, null=True)
     id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
@@ -61,7 +61,7 @@ class Daboard(models.Model):
 
 
 class Dbmsboard(models.Model):
-    no = models.AutoField(primary_key=True)
+    no = models.FloatField(primary_key=True, serialize=False)
     title = models.CharField(max_length=100, blank=True, null=True)
     content = models.CharField(max_length=3000, blank=True, null=True)
     id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
@@ -79,7 +79,7 @@ class Dbmsboard(models.Model):
 
 
 class Board(models.Model):
-    no = models.AutoField(primary_key=True)
+    no = models.FloatField(primary_key=True, serialize=False)
     title = models.CharField(max_length=100, blank=True, null=True)
     content = models.CharField(max_length=3000, blank=True, null=True)
     id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
@@ -94,6 +94,8 @@ class Buser(models.Model):
     id = models.CharField(primary_key=True, max_length=50)
     pw = models.CharField(max_length=150, blank=True, null=True)
     name = models.CharField(max_length=80, blank=True, null=True)
+    phone = models.CharField(max_length=13, blank=True, null=True)
+    xdate = models.DateField(blank=True, null=True,auto_now_add=True)
 
     class Meta:
         managed = False

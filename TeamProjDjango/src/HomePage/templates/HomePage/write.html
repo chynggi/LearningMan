@@ -5,7 +5,7 @@
 
   <!-- Main Content -->
   <div class="container">
-    <table class="table">
+    <table id="dataTable" class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -15,25 +15,30 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-    {% if posts %}    
-    	{% for post in posts %}
+  {% if posts %}
+  {% for post in posts %}
+    <tr>     
+    	
     <th scope="row">{{ post.no }}</th>
       <td><a href="sspost/{{ post.no }}">{{ post.title }}</a></td>
       <td>{{ post.id.name }}</td>
       <td>{{ post.xdate }}</td>
-		{% endfor %}	
+         </tr>  
+    {% endfor %}	
 	{% else %}
 		자료가 없습니다.
-	{% endif %}
-
-      
-    </tr>    
+	{% endif %}  
   </tbody>
 </table>
-	
+	<div class="clearfix">
+          <a class="btn btn-primary float-right" href="{% url 'HomePage:sswrite' %}">글쓰기 </a>
+     </div>
   </div>
 
   <hr>
 
 {% endblock content %}
+{% block datatable %}
+
+  <script src="/static/js/demo/datatables-demo.js"></script>
+{% endblock datatable %}
