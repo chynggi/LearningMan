@@ -29,7 +29,7 @@ public class SSBoardInfoService implements Service {
 		SqlSession sqlSession 	= MBUtils.getSession();
 		BoardDAO dao 			= sqlSession.getMapper(BoardDAO.class);
 		Board data 				= new Board();
-		RequestDispatcher rd 	= request.getRequestDispatcher("./DataAnalysticsDetail.jsp");
+		RequestDispatcher rd 	= request.getRequestDispatcher("../DataAnalysticsDetail.jsp");
 		try {
 			data = dao.info(no);
 			request.setAttribute("data", data);

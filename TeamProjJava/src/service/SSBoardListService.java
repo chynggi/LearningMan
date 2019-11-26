@@ -24,7 +24,7 @@ public class SSBoardListService implements Service {
 		SqlSession sqlSession 	= MBUtils.getSession();
 		BoardDAO dao			= sqlSession.getMapper(BoardDAO.class);
 		List<Board> data 		= new ArrayList<>();
-		RequestDispatcher rd 	= request.getRequestDispatcher("./DataAnalysticsList.jsp");
+		RequestDispatcher rd 	= request.getRequestDispatcher("../DataAnalysticsList.jsp");
 		try {
 			data = dao.selectAll();
 			request.setAttribute("data", data);
