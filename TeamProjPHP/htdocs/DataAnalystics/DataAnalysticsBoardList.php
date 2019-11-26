@@ -35,23 +35,23 @@
         if (isset($_GET["currentPage"])) { // get 방식으로 전달되온상관 배열의 "currentPage" 값이 있으면
             $currentPage = $_GET["currentPage"];
         }
-        // mysqli_connect()함수로 커넥션 객체 생성
-        $conn = mysqli_connect("localhost", "root", "", "team");        
+        // oci_connect()함수로 커넥션 객체 생성
+        $conn = oci_connect("localhost", "root", "", "team");        
 
         // 페이징 작업을 위한 테이블 내 전체 행 갯수 조회 쿼리
-        $sqlCount = "SELECT count(*) FROM board";
-        $resultCount = mysqli_query($conn, $sqlCount); // resultSet과유사
+        $sqlCount    = "SELECT count(*) FROM board";
+        $resultCount = oci_query($conn, $sqlCount); // resultSet과유사
         
-        if ($rowCount = mysqli_fetch_array($resultCount)) {
+        if ($rowCount    = oci_fetch_array($resultCount)) {
             $totalRowNum = $rowCount["count(*)"]; // php는 지역 변수를 밖에서 사용 가능.
         }
 
         $rowPerPage = 20; // 페이지당 보여줄 게시물 행의 수        
-        $begin = ($currentPage - 1) * $rowPerPage;
-        $sql = "SELECT NO, Title, ID, XDate FROM board order by NO desc limit " . $begin . "," . $rowPerPage . "";
-        $result = mysqli_query($conn, $sql);        
+        $begin      = ($currentPage - 1) * $rowPerPage;
+        $sql        = "SELECT NO, Title, ID, XDate FROM board order by NO desc limit " . $begin . "," . $rowPerPage . "";
+        $result     = oci_query($conn, $sql);        
         ?>    
-        <?php while ($row = mysqli_fetch_array($result)) {         
+        <?php while ($row = oci_fetch_array($result)) {         
         }?>		
 				<tr>
 			<td align = "center" bgcolor = "#3e5baa" style="width:10%;"><font color = "white">번호</font></td>
@@ -59,7 +59,7 @@
 			<td align = "center" bgcolor = "#3e5baa" style="width:13%;"><font color = "white">작성자</font></td>
 			<td align = "center" bgcolor = "#3e5baa" style="width:12%;"><font color = "white">작성일</font></td>			
 		</tr>
-		<?php while ($row = mysqli_fetch_array($result)) { ?>	
+		<?php while ($row = oci_fetch_array($result)) { ?>	
 			<tr>
 				<td align = "center" bgcolor = "#e6ebfa">
                     <?php

@@ -15,29 +15,29 @@
             echo "Title : "   . $Title .   "<br>";
             echo "Content : " . $Content . "<br>";
             echo "ID : "      . $ID .      "<br>";
-            //mysql 커넥션 객체 생성
-            $conn = mysqli_connect("localhost", "root", "","team");
+           
+            $conn = oci_connect("localhost", "root", "","team");
             
             //커넥션 객체 생성 여부 확인
             if($conn) {
                 echo "연결 성공<br>";
             } else {
-                die("연결 실패 : " .mysqli_error());
+                die("연결 실패 : " .oci_error());
             }
             //board테이블에서 입력된 글 번호와, 글 비밀번호가 일치하는 행 삭제 쿼리
            
             $sql = "INSERT INTO board (PW, Title, Content, ID, XDate)
             values('".$PW."','".$Title."','".$Content."','".$ID."',now())";
             
-            $result = mysqli_query($conn,$sql);
+            $result = oci_query($conn,$sql);
             //쿼리 실행 여부 확인
             if($result) {
                 echo "삭제 성공: ".$result; //과제 작성시 에러메시지 출력하게 만들기
             } else {
-                echo "삭제 실패: ".mysqli_error($conn);
+                echo "삭제 실패: ".oci_error($conn);
             }
         
-            mysqli_close($conn);
+            oci_close($conn);
             //헤더함수를 이용하여 리스트 페이지로 리다이렉션
             header("Location: ./DataAnalysticsBoardList.php");
         ?>

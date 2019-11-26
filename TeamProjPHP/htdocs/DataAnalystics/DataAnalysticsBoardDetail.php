@@ -23,28 +23,28 @@
     <body>
         <h1 class="display-4">데이터 분석 게시판 게시글 내용</h1>
         <?php
-	   $conn = mysqli_connect("localhost","root","","team"); // mysqli 커넥션 객체 생성
+	   $conn = oci_connect("localhost","root","","team"); // oci 커넥션 객체 생성
         
 	   if($conn){ // 커넥션 객체 생성 여부 확인
             echo "연결 성공<br>";	    
         } else {
-            die("연결 실패 - ".mysqli_error());
+            die("연결 실패 - ".oci_error());
         }
         $NO = $_GET["NO"];
         echo $NO."번재 글 내용<br>";
         
         $sql = "SELECT NO, Title, Content, ID, XDate FROM board WHERE NO = '".$NO."'";
-        $result = mysqli_query($conn, $sql);
+        $result = oci_query($conn, $sql);
         
         if($result){
             echo "조회 성공<br>";            
         } else {
-            echo "조회 실패 - ".mysqli_error($conn);
+            echo "조회 실패 - ".oci_error($conn);
         }        
     ?>
         <table class="table table-bordered" style="width:50%">
             <?php
-		      if($row = mysqli_fetch_array($result)){ // resilt 변수에 담긴 값을 row 값에 저장하여 테이블에 출력
+		      if($row = oci_fetch_array($result)){ // resilt 변수에 담긴 값을 row 값에 저장하여 테이블에 출력
 		      ?>
             <tr>
                 <td style="width:5%">작성자</td>
@@ -82,7 +82,7 @@
             </tr>
             <?php
              }
-             //mysqli_close($conn);
+             //oci_close($conn);
             ?>
         </table>
         <br>

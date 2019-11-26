@@ -17,19 +17,19 @@
         <h1 class="display-4">데이터 분석 게시판 게시글 수정</h1>
         <?php
             //커넥션 객체 생성 (데이터 베이스 연결)
-            $conn = mysqli_connect("localhost", "root", "","team");
+            $conn = oci_connect("localhost", "root", "","team");
             //연결 성공 여부 확인
             if($conn) {
                 echo "연결 성공<br>";
             } else {
-                die("연결 실패 : " .mysqli_error());
+                die("연결 실패 : " .oci_error());
             }
             $NO = $_GET["NO"];
             echo $NO."번째 글 수정 페이지<br>";
             //board 테이블을 조회하여 NO의 값이 일치하는 행의 NO, Title, Content, ID, XDate 필드의 값을 가져오는 쿼리
-            $sql = "SELECT NO, Title, Content, ID, XDate FROM board WHERE NO = '".$NO."'";
-            $result = mysqli_query($conn,$sql);
-            if($row = mysqli_fetch_array($result)){
+            $sql    = "SELECT NO, Title, Content, ID, XDate FROM board WHERE NO = '".$NO."'";
+            $result = oci_query($conn,$sql);
+            if($row = oci_fetch_array($result)){
         ?>
         <br>
         <form action="./DataAnalysticsBoardUpdateAction.php" method="post">
@@ -52,7 +52,7 @@
             <br>
         <?php
             }
-            mysqli_close($conn);
+            oci_close($conn);
         ?>
             &nbsp;&nbsp;&nbsp;
             <button class="btn btn-primary" type="submit">수정하기</button>
