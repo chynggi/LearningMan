@@ -43,6 +43,9 @@
         cursor: pointer;
       }
 </style>
+
+
+
 </head>
 
 <body>
@@ -52,7 +55,8 @@
 		response.setContentType("text/html;charset=UTF-8");
 		SqlSession sqlSession  = MBUtils.getSession(); 
 		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
-		List<Board> data = dao.selectById(id);
+		List<Board> data = dao.selectById(id);		
+		
 		sqlSession.close();
 %>
 
@@ -65,17 +69,24 @@
 			<td align = "center" bgcolor = "#3e5baa" style="width:12%;"><font color = "white">작성일</font></td>			
 		</tr>			
 		<tr>
+				
+			
+			
 			<td align = "center" bgcolor = "#e6ebfa">
-			<%= x.getNo() %>
+			<!--  	<input type="text" name="No" id="No" tabindex="3" class="form-control" value="<%= x.getNo() %>"> -->
+				${x.getNo()}
             </td>
 			<td align = "center">
-			<%= x.getTitle() %>
+			<!--	<input type="text" name="Title" id="Title" tabindex="3" class="form-control" value="<%= x.getTitle() %>"> -->
+				${x.getTitle()}
 			</td>	
 			<td align = "center">
-			<%= x.getId() %>
+			<!--	<input type="text" name="Id" id="Id" tabindex="3" class="form-control" value="<%= x.getId() %>"> -->
+				${x.getId()}
 			</td>   
 			<td align = "center">
-			<%= x.getXdate() %>
+			<!--	<input type="text" name="Xdate" id="Xdate" tabindex="3" class="form-control" value="<%= x.getXdate() %>"> -->
+				${x.getXdate()}
 			</td>              						
         </tr>           		
 		<tr>            	
