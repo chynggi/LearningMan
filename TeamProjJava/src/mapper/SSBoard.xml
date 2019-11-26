@@ -6,10 +6,10 @@
 	<result property = "title" 		column = "TITLE"/>
 	<result property = "content" 	column = "CONTENT"/>
 	<result property = "id" 		column = "ID"/>
-	<result property = "date" 		column = "DATE"/>	
+	<result property = "xdate" 		column = "XDATE"/>	
 </resultMap>
 <sql id="basecolumns">
-	NO,TITLE,CONTENT,ID,DATE
+	NO,TITLE,CONTENT,ID,XDATE
 </sql>
 
 <select id = "selectAll" resultMap="result">
@@ -18,21 +18,21 @@
 </select>
 <insert id = "insert" parameterType="board">	
 	INSERT INTO SSBOARD (<include refid= "basecolumns"></include>) 
-	VALUES(SSBOARD_SEQ.NEXTVAL,#{title},#{content},#{id},#{date})
+	VALUES(SSBOARD_SEQ.NEXTVAL,#{title},#{content},#{id},#{xdate},#{no})
 	
 </insert>
 <update id = "update" parameterType="board">
 	UPDATE BOARD SET
-	 ID = #{id}, TITLE = #{title}, CONTENT = #{content},DATE = #{date}, 
+	 ID = #{id}, TITLE = #{title}, CONTENT = #{content},DATE = #{xdate}, 
 	 WHERE NO = #{no}
 </update>
 <delete id = "delete" parameterType="long">
-	DELETE FROM SSBOARD WHERE NO = #{id}
-
+	DELETE FROM SSBOARD WHERE NO = #{no}
+W
 </delete>
 <select id = "info" parameterType="long" resultType="board">
 <![CDATA[
-	SELECT * FROM SSBOARD WHERE NO = #{id}
+	SELECT * FROM SSBOARD WHERE NO = #{no}
 	]]>
 </select>
 <select id = "countofcontents" resultType="long">

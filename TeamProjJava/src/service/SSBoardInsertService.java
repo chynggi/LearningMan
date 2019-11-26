@@ -12,7 +12,7 @@ import dao.BoardDAO;
 import dto.Board;
 
 public class SSBoardInsertService implements Service {
-
+// 작성
 	@Override
 	public boolean execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("Board Adjusting");
@@ -28,8 +28,6 @@ public class SSBoardInsertService implements Service {
 		out.print("날짜: " + xdate + "<br/>");
 		out.print("ID:" + id + "<br/>");
 		
-
-		//
 		Board vo = new Board();		
 		vo.setContent(content);
 		vo.setId(id);
@@ -45,7 +43,7 @@ public class SSBoardInsertService implements Service {
 			res = dao.insert(vo);
 			if (res > 0) {
 				sqlSession.commit();
-				out.print("Data Input Success! 수정 성공");
+				out.print("Data Input Success! 입력 성공");
 			} else {
 				sqlSession.rollback();
 				out.print("Data Input Failed! 입력 실패");
@@ -62,5 +60,4 @@ public class SSBoardInsertService implements Service {
 
 		return true;
 	}
-
 }
