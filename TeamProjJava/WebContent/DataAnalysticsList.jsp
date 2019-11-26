@@ -97,10 +97,9 @@ sqlSession.close();
 			</c:forEach>
 		</tbody>
          </table>
-         <a href="dbms_Board.html" class="btn btn-primary pull-right">글쓰기</a>
+         <a href="DataAnalysticsAdd" class="btn btn-primary pull-right">글쓰기</a>
         </div>
-      </div>
-    </div>
+      </div>    
   </article>
   <hr>
   <!-- Bootstrap core JavaScript -->
