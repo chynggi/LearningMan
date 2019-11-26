@@ -22,8 +22,10 @@
 
     <body>
         <h1 class="display-4">데이터 분석 게시판 게시글 내용</h1>
-        <?php
-	   $conn = oci_connect("localhost","root","","team"); // oci 커넥션 객체 생성
+        
+     <!--   $conn = oci_connect("localhost", "root", "", "team"); -->
+        <?php 
+        $conn = oci_connect("team", "team", "localhost");
         
 	   if($conn){ // 커넥션 객체 생성 여부 확인
             echo "연결 성공<br>";	    

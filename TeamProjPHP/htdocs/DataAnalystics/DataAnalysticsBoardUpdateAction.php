@@ -14,7 +14,10 @@
             echo "Title : "   . $Title . "<br>";
             echo "Content : " . $Content . "<br>";
             //커넥션 객체 생성 및 연결 여부 확인하기
-            $conn = oci_connect("localhost", "root", "","team");
+            ?>
+     <!--   $conn = oci_connect("localhost", "root", "", "team"); -->
+        <?php 
+        $conn = oci_connect("team", "team", "localhost");
             if($conn) {
                 echo "연결 성공<br>";
             } else {

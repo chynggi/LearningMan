@@ -15,9 +15,10 @@
     </head>
     <body>
         <h1 class="display-4">데이터 분석 게시판 게시글 수정</h1>
-        <?php
-            //커넥션 객체 생성 (데이터 베이스 연결)
-            $conn = oci_connect("localhost", "root", "","team");
+        
+     <!--   $conn = oci_connect("localhost", "root", "", "team"); -->
+        <?php 
+        $conn = oci_connect("team", "team", "localhost");
             //연결 성공 여부 확인
             if($conn) {
                 echo "연결 성공<br>";

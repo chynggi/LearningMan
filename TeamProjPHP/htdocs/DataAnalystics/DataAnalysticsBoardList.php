@@ -36,7 +36,10 @@
             $currentPage = $_GET["currentPage"];
         }
         // oci_connect()함수로 커넥션 객체 생성
-        $conn = oci_connect("localhost", "root", "", "team");        
+        ?>
+     <!--   $conn = oci_connect("localhost", "root", "", "team"); -->
+        <?php 
+        $conn = oci_connect("team", "team", "localhost");
 
         // 페이징 작업을 위한 테이블 내 전체 행 갯수 조회 쿼리
         $sqlCount    = "SELECT count(*) FROM board";

@@ -16,7 +16,10 @@
             echo "Content : " . $Content . "<br>";
             echo "ID : "      . $ID .      "<br>";
            
-            $conn = oci_connect("localhost", "root", "","team");
+            ?>
+     <!--   $conn = oci_connect("localhost", "root", "", "team"); -->
+        <?php 
+        $conn = oci_connect("team", "team", "localhost");
             
             //커넥션 객체 생성 여부 확인
             if($conn) {
