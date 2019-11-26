@@ -13,7 +13,7 @@ import dao.BoardDAO;
 public class SSBoardDeleteService implements Service{
 	@Override
 	public boolean execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("게시글 삭제");
+		System.out.println("게시글 삭제 시스템");
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 		
@@ -28,20 +28,20 @@ public class SSBoardDeleteService implements Service{
 			res = dao.delete(no);
 			if (res > 0) {
 				sqlSession.commit();
-				out.print("삭제 성공");
+				out.print("성공");
 			} else {
 				sqlSession.rollback();
-				out.print("삭제 실패");
+				out.print("실패");
 				return false;
 			}
 		} catch (Exception e) {
-			System.err.println("삭제하려는 데이터나 구문에 문제가 있습니다.");
+			System.err.println("문제가 있음");
 			e.printStackTrace();
 			return false;
 		}
 
-		out.print("<a href=\"DataAnalysticsAdd.jsp\">계속 작업</a>");
-		out.print("<button type=\"button\" onclick=\"location.href='datadisp.jsp'\">입력자료출력</button>");
+		out.print("<a href=\"./DataAnalysticsDelete.jsp\">추가 작업</a>");
+		out.print("<button type=\"button\" onclick=\"location.href='./List.do'\">목록</button>");
 
 		return true;
 	}

@@ -15,17 +15,16 @@ import dao.BoardDAO;
 import dto.Board;
 
 public class SSBoardListService implements Service {
-
 	@Override
 	public boolean execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("Board Info. Display");
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();
-		SqlSession sqlSession = MBUtils.getSession();
-		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
-		List<Board> data = new ArrayList<>();
-		RequestDispatcher rd = request.getRequestDispatcher("./datadisp.jsp");
+		PrintWriter out 		= response.getWriter();
+		SqlSession sqlSession 	= MBUtils.getSession();
+		BoardDAO dao			= sqlSession.getMapper(BoardDAO.class);
+		List<Board> data 		= new ArrayList<>();
+		RequestDispatcher rd 	= request.getRequestDispatcher("./DataAnalysticsList.jsp");
 		try {
 			data = dao.selectAll();
 			request.setAttribute("data", data);
@@ -38,5 +37,4 @@ public class SSBoardListService implements Service {
 		sqlSession.close();
 		return true;
 	}
-
 }
