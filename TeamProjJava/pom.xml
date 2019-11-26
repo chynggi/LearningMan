@@ -24,8 +24,8 @@
       </plugin>
     </plugins>
   </build>
+  
   <dependencies>
-
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
@@ -90,8 +90,7 @@
 			<groupId>com.opencsv</groupId>
 			<artifactId>opencsv</artifactId>
 			<version>4.6</version>
-		</dependency>
-	
+		</dependency>	
 	</dependencies>
 
 	<repositories>
