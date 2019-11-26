@@ -11,8 +11,8 @@ import common.MBUtils;
 import dao.BoardDAO;
 import dto.Board;
 
-public class SSBoardInsertService implements Service {
-
+public class DBMSBoardInsertService implements Service {
+// 작성
 	@Override
 	public boolean execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("Board Adjusting");

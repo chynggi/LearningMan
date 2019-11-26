@@ -149,7 +149,7 @@ public class MainControl extends HttpServlet {
 		case "/SSBoard/new.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
-				service = new SSBoardInsertService();
+				service = new DBMSBoardInsertService();
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
@@ -160,7 +160,7 @@ public class MainControl extends HttpServlet {
 		case "/SSBoard/List.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
-				boolean res = new SSBoardListService().execute(request, response);
+				boolean res = new DBMSBoardListService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -170,7 +170,7 @@ public class MainControl extends HttpServlet {
 		case "/SSBoard/info.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
-				boolean res = new SSBoardInfoService().execute(request, response);
+				boolean res = new DBMSBoardInfoService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -191,7 +191,7 @@ public class MainControl extends HttpServlet {
 		case "/SSBoard/adjust.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
-				boolean res = new SSBoardAdjustService().execute(request, response);
+				boolean res = new DBMSBoardAdjustService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
