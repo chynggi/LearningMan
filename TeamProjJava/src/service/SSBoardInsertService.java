@@ -53,7 +53,7 @@ public class SSBoardInsertService implements Service {
 			e.printStackTrace();
 			return false;
 		}
-		out.print("<a href=\"./DataAnalysticsAdd.jsp\">추가 작업</a>");
+		out.print("<a href=\"./DataAnalysticsUpdate.jsp\">추가 작업</a>");
 		out.print("<button type=\"button\" onclick=\"location.href='./List.do'\">목록</button>");
 		return true;
 	}

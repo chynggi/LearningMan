@@ -81,6 +81,17 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+			
+		case "/user/BoardInsert.do":
+			System.out.println(command + "를 처리합니다.");
+			try {
+				boolean res = new SSBoardInsertService().execute(request, response);
+				System.out.println(res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+			
 		case "/user/MemberInfoAdjust.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
