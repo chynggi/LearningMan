@@ -3,18 +3,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="header2.jsp"></jsp:include>
 
 
-	<style>
-.M_btn>a {
-	text-decoration: none;
-	color: #fff;
-}
-.M_btn>a:hover {
-	color: #000;
-}
-</style>
 	<!-- Main Content -->
 	<div class="container">
 		<div class="row">
@@ -22,8 +13,8 @@
 				<div class="form-box">
 					<div class="form-top">
 						<div class="form-top-left">
-							<h3>Login to our site</h3>
-							<p>Enter username and password to log on:</p>
+							<h3>로그인</h3>
+							<p>아이디와 비밀번호를 입력해주세요. </p>
 						</div>
 						<div class="form-top-right">
 							<i class="fa fa-key"></i>
@@ -32,14 +23,14 @@
 					<div class="form-bottom">
 						<form role="form" action="" method="post" class="login-form">
 							<div class="form-group">
-								<label class="sr-only" for="form-username">Username</label> <input
-									type="text" name="form-username" placeholder="Username..."
+								<label class="sr-only" for="form-username">ID</label> <input
+									type="text" name="form-username" placeholder="ID..."
 									class="form-username form-control" id="form-username">
 							</div>
 							<div class="form-group">
-								<label class="sr-only" for="form-password">Password</label> <input
-									type="password" name="form-password" placeholder="Password..."
-									class="form-password form-control" id="form-password">
+								<label class="sr-only" for="form-password">Password</label> 
+								<input type="password" name="form-password" placeholder="Password..."
+									   class="form-password form-control" id="form-password">
 							</div>
 							<button type="submit" class="btn">Sign in!</button>
 						</form>
@@ -69,7 +60,7 @@
 							</div>
 							<div class="form-group">
 								<label class="sr-only" for="form-email">아이디</label> <input
-									type="text" name="form-email" placeholder="Email..."
+									type="text" name="form-email" placeholder="ID..."
 									class="form-email form-control" id="form-email">
 							</div>
 							<div class="form-group">

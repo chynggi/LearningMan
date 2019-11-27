@@ -103,16 +103,16 @@
   <article>
     <div class="container">
       <div class="row">
-        <table class="table table-striped"  style="text-align: center; border: 1xp solid #dddddd">
-        	<thead>
+        <table class="table table-striped"  style="font-family:GyeonggiBatangOTF;text-align: center; border: 1xp solid #dddddd">
+        	<thead style="color:#fff;background-color: #382825;">
         		<tr>
-        			<th style="background-color: #bbdefb; text-align: center;">No</th>
-        			<th style="background-color: #e3f2fd; text-align: center;">Title</th>
-        			<th style="background-color: #bbdefb; text-align: center;">ID</th>
-        			<th style="background-color: #e3f2fd; text-align: center;">Date</th>
+        			<th style=" text-align: center;">번호</th>
+        			<th style=" text-align: center;">제목</th>
+        			<th style=" text-align: center;">작성자</th>
+        			<th style=" text-align: center;">날짜</th>
          		</tr>
          	</thead>
-         	<tbody>
+         	<tbody style="background-color: #9c734f;">
          		<% 
 	         		SqlSession sqlSession = MBUtils.getSession();
 	        		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
@@ -120,18 +120,20 @@
          			for(int i=0; i<list.size(); i++){
          		%>
          	
-         		<tr>
-        			<td><%= list.get(i).getNo() %></td>
+         		<tr style="color: #fff;border: none;" >
+        			<td ><%= list.get(i).getNo() %></td>
         			<td><%= list.get(i).getTitle() %></td>
         			<td><%= list.get(i).getId() %></td>
         			<td><%= list.get(i).getXdate()%></td>
          		</tr>
+    
           	</tbody>
           	<% } %>
          </table>
-     	<c:if test="${sessionScope.sessionID!=null}"> <!-- 로그인을 해야만 글쓰기가 보인다. -->
-         <a href="Board_insert.html" class="btn btn-primary pull-right">글쓰기</a>
-         </c:if>
+ 
+         <a href="dbms_Board.jsp" class="btn btn-primary pull-right"
+         	 style="border-radius: 12px;  border: none; background-color: #382825; 
+         	 		font-family:GyeonggiBatangOTF">글쓰기</a>
         </div>
       </div>
   </article>

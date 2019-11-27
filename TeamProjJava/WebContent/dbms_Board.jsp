@@ -1,8 +1,5 @@
 <%@ page language='java' contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="java.io.PrintWriter" %>
-<%@ page import="dao.BoardDAO" %>
-<%@ page import="dto.Board" %>
-<%@ page import="java.io.PrintWriter" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -92,27 +89,29 @@
 		<table class="table table-striped" style="text-align: center; ">
 			<thead>
 				<tr>
-					<th colspan="2" style="border-radius: 12px; border: none; color:#ffffff; background-color:#9370DB ; text-align: center;">글작성</th>		
+					<th colspan="2" style="border-radius: 12px; border: none; color:#ffffff; background-color:#AC5E50 ; text-align: center;">글작성</th>		
 				</tr>
 			</thead>
 		
-			<tbody style="border: none; background-color:#9999CC;" >
+			<tbody style="border: none; background-color:#DAAB8C;" >
 					<tr style="width:100%;height: 5px; border: none;  background-color: #ffffff;"><td style="border: none;"></td></tr>
 					<tr >
 						<td style="color:#ffffff; border: none; border-radius: 7px 0px 0px 0px;">제목 : </td>
-						<td style="border: none; border-radius: 0px 7px 0px 0px;"><input type="text" style="width:100%;height: 40px;border-radius: 5px;" class="farm-control" placeholder="글 제목" name="dbmstitle" maxlength="100"></td>
+						<td style="border: none; border-radius: 0px 7px 0px 0px;">
+						<input type="text" style="width:100%;height: 40px; border: none; border-radius: 5px;" class="farm-control" 
+							   placeholder="  글 제목" name="dbmstitle" maxlength="100"></td>
 					</tr>
 					<tr>
 						<td style="color:#ffffff; border: none;border-radius: 0px 0px 0px 25px;">내용 : </td>
 						<td style="border: none;">
-						<textarea class="farm-control" placeholder="글 내용" name="dbmsContent" maxlength="2048" style="width:100%;height: 350px;border-radius: 5px;"></textarea>
+						<textarea class="farm-control" placeholder="  글 내용" name="dbmsContent" maxlength="2048" style="width:100%;height: 350px;border-radius: 5px;"></textarea>
 						</td>
 					</tr>
 				</tbody>				
 		</table>
 			<form >
-				<input type="submit" class="btn btn-primary pull-right" style="border-radius: 12px; border: none; background-color: #000000; font-family:GyeonggiBatangOTF" value="작성">
-				<input type="button" class="btn btn-primary pull-right" style="border-radius: 12px; border: none; background-color: #000000; font-family:GyeonggiBatangOTF" value="돌아가기" onClick="history.go(-1)">
+				<input type="submit" class="btn btn-primary pull-right" style="border-radius: 12px; border: none; background-color: #AC5E50; font-family:GyeonggiBatangOTF" value="작성">
+				<input type="button" class="btn btn-primary pull-right" style="border-radius: 12px; border: none; background-color: #AC5E50; font-family:GyeonggiBatangOTF" value="돌아가기" onClick="history.go(-1)">
 	     	</form>
       </form>
 
