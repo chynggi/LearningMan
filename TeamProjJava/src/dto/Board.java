@@ -7,52 +7,65 @@ public class Board implements Serializable {
 	private String id; //등록 회원 아이디
 	private String title; //제목
 	private String content; //내용
-	private String date; //게시일자
+	private String xdate; //게시일자
+	
 	@Override
 	public String toString() {
-		return "Board [no=" + no + ", id=" + id + ", title=" + title + ", content=" + content + ", date=" + date + "]";
+		return "Board [no=" + no + ", id=" + id + ", title=" + title + ", content=" + content + ", xdate=" + xdate
+				+ "]";
 	}
-	public Board(long no, String id, String title, String content, String date) {
+
+	public Board() {
 		super();
 		this.no = no;
 		this.id = id;
 		this.title = title;
 		this.content = content;
-		this.date = date;
+		this.xdate = xdate;
 	}
-	public Board() {
-		super();
-	}
+
 	public long getNo() {
 		return no;
 	}
+
 	public void setNo(long no) {
 		this.no = no;
 	}
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getContent() {
 		return content;
 	}
+
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getDate() {
-		return date;
+
+	public String getXdate() {
+		return xdate;
 	}
-	public void setDate(String date) {
-		this.date = date;
+
+	public void setXdate(String xdate) {
+		this.xdate = xdate;
 	}
+
+	
+	
 	
 
 }

@@ -70,7 +70,7 @@ public class LoginProc extends HttpServlet {
 		Buser mem = null;
 		try {
 			mem = dao.selectById(id);
-			if (mem.getPassword().equals(password)) {
+			if (mem.getPw().equals(password)) {
 				
 				writer.print("로그인 성공<br/>");
 				

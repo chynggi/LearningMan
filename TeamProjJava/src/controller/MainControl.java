@@ -59,7 +59,7 @@ public class MainControl extends HttpServlet {
 		Service service = null; // Created Interface
 		PrintWriter out = null;
 		switch (command) {
-		case "/login.do":
+		case "/login.do":	// 로그인
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new LoginService();
@@ -70,7 +70,7 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/memberJoin.do":
+		case "/memberJoin.do":	// 회원가입
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new MemberJoinService();
@@ -142,53 +142,48 @@ public class MainControl extends HttpServlet {
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-		case "/SSBoard/new.do":
+		case "/DBMSBoard/new.do":  // 인서트
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new DBMSBoardInsertService();
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;	
-		case "/SSBoard/List.do":
+		case "/DBMSBoard/List.do":  // 목록
 			System.out.println(command+"를 처리합니다.");
 			try {
 				boolean res = new DBMSBoardListService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-		case "/SSBoard/info.do":
+		case "/DBMSBoard/info.do":  // 게시글 보기(정보)
 			System.out.println(command+"를 처리합니다.");
 			try {
 				boolean res = new DBMSBoardInfoService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-		case "/password.do":
+		case "/password.do":  // 비밀번호 찾기
 			System.out.println(command+"를 처리합니다.");
 			try {
 				boolean res = new PasswordSeekService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			//Login처리부분
+			
 			break;
-		case "/SSBoard/adjust.do":
+		case "/DBMSBoard/adjust.do":  // 게시글 수정
 			System.out.println(command+"를 처리합니다.");
 			try {
 				boolean res = new DBMSBoardAdjustService().execute(request, response);

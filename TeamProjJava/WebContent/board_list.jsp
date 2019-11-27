@@ -1,17 +1,22 @@
 <%@ page language='java' contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.*" %>
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="dao.BoardDAO" %>
 <%@ page import="dto.Board" %>
-<%@ page import="java.io.PrintWriter" %>
+<%@ page import="common.MBUtils" %>
+<%@ page import="org.apache.ibatis.session.SqlSession" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
+  <title>게시판</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -22,9 +27,9 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
   <!-- Custom styles for this template -->
-  <link href="css/clean-blog.css" rel="stylesheet">
-  
-  <style>
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+<style>
 .M_btn>a {
 	text-decoration: none;
 	color: #fff;
@@ -33,11 +38,19 @@
 	color: #000;
 }
 </style>
-  
+
 </head>
 <body>
-
-
+<% 
+	String id = null;
+	if(session.getAttribute("id") != null){
+		id = (String) session.getAttribute("id");		
+	}
+	int pageNumber = 1;
+	if(request.getParameter("pageNumber") != null){
+		pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+	}
+%>
 
   <!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="font-family:GyeonggiBatangOTF;">
@@ -68,6 +81,7 @@
 		</div>
 	</nav>
 
+
   <!-- Page Header -->
   <header class="masthead" style="background-image: url('img/dbms3.png')">
 		<div class="overlay"></div>
@@ -85,45 +99,58 @@
 		</div>
 	</header>
 
-  <!-- Main Content -->
-  <div class="container" >
+  <!-- Post Content -->
+  <article>
+    <div class="container">
       <div class="row">
-      <form method="post" action="./DBMSBoard/new.do" style=" width:100%;height: 100%; font-family:GyeonggiBatangOTF;">
-		<table class="table table-striped" style="text-align: center; ">
-			<thead>
-				<tr>
-					<th colspan="2" style="border-radius: 12px; border: none; color:#ffffff; background-color:#9370DB ; text-align: center;">글작성</th>		
-				</tr>
-			</thead>
-		
-			<tbody style="border: none; background-color:#9999CC;" >
-					<tr style="width:100%;height: 5px; border: none;  background-color: #ffffff;"><td style="border: none;"></td></tr>
-					<tr >
-						<td style="color:#ffffff; border: none; border-radius: 7px 0px 0px 0px;">제목 : </td>
-						<td style="border: none; border-radius: 0px 7px 0px 0px;"><input type="text" style="width:100%;height: 40px;border-radius: 5px;" class="farm-control" placeholder="글 제목" name="dbmstitle" maxlength="100"></td>
-					</tr>
-					<tr>
-						<td style="color:#ffffff; border: none;border-radius: 0px 0px 0px 25px;">내용 : </td>
-						<td style="border: none;">
-						<textarea class="farm-control" placeholder="글 내용" name="dbmsContent" maxlength="2048" style="width:100%;height: 350px;border-radius: 5px;"></textarea>
-						</td>
-					</tr>
-				</tbody>				
-		</table>
-			<form >
-				<input type="submit" class="btn btn-primary pull-right" style="border-radius: 12px; border: none; background-color: #000000; font-family:GyeonggiBatangOTF" value="작성">
-				<input type="button" class="btn btn-primary pull-right" style="border-radius: 12px; border: none; background-color: #000000; font-family:GyeonggiBatangOTF" value="돌아가기" onClick="history.go(-1)">
-	     	</form>
-      </form>
-
-       
-
-
+        <table class="table table-striped"  style="text-align: center; border: 1xp solid #dddddd">
+        	<thead>
+        		<tr>
+        			<th style="background-color: #bbdefb; text-align: center;">No</th>
+        			<th style="background-color: #e3f2fd; text-align: center;">Title</th>
+        			<th style="background-color: #bbdefb; text-align: center;">ID</th>
+        			<th style="background-color: #e3f2fd; text-align: center;">Date</th>
+         		</tr>
+         	</thead>
+         	<tbody>
+         		<% 
+	         		SqlSession sqlSession = MBUtils.getSession();
+	        		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
+         			List<Board> list = dao.selectAll();
+         			for(int i=0; i<list.size(); i++){
+         		%>
+         	
+         		<tr>
+        			<td><%= list.get(i).getNo() %></td>
+        			<td><%= list.get(i).getTitle() %></td>
+        			<td><%= list.get(i).getId() %></td>
+        			<td><%= list.get(i).getXdate()%></td>
+         		</tr>
+          	</tbody>
+          	<% } %>
+         </table>
+     	<c:if test="${sessionScope.sessionID!=null}"> <!-- 로그인을 해야만 글쓰기가 보인다. -->
+         <a href="Board_insert.html" class="btn btn-primary pull-right">글쓰기</a>
+         </c:if>
         </div>
-  </div>
+      </div>
+  </article>
 
   <hr>
-    <!-- Bootstrap core JavaScript -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+ 
+          <p class="copyright text-muted">TEST &copy; DBMS 2019</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -131,4 +158,5 @@
   <script src="js/clean-blog.min.js"></script>
 
 </body>
+
 </html>

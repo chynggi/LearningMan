@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="/header.jsp" flush="false"/>
 
 
 	<style>
@@ -64,7 +64,7 @@
             		<a href="#">OOP</a>
             	</p>
             	<p>
-            		<a href="#">DBMS</a>
+            		<a href="board_dbms.html">DBMS</a>
             	</p>
             	<p>
             		<a href="#">Server side</a>
@@ -74,6 +74,6 @@
         </div>
         <hr>
 	<!-- Footer -->
-	<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="/footer.jsp" flush="false"/>
 </body>
 </html>

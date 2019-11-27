@@ -22,10 +22,10 @@ public class DBMSBoardInsertService implements Service {
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		String id = request.getParameter("id");
-		String xdate = request.getParameter("xdate");
+		String date = request.getParameter("date");
 		out.print("title:" + title + "<br/>");
 		out.print("내용:" + content + "<br/>");
-		out.print("날짜: " + xdate + "<br/>");
+		out.print("날짜: " + date + "<br/>");
 		out.print("ID:" + id + "<br/>");
 		
 
@@ -34,7 +34,7 @@ public class DBMSBoardInsertService implements Service {
 		vo.setContent(content);
 		vo.setId(id);
 		vo.setTitle(title);
-		vo.setDate(xdate);
+		vo.setXdate(date);
 		
 		out.print(vo + "<br/>");
 		SqlSession sqlSession = MBUtils.getSession();
@@ -45,7 +45,7 @@ public class DBMSBoardInsertService implements Service {
 			res = dao.insert(vo);
 			if (res > 0) {
 				sqlSession.commit();
-				out.print("Data Input Success! 수정 성공");
+				out.print("Data Input Success! 성공");
 			} else {
 				sqlSession.rollback();
 				out.print("Data Input Failed! 입력 실패");
@@ -57,8 +57,8 @@ public class DBMSBoardInsertService implements Service {
 			return false;
 		}
 
-		out.print("<a href=\"form_Board.jsp\">계속 작업</a>");
-		out.print("<button type=\"button\" onclick=\"location.href='datadisp.jsp'\">입력자료출력</button>");
+		out.print("<a href=\"Board_insert.html\">계속 작업</a>");
+//		out.print("<button type=\"button\" onclick=\"location.href='datadisp.jsp'\">입력자료출력</button>");
 
 		return true;
 	}

@@ -7,9 +7,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="dao.BuserDAO"> 
 <resultMap id ="result" type="buser"> 
 
-	<result property = "id" column = "ID"/> 
-	<result property = "name" column = "NAME"/> 
-	<result property = "pw" column = "PW"/> 
+	<result property = "id" column = "ID"/> 	<!-- 아이디 -->
+	<result property = "pw" column = "PW"/>  	<!-- 비밀번호 -->
+	<result property = "name" column = "NAME"/> <!-- 이름 -->
+	<result property = "phone" column = "PHONE"/> <!-- 폰번호 -->
+	<result property = "xdate" column = "XDATE"/> <!-- 가입날짜 -->
 	
 </resultMap>
 
@@ -20,16 +22,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <insert id = "insert" parameterType="buser">
 	<![CDATA[ 
 	INSERT INTO BUSER 
-	(ID,NAME,PW)
+	(ID,PW,NAME,PHONE,XDATE)
 	VALUES
-	(#{id},#{name},#{pw})
+	(#{id},#{pw},#{name},#{phone},#{xdate})
 	]]>
 </insert>
 
 <update id ="update" parameterType="buser">
-	UPDATE BUSER SET 
-		NAME=#{name},
+	UPDATE BUSER SET 		
 		PW=#{pw},
+		NAME=#{name},
+		PHONE=#{phone},
+		XDATE=#{xdate}
 	WHERE ID = #{id} 
 </update>
 

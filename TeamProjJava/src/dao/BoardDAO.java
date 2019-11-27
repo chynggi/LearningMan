@@ -1,7 +1,5 @@
 package dao;
 
-import java.util.List;
-
 import dto.Board;
 
 public interface BoardDAO extends IDAO<Board,Long>{

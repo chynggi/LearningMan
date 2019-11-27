@@ -36,7 +36,7 @@ public class DBMSBoardAdjustService implements Service{
 		vo.setContent(content);
 		vo.setId(id);
 		vo.setTitle(title);
-		vo.setDate(xdate);
+		vo.setXdate(xdate);
 		
 		out.print(vo + "<br/>");
 		SqlSession sqlSession = MBUtils.getSession();

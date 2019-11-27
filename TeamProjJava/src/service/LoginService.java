@@ -33,7 +33,7 @@ public class LoginService implements Service {
 		Buser mem = null;
 		try {
 			mem = dao.selectById(id);
-			if (mem.getPassword().equals(password)) {
+			if (mem.getPw().equals(password)) {
 				session.setAttribute("loginOK", "OK");
 				session.setAttribute("id", id);
 				session.setAttribute("name", mem.getName());

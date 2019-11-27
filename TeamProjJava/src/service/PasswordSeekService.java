@@ -31,7 +31,7 @@ public class PasswordSeekService implements Service {
 			mem = dao.selectById(id);
 			if(mem!=null)
 			{
-			message = "비밀번호는 "+mem.getPassword()+" 입니다.";
+			message = "비밀번호는 "+mem.getPw()+" 입니다.";
 			session.setAttribute("message", message);
 			response.sendRedirect("./loginorReg.jsp");
 				

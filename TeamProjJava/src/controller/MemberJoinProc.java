@@ -53,7 +53,7 @@ public class MemberJoinProc extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		String id = request.getParameter("id");
-		String password = request.getParameter("password");
+		String password = request.getParameter("pw");
 		String name = request.getParameter("name");
 		
 		response.setCharacterEncoding("UTF-8");
@@ -64,7 +64,7 @@ public class MemberJoinProc extends HttpServlet {
 		
 		// 인터페이스를 별도로 구현없이 사용하기 위해 매퍼와 바로 연결
 		BuserDAO dao = session.getMapper(BuserDAO.class);
-		Buser mem = new Buser(id, name, password);
+		Buser mem = new Buser(); //Buser(id,password,name);
 		try {
 			dao.insert(mem);
 			session.commit();

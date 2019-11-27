@@ -14,10 +14,11 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
             <dataSource type = "POOLED">
                <property name = "driver" value = "oracle.jdbc.driver.OracleDriver"/>
                <property name = "url" value = "jdbc:oracle:thin:@127.0.0.1:1521:xe"/>
-               <property name = "username" value = "board"/>
-               <property name = "password" value = "java"/>
+               <property name = "username" value = "team"/>
+               <property name = "password" value = "team"/>
             </dataSource>        
    </environment>
+   </environments>
 
    <mappers>
 	<mapper resource = "mapper/Buser.xml"/>
