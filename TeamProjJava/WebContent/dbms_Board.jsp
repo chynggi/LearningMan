@@ -85,7 +85,7 @@
   <!-- Main Content -->
   <div class="container" >
       <div class="row">
-      <form method="post" action="./DBMSBoard/new.do" style=" width:100%;height: 100%; font-family:GyeonggiBatangOTF;">
+      <form method="post" action="./DBMSBoard/new.do" style=" width:100%;height: 100%; font-family:GyeonggiBatangOTF;font-size: 15px;">
 		<table class="table table-striped" style="text-align: center; ">
 			<thead>
 				<tr>

@@ -33,7 +33,7 @@
 </style>
 <body>
   <!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="font-family:GyeonggiBatangOTF;">
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="font-family:GyeonggiBatangOTF;font-size: 15px;">
 		<div class="container">
 			<a class="navbar-brand" href="index.jsp">Learning Man</a>
 			<button class="navbar-toggler navbar-toggler-right" type="button"

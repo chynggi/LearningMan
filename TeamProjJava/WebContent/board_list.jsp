@@ -63,19 +63,13 @@
 				Menu <i class="fas fa-bars"></i>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="index">About</a>
-					</li>
-					<li class="nav-item"><a class="nav-link"
-						href="OOP_Board/oop_B_index.php">OOP</a></li>
-					<li class="nav-item"><a class="nav-link" href="board_list.jsp">DBMS</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="contact">Server
-							Side</a></li>
-					<li class="nav-item"><a class="nav-link" href="contact">Frame
-							Works</a></li>
-					<li class="nav-item"><a class="nav-link" href="contact">Data
-							Analystics</a></li>
+				<ul class="navbar-nav ml-auto" >
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="index">About</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="OOP_Board/oop_B_index.php">OOP</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="board_list.jsp">DBMS</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="contact">ServerSide</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="contact">FrameWorks</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="contact">DataAnalystics</a></li>
 				</ul>
 			</div>
 		</div>
@@ -103,7 +97,7 @@
   <article>
     <div class="container">
       <div class="row">
-        <table class="table table-striped"  style="font-family:GyeonggiBatangOTF;text-align: center; border: 1xp solid #dddddd">
+        <table class="table table-striped"  style="font-size: 15px;font-family:GyeonggiBatangOTF;text-align: center; border: 1xp solid #dddddd">
         	<thead style="color:#fff;background-color: #382825;">
         		<tr>
         			<th style=" text-align: center;">번호</th>
@@ -112,7 +106,7 @@
         			<th style=" text-align: center;">날짜</th>
          		</tr>
          	</thead>
-         	<tbody style="background-color: #9c734f;">
+         	<tbody style="background-color: #766f6d;">
          		<% 
 	         		SqlSession sqlSession = MBUtils.getSession();
 	        		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
@@ -120,7 +114,7 @@
          			for(int i=0; i<list.size(); i++){
          		%>
          	
-         		<tr style="color: #fff;border: none;" >
+         		<tr style="font-size: 15px; color: #fff;border: none;" >
         			<td ><%= list.get(i).getNo() %></td>
         			<td><%= list.get(i).getTitle() %></td>
         			<td><%= list.get(i).getId() %></td>
@@ -133,7 +127,7 @@
  
          <a href="dbms_Board.jsp" class="btn btn-primary pull-right"
          	 style="border-radius: 12px;  border: none; background-color: #382825; 
-         	 		font-family:GyeonggiBatangOTF">글쓰기</a>
+         	 		font-size: 15px;font-family:GyeonggiBatangOTF">글쓰기</a>
         </div>
       </div>
   </article>
