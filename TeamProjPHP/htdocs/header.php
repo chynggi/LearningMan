@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
+<?php ?>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -42,15 +40,14 @@
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a class="nav-link" href="index">About</a>
 					</li>
-					<li class="nav-item"><a class="nav-link"
-						href="OOP_Board/oop_B_index.php">OOP</a></li>
-					<li class="nav-item"><a class="nav-link" href="post">DBMS</a>
+					<li class="nav-item"><a class="nav-link" href="OOP_Board/oop_B_index.php">OOP</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">DBMS</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="contact">Server
+					<li class="nav-item"><a class="nav-link" href="#">Server
 							Side</a></li>
-					<li class="nav-item"><a class="nav-link" href="contact">Frame
+					<li class="nav-item"><a class="nav-link" href="#">Frame
 							Works</a></li>
-					<li class="nav-item"><a class="nav-link" href="DataAnalysticsMain.jsp">Data
+					<li class="nav-item"><a class="nav-link" href="DataAnalysticsMain.php">Data
 							Analystics</a></li>
 				</ul>
 			</div>
