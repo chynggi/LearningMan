@@ -68,8 +68,8 @@
             <span class="subheading">Team Project</span>
             <h1>Learning Man</h1>
             <p class="M_btn">
-            	<a class="col-lg-8 col-md-10 mx-auto" href="#">로그인</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="#">회원가입</a>            	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="loginorReg.php">로그인</a>
+            	<a class="col-lg-8 col-md-10 mx-auto" href="loginorReg.php">회원가입</a>            	
             </p>
           </div>
         </div>
@@ -96,7 +96,7 @@
             <h3 class="post-subtitle" style="margin-bottom: 80px;">
               	2019 머신러닝반 교육커리큘럼 소개
             </h3>
-            <div class="OOP_box">
+            <a href="#" class="OOP_box">
             	<div class="OOP_container">
             		<p class="OOP_java">
             			<img src="./img/OOP_java.png" art="OOP_java이미지" title="OOP_java">
@@ -108,8 +108,8 @@
             			<img src="./img/OOP_txt.png" art="OOP이미지" title="OOP">
             		</p>
             	</div>
-            </div>
-            <div class="DBMS_box">
+            </a>
+            <a href="#" class="DBMS_box">
             	<div class="DBMS_container">
             		<p class="DBMS_img">
             			<img src="./img/DBMS_img.jpg" art="DBMS이미지" title="DBMS">
@@ -118,8 +118,8 @@
             			<img src="./img/DBMS_txt.png" art="DBMS이미지" title="DBMS">
             		</p>
             	</div>
-            </div>
-            <div class="sevSi_box">
+            </a>
+            <a href="#" class="sevSi_box">
             	<div class="sevSi_container">
           			<p class="sevSi_jsp">
             			<img src="./img/sev_si_jsp.png" art="ServerSidejsp이미지" title="ServerSidejsp">
@@ -134,8 +134,8 @@
             			<img src="./img/serverside_txt.png" art="ServerSidetxt이미지" title="ServerSidetxt">
             		</p>
             	</div>
-            </div>
-            <div class="FW_box">
+            </a>
+            <a href="#" class="FW_box">
             	<div class="FW_container">
           			<p class="FW_BtStrp">
             			<img src="./img/FW_BtStrp.png" art="frameworksbootstrap이미지" title="frameworksbootstrap">
@@ -156,8 +156,8 @@
             			<img src="./img/FW_txt.png" art="frameworkstxt이미지" title="frameworkstxt">
             		</p>
             	</div>
-            </div>
-            <div class="DA_box">
+            </a>
+            <a href="#" class="DA_box">
             	<div class="DA_container">
           			<p class="DA_img1">
             			<img src="./img/DA_1.png" art="Data Analytics이미지" title="Data Analytics">
@@ -181,8 +181,11 @@
             			<img src="./img/DA_txt.png" art="Data Analyticstxt이미지" title="Data Analyticstxt">
             		</p>            		
             	</div>
-            </div>
+            </a>
         </div>
+      </div>
+  	</div>
+  </div>
         
         
         
