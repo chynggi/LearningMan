@@ -11,22 +11,22 @@ from django.db import models
 
 
 class Board(models.Model):
-    no = models.FloatField(primary_key=True)
-    title = models.CharField(max_length=100, blank=True, null=True)
+    no      = models.FloatField(primary_key=True)
+    title   = models.CharField(max_length=100, blank=True, null=True)
     contens = models.CharField(max_length=3000, blank=True, null=True)
-    id = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
-    xdate = models.DateField(blank=True, null=True)
+    id      = models.ForeignKey('Buser', models.DO_NOTHING, db_column='id', blank=True, null=True)
+    xdate   = models.DateField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed  = False
         db_table = 'board'
 
 
 class Buser(models.Model):
-    id = models.CharField(primary_key=True, max_length=50)
-    pw = models.CharField(max_length=150, blank=True, null=True)
+    id   = models.CharField(primary_key=True, max_length=50)
+    pw   = models.CharField(max_length=150, blank=True, null=True)
     name = models.CharField(max_length=80, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed  = False
         db_table = 'buser'

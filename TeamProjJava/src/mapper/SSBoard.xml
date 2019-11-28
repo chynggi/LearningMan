@@ -28,7 +28,6 @@
 </update>
 <delete id = "delete" parameterType="long">
 	DELETE FROM SSBOARD WHERE NO = #{no}
-W
 </delete>
 <select id = "info" parameterType="long" resultType="board">
 <![CDATA[
