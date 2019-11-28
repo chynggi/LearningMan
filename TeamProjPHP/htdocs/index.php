@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Clean Blog - Start Bootstrap Theme</title>
+  <title>Learning Man</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +20,8 @@
 
   <!-- Custom styles for this template -->
   <link href="css/clean-blog.css" rel="stylesheet">
+  <link href="css/login.css" rel="stylesheet">
+  <link href="css/member.css" rel="stylesheet">
 
 </head>
 
@@ -67,10 +69,26 @@
           <div class="site-heading">
             <span class="subheading">Team Project</span>
             <h1>Learning Man</h1>
+            <?php
+            session_start();
+            if(!isset($_SESSION['id'])){
+            ?>
             <p class="M_btn">
-            	<a class="col-lg-8 col-md-10 mx-auto" href="#">로그인</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="#">회원가입</a>            	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/login.php">로그인</a>
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member.php">회원가입</a>            	
             </p>
+            <?php     
+            }else {
+                $user_name = $_SESSION['name'];
+            ?>
+            <p class="M_btn">
+            	<a class="col-lg-8 col-md-10 mx-auto"><strong><?php echo "$user_name"; ?></strong>님 환영합니다.</a>
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member_update_form.php">본인정보 수정</a>           	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/logout.php">로그아웃</a>           	
+            </p>
+            <?php
+            }
+            ?>
           </div>
         </div>
       </div>
@@ -78,6 +96,10 @@
   </header>
 	<style>
 		.M_btn>a {
+			text-decoration: none;
+			color:#fff;
+		}
+        .M_btn>p {
 			text-decoration: none;
 			color:#fff;
 		}
