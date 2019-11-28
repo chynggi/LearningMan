@@ -26,8 +26,8 @@
 <!-- Custom styles for this template -->
 <link href="css/clean-blog.css" rel="stylesheet">
 
-<?php 
 
+<!-- 
     $dbhost = "locallhost";     // 호스트 주소(localhost, 120.0.0.1)
     $dbName = "dbmsboard";      // 데이타 베이스(DataBase) 이름
     $dbUser = "team";          // DB 아이디
@@ -37,9 +37,20 @@
     $pdo = new PDO("mysql:host={$dbHost};dbname={$dbName}", $dbUser, $dbPass); // PDO 객체 생성
     $statement = $pdo -> query("SELECT CURDATE() AS date FROM TEAM");
     $row = $statement -> fetch(PDO::FETCH_ASSOC);
-    echo htmlentities($row['date']);    
+    echo htmlentities($row['date']);      
+    --> 
     
-?>
+    <?php
+    $tns = " (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)
+    (HOST = 192.168.0.18)(PORT = 1521)) ) (CONNECT_DATA = (SERVICE_NAME = xe) ) ) ";
+    try {
+        $conn = new PDO("oci:dbname=".$tns.";charset=utf8", "team", "team");
+    }
+    catch (PDOException $e) {
+        echo "Failed to obtain database handle " . $e->getMessage();
+    }
+    ?>
+
 
 
 </head>
@@ -105,10 +116,6 @@
 			color:#000;
 		}
 	</style>
-<?php 
-      	require_once ('BoardDaoFunction.php');
-      	$result = selectAll();
-      	?>
 
      <table id="example" class="table table-striped table-bordered"
 		style="width: 100%" border="1">
