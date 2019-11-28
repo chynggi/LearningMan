@@ -39,8 +39,8 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="OOP_Board/oop_B_index.php">OOP</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">DBMS</a></li>
+          <li class="nav-item"><a class="nav-link" href="OOP_Board/oop_B_index.php">객체 지향 프로그래밍</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">데이터베이스</a></li>
           <li class="nav-item"><a class="nav-link" href="#">서버 사이드</a></li>
           <li class="nav-item"><a class="nav-link" href="#">프레임 워크</a></li>
           <li class="nav-item"><a class="nav-link" href="DataAnalysticsMain.php">데이터 분석</a></li>									
@@ -58,6 +58,10 @@
           <div class="page-heading">
             <h1>Learning Man Team Project</h1>
             <span class="subheading">made by Learning Man</span>
+            <p class="M_btn">
+            	<a class="col-lg-8 col-md-10 mx-auto" href="#">로그인</a>
+            	<a class="col-lg-8 col-md-10 mx-auto" href="#">회원가입</a>            	
+            </p>
           </div>
         </div>
       </div>
