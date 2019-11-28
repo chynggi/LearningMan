@@ -26,6 +26,20 @@
 	color: black;
     }
   </style>
+  <style>
+	.M_btn>a {
+		text-decoration: none;
+		color:#fff;
+	}
+    .M_btn>p {
+		text-decoration: none;
+		color:#fff;
+	}
+	.M_btn>a:hover {
+		color:#000;
+	}
+  </style>
+  
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -55,13 +69,29 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>Learning Man Team Project</h1>
-            <span class="subheading">made by Learning Man</span>
+          <div class="site-heading">
+            <span class="subheading">Team Project</span>
+            <h1>Learning Man</h1>
+            <?php
+            session_start();
+            if(!isset($_SESSION['id'])){
+            ?>
             <p class="M_btn">
-            	<a class="col-lg-8 col-md-10 mx-auto" href="#">로그인</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="#">회원가입</a>            	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/login.php">로그인</a>
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member.php">회원가입</a>            	
             </p>
+            <?php     
+            }else {
+                $user_name = $_SESSION['name'];
+            ?>
+            <p class="M_btn">
+            	<a class="col-lg-8 col-md-10 mx-auto"><strong><?php echo "$user_name"; ?></strong>님 환영합니다.</a>
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member_update_form.php">본인정보 수정</a>           	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/logout.php">로그아웃</a>           	
+            </p>
+            <?php
+            }
+            ?>
           </div>
         </div>
       </div>
