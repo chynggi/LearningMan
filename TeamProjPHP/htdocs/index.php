@@ -105,7 +105,7 @@
             		</p>
             	</div>
             </a>
-            <a href="#" class="DA_box">
+            <a href="DataAnalysticsMain.php" class="DA_box">
             	<div class="DA_container">
           			<p class="DA_img1">
             			<img src="./img/DA_1.png" art="Data Analytics이미지" title="Data Analytics">
