@@ -16,14 +16,14 @@
     <body>
         <h1 class="display-4">데이터 분석 게시판 게시글 수정</h1>
         <?php
-            require_once('DataAnalysticsBoardDaoFunction.php');
+            require_once('ServerSideBoardDaoFunction.php');
             $key = $_GET["board_no"];
             echo $key."번째 글 수정 페이지<br>";
             $oneRow = selectOne($key);
             if($row = mysqli_fetch_array($oneRow)){
         ?>
         <br>
-        <form action="./DataAnalysticsBoardUpdateAction.php" method="post">
+        <form action="./ServerSideBoardUpdateAction.php" method="post">
             <table class="table table-bordered" style="width:50%">
                 <tr>
                     <td style="width:10%">글 번호</td>
@@ -56,7 +56,7 @@
             &nbsp;&nbsp;&nbsp;
             <button class="btn btn-primary" type="submit">글 수정</button>
             &nbsp;&nbsp;
-            <a class="btn btn-primary" href="./DataAnalysticsBoardList.php"> 리스트로 돌아가기</a>
+            <a class="btn btn-primary" href="./ServerSideBoardList.php"> 리스트로 돌아가기</a>
         </form>
         
     </body>

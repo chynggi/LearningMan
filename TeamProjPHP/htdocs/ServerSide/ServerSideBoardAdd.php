@@ -16,7 +16,7 @@
 	</head>
 	
 	<body>
-		<form class = "form-horizontal" action = "./DataAnalysticsBoardAddAction.php" method = "post">		
+		<form class = "form-horizontal" action = "./ServerSideBoardAddAction.php" method = "post">		
 		<div class="input-group mb-3">
 			<div class="input-group-prepend">
 				<span class="input-group-text" id="inputGroup-sizing-default">제목</span>

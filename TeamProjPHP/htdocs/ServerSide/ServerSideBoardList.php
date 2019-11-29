@@ -41,8 +41,8 @@
 			<tr>            	
             	<td align = "center" colspan = "20">
             		<?php
-            			echo "<a class='btn btn-primary2' href='./DataAnalysticsBoardList.php?currentPage=" . ($currentPage - 1) . "'>◁</a>&nbsp;&nbsp;";           		    
-            			echo "<a class='btn btn-primary2' href='./DataAnalysticsBoardList.php?currentPage=" . ($currentPage + 1) . "'>▷</a>&nbsp;&nbsp;";
+            			echo "<a class='btn btn-primary2' href='./ServerSideBoardList.php?currentPage=" . ($currentPage - 1) . "'>◁</a>&nbsp;&nbsp;";           		    
+            			echo "<a class='btn btn-primary2' href='./ServerSideBoardList.php?currentPage=" . ($currentPage + 1) . "'>▷</a>&nbsp;&nbsp;";
             		?>
             		<a class="btn btn-primary2" href="./DataAnalysticsBoardAdd.php" >
   					<img src="./DataAnalysticsImg/글쓰기.png" width="30" height="30" title = "글쓰기" alt="글쓰기 로고">

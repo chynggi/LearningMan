@@ -13,7 +13,7 @@
             echo $board_no."번째 글 삭제 페이지<br>";
         ?>
         <!-- board_delete_action.php 페이지로 post방식을 이용하여 값 전송 -->
-        <form action="./DataAnalysticsBoardDeleteAction.php" method="post">
+        <form action="./ServerSideBoardDeleteAction.php" method="post">
             <table class="table table-bordered" style="width:10%">
                 <tr>
                     <td>글 비밀 번호를 입력하세요.</td>

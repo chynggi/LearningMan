@@ -6,7 +6,7 @@
 <body>
 	<h1>데이터 분석 게시판 게시글 삭제</h1>
 	<?php 
-	require 'DataAnalysticsBoardDaoFunction.php';
+	require 'ServerSideBoardDaoFunction.php';
     delete();     
 	?>    
 </body>

@@ -23,7 +23,7 @@
     <body>
         <h1 class="display-4">데이터 분석 게시판 게시글 내용</h1>
         <?php
-            require_once('DataAnalysticsBoardDaoFunction.php');
+            require_once('ServerSideBoardDaoFunction.php');
             $key = $_GET["board_no"];
             echo $key."번째 글 내용<br>";
             $oneRow = selectOne($key);
@@ -74,9 +74,9 @@
         </table>
         <br>
         &nbsp;&nbsp;&nbsp;
-        <a href='./DataAnalysticsBoardUpdate.php?board_no=<?=$row["board_no"]?>'>수정</a>
-		<a href='./DataAnalysticsBoardDelete.php?board_no=<?=$row["board_no"]?>'>삭제</a>
-        <a class="btn btn-primary" href="./DataAnalysticsBoardList.php">
+        <a href='./ServerSideBoardUpdate.php?board_no=<?=$row["board_no"]?>'>수정</a>
+		<a href='./ServerSideBoardDelete.php?board_no=<?=$row["board_no"]?>'>삭제</a>
+        <a class="btn btn-primary" href="./ServerSideBoardList.php">
         	리스트로 돌아가기
         </a>
     </body>
