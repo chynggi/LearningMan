@@ -74,8 +74,8 @@
             if(!isset($_SESSION['id'])){
             ?>
             <p class="M_btn">
-            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/login.php">로그인</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="../member/member.php">회원가입</a>            	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="../login/login.php">로그인</a>
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member.php">회원가입</a>            	
             </p>
             <?php     
             }else {
@@ -83,8 +83,8 @@
             ?>
             <p class="M_btn">
             	<a class="col-lg-8 col-md-10 mx-auto"><strong><?php echo "$user_name"; ?></strong>님 환영합니다.</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="../member/member_update_form.php">본인정보 수정</a>           	
-            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/logout.php">로그아웃</a>           	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member_update_form.php">본인정보 수정</a>           	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="../login/logout.php">로그아웃</a>           	
             </p>
             <?php
             }
@@ -113,27 +113,79 @@
       <div class="col-lg-12 col-md-10 mx-auto">
         <div class="post-preview">
             <h2 class="post-title">
-				로그인
+				회원탈퇴
             </h2>
         </div>
         <hr>
-        <div class="loginForm_box">
-        	<form name="loginForm" action="./login_action.php" method="post">
+        <div class="memberForm_box">
+        	<form name="memberForm" action="./member_delete_action.php"  onSubmit="return insertOk(this)" method="post">
         		<div class="ID_form">
-        			<input class="id" type="text" name="id" placeholder="&nbsp;&nbsp;아이디">
+        			<input class="id" id="id" type="text" name="memId" placeholder="&nbsp;&nbsp;아이디">
         		</div>
         		<div class="PW_form">
-        			<input class="pw" type="password" name="pw" placeholder="&nbsp;&nbsp;비밀번호">
+        			<input class="pw" id="pw" type="password" name="memPw" placeholder="&nbsp;&nbsp;비밀번호">
         		</div>
         		<div class="subM_form">
-        			<input class="loginBtn" type="submit" value="로그인">
+        			<input class="memBtn" id="memBtn" name="memBtn" type="submit" value="회원탈퇴">
         		</div>
 			</form>
         </div>
       </div>
 	</div>
-        
-        
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+    	$("#id").change(function(){
+    		checkId($('#id').val());
+    	});
+    	$("#pw").change(function(){
+    		checkPw($('#pw').val());
+    		formCheck($('#pw').val());
+    	});
+
+    	//
+    	function insertOk(frm) {
+    		var f = document.memberForm;
+    		if(f.memId.value == ""){
+    			alert("아이디를 입력해 주세요.");
+    			$('#id').val('').focus();
+    			return false;
+    		}else if(f.memPw.value == ""){
+    			alert("비밀번호를 입력해 주세요.");
+    			$('#pw').val('').focus();
+    			return false;
+    		}else if(f.memBtn){
+    			alert("정말로 탈퇴하시겠습까?");
+    			return true;
+    		}else{
+    			return true;
+    		}
+
+    	}
+
+
+    	function checkId(id) {
+    		var f = document.memberForm;
+    		if(id.length < 4){
+    			alert("아이디는 4자 이상이여야 합니다. ");
+    			$('#id').val('').focus();
+    			return false;
+    		}else{
+    			return true;
+    		}
+    	}
+    	
+    	function checkPw(pw) {
+    		var f = document.memberForm;
+    		if(pw.length < 4){
+    			alert("비밀번호는 4자 이상 입력하여야 합니다.");
+    			$('#pw').val('').focus();
+    			return false;
+    		}else{
+    			return true;
+    		}
+    	}
+	</script>
+
   <!-- Footer -->
   <footer style="background: #aaa;>
     <div class="container">
@@ -172,8 +224,8 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/jquery-3.4.1.min.js"></script>
 
   <!-- Custom scripts for this template -->
   <script src="../js/clean-blog.min.js"></script>
