@@ -75,7 +75,12 @@
 			</div>
 		</div>
 	</header>
+  <script src="./vendor/jquery/jquery.min.js"></script>
+  <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Custom scripts for this template -->
+  <script src="./js/clean-blog.min.js"type="text/javascript" charset="utf-8"></script>
+  <script src="./js/contents_any.js" type="text/javascript" charset="utf-8"></script>
 
 
 </html>
