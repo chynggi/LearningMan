@@ -79,5 +79,4 @@ public class LoginService implements Service {
 		 * 
 		 * 
 		 */
-
 }

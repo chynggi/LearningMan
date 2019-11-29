@@ -22,7 +22,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
    <mappers>
 	<mapper resource = "mapper/Buser.xml"/>
+<<<<<<< HEAD
 	<mapper resource = "mapper/DBMSBoard.xml"/>
     </mappers>
    
+=======
+	<mapper resource = "mapper/SSBoard.xml"/>
+	</mappers>
+>>>>>>> refs/remotes/origin/EYH
 </configuration>

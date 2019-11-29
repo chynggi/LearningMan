@@ -5,7 +5,7 @@
 <%@ page import="dto.Board" %>
 <%@ page import="common.MBUtils" %>
 <%@ page import="org.apache.ibatis.session.SqlSession" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+ 
 <!DOCTYPE html>
 <html lang="ko">
 

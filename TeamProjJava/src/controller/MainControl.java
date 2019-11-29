@@ -11,38 +11,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import service.*;
 
-/**
- * Servlet implementation class MainControl
- */
 @WebServlet("*.do")
 public class MainControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public MainControl() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		actionDo(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		actionDo(request, response);
 	}
 
@@ -66,7 +49,6 @@ public class MainControl extends HttpServlet {
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
@@ -77,39 +59,46 @@ public class MainControl extends HttpServlet {
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-		case "/user/MemberInfo.do":
+		case "/MemberInfo.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new MemberInfoService();
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-		case "/user/confirmId.do":
+		case "/confirmId.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				boolean res = new ConfirmIdService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-		case "/user/MemberInfoAdjust.do":
+			
+		case "/Insert.do":
+			System.out.println(command + "를 처리합니다.");
+			try {
+				boolean res = new SSBoardInsertService().execute(request, response);
+				System.out.println(res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+			
+		case "/MemberInfoAdjust.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new MemberInfoAdjustService();
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
@@ -120,18 +109,16 @@ public class MainControl extends HttpServlet {
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-		case "/user/memberList.do":
+		case "/memberList.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new AllMemberListService();
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;		
@@ -145,10 +132,18 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+<<<<<<< HEAD
 		case "/DBMSBoard/new.do":  // 인서트
+=======
+		case "/SSBoard/Update.do":
+>>>>>>> refs/remotes/origin/EYH
 			System.out.println(command + "를 처리합니다.");
 			try {
+<<<<<<< HEAD
 				service = new DBMSBoardInsertService();
+=======
+				service = new SSBoardUpdateService();
+>>>>>>> refs/remotes/origin/EYH
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
@@ -186,15 +181,16 @@ public class MainControl extends HttpServlet {
 		case "/DBMSBoard/adjust.do":  // 게시글 수정
 			System.out.println(command+"를 처리합니다.");
 			try {
+<<<<<<< HEAD
 				boolean res = new DBMSBoardAdjustService().execute(request, response);
+=======
+				boolean res = new SSBoardInsertService().execute(request, response);
+>>>>>>> refs/remotes/origin/EYH
 				System.out.println(res);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-
 		}
-
 	}
 }

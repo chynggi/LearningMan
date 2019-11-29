@@ -5,7 +5,11 @@ import dto.Buser;
 
 public interface BuserDAO extends IDAO<Buser, String> {
 
+<<<<<<< HEAD
 
 }
 
 
+=======
+}
+>>>>>>> refs/remotes/origin/EYH

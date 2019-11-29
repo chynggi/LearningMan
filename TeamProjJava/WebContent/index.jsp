@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<jsp:include page="/header.jsp" flush="false"/>
+<jsp:include page="/header2.jsp" flush="false"/>
 
 
 	<style>

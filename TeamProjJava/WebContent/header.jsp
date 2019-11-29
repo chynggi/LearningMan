@@ -10,7 +10,6 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -21,6 +20,16 @@
 
   <!-- Custom styles for this template -->
   <link href="css/clean-blog.css" rel="stylesheet">
+<<<<<<< HEAD
+=======
+  
+    <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+>>>>>>> refs/remotes/origin/EYH
 
 </head>
 
@@ -49,7 +58,7 @@
 							Side</a></li>
 					<li class="nav-item"><a class="nav-link" href="contact">Frame
 							Works</a></li>
-					<li class="nav-item"><a class="nav-link" href="contact">Data
+					<li class="nav-item"><a class="nav-link" href="DataAnalysticsMain.jsp">Data
 							Analystics</a></li>
 				</ul>
 			</div>

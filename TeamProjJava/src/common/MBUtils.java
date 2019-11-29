@@ -13,6 +13,10 @@ public class MBUtils {
 		String resource = "common/SqlMapConfig.xml";
 
 		InputStream  reader;
+
+	public static SqlSessionFactory getsqlSessionFactory() {
+		String resource = "common/SqlMapConfig.xml";
+		InputStream reader;
 		try {
 			reader = Resources.getResourceAsStream(resource);
 		}catch (IOException e) {
