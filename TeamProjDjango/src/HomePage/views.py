@@ -36,13 +36,12 @@ def logout(request):
     return HttpResponseRedirect(reverse('HomePage:index'))
 
 
-def loginorReg(request):
+def login(request):
     form = None;
     message = None;
     if request.method == 'POST':
-        if request.POST.get('name','') == '':
-            username = request.POST.get('form-username','')
-            password = request.POST.get('form-password','')
+            username = request.POST.get('id','')
+            password = request.POST.get('pw','')
             print(username)
             print(password)            
             try:
@@ -51,21 +50,69 @@ def loginorReg(request):
                     return HttpResponseRedirect(reverse('HomePage:index'))
             except Buser.DoesNotExist:    
                     message = "ERROR2"  
-                       
-        else: 
-            form = Form(request.POST)
-            if form.is_valid():
-                message = None;
-                form.save()
-                request.session['userid'] = request.POST.get('form-email','');                
-                return HttpResponseRedirect(reverse('HomePage:index'))
-            else:
-                message = "ERROR"        
     else:
         form = Form()
     print(message)
     return render(request, 'homepage/loginorReg.html', {'form':form, 'message':message})
 
+
+def register(request):
+    form = None;
+    message = None;    
+    if request.method == 'POST':
+        form = Form(request.POST)
+        if form.is_valid():
+            message = None;
+            form.save()
+            request.session['userid'] = request.POST.get('id','');                
+            return HttpResponseRedirect(reverse('HomePage:index'))
+        else:
+            message = "ERROR"        
+    else:
+        form = Form()
+    print(message)
+    return render(request, 'homepage/Register.html', {'form':form, 'message':message})
+
+def update(request):
+    form = None;
+    message = None;    
+    user = Buser.objects.get(id=request.session['userid'])
+    if request.method == 'POST':
+        form = Form(request.POST,instance=user)
+        if form.is_valid():
+            message = None;
+            user = Buser.objects.get(id=form.cleaned_data['id'])
+            user.pw = form.cleaned_data['pw']
+            user.name = form.cleaned_data['name']
+            user.phone = form.cleaned_data['phone']
+            user.save();  
+            return HttpResponseRedirect(reverse('HomePage:index'))
+        else:
+            print(form.errors)
+            message = "ERROR"        
+    else:
+        form = Form()
+    print(message)
+    return render(request, 'homepage/memberupdate.html', {'form':form, 'message':message,'user':user})
+
+def delete(request):
+    form = None;
+    message = None;    
+    if request.method == 'POST':
+        user = Buser.objects.get(id=request.POST.get('id',''))
+        form = Form(request.POST,instance=user)        
+        if form.is_valid():
+            message = None;    
+            user = Buser.objects.get(id=form.cleaned_data['id'],pw=form.cleaned_data['pw'])        
+            user.delete();  
+            return HttpResponseRedirect(reverse('HomePage:index'))
+        else:
+            message = "ERROR"        
+    else:
+        form = Form()
+    print(message)
+    request.session['userid'] = None;
+    return render(request, 'homepage/memberdelete.html', {'form':form, 'message':message})
 
 def SSwrite(request):   
     message = None;
