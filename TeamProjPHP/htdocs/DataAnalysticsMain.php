@@ -85,7 +85,8 @@
         <div class="container">
     		<div class="row">
       			<div class="col-lg-8 col-md-10 mx-auto" align = "center">
-        			<a class="btn btn-primary" href="./DataAnalysticsBoardList.php"> 질문 게시판 이동</a>
+        			<a class="btn btn-primary" href="./DataAnalysticsBoardAdd.php"> 질문 하기</a>
+        			<a class="btn btn-primary" href="./DataAnalysticsBoardList.php"> 질문 게시판</a>
         		</div>
         	</div>
         </div>

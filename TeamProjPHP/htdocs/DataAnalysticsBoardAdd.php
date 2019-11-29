@@ -19,11 +19,15 @@
 		$(document).ready(function() {			
 			$('#head_div').load('header.php');
 		});
-  		</script>
-	
+  		</script>	
 	</head>
 	
 	<body>
+  		<?php 
+  		session_start();
+            $board_id = $_SESSION['id'];
+            $board_pw = $_SESSION['pw'];           
+        ?>
 		<div id="head_div"></div>
 		<hr>
 		<form class = "form-horizontal" action = "./DataAnalysticsBoardAddAction.php" method = "post">		
@@ -31,13 +35,15 @@
                 <tr>
                     <td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">작성자</font></td>
                     <td style="width:50%">
-                    	<input class = "form-control" type="text" name="ID" id = "name">
+                    	<input class="id" id="id" type="hidden" name="id" value="<?php echo "$board_id"; ?>">
+                   		<p><?php echo "$board_id"; ?></p>                       
                     </td>
                 </tr>               
                 <tr>
                     <td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">비밀번호</font></td>
                     <td style="width:50%">
-                    	<input class = "form-control" type="password" name="PW" id = "password">
+                    	<input class="pw" id="pw" type="hidden" name="pw" value="<?php echo "$board_pw"; ?>">
+                   		<p><?php echo "$board_pw"; ?></p>
                     </td>
                 </tr>
                 <tr>
@@ -67,8 +73,8 @@
 		</form>
 	
 		<script type = "text/javascript">
-			$("#PW").change(function(){ // id일 경우 # class일 경우 .
-				checkPassword($('#PW').val());
+			$("#pw").change(function(){ // id일 경우 # class일 경우 .
+				checkPassword($('#pw').val());
 			});
 			$("#Title").change(function(){
 				checkTitle($('#Title').val());
@@ -76,14 +82,14 @@
 			$("#Content").change(function(){
 				checkContent($('#Content').val());
 			});
-			$("#ID").change(function(){
-				checkName($('#ID').val());
+			$("#id").change(function(){
+				checkName($('#id').val());
 			});
 
-			function checkPassword(PW){
-				if(PW.length < 5){
+			function checkPassword(pw){
+				if(pw.length < 5){
 					alert("비밀번호를 5자 이상 설정하시오");
-					$('#PW').val('').focus();
+					$('#pw').val('').focus();
 					return false;
 				} else {
 					return true;
@@ -110,10 +116,10 @@
 				}
 			}
 
-			function checkName(ID){
-				if(ID.length < 2){
+			function checkName(id){
+				if(id.length < 2){
 					alert("작성자명을 2자 이상 설정하시오");
-					$('#ID').val('').focus();
+					$('#id').val('').focus();
 					return false;
 				} else {
 					return true;
