@@ -39,23 +39,23 @@
                    		<p><?php echo "$board_id"; ?></p>                       
                     </td>
                 </tr>               
-                <tr>
+             <!--   <tr>
                     <td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">비밀번호</font></td>
                     <td style="width:50%">
                     	<input class="pw" id="pw" type="hidden" name="pw" value="<?php echo "$board_pw"; ?>">
-                   		<p><?php echo "$board_pw"; ?></p>
+                   	  	<p><?php echo "$board_pw"; ?></p> 
                     </td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">제목</font></td>
                     <td style="width:50%">
-                    	<input class = "form-control" type="text" name="Title" id = "title" placeholder = "제목을 입력하시오">
+                    	<input class = "form-control" type="text" name="Title" id = "title" placeholder = "제목을 입력하세요">
                     </td>
                 </tr> 
                 <tr>
                     <td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">내용</font></td>
                     <td style="width:50%">
-                    	<textarea class = "form-control" name = "Content" id = "content" rows = "5" cols = "50" placeholder = "내용을 입력하시오"></textarea>
+                    	<textarea class = "form-control" name = "Content" id = "content" rows = "5" cols = "50" placeholder = "질문 내용을 입력하세요"></textarea>
                     </td>
                 </tr> 
                 
