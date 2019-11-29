@@ -36,11 +36,10 @@ def logout(request):
     return HttpResponseRedirect(reverse('HomePage:index'))
 
 
-def loginorReg(request):
+def login(request):
     form = None;
     message = None;
     if request.method == 'POST':
-        if request.POST.get('name','') == '':
             username = request.POST.get('form-username','')
             password = request.POST.get('form-password','')
             print(username)
@@ -51,21 +50,28 @@ def loginorReg(request):
                     return HttpResponseRedirect(reverse('HomePage:index'))
             except Buser.DoesNotExist:    
                     message = "ERROR2"  
-                       
-        else: 
-            form = Form(request.POST)
-            if form.is_valid():
-                message = None;
-                form.save()
-                request.session['userid'] = request.POST.get('form-email','');                
-                return HttpResponseRedirect(reverse('HomePage:index'))
-            else:
-                message = "ERROR"        
     else:
         form = Form()
     print(message)
     return render(request, 'homepage/loginorReg.html', {'form':form, 'message':message})
 
+
+def register(request):
+    form = None;
+    message = None;    
+    if request.method == 'POST':
+        form = Form(request.POST)
+        if form.is_valid():
+            message = None;
+            form.save()
+            request.session['userid'] = request.POST.get('form-email','');                
+            return HttpResponseRedirect(reverse('HomePage:index'))
+        else:
+            message = "ERROR"        
+    else:
+        form = Form()
+    print(message)
+    return render(request, 'homepage/loginorReg.html', {'form':form, 'message':message})
 
 def SSwrite(request):   
     message = None;
