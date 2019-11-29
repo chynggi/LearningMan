@@ -5,34 +5,32 @@
 </head>
 <body>
 	<?php
-        $NO = $_POST["NO"];
-        $PW = $_POST["PW"];
-        echo "NO : " . $NO . "<br>";
-        echo "PW : " . $PW . "<br>";
+	   $board_no = $_POST["NO"];
+	   $board_pw = $_POST["pw"];
+	    
+       echo "NO : " . $board_no . "<br>";
+       echo "pw : " . $board_pw . "<br>";
 
-        ?>
-     <!--   $conn = oci_connect("localhost", "root", "", "team"); -->
-        <?php 
-        $conn = oci_connect("team", "team", "localhost");
-        // 커넥션 객체 생성 여부 확인
-        if ($conn) {
-            echo "연결 성공<br>";
-        } else {
-            die("연결 실패 : " . oci_connect_error());
-        }
+       require_once("./dbconnector/dbconnector.php");
+       
+       if($conn) {
+           echo "연결 성공<br>";
+       } else {
+           die("연결 실패 : " .mysqli_error());
+       }
 
         // board테이블에서 입력된 글 번호와, 글 비밀번호가 일치하는 행 삭제 쿼리
         try {
 
             // 삭제대상자료가 있는 지 확인 
-            $selectSql  = "SELECT * FROM board WHERE PW='" . $PW . "' AND NO=" . $NO . "";
+            $selectSql  = "SELECT * FROM board WHERE PW='" . $board_pw . "' AND NO=" . $board_no . "";
             $result     = oci_query($conn, $selectSql);
 
             // 패스워드가 맞는 해당 자료가 있으면 
             if ($row = oci_fetch_array($result)) {
 
                 // 지우는 작업
-                $deleteSql = "DELETE FROM board WHERE PW='" . $PW . "' AND NO=" . $NO . "";
+                $deleteSql = "DELETE FROM board WHERE PW='" . $board_pw . "' AND NO=" . $board_no . "";
                 $res = oci_query($conn, $deleteSql);
                 echo "삭제 성공: " . $deleteSql . ":" . "실행";
             } 

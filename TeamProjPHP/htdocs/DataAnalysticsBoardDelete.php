@@ -27,8 +27,10 @@
     <body>
     	<div id="head_div"></div>        
         <?php 
-            $NO = $_GET["NO"];
-            echo $NO."번째 글 삭제 페이지<br>";
+        session_start();
+            $board_no = $_SESSION["NO"];
+            $board_pw = $_SESSION["pw"];
+            echo $board_no."번째 글 삭제 페이지<br>";
         ?>
         <form action="./DataAnalysticsBoardDeleteAction.php" method="post">
             <table class="table table-bordered" align = "center" style="width:35%" border="2">
@@ -37,7 +39,7 @@
                 </tr>
                 <tr align = "center">
                     <td><input type="text" name="PW">
-                        <input type="hidden" name="NO" value="<?php echo $NO ?>">
+                        <input type="hidden" name="NO" value="<?php echo $board_no ?>">
                     </td>
                 </tr>
                 <tr align = "center">
