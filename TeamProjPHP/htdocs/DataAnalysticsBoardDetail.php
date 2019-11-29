@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
         <title>러닝맨 데이터 분석 게시판 게시글 내용</title>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  		<meta name="description" content="">
+  		<meta name="author" content="">
+        
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
+  		<link href="./css/boost.css" rel='stylesheet' type='text/css'>
+        
         <link rel="stylesheet" href="./css/bootstrap.css">
         <script type="text/javascript" src="./js/bootstrap.js"></script>
-        <link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
-		<link href="./css/boost.css" rel='stylesheet' type='text/css'>
-		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="./css/bootstrap.css">
-		<script type="text/javascript" src="./js/bootstrap.js"></script>
+	
     	<style>
             table {
                 table-layout: fixed;
                 word-wrap: break-word;
             }
         </style>
+        <script>
+			$(document).ready(function() {			
+				$('#head_div').load('header.php');
+			});
+  		</script>
     </head>
 
     <body>
-        <h1 class="display-4">데이터 분석 게시판 게시글 내용</h1>
+        <div id="head_div"></div>
+  		<hr>
         
      <!--   $conn = oci_connect("localhost", "root", "", "team"); -->
         <?php 
@@ -44,7 +54,7 @@
             echo "조회 실패 - ".oci_error($conn);
         }        
     ?>
-        <table class="table table-bordered" style="width:50%">
+        <table class="table table-bordered" align = "center" style="width:50%">
             <?php
 		      if($row = oci_fetch_array($result)){ // resilt 변수에 담긴 값을 row 값에 저장하여 테이블에 출력
 		      ?>

@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>러닝맨 데이터 분석 게시판 리스트</title>
-<link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
-<link href="./css/boost.css" rel='stylesheet' type='text/css'>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="./css/bootstrap.css">
-<script type="text/javascript" src="./js/bootstrap.js"></script>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
+  <link href="./css/boost.css" rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <script type="text/javascript" src="./js/bootstrap.js"></script>
+
 <style type="text/css">
 .jumbotron {
 	background-image: url('./DataAnalysticsImg/jumbotronBackground.jpg');
@@ -25,9 +31,18 @@
         cursor: pointer;
       }
 </style>
+
+<script>
+	$(document).ready(function() {			
+		$('#head_div').load('header.php');
+	});
+</script>
+
 </head>
 
 <body>
+	<div id="head_div"></div>
+  	<hr>
      <table class="table table-bordered" border="1" align = "center" style="width:60%;">
         <?php
         $currentPage = 1;
@@ -36,11 +51,31 @@
             $currentPage = $_GET["currentPage"];
         }
         // oci_connect()함수로 커넥션 객체 생성
-        ?>
-     <!--   $conn = oci_connect("localhost", "root", "", "team"); -->
-        <?php 
-        $conn = oci_connect("team", "team", "localhost");
+        
+        
+        $user_id = $_POST["memId"];
+        $user_pw = $_POST["memPw"];       
+        echo "user_id : " . $user_id . "<br>";
+        echo "user_pw : " . $user_pw . "<br>";        
+        require_once("../dbconnector/dbconnector.php");        
+        if($conn) {
+            echo "연결 성공<br>";
+        } else {
+            die("연결 실패 : " .mysqli_error());
+        }
+        $sql = "UPDATE BUSER SET pw=? WHERE id=?";
+        $result = $conn -> prepare($sql);
+        
+        $result -> execute([$user_pw, $user_id]);
+        //헤더함수를 이용하여 리스트 페이지로 리다이렉션
+        header("Location: ../index.php"); //헤더 함수를 이용해서 리다이렉션 시킬 수 있다.
 
+        //---------------------------------------------
+        $result = $conn -> prepare("SELECT * FROM BUSER WHERE ID = :userid");
+        $result -> bindParam(':userid', $user_id, PDO::PARAM_STR);
+        $result -> execute();
+        $oci_result = $result -> fetchAll(PDO::FETCH_ASSOC);
+        
         // 페이징 작업을 위한 테이블 내 전체 행 갯수 조회 쿼리
         $sqlCount    = "SELECT count(*) FROM board";
         $resultCount = oci_query($conn, $sqlCount); // resultSet과유사

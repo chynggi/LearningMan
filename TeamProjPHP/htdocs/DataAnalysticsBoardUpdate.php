@@ -4,6 +4,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>러닝맨 데이터 분석 게시판 게시글 수정</title>
         <link rel="stylesheet" href="./css/bootstrap.css">
+        <meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  		<meta name="description" content="">
+  		<meta name="author" content="">
+  
+  		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
+  		<link href="./css/boost.css" rel='stylesheet' type='text/css'>
+  		
         <!-- 테이블 크기 조절용 css -->
         <style>
             table {
@@ -11,10 +22,18 @@
                 word-wrap: break-word;
             }
         </style>
+        
+        <script>
+			$(document).ready(function() {			
+				$('#head_div').load('header.php');
+			});
+  		</script>
         <script type="text/javascript" src="./js/bootstrap.js"></script>
     </head>
+    
     <body>
-        <h1 class="display-4">데이터 분석 게시판 게시글 수정</h1>
+        <div id="head_div"></div>
+  		<hr>
         
      <!--   $conn = oci_connect("localhost", "root", "", "team"); -->
         <?php 
