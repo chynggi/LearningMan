@@ -9,10 +9,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class MBUtils {
 	
-	public static SqlSessionFactory getSqlSessionFactory() {
-		String resource = "common/SqlMapConfig.xml";
-
-		InputStream  reader;
 
 	public static SqlSessionFactory getsqlSessionFactory() {
 		String resource = "common/SqlMapConfig.xml";
@@ -27,7 +23,7 @@ public class MBUtils {
 	}
 	
 	public static SqlSession getSession() {
-		return getSqlSessionFactory().openSession(false);
+		return getsqlSessionFactory().openSession(false);
 	}
 	
 }

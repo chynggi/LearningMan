@@ -35,7 +35,6 @@
             <h3 class="post-subtitle" style="margin-bottom: 80px;">
               	2019 머신러닝반 교육커리큘럼 소개
             </h3>
-<<<<<<< HEAD
             <h3 class="post-mtitle">
               	제작자
             </h3>
@@ -70,7 +69,7 @@
             	<p>
             		<a href="#">Server side</a>
             	</p>	
-=======
+
             <div class="OOP_box">
             	<div class="OOP_container">
             		<p class="OOP_java">
@@ -83,7 +82,6 @@
             			<img src="./img/OOP_txt.png" art="OOP이미지" title="OOP">
             		</p>
             	</div>
->>>>>>> refs/remotes/origin/master
             </div>
             <div class="DBMS_box">
             	<div class="DBMS_container">

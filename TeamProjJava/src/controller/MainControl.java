@@ -132,18 +132,14 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-<<<<<<< HEAD
+
 		case "/DBMSBoard/new.do":  // 인서트
-=======
+
 		case "/SSBoard/Update.do":
->>>>>>> refs/remotes/origin/EYH
 			System.out.println(command + "를 처리합니다.");
 			try {
-<<<<<<< HEAD
+
 				service = new DBMSBoardInsertService();
-=======
-				service = new SSBoardUpdateService();
->>>>>>> refs/remotes/origin/EYH
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
@@ -181,11 +177,7 @@ public class MainControl extends HttpServlet {
 		case "/DBMSBoard/adjust.do":  // 게시글 수정
 			System.out.println(command+"를 처리합니다.");
 			try {
-<<<<<<< HEAD
-				boolean res = new DBMSBoardAdjustService().execute(request, response);
-=======
-				boolean res = new SSBoardInsertService().execute(request, response);
->>>>>>> refs/remotes/origin/EYH
+				boolean res = new DBMSBoardAdjustService().execute(request, response);				
 				System.out.println(res);
 			} catch (Exception e) {
 				e.printStackTrace();

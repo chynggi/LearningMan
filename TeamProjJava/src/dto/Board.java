@@ -7,12 +7,8 @@ public class Board implements Serializable {
 	private String id; 		//등록 회원 아이디
 	private String title; 	//제목
 	private String content; //내용
-<<<<<<< HEAD
-	private String xdate; //게시일자
-	
-=======
-	private String date; 	//게시일
->>>>>>> refs/remotes/origin/EYH
+	private String xdate; //게시일자	
+
 	@Override
 	public String toString() {
 		return "Board [no=" + no + ", id=" + id + ", title=" + title + ", content=" + content + ", xdate=" + xdate
@@ -67,13 +63,5 @@ public class Board implements Serializable {
 	public void setXdate(String xdate) {
 		this.xdate = xdate;
 	}
-<<<<<<< HEAD
-
-	
-	
-	
-
 }
-=======
-}
->>>>>>> refs/remotes/origin/EYH
+

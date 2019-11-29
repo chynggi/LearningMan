@@ -7,17 +7,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="dao.BuserDAO"> 
 <resultMap id ="result" type="buser"> 
 
-<<<<<<< HEAD
+
 	<result property = "id" column = "ID"/> 	<!-- 아이디 -->
 	<result property = "pw" column = "PW"/>  	<!-- 비밀번호 -->
 	<result property = "name" column = "NAME"/> <!-- 이름 -->
 	<result property = "phone" column = "PHONE"/> <!-- 폰번호 -->
 	<result property = "xdate" column = "XDATE"/> <!-- 가입날짜 -->
-=======
-	<result property = "id"   column = "ID"/> 
-	<result property = "name" column = "NAME"/> 
-	<result property = "pw"   column = "PW"/> 
->>>>>>> refs/remotes/origin/EYH
+
+
+
 	
 </resultMap>
 
@@ -28,30 +26,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <insert id = "insert" parameterType="buser">
 	<![CDATA[ 
 	INSERT INTO BUSER 
-<<<<<<< HEAD
+
 	(ID,PW,NAME,PHONE,XDATE)
 	VALUES
 	(#{id},#{pw},#{name},#{phone},#{xdate})
-=======
-	(ID,NAME,PW)
-	VALUES
-	(#{id},#{name},#{pw})
->>>>>>> refs/remotes/origin/EYH
+
 	]]>
 </insert>
 
 <update id ="update" parameterType="buser">
-<<<<<<< HEAD
+
 	UPDATE BUSER SET 		
 		PW=#{pw},
 		NAME=#{name},
 		PHONE=#{phone},
-		XDATE=#{xdate}
-=======
-	UPDATE BUSER SET 
-		NAME=#{name},
-		PW=#{pw},
->>>>>>> refs/remotes/origin/EYH
+		XDATE=#{xdate},
 	WHERE ID = #{id} 
 </update>
 

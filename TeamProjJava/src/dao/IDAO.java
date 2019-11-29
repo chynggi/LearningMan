@@ -10,8 +10,6 @@ public interface IDAO<T, K> {
 	public int update(T vo);
 	public int delete(K key);
 	public long maxIdNum();
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> refs/remotes/origin/EYH
+
