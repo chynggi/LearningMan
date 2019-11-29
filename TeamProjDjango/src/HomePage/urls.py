@@ -10,8 +10,10 @@ urlpatterns=[
     path('ssupdate/<int:no>',views.SSupdate,name='ssupdate'),   
     path('ssdelete/<int:no>',views.SSdelete,name='ssdelete'),    
     path('logout',views.logout,name='logout'),
-    path('login',views.login,name='loginorReg'),
-    path('register',views.register,name='loginorReg'),
+    path('login',views.login,name='login'),
+    path('register',views.register,name='register'),
+    path('update',views.update,name='update'),
+    path('delete',views.delete,name='delete'),
     path('sspost/<int:no>',views.SSpost,name='sspost'),
     path('about',views.about,name='about'),
 ]
