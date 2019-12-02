@@ -32,70 +32,53 @@
     <body>
         <div id="head_div"></div>
   		<hr>
-        
-     <!--   $conn = oci_connect("localhost", "root", "", "team"); -->
         <?php 
-        $conn = oci_connect("team", "team", "localhost");
+        session_start();
         
-	   if($conn){ // 커넥션 객체 생성 여부 확인
-            echo "연결 성공<br>";	    
+        $NO       = $_SESSION["NO"];
+        $ID       = $_SESSION["ID"];
+        $Title    = $_SESSION["Title"];
+        $Content  = $_SESSION["Content"];
+        $XDate    = $_SESSION["XDate"];
+        echo "NO : "      . $NO . "<br>";
+        echo "ID : "      . $ID . "<br>";
+        echo "Title : "   . $Title . "<br>";
+        echo "Content : " . $Content . "<br>";
+        echo "XDate : "   . $XDate . "<br>";
+        
+        require_once("./dbconnector/dbconnector.php");
+        
+        if($conn) {
+            echo "연결 성공<br>";
         } else {
-            die("연결 실패 - ".oci_error());
+            die("연결 실패 : " .mysqli_error());
         }
-        $NO = $_GET["NO"];
-        echo $NO."번재 글 내용<br>";
         
-        $sql = "SELECT NO, Title, Content, ID, XDate FROM board WHERE NO = '".$NO."'";
-        $result = oci_query($conn, $sql);
+        $sql = "SELECT NO, ID, TITLE, Content, XDate FROM BOARD WHERE NO = '".$NO."'";
+
+        $result = $conn -> prepare($sql);
+        $result -> execute([$ID, $Title, $Content, $NO]);
         
-        if($result){
-            echo "조회 성공<br>";            
-        } else {
-            echo "조회 실패 - ".oci_error($conn);
-        }        
-    ?>
+        header("Location: ./DataAnalysticsBoardList.php");        
+        ?>
         <table class="table table-bordered" align = "center" style="width:50%">
-            <?php
-		      if($row = oci_fetch_array($result)){ // resilt 변수에 담긴 값을 row 값에 저장하여 테이블에 출력
-		      ?>
-            <tr>
-                <td style="width:5%">작성자</td>
-                <td style="width:40%" colspan="5">
-                    <?php
-                        echo $row["ID"];
-                    ?>
-                </td>
-            </tr>
-            <tr>
-                <td style="width:5%">글 제목</td>
-                <td style="width:24%">
-                    <?php
-                        echo $row["Title"];
-                    ?>
-                </td>
-                <td style="width:5%">글 번호</td>
-                <td style="width:3%">
-                        <?php
-                            echo $row["NO"];
-                        ?>
-                </td>
-                <td  style="width:5%">작성 일자</td>
-                <td  style="width:3%">
-                    <?php
-                        echo $row["XDate"];
-                    ?>
-                </td>
-                
-            </tr>
-            <tr>
+        	<tr>
+        		<td style="width:5%">작성자</td>
+        		<td style="width:40%" colspan="5"><p><?php echo "$ID"; ?></p> </td>
+        	</tr>
+        	<tr>
+        		<td style="width:5%">제목</td>
+        		<td style="width:24%"><p><?php echo "$Title"; ?></p> </td>
+        		<td style="width:5%">번호</td>
+        		<td style="width:3%"><p><?php echo "$NO"; ?></p> </td>
+        		<td style="width:5%">작성일</td>
+        		<td style="width:3%"><p><?php echo "$XDate"; ?></p> </td>
+        	</tr>
+        	<tr>
                 <td colspan="6">
-                    <?=$row["Content"]?>
+                    <?php echo "$Content"; ?>
                 </td>
-            </tr>
-            <?php
-             }
-             //oci_close($conn);
-            ?>
+            </tr>            
         </table>
         <br>
         &nbsp;&nbsp;&nbsp;
