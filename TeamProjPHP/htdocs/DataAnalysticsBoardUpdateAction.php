@@ -1,10 +1,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>러닝맨</title>
+<title>러닝맨 데이터 분석 게시판 게시글 수정 시스템</title>
 </head>
-<body>
-	<h1>데이터 분석 게시판 게시글 수정</h1>
+<body>	
         <?php
             $NO       = $_POST["NO"];
             $ID       = $_POST["ID"];
@@ -15,7 +14,7 @@
             echo "Title : "   . $Title . "<br>";
             echo "Content : " . $Content . "<br>";
             
-            require_once("../dbconnector/dbconnector.php");
+            require_once("./dbconnector/dbconnector.php");
             
             if($conn) {
                 echo "연결 성공<br>";

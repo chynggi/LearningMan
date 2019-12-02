@@ -23,12 +23,12 @@
 	</head>
 	
 	<body>
+		<div id="head_div"></div>
   		<?php 
   		session_start();
             $board_id = $_SESSION['id'];
             $board_pw = $_SESSION['pw'];           
         ?>
-		<div id="head_div"></div>
 		<hr>
 		<form class = "form-horizontal" action = "./DataAnalysticsBoardAddAction.php" method = "post">		
 		<table class="table table-bordered" align = "center" style="width:50%">

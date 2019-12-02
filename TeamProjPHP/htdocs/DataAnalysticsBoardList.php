@@ -41,6 +41,33 @@
 </head>
 
 <body>
+	<?php 
+  	session_start();
+  	    $board_no    = $_SESSION['NO'];
+        $board_id    = $_SESSION['id'];     
+        $board_title = $_SESSION['Title'];       
+        $board_xdate = $_SESSION['XDate'];
+        
+        echo "no : "    . $board_no    . "<br>";
+        echo "id : "    . $board_id    . "<br>";        
+        echo "title : " . $board_title . "<br>";        
+        echo "XDate : " . $board_xdate . "<br>"; 
+        require_once("./dbconnector/dbconnector.php");
+        
+        if($conn) {
+            echo "연결 성공<br>";
+        } else {
+            die("연결 실패 : " .mysqli_error());
+        }
+        
+        $result = $conn -> prepare("SELECT board_no, board_title, board_id FROM board order by board_no desc limit " . $begin . "," . $rowPerPage . "");
+        $result -> execute();
+        
+
+        
+        header("Location: ./DataAnalysticsBoardList.php");
+        
+    ?>
 	<div id="head_div"></div>
   	<hr>
      <table class="table table-bordered" border="1" align = "center" style="width:60%;">
@@ -50,46 +77,9 @@
         if (isset($_GET["currentPage"])) { // get 방식으로 전달되온상관 배열의 "currentPage" 값이 있으면
             $currentPage = $_GET["currentPage"];
         }
-        // oci_connect()함수로 커넥션 객체 생성
         
-        
-        $user_id = $_POST["memId"];
-        $user_pw = $_POST["memPw"];       
-        echo "user_id : " . $user_id . "<br>";
-        echo "user_pw : " . $user_pw . "<br>";        
-        require_once("../dbconnector/dbconnector.php");        
-        if($conn) {
-            echo "연결 성공<br>";
-        } else {
-            die("연결 실패 : " .mysqli_error());
-        }
-        $sql = "UPDATE BUSER SET pw=? WHERE id=?";
-        $result = $conn -> prepare($sql);
-        
-        $result -> execute([$user_pw, $user_id]);
-        //헤더함수를 이용하여 리스트 페이지로 리다이렉션
-        header("Location: ../index.php"); //헤더 함수를 이용해서 리다이렉션 시킬 수 있다.
-
-        //---------------------------------------------
-        $result = $conn -> prepare("SELECT * FROM BUSER WHERE ID = :userid");
-        $result -> bindParam(':userid', $user_id, PDO::PARAM_STR);
-        $result -> execute();
-        $oci_result = $result -> fetchAll(PDO::FETCH_ASSOC);
-        
-        // 페이징 작업을 위한 테이블 내 전체 행 갯수 조회 쿼리
-        $sqlCount    = "SELECT count(*) FROM board";
-        $resultCount = oci_query($conn, $sqlCount); // resultSet과유사
-        
-        if ($rowCount    = oci_fetch_array($resultCount)) {
-            $totalRowNum = $rowCount["count(*)"]; // php는 지역 변수를 밖에서 사용 가능.
-        }
-
-        $rowPerPage = 20; // 페이지당 보여줄 게시물 행의 수        
-        $begin      = ($currentPage - 1) * $rowPerPage;
-        $sql        = "SELECT NO, Title, ID, XDate FROM board order by NO desc limit " . $begin . "," . $rowPerPage . "";
-        $result     = oci_query($conn, $sql);        
-        ?>    
-        <?php while ($row = oci_fetch_array($result)) {         
+            
+        while ($row = oci_fetch_array($result)) {         
         }?>		
 				<tr>
 			<td align = "center" bgcolor = "#3e5baa" style="width:10%;"><font color = "white">번호</font></td>
@@ -97,28 +87,30 @@
 			<td align = "center" bgcolor = "#3e5baa" style="width:13%;"><font color = "white">작성자</font></td>
 			<td align = "center" bgcolor = "#3e5baa" style="width:12%;"><font color = "white">작성일</font></td>			
 		</tr>
+		
 		<?php while ($row = oci_fetch_array($result)) { ?>	
 			<tr>
 				<td align = "center" bgcolor = "#e6ebfa">
                     <?php
-                    echo $row["NO"];
+                    echo "$board_no";
                     ?>
                 </td>
 				<td>
+				    <input class="Title" id="Title" type="hidden" name="Title" value="<?php echo "$board_title"; ?>">
+                   	<p><?php echo "$board_title"; ?></p>
     				<?php
                     echo "<a href='./DataAnalysticsBoardDetail.php?NO=" . $row["NO"] . "'>";
-                    echo $row["Title"];
+                    echo "$board_title";
                     echo "</a>";
                     ?>
                 </td>
 				<td align = "center">
-                    <?php
-                    echo $row["ID"];
-                    ?>
+                    <input class="id" id="id" type="hidden" name="id" value="<?php echo "$board_id"; ?>">
+                   	<p><?php echo "$board_id"; ?></p>
                 </td>
 				<td align = "center">
                     <?php
-                    echo $row["XDate"];
+                    echo "$board_xdate";
                     ?>
                 </td >						
                </tr>

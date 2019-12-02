@@ -63,7 +63,7 @@
         <h3>데이터 분석 실습</h3>
         <p>교육은 R언어로 진행되어 2019년 신년사 텍스트 데이터를 Crawling을 활용해 Word Cloud를 표를 나타냈다.</p>
         <table align = "center">
-	        <tr colspan = "3">
+	        <tr colspan = "2">
     		    <td>
         			<img src="./DataAnalysticsImg/텍스트데이터분석워드클라우딩.jpg" style="max-width: 100%; height: auto;">        
         		</td>
@@ -71,12 +71,7 @@
         		<td>
         			<img src="./DataAnalysticsImg/텍스트데이터분석원형그래프.png" style="max-width: 100%; height: auto;">        
         		</td>
-        	
-        		<td>
-        			<img src="./DataAnalysticsImg/텍스트데이터분석막대그래프.png" style="max-width: 100%; height: auto;">        
-        		</td>
-        		
-        	</tr>
+			</tr>
         </table>
         <br>
 		<p></p>	
