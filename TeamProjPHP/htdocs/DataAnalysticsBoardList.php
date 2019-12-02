@@ -82,10 +82,10 @@
         while ($row = oci_fetch_array($result)) {         
         }?>		
 				<tr>
-			<td align = "center" bgcolor = "#3e5baa" style="width:10%;"><font color = "white">번호</font></td>
-			<td align = "center" bgcolor = "#3e5baa" style="width:65%;"><font color = "white">제목</font></td>
-			<td align = "center" bgcolor = "#3e5baa" style="width:13%;"><font color = "white">작성자</font></td>
-			<td align = "center" bgcolor = "#3e5baa" style="width:12%;"><font color = "white">작성일</font></td>			
+			<td align = "center" bgcolor = "#0085a1" style="width:10%;"><font color = "white">번호</font></td>
+			<td align = "center" bgcolor = "#0085a1" style="width:65%;"><font color = "white">제목</font></td>
+			<td align = "center" bgcolor = "#0085a1" style="width:13%;"><font color = "white">작성자</font></td>
+			<td align = "center" bgcolor = "#0085a1" style="width:12%;"><font color = "white">작성일</font></td>			
 		</tr>
 		
 		<?php while ($row = oci_fetch_array($result)) { ?>	

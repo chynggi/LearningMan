@@ -40,28 +40,28 @@
         <form action="./DataAnalysticsBoardUpdateAction.php" method="post">
             <table class="table table-bordered" style="width:50%">
             	<tr>
-            		<td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">번호</font></td>
+            		<td align = "center" bgcolor = "#0085a1" style="width:10%"><font color = "white">번호</font></td>
                     <td style="width:50%">
                     <input class="no" id="no" type="hidden" name="no" value="<?php echo "$no"; ?>">
                    	<p><?php echo "$no"; ?></p>                       
                 	</td>
                 </tr>
             	<tr>
-            		<td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">작성자</font></td>
+            		<td align = "center" bgcolor = "#0085a1" style="width:10%"><font color = "white">작성자</font></td>
                     <td style="width:50%">
                     <input class="id" id="id" type="hidden" name="id" value="<?php echo "$id"; ?>">
                    	<p><?php echo "$id"; ?></p>                       
                 	</td>
                 </tr>                
                 <tr>
-            		<td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">제목</font></td>
+            		<td align = "center" bgcolor = "#0085a1" style="width:10%"><font color = "white">제목</font></td>
                     <td style="width:50%">
                     <input class="title" id="title" type="text" name="Title" value="<?php echo "$title"; ?>">
                    	<p><?php echo "$title"; ?></p>                       
                 	</td>
                 </tr>
                 <tr>
-            		<td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">제목</font></td>
+            		<td align = "center" bgcolor = "#0085a1" style="width:10%"><font color = "white">제목</font></td>
                     <td style="width:50%">
                     <input class="content" id="content" type="text" name="Content" value="<?php echo "$content"; ?>">
                    	<p><?php echo "$content"; ?></p>                       

@@ -39,19 +39,19 @@
         		삭제한 게시글은 복구 할 수 없습니다.
         		</td>
                 <tr>
-                	<td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">번호</font></td>       			
+                	<td align = "center" bgcolor = "#0085a1" style="width:10%"><font color = "white">번호</font></td>       			
         			<td style="width:50%">
         			<input class="no" id="no" type="hidden" name="no" value="<?php echo "$no"; ?>">
         			</td>
         		</tr>
         		<tr>   
-        			<td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">제목</font></td>
+        			<td align = "center" bgcolor = "#0085a1" style="width:10%"><font color = "white">제목</font></td>
                     <td style="width:50%"> 		
         			<input class="title" id="title" type="hidden" name="Title" value="<?php echo "$title"; ?>">
         			</td>
         		</tr>
         		<tr>
-        			<td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">내용</font></td>
+        			<td align = "center" bgcolor = "#0085a1" style="width:10%"><font color = "white">내용</font></td>
                     <td style="width:50%">
         			<input class="content" id="content" type="hidden" name="Content" value="<?php echo "$content"; ?>">
         			</td>
