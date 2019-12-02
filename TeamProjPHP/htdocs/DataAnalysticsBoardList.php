@@ -60,11 +60,28 @@
   	} else {
   	    die("연결 실패 : " .mysqli_error());
   	}
-        
-        $result = $conn -> prepare("SELECT NO, Title, ID FROM board order by NO desc limit " . $begin . "," . $rowPerPage . "");
-        $result -> execute();        
-        
-        header("Location: ./DataAnalysticsBoardList.php");        
+           
+    $currentPage = 1;
+    
+    if (isset($_GET["currentPage"])) {
+        $currentPage = $_GET["currentPage"];
+    }
+    
+    $sqlCount = "SELECT count(*) FROM board";
+    $resultCount = mysqli_query($conn, $sqlCount);
+     
+    if ($rowCount = mysqli_fetch_array($resultCount)) {
+        $totalRowNum = $rowCount["count(*)"];
+     
+    $rowPerPage = 10;
+    $begin = ($currentPage - 1) * $rowPerPage;
+    
+    $result = $conn -> prepare("SELECT NO, Title, ID FROM board order by NO desc limit " . $begin . "," . $rowPerPage . "");
+    $result -> execute();
+    
+    header("Location: ./DataAnalysticsBoardList.php");  
+    
+    }
     ?>
 	<div ID="head_div"></div>
   	<hr>
@@ -93,7 +110,7 @@
                     ?>
                 </td>
 				<td>
-				    <input class="Title" ID="Title" type="hIDden" name="Title" value="<?php echo "$Title"; ?>">
+				    <input class="Title" ID="Title" type="hidden" name="Title" value="<?php echo "$Title"; ?>">
                    	<p><?php echo "$Title"; ?></p>
     				<?php
                     echo "<a href='./DataAnalysticsBoardDetail.php?NO=" . $row["NO"] . "'>";
@@ -102,7 +119,7 @@
                     ?>
                 </td>
 				<td align = "center">
-                    <input class="ID" ID="ID" type="hIDden" name="ID" value="<?php echo "$ID"; ?>">
+                    <input class="ID" ID="ID" type="hidden" name="ID" value="<?php echo "$ID"; ?>">
                    	<p><?php echo "$ID"; ?></p>
                 </td>
 				<td align = "center">
