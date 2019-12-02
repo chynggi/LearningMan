@@ -3,77 +3,74 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>러닝맨 데이터 분석 게시판 게시글 수정</title>
-        <link rel="stylesheet" href="./css/bootstrap.css">
-        <meta charset="utf-8">
+        <link rel="stylesheet" href="./css/bootstrap.css">        
   		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   		<meta name="description" content="">
   		<meta name="author" content="">
-  
-  		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  		<link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
-  		<link href="./css/boost.css" rel='stylesheet' type='text/css'>
   		
-        <!-- 테이블 크기 조절용 css -->
-        <style>
-            table {
-                table-layout: fixed;
-                word-wrap: break-word;
-            }
-        </style>
-        
+  		<link rel="stylesheet" href="./css/bootstrap.css">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel = "stylesheet" href = "./css/bootstrap.css">
+		<script type="text/javascript" src="./js/bootstrap.js"></script>
+	
+  		<link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
+		<link href="./css/boost.css" rel='stylesheet' type='text/css'>
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    			
+  		        
         <script>
 			$(document).ready(function() {			
 				$('#head_div').load('header.php');
 			});
   		</script>
-        <script type="text/javascript" src="./js/bootstrap.js"></script>
     </head>
     
     <body>
         <div id="head_div"></div>
   		<hr>
-        
-     <!--   $conn = oci_connect("localhost", "root", "", "team"); -->
         <?php 
-        $conn = oci_connect("team", "team", "localhost");
-            //연결 성공 여부 확인
-            if($conn) {
-                echo "연결 성공<br>";
-            } else {
-                die("연결 실패 : " .oci_error());
-            }
-            $NO = $_GET["NO"];
-            echo $NO."번째 글 수정 페이지<br>";
-            //board 테이블을 조회하여 NO의 값이 일치하는 행의 NO, Title, Content, ID, XDate 필드의 값을 가져오는 쿼리
-            $sql    = "SELECT NO, Title, Content, ID, XDate FROM board WHERE NO = '".$NO."'";
-            $result = oci_query($conn,$sql);
-            if($row = oci_fetch_array($result)){
+  		session_start();
+            $id = $_SESSION['id'];
+            $no = $_SESSION['no'];
+            $title = $_SESSION['Title'];
+            $content = $_SESSION['Content'];
         ?>
-        <br>
+        <hr>
         <form action="./DataAnalysticsBoardUpdateAction.php" method="post">
             <table class="table table-bordered" style="width:50%">
+            	<tr>
+            		<td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">번호</font></td>
+                    <td style="width:50%">
+                    <input class="no" id="no" type="hidden" name="no" value="<?php echo "$no"; ?>">
+                   	<p><?php echo "$no"; ?></p>                       
+                	</td>
+                </tr>
+            	<tr>
+            		<td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">작성자</font></td>
+                    <td style="width:50%">
+                    <input class="id" id="id" type="hidden" name="id" value="<?php echo "$id"; ?>">
+                   	<p><?php echo "$id"; ?></p>                       
+                	</td>
+                </tr>                
                 <tr>
-                    <td style="width:10%">번호</td>
-                    <td style="width:20%"><input type="text" name="NO" value="<?php echo $row["NO"]?>" readonly></td>
-                </tr>         
-                <tr>
-                    <td style="width:10%">제목</td>
-                    <td style="width:20%"><input type="text" name="Title" value="<?php echo $row["Title"]?>"></td>
+            		<td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">제목</font></td>
+                    <td style="width:50%">
+                    <input class="title" id="title" type="text" name="Title" value="<?php echo "$title"; ?>">
+                   	<p><?php echo "$title"; ?></p>                       
+                	</td>
                 </tr>
                 <tr>
-                    <td style="width:10%">내용</td>
-                    <td style="width:20%">
-                    <textarea name="Content"  id = "content" rows = "5" cols = "50" wrap = "hard"><?php echo trim($row["Content"])?></textarea>
-                    </td>
+            		<td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">제목</font></td>
+                    <td style="width:50%">
+                    <input class="content" id="content" type="text" name="Content" value="<?php echo "$content"; ?>">
+                   	<p><?php echo "$content"; ?></p>                       
+                	</td>
                 </tr>
+                
             </table>
             <br>
-        <?php
-            }
-            oci_close($conn);
-        ?>
+        
             &nbsp;&nbsp;&nbsp;
             <button class="btn btn-primary" type="submit">수정하기</button>
             &nbsp;&nbsp;
