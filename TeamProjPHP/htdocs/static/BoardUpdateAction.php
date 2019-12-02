@@ -6,8 +6,9 @@
 <body>
 	<h1>데이터 분석 게시판 게시글 수정</h1>
         <?php
-        require 'ServerSideBoardDaoFunction.php';
-        update();
+        require 'BoardDAOFunction.php';
+        $dbname = $_POST["dbname"];
+        update($dbname);
         ?>
     </body>
 </html>

@@ -1,43 +1,35 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>러닝맨 데이터 분석 게시판 게시글 내용</title>
-        <link rel="stylesheet" href="./css/bootstrap.css">
-        <script type="text/javascript" src="./js/bootstrap.js"></script>
-        <link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
-		<link href="./css/boost.css" rel='stylesheet' type='text/css'>
-		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="./css/bootstrap.css">
-		<script type="text/javascript" src="./js/bootstrap.js"></script>
+<?php
+include "../static/header.php"
+?>
     	<style>
             table {
                 table-layout: fixed;
                 word-wrap: break-word;
             }
         </style>
-    </head>
+    
 
     <body>
-        <h1 class="display-4">데이터 분석 게시판 게시글 내용</h1>
+    <div class="container">
+        <h1 class="display-4">ServerSide 게시판 게시글 내용</h1>
+        <br>
         <?php
-            require_once('ServerSideBoardDaoFunction.php');
+            require_once('../static/BoardDAOFunction.php');
             $key = $_GET["board_no"];
-            echo $key."번째 글 내용<br>";
-            $oneRow = selectOne($key);
+            
+            $oneRow = selectOne($key,"SSBOARD");
+            
         ?>
-        <table class="table table-bordered" style="width:50%">
+        <table class="table table-bordered" style="width:100%">
             <?php
                 //result 변수에 담긴 값을 row 변수에 저장하여 테이블에 출력
-            if($row = mysqli_fetch_array($oneRow)) {
+            if($oneRow != null) {
             ?>
             <tr>
                 <td style="width:5%">작성자</td>
                 <td style="width:40%" colspan="5">
                     <?php
-                        echo $row["board_user"];
+                        echo $oneRow["ID"];
                     ?>
                 </td>
             </tr>
@@ -45,26 +37,28 @@
                 <td style="width:5%">글 제목</td>
                 <td style="width:24%">
                     <?php
-                        echo $row["board_title"];
+                        echo $oneRow["TITLE"];
                     ?>
                 </td>
                 <td style="width:5%">글 번호</td>
                 <td style="width:3%">
                         <?php
-                            echo $row["board_no"];
+                            echo $oneRow["NO"];
                         ?>
                 </td>
                 <td  style="width:5%">작성 일자</td>
                 <td  style="width:3%">
                     <?php
-                        echo $row["board_date"];
+                        echo $oneRow["XDATE"];
                     ?>
                 </td>
                 
             </tr>
             <tr>
                 <td colspan="6">
-                    <?=$row["board_content"]?>
+                
+                    <?=$oneRow["CONTENT"]?>
+                   
                 </td>
             </tr>
             <?php
@@ -74,10 +68,12 @@
         </table>
         <br>
         &nbsp;&nbsp;&nbsp;
-        <a href='./ServerSideBoardUpdate.php?board_no=<?=$row["board_no"]?>'>수정</a>
-		<a href='./ServerSideBoardDelete.php?board_no=<?=$row["board_no"]?>'>삭제</a>
-        <a class="btn btn-primary" href="./ServerSideBoardList.php">
+        <a class="btn btn-primary" href="./ServerSideBoardUpdate.php?board_no=<?=$oneRow["NO"]?>">수정</a>
+		<a class="btn btn-danger" href="./ServerSideBoardDelete.php?board_no=<?=$oneRow["NO"]?>">삭제</a>
+        <a class="btn btn-secondary" href="./ServerSideBoardList.php">
         	리스트로 돌아가기
         </a>
-    </body>
-</html>
+        </div>
+<?php
+include "../static/footer.php"
+?>
