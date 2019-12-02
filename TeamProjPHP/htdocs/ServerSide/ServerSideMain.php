@@ -1,4 +1,6 @@
-<?php?>
+<?php
+include "../static/header.php"
+?>
 <H3>데이터 분석 Data Analystics 2019.11.01 ~ 2019.11.21</H3>
 <H5><br>
 목차<br>
@@ -153,4 +155,8 @@
  	a. Keras, Jupyter Notebook 설치 <br>
  	b. 딥 러닝 패키지 적용, 딥 러닝 기본모델 구동, 딥 러닝 모델 가시화 기능 및 저장 <br>
  	c. Tensorboard <br>
+ 	
+ 	<?php
+include "../static/footer.php"
+?>
  	
