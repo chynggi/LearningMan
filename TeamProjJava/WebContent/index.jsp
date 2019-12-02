@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<jsp:include page="/header2.jsp" flush="false"/>
+<jsp:include page="header.jsp"></jsp:include>
 
 
 	<style>
@@ -35,41 +35,6 @@
             <h3 class="post-subtitle" style="margin-bottom: 80px;">
               	2019 머신러닝반 교육커리큘럼 소개
             </h3>
-            <h3 class="post-mtitle">
-              	제작자
-            </h3>
-            <h3 class="post-mtitle">
-              	OOP - 이동탁
-            </h3>
-            <h3 class="post-mtitle">
-              	DBMS - 송승연
-            </h3>
-            <h3 class="post-mtitle">
-              	Server Side - 최용규
-            </h3>
-            <h3 class="post-mtitle">
-              	Frame Works - 성유진 
-            </h3>
-            <h3 class="post-mtitle">
-              	Data Analystics - 엄윤환
-            </h3>
-        </div>
-        <hr>
-		<div class="post-preview" style="margin-bottom: 80px;">
-            <h2 class="post-title" style="margin-bottom: 50px;">
-				CONTENT
-            </h2>
-            <div style="text-align: center;">
-            	<p>
-            		<a href="#">OOP</a>
-            	</p>
-            	<p>
-            		<a href="dbms_Board.jsp">DBMS</a>
-            	</p>
-            	<p>
-            		<a href="#">Server side</a>
-            	</p>	
-
             <div class="OOP_box">
             	<div class="OOP_container">
             		<p class="OOP_java">
@@ -159,6 +124,6 @@
         </div>
         
 	<!-- Footer -->
-	<jsp:include page="/footer.jsp" flush="false"/>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Learning Man</title>
+  <title>회원가입</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="./index.php">About</a>
+            <a class="nav-link" href="index.php">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="OOP_Board/oop_B_index.php">OOP</a>
@@ -52,15 +52,9 @@
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Frame Works</a>
           </li>
-          <li class="nav-item dropdown dmenu" >
-      		<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-     	 	Data Analystics
-      		</a>
-      		<div class="dropdown-menu sm-menu">
-        		<a class="dropdown-item" href="../DataAnalysticsMain.php">데이터 분석이란?</a>
-        		<a class="dropdown-item" href="../DataAnalysticsBoardList.php">질문 게시판</a>     			
-      		</div>
-     	  </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Data Analystics</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -80,7 +74,7 @@
             if(!isset($_SESSION['id'])){
             ?>
             <p class="M_btn">
-            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/login.php">로그인</a>
+            	<a class="col-lg-8 col-md-10 mx-auto" href="../login/login.php">로그인</a>
             	<a class="col-lg-8 col-md-10 mx-auto" href="../member/member.php">회원가입</a>            	
             </p>
             <?php     
@@ -89,8 +83,8 @@
             ?>
             <p class="M_btn">
             	<a class="col-lg-8 col-md-10 mx-auto"><strong><?php echo "$user_name"; ?></strong>님 환영합니다.</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="../member/member_update_form.php">본인정보 수정</a>           	
-            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/logout.php">로그아웃</a>           	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member_update_form.php">본인정보 수정</a>           	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="../login/logout.php">로그아웃</a>           	
             </p>
             <?php
             }
@@ -119,45 +113,126 @@
       <div class="col-lg-12 col-md-10 mx-auto">
         <div class="post-preview">
             <h2 class="post-title">
-				로그인
+				회원가입
             </h2>
         </div>
         <hr>
-<<<<<<< HEAD
-		<form action="loginAction.php" method="post" style="text-align: center;">
-			<div>
-				<label for="id" id="board_user" text = "text">ID</label>&nbsp;&nbsp;&nbsp;
-				<input type="text" name="id">
-			</div>
-			<div>
-				<label for="pw" id="board_pw" text = "password">PW</label>&nbsp;
-				<input type="text" name="pw">
-			</div>
-			<div style="margin-left: 206px;">
-				<input type="submit" value="로그인">
-			</div>
-		</form>
-        
-        
-=======
-        <div class="loginForm_box">
-        	<form name="loginForm" action="./login_action.php" method="post">
+        <div class="memberForm_box">
+        	<form name="memberForm" action="./member_add_action.php"  onSubmit="return insertOk(this)" method="post">
         		<div class="ID_form">
-        			<input class="id" type="text" name="id" placeholder="&nbsp;&nbsp;아이디">
+        			<input class="id" id="id" type="text" name="memId" placeholder="&nbsp;&nbsp;아이디">
         		</div>
         		<div class="PW_form">
-        			<input class="pw" type="password" name="pw" placeholder="&nbsp;&nbsp;비밀번호">
+        			<input class="pw" id="pw" type="password" name="memPw" placeholder="&nbsp;&nbsp;비밀번호">
+        		</div>
+        		<div class="PWC_form">
+        			<input class="pwc" id="pwc" type="password" name="memPwc" placeholder="&nbsp;&nbsp;비밀번호확인">
+        		</div>
+        		<div class="NAME_form">
+        			<input class="name" id="name" type="text" name="memName" placeholder="&nbsp;&nbsp;이름">
+        		</div>
+        		<div class="PN_form">
+        			<input class="phone" id="phone" type="text" name="memPhone" placeholder="&nbsp;&nbsp;전화번호 (-없이)">
         		</div>
         		<div class="subM_form">
-        			<input class="loginBtn" type="submit" value="로그인">
+        			<input class="memBtn" type="submit" value="회원가입">
         		</div>
 			</form>
         </div>
       </div>
 	</div>
->>>>>>> refs/remotes/origin/master
-        
-        
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+    	$("#id").change(function(){
+    		checkId($('#id').val());
+    	});
+    	$("#pw").change(function(){
+    		checkPw($('#pw').val());
+    		formCheck($('#pw').val());
+    	});
+    	$("#name").change(function(){
+    		checkName($('#name').val());
+    	});
+    	$("#phone").change(function(){
+    		checkPhone($('#phone').val());
+    	});
+    	
+    	//
+    	function insertOk(frm) {
+    		var f = document.memberForm;
+    		if(f.memId.value == ""){
+    			alert("아이디를 입력해 주세요.");
+    			$('#id').val('').focus();
+    			return false;
+    		}else if(f.memPw.value == ""){
+    			alert("비밀번호를 입력해 주세요.");
+    			$('#pw').val('').focus();
+    			return false;
+    		}else if(frm.memPw.value !== frm.memPwc.value){
+    			alert("비밀번호를 확인하세요.");
+    			$('#pw').val('').focus();
+    			$('#pwc').val('').focus();
+    			return false;
+    		}else if(f.memName.value == ""){
+    			alert("이름을 입력해 주세요.");
+    			$('#name').val('').focus();
+    			return false;
+    		}else if(f.memPhone.value == ""){
+    			alert("휴대폰 번호를 입력해 주세요.");
+    			$('#phone').val('').focus();
+    			return false;
+    		}else{
+    			return true;
+    		}
+
+    	}
+
+
+    	function checkId(id) {
+    		var f = document.memberForm;
+    		if(id.length < 4){
+    			alert("아이디는 4자 이상이여야 합니다. ");
+    			$('#id').val('').focus();
+    			return false;
+    		}else{
+    			return true;
+    		}
+    	}
+    	
+    	function checkPw(pw) {
+    		var f = document.memberForm;
+    		if(pw.length < 4){
+    			alert("비밀번호는 4자 이상 입력하여야 합니다.");
+    			$('#pw').val('').focus();
+    			return false;
+    		}else{
+    			return true;
+    		}
+    	}
+    
+    	function checkName(name) {
+    		var f = document.memberForm;
+    		if(name.length < 2){
+    			alert("이름은 2자 이상 입력하여야 합니다.");
+    			$('#name').val('').focus();
+    			return false;
+    		}else{
+    			return true;
+    		}
+    	}
+    
+    	function checkPhone(phone) {
+    		var f = document.memberForm;
+    		if(phone.length < 10){
+    			alert("휴대폰 번호은 10자 이상 입력하여야 합니다.");
+    			$('#phone').val('').focus();
+    			return false;
+    		}else{
+    			return true;
+    		}
+    	}
+	</script>
+
   <!-- Footer -->
   <footer style="background: #aaa;>
     <div class="container">
@@ -196,8 +271,8 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/jquery-3.4.1.min.js"></script>
 
   <!-- Custom scripts for this template -->
   <script src="../js/clean-blog.min.js"></script>

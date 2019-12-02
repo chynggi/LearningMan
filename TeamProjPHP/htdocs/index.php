@@ -15,6 +15,12 @@
   <link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
   <link href="./css/boost.css" rel='stylesheet' type='text/css'>
 
+<<<<<<< HEAD
+=======
+  <title>Learning Man</title>
+
+  <!-- Bootstrap core CSS -->
+>>>>>>> refs/remotes/origin/master
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -22,12 +28,15 @@
   <link href="css/clean-blog.css" rel="stylesheet">
   <link href="css/login.css" rel="stylesheet">
   <link href="css/member.css" rel="stylesheet">
+<<<<<<< HEAD
 
   <script>
 	$(document).ready(function() {			
 		$('#head_div').load('header.php');
 	});
   </script>
+=======
+>>>>>>> refs/remotes/origin/master
 
 </head>
 
@@ -76,10 +85,31 @@
           <div class="site-heading">
             <span class="subheading">Team Project</span>
             <h1>Learning Man</h1>
+            <?php
+            session_start();
+            if(!isset($_SESSION['id'])){
+            ?>
             <p class="M_btn">
+<<<<<<< HEAD
             	<a class="col-lg-8 col-md-10 mx-auto" href="loginorReg.php">로그인</a>
             	<a class="col-lg-8 col-md-10 mx-auto" href="loginorReg.php">회원가입</a>            	
+=======
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/login.php">로그인</a>
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member.php">회원가입</a>            	
+>>>>>>> refs/remotes/origin/master
             </p>
+            <?php     
+            }else {
+                $user_name = $_SESSION['name'];
+            ?>
+            <p class="M_btn">
+            	<a class="col-lg-8 col-md-10 mx-auto"><strong><?php echo "$user_name"; ?></strong>님 환영합니다.</a>
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member_update_form.php">본인정보 수정</a>           	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/logout.php">로그아웃</a>           	
+            </p>
+            <?php
+            }
+            ?>
           </div>
         </div>
       </div>
@@ -87,6 +117,10 @@
   </header>
 	<style>
 		.M_btn>a {
+			text-decoration: none;
+			color:#fff;
+		}
+        .M_btn>p {
 			text-decoration: none;
 			color:#fff;
 		}

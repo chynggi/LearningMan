@@ -50,7 +50,7 @@
 					</li>
 					<li class="nav-item"><a class="nav-link"
 						href="OOP_Board/oop_B_index.php">OOP</a></li>
-					<li class="nav-item"><a class="nav-link" href="post">DBMS</a>
+					<li class="nav-item"><a class="nav-link" href="dbms_Board.jsp">DBMS</a>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="contact">Server
 							Side</a></li>
@@ -74,8 +74,8 @@
 						<span class="subheading">Team Project</span>
 						<h1>Learning Man</h1>
 						<p class="M_btn">
-							<a class="col-lg-8 col-md-10 mx-auto" href="#">로그인</a> <a
-								class="col-lg-8 col-md-10 mx-auto" href="#">회원가입</a>
+							<a class="col-lg-8 col-md-10 mx-auto" href="loginorReg.jsp">로그인</a> <a
+								class="col-lg-8 col-md-10 mx-auto" href="loginorReg.jsp">회원가입</a>
 						</p>
 					</div>
 				</div>
