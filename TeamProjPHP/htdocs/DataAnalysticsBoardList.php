@@ -58,7 +58,7 @@
   	if($conn) {
   	    echo "연결 성공<br>";
   	} else {
-  	    die("연결 실패 : " .mysqli_error());
+  	    die("연결 실패 : " .oci_error());
   	}
            
     $currentPage = 1;
@@ -68,9 +68,9 @@
     }
     
     $sqlCount = "SELECT count(*) FROM board";
-    $resultCount = mysqli_query($conn, $sqlCount);
+    $resultCount = oci_query($conn, $sqlCount);
      
-    if ($rowCount = mysqli_fetch_array($resultCount)) {
+    if ($rowCount = oci_fetch_array($resultCount)) {
         $totalRowNum = $rowCount["count(*)"];
      
     $rowPerPage = 10;
@@ -86,15 +86,6 @@
 	<div ID="head_div"></div>
   	<hr>
      <table class="table table-bordered" border="1" align = "center" style="wIDth:60%;">
-        <?php
-        $currentPage = 1;
-        
-        if (isset($_GET["currentPage"])) { // get 방식으로 전달되온상관 배열의 "currentPage" 값이 있으면
-            $currentPage = $_GET["currentPage"];
-        }        
-            
-        while ($row = oci_fetch_array($result)) {         
-        }?>		
 		<tr>
 			<td align = "center" bgcolor = "#0085a1" style="wIDth:10%;"><font color = "white">번호</font></td>
 			<td align = "center" bgcolor = "#0085a1" style="wIDth:65%;"><font color = "white">제목</font></td>
@@ -106,26 +97,27 @@
 			<tr>
 				<td align = "center" bgcolor = "#e6ebfa">
                     <?php
-                    echo "$NO";
+                    echo $row["$NO"];                    
                     ?>
                 </td>
 				<td>
 				    <input class="Title" ID="Title" type="hidden" name="Title" value="<?php echo "$Title"; ?>">
-                   	<p><?php echo "$Title"; ?></p>
-    				<?php
+                    <?php
                     echo "<a href='./DataAnalysticsBoardDetail.php?NO=" . $row["NO"] . "'>";
-                    echo "$Title";
+                    echo $row["$Title"];
                     echo "</a>";
-                    ?>
+                    ?>                    
                 </td>
 				<td align = "center">
                     <input class="ID" ID="ID" type="hidden" name="ID" value="<?php echo "$ID"; ?>">
-                   	<p><?php echo "$ID"; ?></p>
+                   	<?php
+                    echo $row["$ID"];
+                    ?>
                 </td>
 				<td align = "center">
-                    <?php
-                    echo "$XDate";
-                    ?>
+					<?php
+                    echo $row["$XDate"];
+                    ?>                    
                 </td >						
                </tr>
             <?php } ?>		
