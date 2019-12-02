@@ -37,7 +37,7 @@
             $content = $_SESSION['Content'];
         ?>
         <hr>
-        <form action="./DataAnalysticsBoardUpdateAction.php" method="post">
+        <form action="./DataAnalysticsBoardUpdateAction.php" method="post" align = "center">
             <table class="table table-bordered" style="width:50%">
             	<tr>
             		<td align = "center" bgcolor = "#0085a1" style="width:10%"><font color = "white">번호</font></td>

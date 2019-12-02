@@ -4,15 +4,14 @@
         <title>러닝맨 데이터 분석 게시판 게시글 입력 시스템</title>
     </head>
     <body>
-        <h1>데이터 분석 게시판 글 등록하기 액션</h1>
         <?php
-            $id = $_POST['id'];
-            //$pw = $_POST['pw'];        
+            $id       = $_POST['id'];
+            //$pw     = $_POST['pw'];        
             $title    = $_POST["Title"];
             $content  = $_POST["Content"];
                         
             echo "id : "      . $id . "<br>";
-            //echo "pw : "      . $pw . "<br>";
+            //echo "pw : "    . $pw . "<br>";
             echo "Title : "   . $title .   "<br>";
             echo "Content : " . $content . "<br>";
             require_once("./dbconnector/dbconnector.php");
