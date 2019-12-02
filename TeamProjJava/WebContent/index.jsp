@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="../static/header.jsp"></jsp:include>
 
 
 	<style>
@@ -124,6 +124,6 @@
         </div>
         
 	<!-- Footer -->
-	<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="../static/footer.html"></jsp:include>
 </body>
 </html>
