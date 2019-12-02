@@ -146,10 +146,10 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/SSBoard/new.do":
+		case "/ServerSide/new.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
-				service = new SSBoardInsertService();
+				service = new BoardInsertService();
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
@@ -157,20 +157,20 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;	
-		case "/SSBoard/List.do":
+		case "/ServerSide/List.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
-				boolean res = new SSBoardListService().execute(request, response);
+				boolean res = new BoardListService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-		case "/SSBoard/info.do":
+		case "/ServerSide/info.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
-				boolean res = new SSBoardInfoService().execute(request, response);
+				boolean res = new BoardInfoService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -188,10 +188,10 @@ public class MainControl extends HttpServlet {
 			}
 			//Login처리부분
 			break;
-		case "/SSBoard/adjust.do":
+		case "/ServerSide/adjust.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
-				boolean res = new SSBoardAdjustService().execute(request, response);
+				boolean res = new BoardAdjustService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
