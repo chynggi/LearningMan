@@ -43,15 +43,15 @@
 <body>
 	<?php 
   	session_start();
-  	    $board_no    = $_SESSION['NO'];
-        $board_id    = $_SESSION['id'];     
-        $board_title = $_SESSION['Title'];       
-        $board_xdate = $_SESSION['XDate'];
+  	    $no    = $_SESSION['NO'];
+        $id    = $_SESSION['id'];     
+        $title = $_SESSION['Title'];       
+        $xdate = $_SESSION['XDate'];
         
-        echo "no : "    . $board_no    . "<br>";
-        echo "id : "    . $board_id    . "<br>";        
-        echo "title : " . $board_title . "<br>";        
-        echo "XDate : " . $board_xdate . "<br>"; 
+        echo "no : "    . $no    . "<br>";
+        echo "id : "    . $id    . "<br>";        
+        echo "title : " . $title . "<br>";        
+        echo "XDate : " . $xdate . "<br>"; 
         require_once("./dbconnector/dbconnector.php");
         
         if($conn) {
@@ -60,7 +60,7 @@
             die("연결 실패 : " .mysqli_error());
         }
         
-        $result = $conn -> prepare("SELECT board_no, board_title, board_id FROM board order by board_no desc limit " . $begin . "," . $rowPerPage . "");
+        $result = $conn -> prepare("SELECT no, title, id FROM board order by no desc limit " . $begin . "," . $rowPerPage . "");
         $result -> execute();
         
 
@@ -92,25 +92,25 @@
 			<tr>
 				<td align = "center" bgcolor = "#e6ebfa">
                     <?php
-                    echo "$board_no";
+                    echo "$no";
                     ?>
                 </td>
 				<td>
-				    <input class="Title" id="Title" type="hidden" name="Title" value="<?php echo "$board_title"; ?>">
-                   	<p><?php echo "$board_title"; ?></p>
+				    <input class="Title" id="Title" type="hidden" name="Title" value="<?php echo "$title"; ?>">
+                   	<p><?php echo "$title"; ?></p>
     				<?php
                     echo "<a href='./DataAnalysticsBoardDetail.php?NO=" . $row["NO"] . "'>";
-                    echo "$board_title";
+                    echo "$title";
                     echo "</a>";
                     ?>
                 </td>
 				<td align = "center">
-                    <input class="id" id="id" type="hidden" name="id" value="<?php echo "$board_id"; ?>">
-                   	<p><?php echo "$board_id"; ?></p>
+                    <input class="id" id="id" type="hidden" name="id" value="<?php echo "$id"; ?>">
+                   	<p><?php echo "$id"; ?></p>
                 </td>
 				<td align = "center">
                     <?php
-                    echo "$board_xdate";
+                    echo "$xdate";
                     ?>
                 </td >						
                </tr>

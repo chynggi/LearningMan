@@ -80,6 +80,11 @@
                 </td>
             </tr>            
         </table>
+        <?php
+        if($row = $sql($result)){
+        
+        }
+		?>
         <br>
         &nbsp;&nbsp;&nbsp;
         <a href='./DataAnalysticsBoardUpdate.php?NO=<?=$row["NO"]?>'>수정</a>
