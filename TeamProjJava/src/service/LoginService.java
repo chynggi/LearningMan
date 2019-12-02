@@ -42,41 +42,18 @@ public class LoginService implements Service {
 			} else {
 				message = "비밀번호가 일치하지 않습니다.";
 				session.setAttribute("message", message);
-				response.sendRedirect("./formLogin.jsp");
+				response.sendRedirect("./loginorReg.jsp");
 
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			message = "회원정보가 존재하지 않습니다.";
 			session.setAttribute("message", message);
-			response.sendRedirect("./formLogin.jsp");
+			response.sendRedirect("./loginorReg.jsp");
 			return false;
 		}
 		sqlsession.close();
 		writer.close();
 		return true;
-	}/*
-		 * <%
-		 * 
-		 * request.setCharacterEncoding("UTF-8"); String id =
-		 * request.getParameter("id"); String password =
-		 * request.getParameter("password"); MyMemberDAO dao = new MyMemberDAO();
-		 * Connection conn = ConnectionFactory.getConnection(); PrintWriter writer =
-		 * response.getWriter(); MyMember mem = null; try{ mem = dao.select(conn, id);
-		 * if(mem.getPassword().equals(password)) {
-		 * writer.print("<h1>LOGIN SUCCESS! WELCOME!</h1>"); session.setAttribute("id",
-		 * id);
-		 * 
-		 * writer.print("<button type='button' onclick="+
-		 * "location.href='../homebook/form_homebook.jsp'" +">Homebook Input</button>");
-		 * 
-		 * 
-		 * } else { writer.print("<h1>LOGIN FAILED! CHECK YOUR PASSWORD!</h1>"); }
-		 * 
-		 * }catch (Exception e) { writer.print("<h1>LOGIN FAILED! CHECK YOUR ID!</h1>");
-		 * e.printStackTrace(); } %>
-		 * 
-		 * 
-		 * 
-		 */
+	}
 }

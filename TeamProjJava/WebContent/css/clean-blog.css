@@ -3,7 +3,7 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/master/LICENSE)
  */
-<<<<<<< HEAD
+
 @font-face { 
    font-family: 'GyeonggiBatangOTF'; 
    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff');
@@ -24,16 +24,13 @@
 }
 
 
->>>>>>> refs/remotes/origin/master
 body {
   font-size: 20px;
   color: #212529;
-<<<<<<< HEAD
   font-family:'GyeonggiBatangOTF';, serif;
-=======
   font-family: 'Nanum Gothic', 'Dotum', serif;
   font: "나눔 고딕", "Nanum Gothic", "돋움", Dotum, Sans-Serief; color: #555; 
->>>>>>> refs/remotes/origin/master
+
 }
 
 p {

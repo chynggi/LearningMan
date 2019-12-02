@@ -20,7 +20,7 @@
 <insert id = "insert" parameterType="board">
 	
 	INSERT INTO DBMSBOARD (<include refid= "basecolumns"></include>) 
-	VALUES(DBMSBOARD_SEQ.NEXTVAL,#{title},#{content},#{id},#{xdate})
+	VALUES(DBMSBOARD_SEQ.NEXTVAL,#{title},#{content},#{id},sysdate)
 	
 
 </insert>

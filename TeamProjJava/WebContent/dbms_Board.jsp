@@ -32,6 +32,13 @@
 </style>
   
 </head>
+<% 
+	String id = null;
+	if(session.getAttribute("id") != null){
+		id = (String) session.getAttribute("id");		
+	}
+	
+%>
 <body>
 
 
@@ -98,7 +105,7 @@
 					<tr >
 						<td style="color:#ffffff; border: none; border-radius: 7px 0px 0px 0px;">제목 : </td>
 						<td style="border: none; border-radius: 0px 7px 0px 0px;">
-						<input type="text" style="width:100%;height: 40px; border: none; border-radius: 5px;" class="farm-control" 
+						<input type="text" style="width:100%;height: 40px; border: none; border-radius: 5px;" class="form-control" 
 							   placeholder="  글 제목" name="dbmstitle" maxlength="100"></td>
 					</tr>
 					<tr>
@@ -109,7 +116,8 @@
 					</tr>
 				</tbody>				
 		</table>
-			<form >
+		<input type="hidden" name="id" value="<%=id%>">
+			<form>
 				<input type="submit" class="btn btn-primary pull-right" style="border-radius: 12px; border: none; background-color: #AC5E50; font-family:GyeonggiBatangOTF" value="작성">
 				<input type="button" class="btn btn-primary pull-right" style="border-radius: 12px; border: none; background-color: #AC5E50; font-family:GyeonggiBatangOTF" value="돌아가기" onClick="history.go(-1)">
 	     	</form>

@@ -8,7 +8,7 @@
 	<h1>board_delete_action.php</h1>
     <?php 
 	require 'BoardDaoFunction.php';
-    delete();     
+    delete("");     
 	?>
 </body>
 </html>

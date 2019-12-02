@@ -33,7 +33,7 @@ public class MemberJoinService implements Service {
 		if (vo != null) {
 			message = "중복된 아이디 입니다.";
 			httpsession.setAttribute("message", message);
-			response.sendRedirect("./memberJoin.jsp");
+			response.sendRedirect("./loginorReg.jsp");
 			return false;
 		} 
 		else {

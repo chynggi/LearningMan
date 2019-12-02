@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.session.SqlSession;
 
+
 import common.MBUtils;
 import dao.BoardDAO;
 import dto.Board;
@@ -19,22 +20,20 @@ public class DBMSBoardInsertService implements Service {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		String title = request.getParameter("title");
-		String content = request.getParameter("content");
+		String title = request.getParameter("dbmstitle");
+		String content = request.getParameter("dbmsContent");
 		String id = request.getParameter("id");
-		String date = request.getParameter("date");
-		out.print("title:" + title + "<br/>");
+
+		out.print("제목:" + title + "<br/>");
 		out.print("내용:" + content + "<br/>");
-		out.print("날짜: " + date + "<br/>");
-		out.print("ID:" + id + "<br/>");
-		
+		out.print("작성자:" + id + "<br/>");
+
 
 		//
 		Board vo = new Board();		
 		vo.setContent(content);
 		vo.setId(id);
 		vo.setTitle(title);
-		vo.setXdate(date);
 		
 		out.print(vo + "<br/>");
 		SqlSession sqlSession = MBUtils.getSession();
@@ -44,7 +43,7 @@ public class DBMSBoardInsertService implements Service {
 		try {
 			res = dao.insert(vo);
 			if (res > 0) {
-				sqlSession.commit();
+				sqlSession.commit();				
 				out.print("Data Input Success! 성공");
 			} else {
 				sqlSession.rollback();
@@ -57,7 +56,7 @@ public class DBMSBoardInsertService implements Service {
 			return false;
 		}
 
-		out.print("<a href=\"Board_insert.html\">계속 작업</a>");
+		out.print("<a href=\"../board_list.jsp\">계속 작업</a>");
 //		out.print("<button type=\"button\" onclick=\"location.href='datadisp.jsp'\">입력자료출력</button>");
 
 		return true;

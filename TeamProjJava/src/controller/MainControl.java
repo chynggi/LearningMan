@@ -42,6 +42,9 @@ public class MainControl extends HttpServlet {
 		Service service = null; // Created Interface
 		PrintWriter out = null;
 		switch (command) {
+		
+		
+		
 		case "/login.do":	// 로그인
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -82,15 +85,7 @@ public class MainControl extends HttpServlet {
 			}
 			break;
 			
-		case "/Insert.do":
-			System.out.println(command + "를 처리합니다.");
-			try {
-				boolean res = new SSBoardInsertService().execute(request, response);
-				System.out.println(res);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
+	
 			
 		case "/MemberInfoAdjust.do":
 			System.out.println(command + "를 처리합니다.");
@@ -132,13 +127,11 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-
+			
+		
 		case "/DBMSBoard/new.do":  // 인서트
-
-		case "/SSBoard/Update.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
-
 				service = new DBMSBoardInsertService();
 				boolean res = service.execute(request, response);
 				System.out.println(res);

@@ -26,10 +26,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <insert id = "insert" parameterType="buser">
 	<![CDATA[ 
 	INSERT INTO BUSER 
-
 	(ID,PW,NAME,PHONE,XDATE)
 	VALUES
-	(#{id},#{pw},#{name},#{phone},#{xdate})
+	(#{id},#{pw},#{name},#{phone},sysdate)
 
 	]]>
 </insert>

@@ -64,7 +64,7 @@
             		<a href="#">OOP</a>
             	</p>
             	<p>
-            		<a href="board_dbms.html">DBMS</a>
+            		<a href="dbms_Board.jsp">DBMS</a>
             	</p>
             	<p>
             		<a href="#">Server side</a>

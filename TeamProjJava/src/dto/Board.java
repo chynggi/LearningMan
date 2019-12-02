@@ -15,7 +15,9 @@ public class Board implements Serializable {
 				+ "]";
 	}
 
-	public Board() {
+	
+
+	public Board(long no, String id, String title, String content, String xdate) {
 		super();
 		this.no = no;
 		this.id = id;
@@ -23,6 +25,14 @@ public class Board implements Serializable {
 		this.content = content;
 		this.xdate = xdate;
 	}
+
+
+
+	public Board() {
+		super();
+	}
+
+
 
 	public long getNo() {
 		return no;

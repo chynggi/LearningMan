@@ -114,7 +114,7 @@
          			for(int i=0; i<list.size(); i++){
          		%>
          	
-         		<tr style="font-size: 15px; color: #fff;border: none;" >
+         		<tr style="background-color: #766f6d; font-size: 15px; color: #fff;border: none;" >
         			<td ><%= list.get(i).getNo() %></td>
         			<td><%= list.get(i).getTitle() %></td>
         			<td><%= list.get(i).getId() %></td>
