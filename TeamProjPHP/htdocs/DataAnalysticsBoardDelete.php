@@ -25,28 +25,42 @@
         
     </head>
     <body>
-    	<div id="head_div"></div>        
-        <?php 
-        session_start();
-            $board_no = $_SESSION["NO"];
-            $board_pw = $_SESSION["pw"];
-            echo $board_no."번째 글 삭제 페이지<br>";
-        ?>
-        <form action="./DataAnalysticsBoardDeleteAction.php" method="post">
-            <table class="table table-bordered" align = "center" style="width:35%" border="2">
+    <div id="head_div"></div>
+    	<?php 
+            session_start();
+            $no      = $_SESSION["NO"];
+            $title   = $_SESSION["Title"];
+            $content = $_SESSION["Content"];
+            echo $no."번째 글 삭제 페이지<br>";
+        ?>   	
+        <form action="./DataAnalysticsBoardDeleteAction.php" method="post">    
+            <table class="table table-bordered" align = "center" style="width:55%">
+                <td align = "center" colspan = "2">
+        		삭제한 게시글은 복구 할 수 없습니다.
+        		</td>
                 <tr>
-                    <td align = "center" bgcolor = "#3e5baa" style="width:100%"><font color = "white">게시글을 삭제하려면 비밀 번호를 입력하세요.</font></td>
-                </tr>
-                <tr align = "center">
-                    <td><input type="text" name="PW">
-                        <input type="hidden" name="NO" value="<?php echo $board_no ?>">
-                    </td>
-                </tr>
-                <tr align = "center">
-                    <td><button class="btn btn-primary" type="submit">삭제</button>
-                    <a class="btn btn-primary" href="./DataAnalysticsBoardList.php">취소</a></td>
-                </tr>
-            </table>
+                	<td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">번호</font></td>       			
+        			<td style="width:50%">
+        			<input class="no" id="no" type="hidden" name="no" value="<?php echo "$no"; ?>">
+        			</td>
+        		</tr>
+        		<tr>   
+        			<td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">제목</font></td>
+                    <td style="width:50%"> 		
+        			<input class="title" id="title" type="hidden" name="Title" value="<?php echo "$title"; ?>">
+        			</td>
+        		</tr>
+        		<tr>
+        			<td align = "center" bgcolor = "#3e5baa" style="width:10%"><font color = "white">내용</font></td>
+                    <td style="width:50%">
+        			<input class="content" id="content" type="hidden" name="Content" value="<?php echo "$content"; ?>">
+        			</td>
+        		</tr>           		 		
+        		<td align = "center" colspan = "2">
+        			<button class="btn btn-primary" type="submit">삭제</button>
+        			<a class="btn btn-primary" href="./DataAnalysticsBoardList.php">취소</a>
+				</td>				
+            </table>           
         </form>      
     </body>
 </html>
