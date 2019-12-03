@@ -1,33 +1,21 @@
 package dto;
 
 public class Buser {
-	private String id;	
-	private String pw;
+	private String id;
+	private String password;
 	private String name;
 	private String phone;
-	private String xdate;
-
-
-	public Buser(String id, String name, String password, String phone, String xdate) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.pw = password;
-		this.phone = phone;
-		this.xdate = xdate;
-	}
-	
+	private String date;
 	public String getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public Buser(String id, String password, String name, String phone, String date) {
+		super();
 		this.id = id;
-	}
-	public String getPw() {
-		return pw;
-	}
-	public void setPw(String password) {
-		this.pw = password;
+		this.password = password;
+		this.name = name;
+		this.phone = phone;
+		this.date = date;
 	}
 	public String getPhone() {
 		return phone;
@@ -35,32 +23,35 @@ public class Buser {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getXdate() {
-		return xdate;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public void setXdate(String xdate) {
-		this.xdate = xdate;
+	public String getPassword() {
+		return password;
 	}
-	
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	public String getName() {
 		return name;
 	}
-	
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
 	@Override
 	public String toString() {
-		return "Buser [id=" + id + ", pw=" + pw + ", name=" + name + ", phone=" + phone + ", xdate=" + xdate
+		return "Buser [id=" + id + ", password=" + password + ", name=" + name + ", phone=" + phone + ", date=" + date
 				+ "]";
 	}
-
-	public void setPassword(String password) {
-		this.pw = password;
-	}
-	public Buser() {
-		super();
-	}	
+	
+	
+	
+	
 }

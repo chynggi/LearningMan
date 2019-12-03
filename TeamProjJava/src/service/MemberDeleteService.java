@@ -44,7 +44,8 @@ public class MemberDeleteService implements Service {
 		} catch (Exception e) {
 			e.printStackTrace();
 			message = "회원정보가 존재하지 않습니다.";
-			session.setAttribute("message", message);			
+			session.setAttribute("message", message);
+			
 			sqlsession.close();
 			response.sendRedirect("./MyInfoDelete.jsp");
 			return false;

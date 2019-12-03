@@ -17,7 +17,7 @@ public class BoardDeleteService implements Service{
 		System.out.println("Board Adjusting");
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-		String tablename = (String)request.getAttribute("tablename");
+		String tablename = request.getParameter("tablename");
 		PrintWriter out = response.getWriter();
 		long no = Long.parseLong(request.getParameter("no"));
 		HashMap<String,Object> para = new HashMap<String,Object>();

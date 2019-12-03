@@ -27,7 +27,7 @@
     <span class="input-group-text">내용</span>
   </div>
   <textarea rows="20" id = "content" name = "content" class="form-control" aria-label="With textarea">
-  <%=content%>
+  
   
   </textarea>
   

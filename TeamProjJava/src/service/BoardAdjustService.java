@@ -62,7 +62,7 @@ public class BoardAdjustService implements Service{
 			return false;
 		}
 
-		response.sendRedirect("./Info.do?no="+no);
+		response.sendRedirect("./List.do");
 
 		return true;
 	}

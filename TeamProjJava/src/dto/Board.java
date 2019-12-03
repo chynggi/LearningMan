@@ -3,75 +3,56 @@ package dto;
 import java.io.Serializable;
 
 public class Board implements Serializable {
-	private long no; 		//게시판번호
-	private String id; 		//등록 회원 아이디
-	private String title; 	//제목
+	private long no; //게시판번호
+	private String id; //등록 회원 아이디
+	private String title; //제목
 	private String content; //내용
-	private String xdate; //게시일자	
-
+	private String date; //게시일자
 	@Override
 	public String toString() {
-		return "Board [no=" + no + ", id=" + id + ", title=" + title + ", content=" + content + ", xdate=" + xdate
-				+ "]";
+		return "Board [no=" + no + ", id=" + id + ", title=" + title + ", content=" + content + ", date=" + date + "]";
 	}
-
-	
-
-	public Board(long no, String id, String title, String content, String xdate) {
+	public Board(long no, String id, String title, String content, String date) {
 		super();
 		this.no = no;
 		this.id = id;
 		this.title = title;
 		this.content = content;
-		this.xdate = xdate;
+		this.date = date;
 	}
-
-
-
 	public Board() {
 		super();
 	}
-
-
-
 	public long getNo() {
 		return no;
 	}
-
 	public void setNo(long no) {
 		this.no = no;
 	}
-
 	public String getId() {
 		return id;
 	}
-
 	public void setId(String id) {
 		this.id = id;
 	}
-
 	public String getTitle() {
 		return title;
 	}
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 	public String getContent() {
 		return content;
 	}
-
 	public void setContent(String content) {
 		this.content = content;
 	}
-
-	public String getXdate() {
-		return xdate;
+	public String getDate() {
+		return date;
 	}
-
-	public void setXdate(String xdate) {
-		this.xdate = xdate;
+	public void setDate(String date) {
+		this.date = date;
 	}
+	
+
 }
-

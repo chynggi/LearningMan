@@ -13,17 +13,6 @@
 				회원가입
             </h2>
         </div>
-        <%
-        if (session.getAttribute("message") != null)
-        {
-        	%>
-        <div class="alert alert-danger" role="alert">
-  <strong><%=session.getAttribute("message")%></strong>
-</div>
-        	<%
-        }
-        
-        %>
         <hr>
         <div class="memberForm_box">
         	<form name="memberForm" action="./memberJoin.do"  onSubmit="return insertOk(this)" method="post">

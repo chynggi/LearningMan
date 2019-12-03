@@ -11,7 +11,7 @@ public class MBUtils {
 	
 
 	public static SqlSessionFactory getsqlSessionFactory() {
-		String resource = "common/SqlMapConfig.xml";
+		String resource = "com/cyg/common/SqlMapConfig.xml";
 		InputStream reader;
 		try {
 			reader = Resources.getResourceAsStream(resource);

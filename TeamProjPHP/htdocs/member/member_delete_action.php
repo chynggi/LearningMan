@@ -19,20 +19,27 @@
     } else {
         die("연결 실패 : " .mysqli_error());
     }
-    $sql = "DELETE FROM BUSER WHERE id='"
-        . $user_id . "' AND pw=" . $user_pw."";
-    $result = $conn -> prepare($sql);
     
-    $result -> execute();
-    if($result -> execute() == TRUE){
+    $selsql = $conn -> prepare("SELECT * FROM BUSER WHERE ID = :userid");
+    $selsql -> bindParam(':userid', $user_id, PDO::PARAM_STR);
+    $selsql -> execute();
+    $oci_selsql = $selsql -> fetchAll(PDO::FETCH_ASSOC);
+    
+    
+    if($oci_selsql[0]['ID'] == $user_id && $oci_selsql[0]['PW'] == $user_pw){
+        $sql = "DELETE FROM BUSER WHERE id='"
+            . $user_id . "' AND pw=" . $user_pw."";
+        $result = $conn -> prepare($sql);
+        $result -> execute();
         echo "삭제 성공";
         session_start();
         session_destroy();
+        header("Location: ../index.php"); //헤더 함수를 이용해서 리다이렉션 시킬 수 있다.
     }else {
-        echo "삭제 실패";
+        echo "<script> alert('회원탈퇴에 실패하셨습니다.');</script>";
+        header("Location: ../member/member_delete_form.php"); //헤더 함수를 이용해서 리다이렉션 시킬 수 있다.
     }
     //헤더함수를 이용하여 리스트 페이지로 리다이렉션
-    header("Location: ../index.php"); //헤더 함수를 이용해서 리다이렉션 시킬 수 있다.
 ?> 
 </body>
 </html>

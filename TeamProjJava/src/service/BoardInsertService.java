@@ -60,9 +60,10 @@ public class BoardInsertService implements Service {
 			e.printStackTrace();
 			return false;
 		}
-		
-		
-		response.sendRedirect("./List.do");
+
+		out.print("<a href=\"form_Board.jsp\">계속 작업</a>");
+		out.print("<button type=\"button\" onclick=\"location.href='datadisp.jsp'\">입력자료출력</button>");
+
 		return true;
 	}
 

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
+<<<<<<< HEAD
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   		<meta name="description" content="">
@@ -37,5 +38,26 @@
 
 	<!-- Footer -->
 	<jsp:include page="static/footer.jsp"></jsp:include>
+=======
+
+<jsp:include page="header.jsp"></jsp:include>
+
+
+	<!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+	<!-- Footer -->
+	<jsp:include page="footer.jsp"></jsp:include>
+>>>>>>> refs/remotes/origin/master
 </body>
 </html>

@@ -34,7 +34,7 @@ public class BoardInfoService implements Service {
 		HashMap<String,Object> para = new HashMap<String,Object>();
 		para.put("dbname", tablename);
 		para.put("no",no);
-		RequestDispatcher rd = request.getRequestDispatcher("./Detail.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("./MyInfoUpdate.jsp");
 		try {
 			data = dao.info(para);
 			request.setAttribute("data", data);

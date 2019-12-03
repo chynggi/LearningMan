@@ -20,7 +20,7 @@
         {
         	%>
         <div class="alert alert-danger" role="alert">
-  <strong><%=session.getAttribute("message")%></strong>
+  <strong><%=session.getAttribute("message") %></strong>
 </div>
         	<%
         }

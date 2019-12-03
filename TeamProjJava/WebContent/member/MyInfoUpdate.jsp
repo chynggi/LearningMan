@@ -44,7 +44,7 @@
         		</div>
         		<div class="subM_form">
         			<input class="upBtn" type="submit" value="수정">
-        			<button type="button" onclick="location.href='./MyInfoDelete.jsp'" class="deBtn">회원탈퇴</button>
+        			<button type="button" onclick="location.href='./member_delete_form.php'" class="deBtn">회원탈퇴</button>
         		</div>
 			</form>
         </div>

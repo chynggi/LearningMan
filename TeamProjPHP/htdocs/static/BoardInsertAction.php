@@ -10,7 +10,21 @@
         $dbname = $_POST["dbname"];
         insert($dbname);
             //헤더함수를 이용하여 리스트 페이지로 리다이렉션
-            header("Location: ./ServerSideBoardList.php");
-        ?>
+//         if($dbname == "OOPBOARD"){
+//             header("Location: ../ServerSide/ServerSideBoardList.php");
+//         }elseif ($dbname == "SSBOARD"){
+//             header("Location: ../ServerSide/ServerSideBoardList.php");
+//         }elseif ($dbname == "FRBOARD"){
+//             header("Location: ../ServerSide/ServerSideBoardList.php");
+//         }elseif ($dbname == "DBMSBOARD"){
+//             header("Location: ../ServerSide/ServerSideBoardList.php");
+//         }elseif($dbname == "DABOARD"){
+//             header("Location: ../ServerSide/ServerSideBoardList.php");
+//         }
+//         else{
+//             header("Location: ../index.php");
+//         }
+            
+            ?>
     </body>
 </html>

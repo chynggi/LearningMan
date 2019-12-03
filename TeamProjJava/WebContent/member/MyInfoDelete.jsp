@@ -14,7 +14,7 @@
         </div>
         <hr>
         <div class="memberForm_box">
-        	<form name="memberForm" action="./member_delete_action.php"  onSubmit="return insertOk(this)" method="post">
+        	<form name="memberForm" action="./Delete.do"  onSubmit="return insertOk(this)" method="post">
         		<div class="ID_form">
         			<input class="id" id="id" type="text" name="memId" placeholder="&nbsp;&nbsp;아이디">
         		</div>
@@ -82,4 +82,3 @@
     		}
     	}
 	</script>
-<jsp:include page="../static/footer.html"></jsp:include>

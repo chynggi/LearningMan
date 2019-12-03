@@ -11,21 +11,38 @@ import javax.servlet.http.HttpServletResponse;
 
 import service.*;
 
+/**
+ * Servlet implementation class MainControl
+ */
 @WebServlet("*.do")
 public class MainControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
 	public MainControl() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		actionDo(request, response);
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		actionDo(request, response);
 	}
 
@@ -42,31 +59,28 @@ public class MainControl extends HttpServlet {
 		Service service = null; // Created Interface
 		PrintWriter out = null;
 		switch (command) {
-		
-		
-		
-		case "/login/login.do":// 로그인
+		case "/login/login.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new LoginService();
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-
-		case "/member/memberJoin.do"://회원가입
+		case "/member/memberJoin.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new MemberJoinService();
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-
 		case "/member/MemberInfo.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -74,21 +88,11 @@ public class MainControl extends HttpServlet {
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-
-		case "/member/confirmId.do":
-			System.out.println(command + "를 처리합니다.");
-			try {
-				boolean res = new ConfirmIdService().execute(request, response);
-				System.out.println(res);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
-			
-		case "/member/delete.do":
+		case "/member/Delete.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				boolean res = new MemberDeleteService().execute(request, response);
@@ -98,7 +102,6 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-			
 		case "/member/MemberInfoAdjust.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -106,6 +109,7 @@ public class MainControl extends HttpServlet {
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
@@ -116,10 +120,10 @@ public class MainControl extends HttpServlet {
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-			
 		case "/member/memberList.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -127,10 +131,10 @@ public class MainControl extends HttpServlet {
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			break;	
-			
+			break;		
 		case "/Logout.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -138,51 +142,43 @@ public class MainControl extends HttpServlet {
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-			
-		case "/ServerSide/new.do":// 인서트
-
+		case "/ServerSide/new.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new BoardInsertService();
-
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;	
-			
-		case "/ServerSide/List.do":// 목록
-
+		case "/ServerSide/List.do":
 			System.out.println(command+"를 처리합니다.");
-			request.setAttribute("tablename","DBMSBOARD");
 			try {
-
 				boolean res = new BoardListService().execute(request, response);
-
 				System.out.println(res);
 			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-			
-		case "/ServerSide/Info.do":// 게시글 보기(정보)
+		case "/ServerSide/info.do":
 			System.out.println(command+"를 처리합니다.");
-			request.setAttribute("tablename","DBMSBOARD");
 			try {
 				boolean res = new BoardInfoService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-			
-		case "/ServerSide/delete.do":
+		case "/ServerSide/Delete.do":
 			System.out.println(command+"를 처리합니다.");
-			request.setAttribute("tablename","DBMSBOARD");
 			try {
 				boolean res = new BoardDeleteService().execute(request, response);
 				System.out.println(res);
@@ -191,31 +187,29 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-			
 		case "/password.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
 				boolean res = new PasswordSeekService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+			//Login처리부분
 			break;
-		case "/ServerSide/adjust.do": // 게시글 수정
-
+		case "/ServerSide/adjust.do":
 			System.out.println(command+"를 처리합니다.");
-			request.setAttribute("tablename","DBMSBOARD");
 			try {
 				boolean res = new BoardAdjustService().execute(request, response);
-
 				System.out.println(res);
 			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-			}
+
+		}
+
 	}
 }
-
-		
