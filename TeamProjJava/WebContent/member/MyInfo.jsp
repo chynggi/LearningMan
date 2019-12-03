@@ -4,12 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
-<%@ include file ="/header.jsp" %>
 
-
-<%@ include file ="/footer.jsp" %>
 </body>
 </html>

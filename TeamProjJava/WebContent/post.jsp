@@ -36,6 +36,6 @@
   <hr>
 
 	<!-- Footer -->
-	<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="static/footer.jsp"></jsp:include>
 </body>
 </html>

@@ -128,30 +128,38 @@ public class MainControl extends HttpServlet {
 			}
 			break;
 			
-		
-		case "/DBMSBoard/new.do":  // 인서트
+		case "/ServerSide/new.do":// 인서트
+
 			System.out.println(command + "를 처리합니다.");
 			try {
-				service = new DBMSBoardInsertService();
+				service = new BoardInsertService();
+
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			break;	
-		case "/DBMSBoard/List.do":  // 목록
+			
+		case "/ServerSide/List.do":// 목록
+
 			System.out.println(command+"를 처리합니다.");
 			try {
-				boolean res = new DBMSBoardListService().execute(request, response);
+
+				boolean res = new BoardListService().execute(request, response);
+
 				System.out.println(res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			break;
-		case "/DBMSBoard/info.do":  // 게시글 보기(정보)
+			
+		case "/ServerSide/info.do":// 게시글 보기(정보)
+
 			System.out.println(command+"를 처리합니다.");
 			try {
-				boolean res = new DBMSBoardInfoService().execute(request, response);
+				boolean res = new BoardInfoService().execute(request, response);
+
 				System.out.println(res);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -167,15 +175,19 @@ public class MainControl extends HttpServlet {
 			}
 			
 			break;
-		case "/DBMSBoard/adjust.do":  // 게시글 수정
+		case "/ServerSide/adjust.do": // 게시글 수정
+
 			System.out.println(command+"를 처리합니다.");
 			try {
-				boolean res = new DBMSBoardAdjustService().execute(request, response);				
+				boolean res = new BoardAdjustService().execute(request, response);
+
 				System.out.println(res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			break;
-		}
+			}
 	}
 }
+
+		

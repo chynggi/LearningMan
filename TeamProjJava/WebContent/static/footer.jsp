@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-<!DOCTYPE html>
-<html lang="ko">
-  
-   <!-- Footer -->
+<!-- Footer -->
   <footer>
     <div class="container">
       <div class="row">
@@ -18,12 +14,18 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="/vendor/jquery/jquery.min.js"></script>
-  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+  <script src="../static/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/js/jquery.dataTables_kor.js"></script>
+  <script src="../static/js/dataTables.bootstrap4.js"></script>
   <!-- Custom scripts for this template -->
-  <script src="/js/clean-blog.min.js"type="text/javascript" charset="utf-8"></script>
-  <script src="/js/contents_any.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../static/js/clean-blog.min.js"></script>
+  <script src="../static/js/contents_any.js"></script>
+  <script src="../static/js/demo/datatables-demo.js"></script>
+  
+  
+  
+
 </body>
 
 </html>
