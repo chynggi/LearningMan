@@ -28,7 +28,7 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include> 
+<jsp:include page="./header.jsp"></jsp:include> 
 <% 
 	String id = null;
 	if(session.getAttribute("id") != null){
@@ -78,6 +78,6 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/clean-blog.min.js"></script>
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="./footer.jsp"></jsp:include>
 </body>
 </html>
