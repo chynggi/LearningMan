@@ -26,7 +26,7 @@ function insert($dbname)
     echo "board_user:".$board_user."<br>";
     // mysql 커넥션 객체 생성
     try {
-        $conn = dbConnect();
+       $conn = dbConnect();
         
         // board 테이블에 입력된 값을 1행에 넣고 board_date 필드에는 현재 시간을 입력하는 쿼리
         $pdoStatement = $conn->prepare("INSERT INTO ".$dbname." (no, title, content, ID, xdate)

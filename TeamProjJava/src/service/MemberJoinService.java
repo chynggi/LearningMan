@@ -58,7 +58,7 @@ public class MemberJoinService implements Service {
 		
 		// 인터페이스를 별도로 구현없이 사용하기 위해 매퍼와 바로 연결
 		dao = session.getMapper(BuserDAO.class);
-		Buser mem = new Buser(mid, mname, mpassword);
+		Buser mem = new Buser(mid, mname, mpassword, mphone, mjoinDate );
 		try {
 			dao.insert(mem);			
 			httpsession.setAttribute("joinedID", mid);

@@ -4,10 +4,24 @@ public class Buser {
 	private String id;
 	private String password;
 	private String name;
-	private int phone;
+	private String phone;
 	private String date;
 	public String getId() {
 		return id;
+	}
+	public Buser(String id, String password, String name, String phone, String date) {
+		super();
+		this.id = id;
+		this.password = password;
+		this.name = name;
+		this.phone = phone;
+		this.date = date;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	public void setId(String id) {
 		this.id = id;
@@ -24,12 +38,7 @@ public class Buser {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getPhone() {
-		return phone;
-	}
-	public void setPhone(int phone) {
-		this.phone = phone;
-	}
+	
 	public String getDate() {
 		return date;
 	}
