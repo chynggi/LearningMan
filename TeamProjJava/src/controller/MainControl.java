@@ -92,10 +92,10 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/member/confirmId.do":
+		case "/member/Delete.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
-				boolean res = new ConfirmIdService().execute(request, response);
+				boolean res = new MemberDeleteService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -171,6 +171,16 @@ public class MainControl extends HttpServlet {
 			System.out.println(command+"를 처리합니다.");
 			try {
 				boolean res = new BoardInfoService().execute(request, response);
+				System.out.println(res);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/ServerSide/Delete.do":
+			System.out.println(command+"를 처리합니다.");
+			try {
+				boolean res = new BoardDeleteService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
