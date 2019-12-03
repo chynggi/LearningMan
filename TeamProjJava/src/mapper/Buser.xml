@@ -4,9 +4,7 @@
 <resultMap id="result" type="buser">
 	<result property = "id" column = "ID"/>
 	<result property = "name" column = "NAME"/>
-	<result property = "password" column = "PW"/>
-	<result property = "phone" column = "PHONE"/>
-	<result property = "xdate" column = "XDATE"/>
+	<result property = "password" column = "PASSWORD"/>
 </resultMap>
 <select id = "selectAll" resultMap="result">
 <![CDATA[
@@ -16,23 +14,23 @@
 <insert id = "insert" parameterType="buser"
 	>
 	<![CDATA[
-	INSERT INTO buser (ID,NAME,PW,PHONE,XDATE) 
-	VALUES(#{id},#{name},#{password},#{phone},sysdate)
+	INSERT INTO buser (MID,MNAME,MPASSWORD) 
+	VALUES(#{mid},#{mname},#{mpassword})
 	]]>
 
 </insert>
 <update id = "update" parameterType="buser">
 	UPDATE buser SET
-	 NAME = #{name}, PW = #{password},PHONE = #{phone}
-	 WHERE ID = #{id}
+	 MNAME = #{mname}, MPASSWORD = #{mpassword}
+	 WHERE MID = #{mid}
 </update>
 <delete id = "delete" parameterType="String">
-	DELETE FROM buser WHERE ID = #{id}
+	DELETE FROM buser WHERE MID = #{id}
 
 </delete>
 <select id = "selectById" parameterType="String" resultMap="result">
 <![CDATA[
-	SELECT * FROM buser WHERE ID = #{id}
+	SELECT * FROM buser WHERE MID = #{id}
 	]]>
 </select>
 

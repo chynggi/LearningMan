@@ -59,7 +59,7 @@ public class MainControl extends HttpServlet {
 		Service service = null; // Created Interface
 		PrintWriter out = null;
 		switch (command) {
-		case "/login/login.do":
+		case "/login.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new LoginService();
@@ -70,7 +70,7 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/member/memberJoin.do":
+		case "/memberJoin.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new MemberJoinService();
@@ -81,7 +81,7 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/member/MemberInfo.do":
+		case "/user/MemberInfo.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new MemberInfoService();
@@ -92,7 +92,7 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/member/confirmId.do":
+		case "/user/confirmId.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				boolean res = new ConfirmIdService().execute(request, response);
@@ -102,17 +102,7 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/member/delete.do":
-			System.out.println(command + "를 처리합니다.");
-			try {
-				boolean res = new MemberDeleteService().execute(request, response);
-				System.out.println(res);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			break;
-		case "/member/MemberInfoAdjust.do":
+		case "/user/MemberInfoAdjust.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new MemberInfoAdjustService();
@@ -134,7 +124,7 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/member/memberList.do":
+		case "/user/memberList.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new AllMemberListService();
@@ -156,10 +146,10 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/ServerSide/new.do":
+		case "/SSBoard/new.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
-				service = new BoardInsertService();
+				service = new SSBoardInsertService();
 				boolean res = service.execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
@@ -167,33 +157,20 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;	
-		case "/ServerSide/List.do":
+		case "/SSBoard/List.do":
 			System.out.println(command+"를 처리합니다.");
-			request.setAttribute("tablename","SSBOARD");
 			try {
-				boolean res = new BoardListService().execute(request, response);
+				boolean res = new SSBoardListService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-		case "/ServerSide/Info.do":
+		case "/SSBoard/info.do":
 			System.out.println(command+"를 처리합니다.");
-			request.setAttribute("tablename","SSBOARD");
 			try {
-				boolean res = new BoardInfoService().execute(request, response);
-				System.out.println(res);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			break;
-		case "/ServerSide/delete.do":
-			System.out.println(command+"를 처리합니다.");
-			request.setAttribute("tablename","SSBOARD");
-			try {
-				boolean res = new BoardDeleteService().execute(request, response);
+				boolean res = new SSBoardInfoService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -211,11 +188,10 @@ public class MainControl extends HttpServlet {
 			}
 			//Login처리부분
 			break;
-		case "/ServerSide/adjust.do":
+		case "/SSBoard/adjust.do":
 			System.out.println(command+"를 처리합니다.");
-			request.setAttribute("tablename","SSBOARD");
 			try {
-				boolean res = new BoardAdjustService().execute(request, response);
+				boolean res = new SSBoardAdjustService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

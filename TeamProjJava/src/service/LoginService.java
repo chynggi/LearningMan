@@ -19,10 +19,7 @@ public class LoginService implements Service {
 		// 파라미터/응답 인코딩 방식 지정
 		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("id");
-		String password = request.getParameter("pw");
-		
-		System.out.println(id);
-		System.out.println(password);
+		String password = request.getParameter("password");
 		String message = null;
 		response.setCharacterEncoding("UTF-8");
 		// 태그인식 여부
@@ -45,14 +42,14 @@ public class LoginService implements Service {
 			} else {
 				message = "비밀번호가 일치하지 않습니다.";
 				session.setAttribute("message", message);
-				response.sendRedirect("./Login.jsp");
+				response.sendRedirect("./formLogin.jsp");
 
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			message = "회원정보가 존재하지 않습니다.";
 			session.setAttribute("message", message);
-			response.sendRedirect("./Login.jsp");
+			response.sendRedirect("./formLogin.jsp");
 			return false;
 		}
 		sqlsession.close();

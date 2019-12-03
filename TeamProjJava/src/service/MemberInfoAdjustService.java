@@ -31,7 +31,9 @@ public class MemberInfoAdjustService implements Service {
 			try {
 				System.out.println(mem);
 				dao.update(mem);
-				sqlsession.commit();				
+				sqlsession.commit();
+				out.print("성공적으로 정보가 수정되었습니다!");
+				out.print("<button type=\"button\" onclick=\"history.go(-2)\">돌아가기</button>");
 			} catch (Exception e) {
 				sqlsession.rollback();
 				sqlsession.close();

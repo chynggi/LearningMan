@@ -1,0 +1,54 @@
+body,html{
+	margin:0;
+	padding:0;
+	
+}
+.container > .row > div > .OOP_board_box{
+	width:100%;
+	height:auto;
+	margin:0;
+	padding:0;
+	background:#cc3;
+	border:1px solid #000;	
+	}
+	.container > .row > div > .OOP_board_box > .b_header{
+		width:100%;
+		height:auto;
+		margin:0;
+		padding:0;
+		background: #000;
+		}
+		.container > .row > div > .OOP_board_box > .b_header > p{
+			float: left;
+			margin:0;
+			padding:0;
+		}
+		.container > .row > div > .OOP_board_box > .b_header > .OOP_no{
+			width:20%;
+			height:80px;
+		}	
+		.container > .row > div > .OOP_board_box > .b_header > .OOP_title{
+			width:40%;
+			height:80px;
+		}	
+		.container > .row > div > .OOP_board_box > .b_header > .OOP_id{
+			width:20%;
+			height:80px;
+		}	
+		.container > .row > div > .OOP_board_box > .b_header > .OOP_date{
+			width:20%;
+			height:80px;
+		}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
