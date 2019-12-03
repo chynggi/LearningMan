@@ -64,7 +64,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-        <a class="btn btn-danger" href="{% url 'HomePage:ssdelete' post.no %}">삭제</a>
+        <a class="btn btn-danger" href="./delete.do?no=<%=post.getNo()%>">삭제</a>
       </div>
     </div>
   </div>
