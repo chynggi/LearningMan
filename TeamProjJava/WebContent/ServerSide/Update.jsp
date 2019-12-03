@@ -20,14 +20,14 @@
 			</div>
 			<input type="text" id="title" name = "title" class="form-control"
 				aria-label="Sizing example input"
-				aria-describedby="inputGroup-sizing-default">
+				aria-describedby="inputGroup-sizing-default" value=<%=title%>>
 		</div>
 		<div class="input-group">
   <div class="input-group-prepend">
     <span class="input-group-text">내용</span>
   </div>
   <textarea rows="20" id = "content" name = "content" class="form-control" aria-label="With textarea">
-  
+  <%=content%>
   
   </textarea>
   

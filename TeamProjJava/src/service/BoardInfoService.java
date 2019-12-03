@@ -27,14 +27,14 @@ public class BoardInfoService implements Service {
 		HttpSession session = request.getSession();
 		long no = Long.parseLong(request.getParameter("no"));
 		PrintWriter out = response.getWriter();
-		String tablename = request.getParameter("tablename");
+		String tablename = (String)request.getAttribute("tablename");
 		SqlSession sqlSession = MBUtils.getSession();
 		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
 		Board data = new Board();
 		HashMap<String,Object> para = new HashMap<String,Object>();
 		para.put("dbname", tablename);
 		para.put("no",no);
-		RequestDispatcher rd = request.getRequestDispatcher("./post.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("./Detail.jsp");
 		try {
 			data = dao.info(para);
 			request.setAttribute("data", data);

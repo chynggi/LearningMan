@@ -42,7 +42,7 @@
 						href="OOP_Board/oop_B_index.php">OOP</a></li>
 					<li class="nav-item"><a class="nav-link" href="post">DBMS</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="../ServerSide/ServerSideBoardList.php">Server
+					<li class="nav-item"><a class="nav-link" href="../ServerSide/List.do">Server
 							Side</a></li>
 					<li class="nav-item"><a class="nav-link" href="contact">Frame
 							Works</a></li>
@@ -62,15 +62,12 @@
           <div class="site-heading">
             <span class="subheading">Team Project</span>
             <h1>Learning Man</h1>
-            <?php
-            session_start();
-            if(!isset($_SESSION['id'])){
-            ?>
+            
             <%if(session.getAttribute("name") == null || session.getAttribute("name").equals(""))
             	{%>
             <p class="M_btn">
-            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/login.php">로그인</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="../member/member.php">회원가입</a>            	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="../login/Login.jsp">로그인</a>
+            	<a class="col-lg-8 col-md-10 mx-auto" href="../member/member.jsp">회원가입</a>            	
             </p>
             <%}
             else { String user_name = (String)session.getAttribute("name");
@@ -79,8 +76,8 @@
             
             <p class="M_btn">
             	<a class="col-lg-8 col-md-10 mx-auto"><strong><%=user_name%></strong>님 환영합니다.</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="../member/member_update_form.php">본인정보 수정</a>           	
-            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/logout.php">로그아웃</a>           	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="../member/MyInfoUpdate.jsp">본인정보 수정</a>           	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="../login/logout.do">로그아웃</a>           	
             </p>
             <%
             }
