@@ -21,19 +21,21 @@ public class BoardInsertService implements Service {
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		String title = request.getParameter("title");
+		String xdate = request.getParameter("xdate");
 		String content = request.getParameter("content");
 		String id = request.getParameter("id");
 		String tablename = request.getParameter("tablename");
 		out.print("title:" + title + "<br/>");
 		out.print("내용:" + content + "<br/>");
 		out.print("ID:" + id + "<br/>");
-		
 
 		//
 		Board vo = new Board();		
 		vo.setContent(content);
 		vo.setId(id);
 		vo.setTitle(title);
+		vo.setXdate(xdate);
+
 		
 		out.print(vo + "<br/>");
 		HashMap<String,Object> para = new HashMap<String,Object>();
