@@ -126,11 +126,6 @@
               	객체지향 프로그래밍
             </h3>
         </div>
-    	<div class="add_btn">
-			<p>
-				<a href="./oop_add.php">글쓰기</a>
-			</p>			
-		</div>
         <hr>
 		<div class="OOP_board_box">
 			<div class="b_header">
@@ -148,6 +143,11 @@
 				<p class="OOP_date"><?=$val["XDATE"]?></p>
 			</div>
 		<?php }?>
+			<div>
+				<p>
+					<a href="#">글쓰기</a>
+				</p>			
+			</div>
 		</div>
 	</div>
   </div>
