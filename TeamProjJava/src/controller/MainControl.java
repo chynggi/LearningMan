@@ -42,14 +42,10 @@ public class MainControl extends HttpServlet {
 		Service service = null; // Created Interface
 		PrintWriter out = null;
 		switch (command) {
-<<<<<<< HEAD
 		
 		
 		
-		case "/login.do":	// 로그인
-=======
-		case "/login/login.do":
->>>>>>> refs/remotes/origin/master
+		case "/login/login.do":// 로그인
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new LoginService();
@@ -59,11 +55,8 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-<<<<<<< HEAD
-		case "/memberJoin.do":	// 회원가입
-=======
-		case "/member/memberJoin.do":
->>>>>>> refs/remotes/origin/master
+
+		case "/member/memberJoin.do"://회원가입
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new MemberJoinService();
@@ -73,11 +66,8 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-<<<<<<< HEAD
-		case "/MemberInfo.do":
-=======
+
 		case "/member/MemberInfo.do":
->>>>>>> refs/remotes/origin/master
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new MemberInfoService();
@@ -87,11 +77,8 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-<<<<<<< HEAD
-		case "/confirmId.do":
-=======
+
 		case "/member/confirmId.do":
->>>>>>> refs/remotes/origin/master
 			System.out.println(command + "를 처리합니다.");
 			try {
 				boolean res = new ConfirmIdService().execute(request, response);
@@ -100,12 +87,7 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-<<<<<<< HEAD
 			
-	
-			
-		case "/MemberInfoAdjust.do":
-=======
 		case "/member/delete.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -116,8 +98,8 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+			
 		case "/member/MemberInfoAdjust.do":
->>>>>>> refs/remotes/origin/master
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new MemberInfoAdjustService();
@@ -137,11 +119,8 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-<<<<<<< HEAD
-		case "/memberList.do":
-=======
+			
 		case "/member/memberList.do":
->>>>>>> refs/remotes/origin/master
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new AllMemberListService();
@@ -150,7 +129,8 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			break;		
+			break;	
+			
 		case "/Logout.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -178,7 +158,7 @@ public class MainControl extends HttpServlet {
 		case "/ServerSide/List.do":// 목록
 
 			System.out.println(command+"를 처리합니다.");
-			request.setAttribute("tablename","SSBOARD");
+			request.setAttribute("tablename","DBMSBOARD");
 			try {
 
 				boolean res = new BoardListService().execute(request, response);
@@ -188,33 +168,21 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-<<<<<<< HEAD
 			
-		case "/ServerSide/info.do":// 게시글 보기(정보)
-
-=======
-		case "/ServerSide/Info.do":
->>>>>>> refs/remotes/origin/master
+		case "/ServerSide/Info.do":// 게시글 보기(정보)
 			System.out.println(command+"를 처리합니다.");
-<<<<<<< HEAD
+			request.setAttribute("tablename","DBMSBOARD");
 			try {
-=======
-			request.setAttribute("tablename","SSBOARD");
-			try {
->>>>>>> refs/remotes/origin/master
 				boolean res = new BoardInfoService().execute(request, response);
-
 				System.out.println(res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			break;
-<<<<<<< HEAD
-		case "/password.do":  // 비밀번호 찾기
-=======
+			
 		case "/ServerSide/delete.do":
 			System.out.println(command+"를 처리합니다.");
-			request.setAttribute("tablename","SSBOARD");
+			request.setAttribute("tablename","DBMSBOARD");
 			try {
 				boolean res = new BoardDeleteService().execute(request, response);
 				System.out.println(res);
@@ -223,8 +191,8 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+			
 		case "/password.do":
->>>>>>> refs/remotes/origin/master
 			System.out.println(command+"를 처리합니다.");
 			try {
 				boolean res = new PasswordSeekService().execute(request, response);
@@ -237,7 +205,7 @@ public class MainControl extends HttpServlet {
 		case "/ServerSide/adjust.do": // 게시글 수정
 
 			System.out.println(command+"를 처리합니다.");
-			request.setAttribute("tablename","SSBOARD");
+			request.setAttribute("tablename","DBMSBOARD");
 			try {
 				boolean res = new BoardAdjustService().execute(request, response);
 

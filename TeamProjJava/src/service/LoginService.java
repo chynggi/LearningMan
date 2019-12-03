@@ -45,22 +45,16 @@ public class LoginService implements Service {
 			} else {
 				message = "비밀번호가 일치하지 않습니다.";
 				session.setAttribute("message", message);
-<<<<<<< HEAD
-				response.sendRedirect("./loginorReg.jsp");
-=======
 				response.sendRedirect("./Login.jsp");
->>>>>>> refs/remotes/origin/master
+
 
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			message = "회원정보가 존재하지 않습니다.";
 			session.setAttribute("message", message);
-<<<<<<< HEAD
-			response.sendRedirect("./loginorReg.jsp");
-=======
+//			response.sendRedirect("./loginorReg.jsp");
 			response.sendRedirect("./Login.jsp");
->>>>>>> refs/remotes/origin/master
 			return false;
 		}
 		sqlsession.close();

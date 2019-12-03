@@ -5,8 +5,7 @@
 <%@ page import="dto.Board" %>
 <%@ page import="common.MBUtils" %>
 <%@ page import="org.apache.ibatis.session.SqlSession" %>
- 
-<!DOCTYPE html>
+
 <html lang="ko">
 
 <head>
@@ -41,6 +40,7 @@
 
 </head>
 <body>
+
 <% 
 	String id = null;
 	if(session.getAttribute("id") != null){
@@ -106,6 +106,7 @@
         			<th style=" text-align: center;">날짜</th>
          		</tr>
          	</thead>
+         	
          	<tbody style="background-color: #766f6d;">
          		<% 
 	         		SqlSession sqlSession = MBUtils.getSession();
@@ -124,7 +125,7 @@
           	</tbody>
           	<% } %>
          </table>
- 
+ 			
          <a href="dbms_Board.jsp" class="btn btn-primary pull-right"
          	 style="border-radius: 12px;  border: none; background-color: #382825; 
          	 		font-size: 15px;font-family:GyeonggiBatangOTF">글쓰기</a>

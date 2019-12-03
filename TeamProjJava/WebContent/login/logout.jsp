@@ -16,5 +16,5 @@
 	String root = (String) session.getAttribute("root");
 	response.sendRedirect("index.jsp");
 %>
-</body>
+</body>s
 </html>

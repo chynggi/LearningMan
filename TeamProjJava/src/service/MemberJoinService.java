@@ -21,11 +21,8 @@ public class MemberJoinService implements Service {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		String message = null;
-<<<<<<< HEAD
 		String id = request.getParameter("id");
-=======
 		String mid = request.getParameter("id");
->>>>>>> refs/remotes/origin/master
 		SqlSession session = MBUtils.getSession();
 		BuserDAO dao = session.getMapper(BuserDAO.class);
 		Buser vo = dao.selectById(id);
@@ -62,11 +59,7 @@ public class MemberJoinService implements Service {
 		
 		// 인터페이스를 별도로 구현없이 사용하기 위해 매퍼와 바로 연결
 		dao = session.getMapper(BuserDAO.class);
-<<<<<<< HEAD
-		Buser mem = new Buser();
-=======
 		Buser mem = new Buser(mid, mname, mpassword,mphone,mjoinDate);
->>>>>>> refs/remotes/origin/master
 		try {
 			dao.insert(mem);			
 			httpsession.setAttribute("joinedID", id);
