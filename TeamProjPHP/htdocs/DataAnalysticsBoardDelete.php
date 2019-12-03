@@ -45,6 +45,25 @@
                     <a class="btn btn-primary" href="./DataAnalysticsBoardList.php">취소</a></td>
                 </tr>
             </table>
-        </form>      
+        </form>    
+          <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          
+          <p class="copyright text-muted">test &copy; Your Website 2019</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/contents_any.js" type="text/javascript" charset="utf-8"></script>  
     </body>
 </html>

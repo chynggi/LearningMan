@@ -15,12 +15,10 @@
   <link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
   <link href="./css/boost.css" rel='stylesheet' type='text/css'>
 
-<<<<<<< HEAD
-=======
+
   <title>Learning Man</title>
 
   <!-- Bootstrap core CSS -->
->>>>>>> refs/remotes/origin/master
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -28,20 +26,16 @@
   <link href="css/clean-blog.css" rel="stylesheet">
   <link href="css/login.css" rel="stylesheet">
   <link href="css/member.css" rel="stylesheet">
-<<<<<<< HEAD
 
   <script>
 	$(document).ready(function() {			
 		$('#head_div').load('header.php');
 	});
   </script>
-=======
->>>>>>> refs/remotes/origin/master
 
 </head>
 
 <body>
-<<<<<<< HEAD
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -89,14 +83,9 @@
             session_start();
             if(!isset($_SESSION['id'])){
             ?>
-            <p class="M_btn">
-<<<<<<< HEAD
-            	<a class="col-lg-8 col-md-10 mx-auto" href="loginorReg.php">로그인</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="loginorReg.php">회원가입</a>            	
-=======
+            <p class="M_btn">        	
             	<a class="col-lg-8 col-md-10 mx-auto" href="./login/login.php">로그인</a>
             	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member.php">회원가입</a>            	
->>>>>>> refs/remotes/origin/master
             </p>
             <?php     
             }else {
@@ -128,9 +117,7 @@
 			color:#000;
 		}
 	</style>
-=======
   <div id="head_div"></div>
->>>>>>> refs/remotes/origin/EYH
   <!-- Main Content -->
   <div class="container">
     <div class="row">
