@@ -21,6 +21,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/clean-blog.css" rel="stylesheet">
+<<<<<<< HEAD
   
     <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -28,6 +29,8 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/clean-blog.min.js"></script>
+=======
+>>>>>>> refs/remotes/origin/master
 
 </head>
 
