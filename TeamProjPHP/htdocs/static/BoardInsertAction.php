@@ -6,10 +6,11 @@
     <body>
         <h1>데이터 분석 게시판 입력</h1>
         <?php
-        require 'DataAnalysticsBoardDaoFunction.php';
-        insert();
+        require 'BoardDAOFunction.php';
+        $dbname = $_POST["dbname"];
+        insert($dbname);
             //헤더함수를 이용하여 리스트 페이지로 리다이렉션
-            header("Location: ./DataAnalysticsBoardList.php");
+            header("Location: ./ServerSideBoardList.php");
         ?>
     </body>
 </html>

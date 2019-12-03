@@ -1,0 +1,66 @@
+.container > .row > div > .loginForm_box{
+	text-align: center;
+	
+	}
+	.container > .row > div > .loginForm_box > form > .ID_form{
+		margin-top:50px;
+		margin-bottom:20px;		
+		padding:0px;
+		}
+		.container > .row > div > .loginForm_box > form > .ID_form > input{
+			width:400px;
+			height:50px;
+			margin:0px;
+			padding:0px;
+			font-weight:bold;
+			color:#0085A1;
+			font-size:18px;
+			border: 1px solid #0085A1;
+		}
+	.container > .row > div > .loginForm_box > form > .PW_form{
+		margin-bottom:40px;
+		padding:0px;
+		}
+		.container > .row > div > .loginForm_box > form > .PW_form > input{
+			width:400px;
+			height:50px;
+			margin:0px;
+			padding:0px;
+			font-weight:bold;
+			font-size:18px;
+			border: 1px solid #0085A1;
+		}
+
+		
+	.container > .row > div > .loginForm_box > form > .subM_form{
+		margin-top:20px;
+		margin-bottom:100px;
+		padding:0px;
+		}
+		.container > .row > div > .loginForm_box > form > .subM_form > input{
+			width:400px;
+			height:60px;
+			margin:0px;
+			padding:0px;
+			font-size:18px;
+			font-weight:bold;
+			color:#fff;
+			background:#0085A1;
+			border: 1px solid #0085A1;
+		}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -6,8 +6,9 @@
 <body>
 	<h1>데이터 분석 게시판 게시글 삭제</h1>
 	<?php 
-	require 'DataAnalysticsBoardDaoFunction.php';
-    delete();     
+	require 'BoardDAOFunction.php';
+	$dbname = $_POST["dbname"];
+	delete($dbname);     
 	?>    
 </body>
 </html>

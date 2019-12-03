@@ -123,7 +123,7 @@
             </h2>
         </div>
         <hr>
-<<<<<<< HEAD
+
 		<form action="loginAction.php" method="post" style="text-align: center;">
 			<div>
 				<label for="id" id="board_user" text = "text">ID</label>&nbsp;&nbsp;&nbsp;
@@ -139,7 +139,7 @@
 		</form>
         
         
-=======
+
         <div class="loginForm_box">
         	<form name="loginForm" action="./login_action.php" method="post">
         		<div class="ID_form">
@@ -155,7 +155,6 @@
         </div>
       </div>
 	</div>
->>>>>>> refs/remotes/origin/master
         
         
   <!-- Footer -->
@@ -205,3 +204,8 @@
 </body>
 
 </html>
+
+  <?php
+include "../static/footer.php"
+?>
+

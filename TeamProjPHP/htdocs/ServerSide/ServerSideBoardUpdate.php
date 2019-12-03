@@ -1,63 +1,91 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>러닝맨 데이터 분석 게시판 게시글 수정</title>
-        <link rel="stylesheet" href="./css/bootstrap.css">
-        <!-- 테이블 크기 조절용 css -->
-        <style>
+<?php
+include "../static/header.php"
+?>        
+    <style>
             table {
                 table-layout: fixed;
                 word-wrap: break-word;
             }
         </style>
-        <script type="text/javascript" src="./js/bootstrap.js"></script>
-    </head>
-    <body>
-        <h1 class="display-4">데이터 분석 게시판 게시글 수정</h1>
+        <div class="container">
+        <h1 class="display-4">ServerSide 게시판 게시글 수정</h1>
         <?php
-            require_once('DataAnalysticsBoardDaoFunction.php');
+            require_once('../static/BoardDAOFunction.php');
             $key = $_GET["board_no"];
-            echo $key."번째 글 수정 페이지<br>";
-            $oneRow = selectOne($key);
-            if($row = mysqli_fetch_array($oneRow)){
+            $oneRow = selectOne($key,"SSBOARD");
+            if($oneRow){
         ?>
         <br>
-        <form action="./DataAnalysticsBoardUpdateAction.php" method="post">
-            <table class="table table-bordered" style="width:50%">
-                <tr>
-                    <td style="width:10%">글 번호</td>
-                    <td style="width:20%">
-                    <input type="text" name="board_no" 
-                    value="<?php echo $row["board_no"]?>" readonly></td>
-                </tr>
-                <tr>
-                    <td style="width:10%">글 제목</td>
-                    <td style="width:20%">
-                    <input type="text" name="board_title" 
-                    value="<?php echo $row["board_title"]?>"></td>
-                </tr>
-                <tr>
-                    <td style="width:10%">글 내용</td>
-                    <td style="width:20%">
-                    <!-- texrarea테그 사이에 값을 적는 부분에서 빈공란이 들어가면 안된다. -->
-                    <textarea name="board_content" id="content" rows="5" cols="50" wrap="hard">
-                    <?php echo trim($row["board_content"])?>
-                    </textarea>
-                    
-                    </td>
-                  
-                </tr>
-            </table>
+        <form class = "form-horizontal" action="../static/BoardUpdateAction.php" method="post">
+           <div class="container">
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default">제목</span>
+			</div>
+			<input type="text" id="title" name = "board_title" class="form-control"
+				aria-label="Sizing example input"
+				aria-describedby="inputGroup-sizing-default"  value="<?php echo $oneRow["TITLE"]?>">
+		</div>
+		<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">내용</span>
+  </div>
+  <textarea rows="20" id = "content" name = "board_content" class="form-control" aria-label="With textarea">
+  <?php echo trim($oneRow["CONTENT"])?>
+  
+  </textarea>
+  </div>
+<br>
+	<input type="hidden" name = "board_id" value=" <?=$_SESSION["id"]?> ">
+	<input type="hidden" name = "board_no" value="<?php echo $oneRow["NO"]?>">
+	<input type="hidden" name = "dbname" value="SSBOARD">
+	<button class="btn btn-success" type="submit">수정</button>
+	            &nbsp;&nbsp;&nbsp;
+     <a class="btn btn-secondary" href="./ServerSideBoardList.php"> 리스트로 돌아가기</a>
+        </form>
+        </div>
+	
+	
+		
+	
+		<script type = "text/javascript">
+			$("#title").change(function(){
+				checkTitle($('#title').val());
+			});
+			$("#content").change(function(){
+				checkContent($('#content').val());
+			});
+			
+			
+
+			function checkTitle(title){
+				if(title.length < 2){
+					alert("제목을 2자 이상 설정하시오");
+					$('#title').val('').focus();
+					return false;
+				} else {
+					return true;
+				}
+			}
+
+			function checkContent(content){
+				if(content.length < 2){
+					alert("내용을 2자 이상 설정하시오");
+					$('#content').val('').focus();
+					return false;
+				} else {
+					return true;
+				}
+			}
+
+			
+		</script>
             <br>
         <?php
             }
         ?>
-            &nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary" type="submit">글 수정</button>
-            &nbsp;&nbsp;
-            <a class="btn btn-primary" href="./DataAnalysticsBoardList.php"> 리스트로 돌아가기</a>
-        </form>
         
-    </body>
-</html>
+ 
+<?php
+include "../static/footer.php"
+?>        

@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php $tns = " (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)
 (HOST = 192.168.0.18)(PORT = 1521)) ) (CONNECT_DATA = (SERVICE_NAME = xe) ) ) "; 
 try { 
@@ -10,10 +11,12 @@ catch(PDOException $e)
 
 OK?
 =======
+=======
+>>>>>>> refs/remotes/origin/master
 <?php
 $tns = " 
     (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)
-    (HOST = 192.168.0.24)(PORT = 1521)) ) 
+    (HOST = 192.168.0.2)(PORT = 1521)) ) 
     (CONNECT_DATA = (SERVICE_NAME = xe) )
  ) "; 
 try { 
@@ -22,6 +25,7 @@ try {
      echo "Failed to obtain database handle " . $e->getMessage();
 }
 ?>
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/master
 =======
 <?php 
@@ -38,4 +42,7 @@ catch (PDOException $e) {
 >>>>>>> refs/remotes/origin/master
 =======
 >>>>>>> refs/remotes/origin/LeeDongTak
+>>>>>>> refs/remotes/origin/master
+=======
+
 >>>>>>> refs/remotes/origin/master
