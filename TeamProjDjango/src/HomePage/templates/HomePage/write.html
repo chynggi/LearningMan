@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+
+  <!-- Main Content -->
+  <div class="container">
+    <table id="dataTable" class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">제목</th>
+      <th scope="col">작성자</th>
+      <th scope="col">작성일</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% if posts %}
+  {% for post in posts %}
+    <tr>     
+    	
+    <th scope="row">{{ post.no }}</th>
+      <td><a href="sspost/{{ post.no }}">{{ post.title }}</a></td>
+      <td>{{ post.id.name }}</td>
+      <td>{{ post.xdate }}</td>
+         </tr>  
+    {% endfor %}	
+	{% else %}
+		자료가 없습니다.
+	{% endif %}  
+  </tbody>
+</table>
+	<div class="clearfix">
+          <a class="btn btn-primary float-right" href="{% url 'HomePage:sswrite' %}">글쓰기 </a>
+     </div>
+  </div>
+
+  <hr>
+<script src="/static/js/demo/datatables-demo.js"></script>
+{% endblock content %}
