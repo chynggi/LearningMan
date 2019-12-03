@@ -21,7 +21,7 @@ public class MemberJoinService implements Service {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		String message = null;
-		String mid = request.getParameter("mid");
+		String mid = request.getParameter("id");
 		SqlSession session = MBUtils.getSession();
 		BuserDAO dao = session.getMapper(BuserDAO.class);
 		Buser vo = dao.selectById(mid);
@@ -38,16 +38,16 @@ public class MemberJoinService implements Service {
 		} 
 		else {
 		session.close();
-		String mpassword = request.getParameter("mpassword");
-		String mpassword2 = request.getParameter("mpassword2");
+		String mpassword = request.getParameter("pw");
+		String mpassword2 = request.getParameter("pw2");
 		if(!mpassword.equals(mpassword2)){
 			message = "비밀번호 재확인 [비밀번호 랑 비밀번호 확인 이 일치하지 않음]";
 			httpsession.setAttribute("message", message);
 			response.sendRedirect("./memberJoin.jsp");
 			return false;
 		} 
-		String mname = request.getParameter("mname");
-		String mphone = request.getParameter("mphone");
+		String mname = request.getParameter("name");
+		String mphone = request.getParameter("phone");
 		String mjoinDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 		
 		
@@ -58,19 +58,19 @@ public class MemberJoinService implements Service {
 		
 		// 인터페이스를 별도로 구현없이 사용하기 위해 매퍼와 바로 연결
 		dao = session.getMapper(BuserDAO.class);
-		Buser mem = new Buser(mid, mname, mpassword);
+		Buser mem = new Buser(mid, mname, mpassword,mphone,mjoinDate);
 		try {
 			dao.insert(mem);			
 			httpsession.setAttribute("joinedID", mid);
 			session.commit();
-			response.sendRedirect("./JoinConfirm.do");
+			response.sendRedirect("../main.do");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 			session.rollback();					
 			message ="정보를 확인하고 다시 시도해 주세요.";
 			httpsession.setAttribute("message", message);
-			response.sendRedirect("./memberJoin.jsp");
+			response.sendRedirect("./signup.jsp");
 			return false;
 		}
 		session.close();

@@ -59,7 +59,7 @@ public class MainControl extends HttpServlet {
 		Service service = null; // Created Interface
 		PrintWriter out = null;
 		switch (command) {
-		case "/login.do":
+		case "/login/login.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new LoginService();
@@ -70,7 +70,7 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/memberJoin.do":
+		case "/member/memberJoin.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new MemberJoinService();
@@ -81,7 +81,7 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/user/MemberInfo.do":
+		case "/member/MemberInfo.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new MemberInfoService();
@@ -92,7 +92,7 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/user/confirmId.do":
+		case "/member/confirmId.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				boolean res = new ConfirmIdService().execute(request, response);
@@ -102,7 +102,17 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/user/MemberInfoAdjust.do":
+		case "/member/delete.do":
+			System.out.println(command + "를 처리합니다.");
+			try {
+				boolean res = new MemberDeleteService().execute(request, response);
+				System.out.println(res);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/member/MemberInfoAdjust.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new MemberInfoAdjustService();
@@ -124,7 +134,7 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/user/memberList.do":
+		case "/member/memberList.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new AllMemberListService();
@@ -159,6 +169,7 @@ public class MainControl extends HttpServlet {
 			break;	
 		case "/ServerSide/List.do":
 			System.out.println(command+"를 처리합니다.");
+			request.setAttribute("tablename","SSBOARD");
 			try {
 				boolean res = new BoardListService().execute(request, response);
 				System.out.println(res);
@@ -167,10 +178,22 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/ServerSide/info.do":
+		case "/ServerSide/Info.do":
 			System.out.println(command+"를 처리합니다.");
+			request.setAttribute("tablename","SSBOARD");
 			try {
 				boolean res = new BoardInfoService().execute(request, response);
+				System.out.println(res);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/ServerSide/delete.do":
+			System.out.println(command+"를 처리합니다.");
+			request.setAttribute("tablename","SSBOARD");
+			try {
+				boolean res = new BoardDeleteService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -190,6 +213,7 @@ public class MainControl extends HttpServlet {
 			break;
 		case "/ServerSide/adjust.do":
 			System.out.println(command+"를 처리합니다.");
+			request.setAttribute("tablename","SSBOARD");
 			try {
 				boolean res = new BoardAdjustService().execute(request, response);
 				System.out.println(res);

@@ -13,7 +13,7 @@
 %>
 <article>
     <div class="container">
-	<form action = "ServerSideUpdate.jsp">
+	<form action = "./Update.jsp">
 		<div class="input-group mb-3">
 		
 			<div class="input-group-prepend">
@@ -31,13 +31,20 @@
   <textarea rows="20" readonly name = "content" class="form-control" aria-label="With textarea" ><%=post.getContent()%></textarea>
 </div>
 	<br>
+	<%try{ %>
 <% if (session.getAttribute("id").equals(post.getId())){ %>
 	 <button type="submit" class="btn btn-primary" >수정</button>
 	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">삭제</button>
 	 <% }else if (session.getAttribute("id").equals("admin")){ %>
 	 <button type="submit" class="btn btn-primary" >수정</button>	
 	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">삭제</button>
-	<% }%>
+	<% }
+	} catch (Exception e){
+		
+	}%>
+	<a class="btn btn-secondary" href="./List.do">
+        	리스트로 돌아가기
+        </a>
 </form>	
 </div>
 
@@ -62,7 +69,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-        <a class="btn btn-danger" href="{% url 'HomePage:ssdelete' post.no %}">삭제</a>
+        <a class="btn btn-danger" href="./delete.do?no=<%=post.getNo()%>">삭제</a>
       </div>
     </div>
   </div>

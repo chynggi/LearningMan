@@ -17,9 +17,8 @@ public class BoardDeleteService implements Service{
 		System.out.println("Board Adjusting");
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-		String tablename = request.getParameter("tablename");
-		PrintWriter out = response.getWriter();		
-		String id = request.getParameter("id");
+		String tablename = (String)request.getAttribute("tablename");
+		PrintWriter out = response.getWriter();
 		long no = Long.parseLong(request.getParameter("no"));
 		HashMap<String,Object> para = new HashMap<String,Object>();
 		para.put("dbname", tablename);
@@ -44,8 +43,7 @@ public class BoardDeleteService implements Service{
 			return false;
 		}
 
-		out.print("<a href=\"form_Board.jsp\">계속 작업</a>");
-		out.print("<button type=\"button\" onclick=\"location.href='datadisp.jsp'\">입력자료출력</button>");
+		response.sendRedirect("./List.do");
 
 		return true;
 	}
