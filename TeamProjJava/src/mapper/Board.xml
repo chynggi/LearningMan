@@ -6,37 +6,37 @@
 	<result property = "title" column = "TITLE"/>
 	<result property = "content" column = "CONTENT"/>
 	<result property = "id" column = "ID"/>
-	<result property = "date" column = "DATE"/>	
+	<result property = "date" column = "XDATE"/>	
 </resultMap>
 <sql id="basecolumns">
-	NO,TITLE,CONTENT,ID,DATE
+NO,TITLE,CONTENT,ID,XDATE
 </sql>
 
 <select id = "selectAll" parameterType="String" resultMap="result">
 
-	SELECT <include refid= "basecolumns"></include> FROM #{dbname}
+	SELECT <include refid= "basecolumns"></include> FROM ${Tablename}
 
 </select>
 <insert id = "insert" parameterType="hashmap"
 	>
 	
-	INSERT INTO #{dbname} (<include refid= "basecolumns"></include>) 
-	VALUES(SSBOARD_SEQ.NEXTVAL,#{board.title},#{board.content},#{board.id},#{board.date})
+	INSERT INTO ${dbname} (<include refid= "basecolumns"></include>) 
+	VALUES(SSBOARD_SEQ.NEXTVAL,#{board.title},#{board.content},#{board.id},SYSDATE)
 	
 
 </insert>
 <update id = "update" parameterType="hashmap">
-	UPDATE #{dbname} SET
-	 ID = #{board.id}, TITLE = #{board.title}, CONTENT = #{board.content},DATE = #{board.date}, 
-	 WHERE NO = #{board.no}
+	UPDATE ${dbname} SET
+	 ID = ${board.id}, TITLE = ${board.title}, CONTENT = ${board.content},XDATE = ${board.date}, 
+	 WHERE NO = ${board.no}
 </update>
 <delete id = "delete" parameterType="hashmap">
-	DELETE FROM #{dbname} WHERE NO = #{id}
+	DELETE FROM ${dbname} WHERE NO = #{no}
 
 </delete>
 <select id = "info" parameterType="hashmap" resultType="board">
 <![CDATA[
-	SELECT * FROM #{dbname} WHERE NO = #{id}
+	SELECT * FROM ${dbname} WHERE NO = #{no}
 	]]>
 </select>
 <select id = "countofcontents" resultType="long">

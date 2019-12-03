@@ -62,8 +62,7 @@ public class BoardAdjustService implements Service{
 			return false;
 		}
 
-		out.print("<a href=\"form_Board.jsp\">계속 작업</a>");
-		out.print("<button type=\"button\" onclick=\"location.href='datadisp.jsp'\">입력자료출력</button>");
+		response.sendRedirect("./Info.do?no="+no);
 
 		return true;
 	}

@@ -23,11 +23,9 @@ public class BoardInsertService implements Service {
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		String id = request.getParameter("id");
-		String xdate = request.getParameter("xdate");
 		String tablename = request.getParameter("tablename");
 		out.print("title:" + title + "<br/>");
 		out.print("내용:" + content + "<br/>");
-		out.print("날짜: " + xdate + "<br/>");
 		out.print("ID:" + id + "<br/>");
 		
 
@@ -36,7 +34,10 @@ public class BoardInsertService implements Service {
 		vo.setContent(content);
 		vo.setId(id);
 		vo.setTitle(title);
+<<<<<<< HEAD
 		vo.setXdate(xdate);
+=======
+>>>>>>> refs/remotes/origin/master
 		
 		out.print(vo + "<br/>");
 		HashMap<String,Object> para = new HashMap<String,Object>();
@@ -61,10 +62,9 @@ public class BoardInsertService implements Service {
 			e.printStackTrace();
 			return false;
 		}
-
-		out.print("<a href=\"form_Board.jsp\">계속 작업</a>");
-		out.print("<button type=\"button\" onclick=\"location.href='datadisp.jsp'\">입력자료출력</button>");
-
+		
+		
+		response.sendRedirect("./List.do");
 		return true;
 	}
 

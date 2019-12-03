@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
@@ -17,11 +18,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 	
+=======
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.BuserDAO">
+<resultMap id="result" type="buser">
+	<result property = "id" column = "ID"/>
+	<result property = "name" column = "NAME"/>
+	<result property = "password" column = "PW"/>
+	<result property = "phone" column = "PHONE"/>
+	<result property = "xdate" column = "XDATE"/>
+>>>>>>> refs/remotes/origin/master
 </resultMap>
 
 <select id = "selectAll" resultMap="result">
 	SELECT * FROM BUSER
 </select>
+<<<<<<< HEAD
+=======
+<insert id = "insert" parameterType="buser"
+	>
+	<![CDATA[
+	INSERT INTO buser (ID,NAME,PW,PHONE,XDATE) 
+	VALUES(#{id},#{name},#{password},#{phone},sysdate)
+	]]>
+>>>>>>> refs/remotes/origin/master
 
 <insert id = "insert" parameterType="buser">
 	<![CDATA[ 
@@ -32,6 +52,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	]]>
 </insert>
+<<<<<<< HEAD
+=======
+<update id = "update" parameterType="buser">
+	UPDATE buser SET
+	 NAME = #{name}, PW = #{password},PHONE = #{phone}
+	 WHERE ID = #{id}
+</update>
+<delete id = "delete" parameterType="String">
+	DELETE FROM buser WHERE ID = #{id}
+>>>>>>> refs/remotes/origin/master
 
 <update id ="update" parameterType="buser">
 
@@ -46,10 +76,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <delete id="delete" parameterType="string">
 	DELETE FROM BUSER WHERE ID=#{id}
 </delete>
+<<<<<<< HEAD
 
 <select id = "selectById" parameterType="string" resultMap="result">
 	SELECT * FROM BUSER 
 	WHERE ID=#{id}
+=======
+<select id = "selectById" parameterType="String" resultMap="result">
+<![CDATA[
+	SELECT * FROM buser WHERE ID = #{id}
+	]]>
+>>>>>>> refs/remotes/origin/master
 </select>
 
 </mapper> 
