@@ -1,7 +1,7 @@
 <?php
-
 function dbConnect(){
     require_once("../dbconnector/dbconnector.php");
+
     return $conn;
 }
 
@@ -10,19 +10,20 @@ function insert($dbname)
     $board_title = $_POST["board_title"];
     $board_content = $_POST["board_content"];
     $board_user = $_POST["board_id"];
+    $board_user2 = explode(' ',  $board_user);    
     echo "board_title : " . $board_title . "<br>";
     echo "board_content : " . $board_content . "<br>";
-    echo "board_user : " . $board_user . "<br>";
+    echo "board_user:".$board_user."<br>";
     // mysql 커넥션 객체 생성
     try {
         $conn = dbConnect();
         
         // board 테이블에 입력된 값을 1행에 넣고 board_date 필드에는 현재 시간을 입력하는 쿼리
         $pdoStatement = $conn->prepare("INSERT INTO ".$dbname." (no, title, content, ID, xdate)
-        values (".$dbname."_SEQ.NEXTVAL,:title,:content,':id',sysdate)");
+        values (".$dbname."_SEQ.NEXTVAL,:title,:content,:id,sysdate)");
         $pdoStatement->bindValue(":title", $board_title, PDO::PARAM_STR);
         $pdoStatement->bindValue(":content", $board_content, PDO::PARAM_STR);
-        $pdoStatement->bindValue(":id", $board_user,PDO::PARAM_STR);
+        $pdoStatement->bindValue(":id", $board_user2[1],PDO::PARAM_STR);
         $res = $pdoStatement->execute();
         if($res)
         {
