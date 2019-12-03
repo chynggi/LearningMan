@@ -24,12 +24,29 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+
+		<style type="text/css">
+			.jumbotron {
+			background-image: url('./DataAnalysticsImg/jumbotronBackground.jpg');
+			background-size: cover;
+			text-shadow: black 0.5em 0.5em 0.5em;
+			color: black;
+		}
+		    .img-button1 {
+		    background: url( "./DataAnalysticsImg/글쓰기.png" ) no-repeat;
+		    border: none;
+		    width: 32px;
+		    height: 32px;
+ 		    cursor: pointer;
+		}
+		</style>
 </head>
 <body>
+<jsp:include page="../static/header.jsp"></jsp:include>
+<hr>
 <div class="container">
       <div class="row">
-      <form method="post" action="./Insert.do" style="width:100%; height: 100%;">
-		
+      <form method="post" action="new.do" style="width:100%; height: 100%;">		
 		<table class="table table-bordered" style="text-align: center; border: 1xp solid #dddddd" style="width:50%">
 			<tr>
                 <td align = "center" bgcolor = "#3e5baa" style="width:10%">
@@ -54,11 +71,11 @@
             </tr> 
             <tr>
             	<td align = "center" colspan = "2">
-                	<input class="btn btn-primary2" type="hidden" name = "id" value="<%=session.getAttribute("id")%>">
+                	<input class = "btn btn-primary2" type = "hidden" name = "id" value="<%=session.getAttribute("id")%>">
 						&nbsp;&nbsp;&nbsp;
-					<input class="btn btn-primary2" type="hidden" name = "tablename" value="SSBOARD">
+					<input class = "btn btn-primary2" type = "hidden" name = "tablename" value="SSBOARD">
 						&nbsp;&nbsp;&nbsp;
-					<button class="btn btn-primary2" type="submit">저장</button>
+					<button class = "btn btn-primary2" type = "submit">저장</button>
 						&nbsp;&nbsp;&nbsp;
 					<button class = "btn btn-primary2" type = "reset">초기화</button>
 						&nbsp;&nbsp;&nbsp;
@@ -69,5 +86,7 @@
       </form>
 	</div>
   </div>
+<hr>
+<jsp:include page="../static/footer.html"></jsp:include>
 </body>
 </html>

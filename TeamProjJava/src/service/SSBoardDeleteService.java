@@ -9,23 +9,37 @@ import org.apache.ibatis.session.SqlSession;
 
 import common.MBUtils;
 import dao.BoardDAO;
+import dto.Board;
 
-public class SSBoardDeleteService implements Service{
+public class SSBoardDeleteService implements Service {
 	@Override
 	public boolean execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("게시글 삭제 시스템");
+		System.out.println("게시글 수정 시스템");
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		String title 	= request.getParameter("title");
+		String content 	= request.getParameter("content");
+		String id 		= request.getParameter("id");
+		String xdate 	= request.getParameter("xdate");
+		out.print("title:" 	+ title 	+ "<br/>");
+		out.print("내용:" 	+ content 	+ "<br/>");
+		out.print("날짜: " 	+ xdate 	+ "<br/>");
+		out.print("ID:" 	+ id 		+ "<br/>");
 		
-		PrintWriter out 		= response.getWriter();		
-		String id 				= request.getParameter("id");
-		long no 				= Long.parseLong(request.getParameter("no"));
-		SqlSession sqlSession 	= MBUtils.getSession();
-		BoardDAO dao 			= sqlSession.getMapper(BoardDAO.class);
+		Board vo = new Board();		
+		vo.setContent(content);
+		vo.setId(id);
+		vo.setTitle(title);
+		vo.setDate(xdate);
+		
+		out.print(vo + "<br/>");
+		SqlSession sqlSession = MBUtils.getSession();
+		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
 
 		int res = 0;
 		try {
-			res = dao.delete(no);
+			res = dao.insert(vo);
 			if (res > 0) {
 				sqlSession.commit();
 				out.print("성공");
@@ -39,12 +53,8 @@ public class SSBoardDeleteService implements Service{
 			e.printStackTrace();
 			return false;
 		}
-
-		out.print("<a href=\"./DataAnalysticsDelete.jsp\">추가 작업</a>");
+		out.print("<a href=\"./DataAnalysticsUpdate.jsp\">추가 작업</a>");
 		out.print("<button type=\"button\" onclick=\"location.href='./List.do'\">목록</button>");
-
 		return true;
 	}
-
-
 }

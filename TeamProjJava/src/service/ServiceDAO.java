@@ -1,6 +1,6 @@
 package service;
-import java.util.*;
 
+import java.util.*;
 import dto.Board;
 import dto.Buser;
 

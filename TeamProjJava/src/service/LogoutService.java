@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class LogoutService implements Service {
-
 	@Override
 	public boolean execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session = request.getSession();		
@@ -14,5 +13,4 @@ public class LogoutService implements Service {
 		response.sendRedirect("../main.do");
 		return true;
 	}
-
 }

@@ -4,15 +4,14 @@
 <configuration>
 	<typeAliases>	
 	<typeAlias type="dto.Buser" alias="buser"/>
-	<typeAlias type="dto.Board" alias="board"/>
-		
+	<typeAlias type="dto.Board" alias="board"/>		
 	</typeAliases>	
 	<environments default = "development">
 		<environment id = "development">
 		<transactionManager type="JDBC"/>
 			<dataSource type = "POOLED">
 				<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
-				<property name="url" value="jdbc:oracle:thin:@192.168.0.18:1521:xe"/>
+				<property name="url" value="jdbc:oracle:thin:@192.168.0.9:1521:xe"/>
 				<property name="username" value="team"/>
 				<property name="password" value="team"/>
 			</dataSource>
@@ -21,6 +20,6 @@
 	<mappers>
 		
 	<mapper resource = "mapper/Buser.xml"/>
-	<mapper resource = "mapper/SSBoard.xml"/>
+	<mapper resource = "mapper/Board.xml"/>
 	</mappers>
 </configuration>

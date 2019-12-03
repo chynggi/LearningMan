@@ -3,6 +3,7 @@
 <%@ page import="dto.Board"%>
 <!DOCTYPE html>
 <html>
+<head>
 	<title>러닝맨 데이터 분석 게시판 게시글 보기</title>
   		<meta charset="utf-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -42,13 +43,14 @@
 		</style>		
 </head>
 <body>
+<jsp:include page="../static/header.jsp"></jsp:include>
 	<%
 	request.setCharacterEncoding("UTF-8");
 	Board post = (Board)request.getAttribute("data");
 	%>
-	<article>
+<article>
     <div class="container">
-	<form action = "DataAnalysticsUpdate.jsp">
+	<form action = "./DataAnalysticsUpdate.jsp">
 		<div class="input-group mb-3">		
 			<div class="input-group-prepend">			
 				<span class="input-group-text" id="inputGroup-sizing-default">제목</span>
@@ -59,28 +61,25 @@
   			<div class="input-group-prepend">
     			<span class="input-group-text">내용</span>
   			</div>
-  			<textarea rows="20" readonly name = "content" class="form-control" aria-label="With textarea" ><%=post.getContent()%></textarea>
+  			<textarea rows="20" readonly name = "content" class="form-control" aria-label="With textarea"><%=post.getContent()%></textarea>
 		</div>
 	<br>
-
-
-<% if (session.getAttribute("id").equals(post.getId())){ %>
-	 <button type="submit" class="btn btn-primary" >수정</button>
-	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">삭제</button>
-	 <% }else if (session.getAttribute("id").equals("admin")){ %>
-	 <button type="submit" class="btn btn-primary" >수정</button>	
-	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">삭제</button>
-	<% }%>
-</form>	
-</div>
-
-	
-
-  </article>
-  	
-	
-  <hr>
-  
+	<% try { %>
+	<% if (session.getAttribute("id").equals(post.getId())){ %>
+	 	<button type="submit" class="btn btn-primary">수정</button>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal">삭제</button>
+	<% } 
+	  else if (session.getAttribute("id").equals("admin")){ %>
+	 	<button type="submit" class="btn btn-primary" >수정</button>	
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal">삭제</button>
+	<% }
+	} catch (Exception e) {		
+	} %>
+		<a class="btn btn-primary" href="./DataAnalysticsList.do">리스트로 돌아가기</a>
+	</form>	
+	</div>
+</article>
+<hr> 
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -91,14 +90,13 @@
         </button>
       </div>
       <div class="modal-body">
-        	삭제한 뒤에는 복구할 수 없습니다.
+        	게시글을 삭제하면 복구 할 수 없습니다.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-        <a class="btn btn-danger" href="{% url 'HomePage:ssdelete' post.no %}">삭제</a>
+        <a class="btn btn-primary" href="./delete.do?no=<%=post.getNo()%>">삭제</a>
       </div>
     </div>
   </div>
 </div>
-</body>
-</html>
+<jsp:include page="../static/footer.html"></jsp:include>
