@@ -21,6 +21,7 @@ NO,TITLE,CONTENT,ID,XDATE
 	>
 	
 	INSERT INTO ${dbname} (<include refid= "basecolumns"></include>) 
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
 <<<<<<< Upstream, based on origin/master
 	VALUES(SSBOARD_SEQ.NEXTVAL,#{board.title},#{board.content},#{board.id},SYSDATE)
@@ -30,6 +31,9 @@ NO,TITLE,CONTENT,ID,XDATE
 =======
 	VALUES(${dbname}_SEQ.NEXTVAL,#{board.title},#{board.content},#{board.id},SYSDATE)
 >>>>>>> refs/remotes/origin/ssy
+=======
+	VALUES(${dbname}_SEQ.NEXTVAL,#{board.title},#{board.content},#{board.id},SYSDATE)
+>>>>>>> fe99d9a 141
 	
 
 </insert>

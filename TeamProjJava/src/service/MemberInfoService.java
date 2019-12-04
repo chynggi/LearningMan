@@ -30,11 +30,15 @@ public class MemberInfoService implements Service {
 =======
 			request.setAttribute("name", vo.getName());
 			request.setAttribute("password", vo.getPassword());
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
 >>>>>>> 42c7f6f 2019-12-04  15:00
 =======
 >>>>>>> refs/remotes/origin/ssy
+=======
+>>>>>>> fe99d9a 141
 			request.setAttribute("phone", vo.getPhone());
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
 <<<<<<< Upstream, based on origin/master
 			request.setAttribute("xdate", vo.getXdate());
@@ -44,6 +48,9 @@ public class MemberInfoService implements Service {
 =======
 			request.setAttribute("xdate", vo.getDate());
 >>>>>>> refs/remotes/origin/ssy
+=======
+			request.setAttribute("xdate", vo.getDate());
+>>>>>>> fe99d9a 141
 			rd.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();

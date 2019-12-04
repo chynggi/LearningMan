@@ -24,6 +24,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration> 
   	<typeAliases>	
 	<typeAlias type="dto.Buser" alias="buser"/>
+<<<<<<< Upstream, based on origin/master
 	<typeAlias type="dto.Board" alias="board"/>   			
 <<<<<<< HEAD
 >>>>>>> 42c7f6f 2019-12-04  15:00
@@ -62,7 +63,11 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
             </dataSource>        
    </environment>
    </environments>
+<<<<<<< Upstream, based on branch 'seongyujin' of https://github.com/chynggi/LearningMan.git
 >>>>>>> 030f857f02fd9102874f261cd9c53ac9268851c2
+=======
+>>>>>>> fe99d9a 141
+>>>>>>> 587535d 141
 	<mapper resource = "mapper/Buser.xml"/>
 	<mapper resource = "mapper/Board.xml"/>
 <<<<<<< Upstream, based on branch 'seongyujin' of https://github.com/chynggi/LearningMan.git

@@ -37,10 +37,14 @@ public class MainControl extends HttpServlet {
 		Service service = null; // Created Interface
 		PrintWriter out = null;
 		
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
 =======
 		
 >>>>>>> refs/remotes/origin/ssy
+=======
+		
+>>>>>>> fe99d9a 141
 		switch (command) {
 		
 		case "/login/login.do":
@@ -73,7 +77,10 @@ public class MainControl extends HttpServlet {
 		 * break;
 		 */
 			
+<<<<<<< Upstream, based on origin/master
 >>>>>>> refs/remotes/origin/ssy
+=======
+>>>>>>> fe99d9a 141
 		case "/member/MemberInfo.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -86,6 +93,7 @@ public class MainControl extends HttpServlet {
 		case "/member/confirmId.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
+<<<<<<< Upstream, based on origin/master
 				boolean res = new ConfirmIdService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
@@ -94,6 +102,8 @@ public class MainControl extends HttpServlet {
 		case "/member/delete.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
+=======
+>>>>>>> fe99d9a 141
 				boolean res = new MemberDeleteService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
@@ -197,7 +207,11 @@ public class MainControl extends HttpServlet {
 		case "/DBMSBoard/new.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
+<<<<<<< Upstream, based on origin/master
 				request.setAttribute("tablename", "DBMSBOARD");
+=======
+				request.setAttribute("tablename", "SSBOARD");
+>>>>>>> fe99d9a 141
 				service = new BoardInsertService();
 				boolean res = service.execute(request, response);
 				System.out.println(res);
@@ -209,7 +223,22 @@ public class MainControl extends HttpServlet {
 		case "/DBMSBoard/info.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
+<<<<<<< Upstream, based on origin/master
 				request.setAttribute("tablename", "DBMSBOARD");
+=======
+				request.setAttribute("tablename", "SSBOARD");
+				boolean res = new BoardListService().execute(request, response);
+				System.out.println(res);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/ServerSide/info.do":
+			System.out.println(command+"를 처리합니다.");
+			try {
+				request.setAttribute("tablename", "SSBOARD");
+>>>>>>> fe99d9a 141
 				boolean res = new BoardInfoService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
@@ -220,7 +249,11 @@ public class MainControl extends HttpServlet {
 		case "/DBMSBoard/Delete.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
+<<<<<<< Upstream, based on origin/master
 				request.setAttribute("tablename", "DBMSBOARD");
+=======
+				request.setAttribute("tablename", "SSBOARD");
+>>>>>>> fe99d9a 141
 				boolean res = new BoardDeleteService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
@@ -231,7 +264,66 @@ public class MainControl extends HttpServlet {
 		case "/DBMSBoard/adjust.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
+<<<<<<< Upstream, based on origin/master
 				request.setAttribute("tablename", "DBMSBOARD");
+=======
+				boolean res = new PasswordSeekService().execute(request, response);
+				System.out.println(res);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//Login처리부분
+			break;
+		case "/ServerSide/adjust.do":
+			System.out.println(command+"를 처리합니다.");
+			try {
+				request.setAttribute("tablename", "SSBOARD");
+				boolean res = new BoardAdjustService().execute(request, response);
+				System.out.println(res);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		case "/FRBOARD/new.do":
+			System.out.println(command + "를 처리합니다.");
+			try {
+				request.setAttribute("tablename", "FRBOARD");
+				service = new BoardInsertService();
+				boolean res = service.execute(request, response);
+				System.out.println(res);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;			
+		case "/FRBOARD/info.do":
+			System.out.println(command+"를 처리합니다.");
+			try {
+				request.setAttribute("tablename", "FRBOARD");
+				boolean res = new BoardInfoService().execute(request, response);
+				System.out.println(res);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/FRBOARD/Delete.do":
+			System.out.println(command+"를 처리합니다.");
+			try {
+				request.setAttribute("tablename", "FRBOARD");
+				boolean res = new BoardDeleteService().execute(request, response);
+				System.out.println(res);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;		
+		case "/FRBOARD/adjust.do":
+			System.out.println(command+"를 처리합니다.");
+			try {
+				request.setAttribute("tablename", "FRBOARD");
+>>>>>>> fe99d9a 141
 				boolean res = new BoardAdjustService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
