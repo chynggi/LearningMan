@@ -68,7 +68,11 @@ public class MemberJoinService implements Service {
 		Buser mem = new Buser(mid, mname, mpassword,mphone,mjoinDate);
 =======
 		dao = session.getMapper(BuserDAO.class);
+<<<<<<< HEAD
+		Buser mem = new Buser(mid, mname, mpassword);
+=======
 		Buser mem = new Buser(mid, mname, mpassword, mphone, mjoinDate );
+>>>>>>> refs/remotes/origin/master
 >>>>>>> refs/remotes/origin/master
 		try {
 			dao.insert(mem);			
