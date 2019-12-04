@@ -25,12 +25,14 @@ public class MemberInfoService implements Service {
 		String id = (String) session.getAttribute("id");
 		SqlSession sqlsession = MBUtils.getSession();
 		BuserDAO dao = sqlsession.getMapper(BuserDAO.class);
-		RequestDispatcher rd = request.getRequestDispatcher("./MyMemberInfo.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("./MyInfoUpdate.jsp");
 		try {
 			Buser vo = dao.selectById(id);
 			request.setAttribute("id", id);
 			request.setAttribute("name", vo.getName());
-			request.setAttribute("password", vo.getPassword());
+			request.setAttribute("password", vo.getPw());
+			request.setAttribute("phone", vo.getPhone());
+			request.setAttribute("xdate", vo.getXdate());
 			rd.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -13,18 +13,24 @@ import org.apache.ibatis.session.SqlSession;
 import common.MBUtils;
 import dao.BuserDAO;
 import dto.Buser;
-
+// 비밀번호 재확인.
 public class MemberJoinService implements Service {
 
 	@Override
 	public boolean execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
+<<<<<<< HEAD
+		String message = null;
+		String id = request.getParameter("id");
+		String mid = request.getParameter("id");
+=======
 		String message = null;
 		String mid = request.getParameter("mid");
+>>>>>>> refs/remotes/origin/master
 		SqlSession session = MBUtils.getSession();
 		BuserDAO dao = session.getMapper(BuserDAO.class);
-		Buser vo = dao.selectById(mid);
+		Buser vo = dao.selectById(id);
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession httpsession = request.getSession();
@@ -33,7 +39,7 @@ public class MemberJoinService implements Service {
 		if (vo != null) {
 			message = "중복된 아이디 입니다.";
 			httpsession.setAttribute("message", message);
-			response.sendRedirect("./memberJoin.jsp");
+			response.sendRedirect("./loginorReg.jsp");
 			return false;
 		} 
 		else {
@@ -57,11 +63,20 @@ public class MemberJoinService implements Service {
 		session = MBUtils.getSession();
 		
 		// 인터페이스를 별도로 구현없이 사용하기 위해 매퍼와 바로 연결
+<<<<<<< HEAD
 		dao = session.getMapper(BuserDAO.class);
+		Buser mem = new Buser(mid, mname, mpassword,mphone,mjoinDate);
+=======
+		dao = session.getMapper(BuserDAO.class);
+<<<<<<< HEAD
 		Buser mem = new Buser(mid, mname, mpassword);
+=======
+		Buser mem = new Buser(mid, mname, mpassword, mphone, mjoinDate );
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
 		try {
 			dao.insert(mem);			
-			httpsession.setAttribute("joinedID", mid);
+			httpsession.setAttribute("joinedID", id);
 			session.commit();
 			response.sendRedirect("./JoinConfirm.do");
 			
