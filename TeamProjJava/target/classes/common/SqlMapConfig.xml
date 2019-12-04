@@ -1,3 +1,8 @@
+<<<<<<< Upstream, based on branch 'seongyujin' of https://github.com/chynggi/LearningMan.git
+=======
+<<<<<<< Upstream, based on origin/master
+<<<<<<< HEAD
+>>>>>>> e77d7a0 2019-12-04  15:00
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
@@ -5,9 +10,23 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration> 
   	<typeAliases>	
 	<typeAlias type="dto.Buser" alias="buser"/>
+<<<<<<< Upstream, based on branch 'seongyujin' of https://github.com/chynggi/LearningMan.git
 <<<<<<< HEAD
 	<typeAlias type="dto.Board" alias="board"/>
 		
+=======
+	<typeAlias type="dto.Board" alias="board"/>		
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.apache.org/dtd/mybatis-3-config.dtd"> 
+<configuration> 
+  	<typeAliases>	
+	<typeAlias type="dto.Buser" alias="buser"/>
+	<typeAlias type="dto.Board" alias="board"/>   			
+>>>>>>> 42c7f6f 2019-12-04  15:00
+>>>>>>> e77d7a0 2019-12-04  15:00
 	</typeAliases>	
 	<environments default = "development">
 		<environment id = "development">
@@ -40,6 +59,40 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 >>>>>>> 030f857f02fd9102874f261cd9c53ac9268851c2
 	<mapper resource = "mapper/Buser.xml"/>
 	<mapper resource = "mapper/Board.xml"/>
+<<<<<<< Upstream, based on branch 'seongyujin' of https://github.com/chynggi/LearningMan.git
+=======
+<<<<<<< Upstream, based on origin/master
+=======
+
+>>>>>>> 42c7f6f 2019-12-04  15:00
+	</mappers>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.apache.org/dtd/mybatis-3-config.dtd"> 
+<configuration> 
+  	<typeAliases>	
+	<typeAlias type="dto.Buser" alias="buser"/>
+	<typeAlias type="dto.Board" alias="board"/>
+	</typeAliases>	
+	<environments default = "development">
+		<environment id = "development">
+		<transactionManager type="JDBC"/>
+			<dataSource type = "POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+				<property name="url" value="jdbc:oracle:thin:@192.168.0.98:1521:xe"/>
+				<property name="username" value="team"/>
+				<property name="password" value="team"/>
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		
+	<mapper resource = "mapper/Buser.xml"/>
+	<mapper resource = "mapper/Board.xml"/>
+	</mappers>
+>>>>>>> e77d7a0 2019-12-04  15:00
 
 	</mappers>
 
