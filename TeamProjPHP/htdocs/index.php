@@ -2,26 +2,36 @@
 <html lang="ko">
 
 <head>
+  <title>Learning Man</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
+  <link href="./css/boost.css" rel='stylesheet' type='text/css'>
+
 
   <title>Learning Man</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-  <!-- Custom styles for     this template -->
   <link href="css/clean-blog.css" rel="stylesheet">
   <link href="css/login.css" rel="stylesheet">
   <link href="css/member.css" rel="stylesheet">
+
+  <script>
+	$(document).ready(function() {			
+		$('#head_div').load('header.php');
+	});
+  </script>
 
 </head>
 
@@ -73,7 +83,7 @@
             session_start();
             if(!isset($_SESSION['id'])){
             ?>
-            <p class="M_btn">
+            <p class="M_btn">        	
             	<a class="col-lg-8 col-md-10 mx-auto" href="./login/login.php">로그인</a>
             	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member.php">회원가입</a>            	
             </p>
@@ -107,6 +117,7 @@
 			color:#000;
 		}
 	</style>
+  <div id="head_div"></div>
   <!-- Main Content -->
   <div class="container">
     <div class="row">
@@ -179,7 +190,7 @@
             		</p>
             	</div>
             </a>
-            <a href="#" class="DA_box">
+            <a href="DataAnalysticsMain.php" class="DA_box">
             	<div class="DA_container">
           			<p class="DA_img1">
             			<img src="./img/DA_1.png" art="Data Analytics이미지" title="Data Analytics">

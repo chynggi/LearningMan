@@ -4,6 +4,17 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/master/LICENSE)
  */
 
+<<<<<<< HEAD
+=======
+@font-face { 
+   font-family: 'GyeonggiBatangOTF'; 
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+=======
+
+>>>>>>> 030f857f02fd9102874f261cd9c53ac9268851c2
 @font-face {
   font-family: 'Nanum GothicB';
   font-style: normal;
@@ -19,8 +30,15 @@
 body {
   font-size: 20px;
   color: #212529;
+<<<<<<< HEAD
   font-family: 'Nanum Gothic', 'Dotum', serif;
   font: "나눔 고딕", "Nanum Gothic", "돋움", Dotum, Sans-Serief; color: #555; 
+=======
+  font-family:'GyeonggiBatangOTF';, serif;
+  font-family: 'Nanum Gothic', 'Dotum', serif;
+  font: "나눔 고딕", "Nanum Gothic", "돋움", Dotum, Sans-Serief; color: #555; 
+
+>>>>>>> 030f857f02fd9102874f261cd9c53ac9268851c2
 }
 
 p {
