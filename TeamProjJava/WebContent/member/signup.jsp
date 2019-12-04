@@ -29,10 +29,10 @@
         			<input class="id" id="id" type="text" name="id" placeholder="&nbsp;&nbsp;아이디">
         		</div>
         		<div class="PW_form">
-        			<input class="pw" id="pw" type="password" name="pw" placeholder="&nbsp;&nbsp;비밀번호">
+        			<input class="pw" id="pw" type="password" name="password" placeholder="&nbsp;&nbsp;비밀번호">
         		</div>
         		<div class="PWC_form">
-        			<input class="pwc" id="pwc" type="password" name="pw2" placeholder="&nbsp;&nbsp;비밀번호확인">
+        			<input class="pwc" id="pwc" type="password" name="password2" placeholder="&nbsp;&nbsp;비밀번호확인">
         		</div>
         		<div class="NAME_form">
         			<input class="name" id="name" type="text" name="name" placeholder="&nbsp;&nbsp;이름">

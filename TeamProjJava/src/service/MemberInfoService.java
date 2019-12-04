@@ -25,9 +25,18 @@ public class MemberInfoService implements Service {
 		try {
 			Buser vo = dao.selectById(id);
 			request.setAttribute("id", id);
+<<<<<<< Upstream, based on origin/master
 			request.setAttribute("name", vo.getName());
+=======
+			request.setAttribute("name", vo.getName());
+			request.setAttribute("password", vo.getPassword());
+>>>>>>> 42c7f6f 2019-12-04  15:00
 			request.setAttribute("phone", vo.getPhone());
+<<<<<<< Upstream, based on origin/master
 			request.setAttribute("xdate", vo.getXdate());
+=======
+			request.setAttribute("xdate", vo.getDate());
+>>>>>>> 42c7f6f 2019-12-04  15:00
 			rd.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();

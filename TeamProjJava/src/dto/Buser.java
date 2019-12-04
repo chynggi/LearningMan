@@ -5,6 +5,7 @@ public class Buser {
 	private String name;
 	private String password;
 	private String phone;
+<<<<<<< Upstream, based on origin/master
 	private String xdate;
 	public Buser(String id, String name, String password, String phone, String xdate) {
 		super();
@@ -18,13 +19,18 @@ public class Buser {
 		return id;
 	}
 	public void setId(String id) {
+=======
+	private String date;
+	
+	
+	public Buser(String id, String password, String name, String phone, String date) {
+		super();
+>>>>>>> 42c7f6f 2019-12-04  15:00
 		this.id = id;
 	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+	
+	public String getId() {
+		return id;
 	}
 	public String getXdate() {
 		return xdate;
@@ -49,8 +55,39 @@ public class Buser {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+<<<<<<< Upstream, based on origin/master
 	}	
 	public Buser() {
 		super();
 	}	
 }
+=======
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Buser [id=" + id + ", password=" + password + ", name=" + name + ", phone=" + phone + ", date=" + date
+				+ "]";
+	}
+	
+}
+>>>>>>> 42c7f6f 2019-12-04  15:00

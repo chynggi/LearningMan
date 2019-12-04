@@ -1,3 +1,4 @@
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
@@ -6,6 +7,16 @@
 	<typeAliases>	
 	<typeAlias type="dto.Buser" alias="buser"/>
 	<typeAlias type="dto.Board" alias="board"/>		
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.apache.org/dtd/mybatis-3-config.dtd"> 
+<configuration> 
+  	<typeAliases>	
+	<typeAlias type="dto.Buser" alias="buser"/>
+	<typeAlias type="dto.Board" alias="board"/>   			
+>>>>>>> 42c7f6f 2019-12-04  15:00
 	</typeAliases>	
 	<environments default = "development">
 		<environment id = "development">
@@ -22,6 +33,10 @@
 		
 	<mapper resource = "mapper/Buser.xml"/>
 	<mapper resource = "mapper/Board.xml"/>
+<<<<<<< Upstream, based on origin/master
+=======
+
+>>>>>>> 42c7f6f 2019-12-04  15:00
 	</mappers>
 =======
 <?xml version="1.0" encoding="UTF-8"?>
