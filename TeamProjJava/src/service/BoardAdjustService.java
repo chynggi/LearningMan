@@ -37,7 +37,7 @@ public class BoardAdjustService implements Service{
 		vo.setContent(content);
 		vo.setId(id);
 		vo.setTitle(title);
-		vo.setDate(xdate);
+		vo.setXdate(xdate);
 		HashMap<String,Object> para = new HashMap<String,Object>();
 		para.put("dbname", tablename);
 		para.put("board",vo);

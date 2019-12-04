@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
- "http://mybatis.org/dtd/mybatis-3-config.dtd">
-<configuration>
-	<typeAliases>	
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.apache.org/dtd/mybatis-3-config.dtd"> 
+<configuration> 
+  	<typeAliases>	
 	<typeAlias type="dto.Buser" alias="buser"/>
 	<typeAlias type="dto.Board" alias="board"/>
-		
 	</typeAliases>	
 	<environments default = "development">
 		<environment id = "development">
@@ -21,6 +21,7 @@
 	<mappers>
 		
 	<mapper resource = "mapper/Buser.xml"/>
-	<mapper resource = "mapper/SSBoard.xml"/>
+	<mapper resource = "mapper/Board.xml"/>
 	</mappers>
+
 </configuration>
