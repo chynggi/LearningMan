@@ -30,7 +30,10 @@ public class BoardInsertService implements Service {
 		String id = request.getParameter("id");
 		String tablename = (String)request.getAttribute("tablename");
 		System.out.println(tablename);
+<<<<<<< HEAD
 >>>>>>> 42c7f6f 2019-12-04  15:00
+=======
+>>>>>>> refs/remotes/origin/ssy
 		out.print("title:" + title + "<br/>");
 		out.print("내용:" + content + "<br/>");
 		out.print("ID:" + id + "<br/>");
@@ -39,8 +42,11 @@ public class BoardInsertService implements Service {
 		vo.setContent(content);
 		vo.setId(id);
 		vo.setTitle(title);
+<<<<<<< HEAD
 <<<<<<< Upstream, based on origin/master
 =======
+=======
+>>>>>>> refs/remotes/origin/ssy
 		vo.setDate(date);
 
 >>>>>>> 42c7f6f 2019-12-04  15:00
@@ -74,7 +80,10 @@ public class BoardInsertService implements Service {
 =======
 
 		response.sendRedirect("./board_list.jsp");
+<<<<<<< HEAD
 >>>>>>> 42c7f6f 2019-12-04  15:00
+=======
+>>>>>>> refs/remotes/origin/ssy
 		return true;
 	}
 }

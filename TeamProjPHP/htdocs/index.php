@@ -27,6 +27,7 @@
   <link href="css/clean-blog.css" rel="stylesheet">
   <link href="css/login.css" rel="stylesheet">
   <link href="css/member.css" rel="stylesheet">
+<<<<<<< HEAD
 <<<<<<< Upstream, based on origin/master
   
   <script src="vendor/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -36,14 +37,20 @@
   <script src="js/contents_any.js" type="text/javascript" charset="utf-8"></script>
 
 =======
+=======
+>>>>>>> refs/remotes/origin/ssy
   <script>
 	$(document).ready(function() {			
 		$('#head_div').load('header.php');
 	});
   </script>
+<<<<<<< HEAD
 >>>>>>> 61a32aa dddd
+=======
+>>>>>>> refs/remotes/origin/ssy
 </head>
 <body>
+<<<<<<< HEAD
 <<<<<<< Upstream, based on origin/master
 
 
@@ -98,6 +105,8 @@
 =======
 =======
 >>>>>>> 61a32aa dddd
+=======
+>>>>>>> refs/remotes/origin/ssy
   <div id="head_div"></div>
 >>>>>>> refs/remotes/origin/master
   <!-- Main Content -->
@@ -241,15 +250,21 @@
       </div>
     </div>
   </footer>
+<<<<<<< HEAD
 <<<<<<< Upstream, based on origin/master
 
 =======
+=======
+>>>>>>> refs/remotes/origin/ssy
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
   <!-- Custom scripts for this template -->
   <script src="js/clean-blog.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/contents_any.js" type="text/javascript" charset="utf-8"></script>
+<<<<<<< HEAD
 >>>>>>> 61a32aa dddd
+=======
+>>>>>>> refs/remotes/origin/ssy
 </body>
 </html>

@@ -25,8 +25,14 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   	<typeAliases>	
 	<typeAlias type="dto.Buser" alias="buser"/>
 	<typeAlias type="dto.Board" alias="board"/>   			
+<<<<<<< HEAD
 >>>>>>> 42c7f6f 2019-12-04  15:00
+<<<<<<< Upstream, based on branch 'seongyujin' of https://github.com/chynggi/LearningMan.git
 >>>>>>> e77d7a0 2019-12-04  15:00
+=======
+=======
+>>>>>>> refs/remotes/origin/ssy
+>>>>>>> 9dfff4e Merge remote-tracking branch 'origin/ssy' into ssy
 	</typeAliases>	
 	<environments default = "development">
 		<environment id = "development">
@@ -60,9 +66,17 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<mapper resource = "mapper/Buser.xml"/>
 	<mapper resource = "mapper/Board.xml"/>
 <<<<<<< Upstream, based on branch 'seongyujin' of https://github.com/chynggi/LearningMan.git
+<<<<<<< Upstream, based on branch 'seongyujin' of https://github.com/chynggi/LearningMan.git
 =======
+=======
+<<<<<<< HEAD
+>>>>>>> 9dfff4e Merge remote-tracking branch 'origin/ssy' into ssy
 <<<<<<< Upstream, based on origin/master
 =======
+=======
+
+	</mappers>
+>>>>>>> refs/remotes/origin/ssy
 
 >>>>>>> 42c7f6f 2019-12-04  15:00
 	</mappers>

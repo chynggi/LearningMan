@@ -5,6 +5,7 @@ public class Buser {
 	private String name;
 	private String password;
 	private String phone;
+<<<<<<< HEAD
 <<<<<<< Upstream, based on origin/master
 	private String xdate;
 	public Buser(String id, String name, String password, String phone, String xdate) {
@@ -20,6 +21,8 @@ public class Buser {
 	}
 	public void setId(String id) {
 =======
+=======
+>>>>>>> refs/remotes/origin/ssy
 	private String date;
 	
 	
@@ -49,6 +52,18 @@ public class Buser {
 	
 	public void setName(String name) {
 		this.name = name;
+<<<<<<< HEAD
+=======
+		this.phone = phone;
+		this.date = date;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+>>>>>>> refs/remotes/origin/ssy
 	}
 	public String getPassword() {
 		return password;
