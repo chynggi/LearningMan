@@ -2,6 +2,12 @@
 include "../static/header.php"
 ?>
     	<title>러닝맨 데이터 분석 게시판 게시글 삭제</title>
+<<<<<<< HEAD
+=======
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       
+    
+>>>>>>> refs/remotes/origin/master
     <body>
         <h1 class="display-4">데이터 분석 게시판 게시글 삭제</h1>
         <?php 

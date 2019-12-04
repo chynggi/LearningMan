@@ -39,9 +39,17 @@ include "../static/header.php"
 	<input type="hidden" name = "board_id" value=" <?=$_SESSION["id"]?> ">
 	<input type="hidden" name = "board_no" value="<?php echo $oneRow["NO"]?>">
 	<input type="hidden" name = "dbname" value="SSBOARD">
+<<<<<<< HEAD
 	<button class="btn btn-success" type="submit">수정</button>
 	            &nbsp;&nbsp;&nbsp;
      <a class="btn btn-secondary" href="./ServerSideBoardList.php"> 리스트로 돌아가기</a>
+=======
+	<button class="btn btn-success" type="submit">저장</button>
+	            &nbsp;&nbsp;&nbsp;
+            <button class="btn btn-primary" type="submit">글 수정</button>
+            &nbsp;&nbsp;
+            <a class="btn btn-primary" href="./ServerSideBoardList.php"> 리스트로 돌아가기</a>
+>>>>>>> refs/remotes/origin/master
         </form>
         </div>
 	
