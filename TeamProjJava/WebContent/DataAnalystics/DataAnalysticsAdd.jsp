@@ -49,7 +49,7 @@
       <form method="post" action="new.do" style="width:100%; height: 100%;">		
 		<table class="table table-bordered" style="text-align: center; border: 1xp solid #dddddd" style="width:50%">
 			<tr>
-                <td align = "center" bgcolor = "#3e5baa" style="width:10%">
+                <td align = "center" bgcolor = "#0085a1" style="width:10%">
                 	<font color = "white">
                 	제목
                 	</font>
@@ -59,7 +59,7 @@
                 </td>
             </tr> 
             <tr>
-                <td align = "center" bgcolor = "#3e5baa" style="width:10%">               		
+                <td align = "center" bgcolor = "#0085a1" style="width:10%">               		
                 	<font color = "white">
                 	내용
                 	</font>               		

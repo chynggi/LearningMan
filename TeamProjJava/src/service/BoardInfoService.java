@@ -20,6 +20,7 @@ public class BoardInfoService implements Service {
 		System.out.println("Board Info. Display");
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
+		
 		HttpSession session = request.getSession();
 		long no = Long.parseLong(request.getParameter("no"));
 		PrintWriter out = response.getWriter();
@@ -28,6 +29,7 @@ public class BoardInfoService implements Service {
 		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
 		Board data = new Board();
 		HashMap<String,Object> para = new HashMap<String,Object>();
+		
 		para.put("dbname", tablename);
 		para.put("no",no);
 		RequestDispatcher rd = request.getRequestDispatcher("./DataAnalysticsDetail.jsp");

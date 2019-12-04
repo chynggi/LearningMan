@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="dto.Board" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -42,16 +44,20 @@
 		</style>
 </head>
 <body>
+<%
+request.setCharacterEncoding("UTF-8");
+List<Board> list = (List<Board>)request.getAttribute("data");
+for(Board x:list) { %>
     <jsp:include page="../static/header.jsp"></jsp:include>        
         <form action="delete.do" method="post" colspan = "20">
         <table class="table table-bordered" border="1" align = "center" style="width:60%;">
             
                 <tr align = "center">
-                    <td>게시글을 삭제하려면 비밀 번호를 입력하세요.</td>
+                    <td>게시글을 삭제하시겠습니까</td>
                 </tr>
                 <tr align = "center">
-                    <td><input type="text" name="PW">
-                        <input type="hidden" name="NO" value="<?php echo $NO ?>">
+                    <td><input type="text" name="no">
+                        <input type="hidden" name="no" value="<% x.getNo(); %>">
                     </td>
                 </tr>
                 <tr align = "center">
@@ -61,5 +67,6 @@
             </table>
         </form>    
    <jsp:include page="../static/footer.html"></jsp:include>
+<% } %> 
 </body>
 </html>

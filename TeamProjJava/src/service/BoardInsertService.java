@@ -42,7 +42,7 @@ public class BoardInsertService implements Service {
 			res = dao.insert(para);
 			if (res > 0) {
 				sqlSession.commit();
-				out.print("Data Input Success! 수정 성공");
+				out.print("Data Input Success! 입력 성공");
 			} else {
 				sqlSession.rollback();
 				out.print("Data Input Failed! 입력 실패");

@@ -93,7 +93,7 @@
         	게시글을 삭제하면 복구 할 수 없습니다.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">취소</button>
         <a class="btn btn-primary" href="./delete.do?no=<%=post.getNo()%>">삭제</a>
       </div>
     </div>

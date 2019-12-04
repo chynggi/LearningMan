@@ -117,7 +117,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} break;
-		case "/ServerSide/new.do":
+		case "/DataAnalystics/new.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new BoardInsertService();
@@ -126,7 +126,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} break;	
-		case "/ServerSide/List.do":
+		case "/DataAnalystics/List.do":
 			System.out.println(command+"를 처리합니다.");
 			request.setAttribute("tablename","SSBOARD");
 			try {
@@ -135,7 +135,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} break;
-		case "/ServerSide/Info.do":
+		case "/DataAnalystics/Info.do":
 			System.out.println(command+"를 처리합니다.");
 			request.setAttribute("tablename","SSBOARD");
 			try {
@@ -144,7 +144,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} break;
-		case "/ServerSide/delete.do":
+		case "/DataAnalystics/delete.do":
 			System.out.println(command+"를 처리합니다.");
 			request.setAttribute("tablename","SSBOARD");
 			try {
@@ -161,7 +161,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();			
 			} break; //Login처리부분
-		case "/ServerSide/adjust.do":
+		case "/DataAnalystics/adjust.do":
 			System.out.println(command+"를 처리합니다.");
 			request.setAttribute("tablename","SSBOARD");
 			try {

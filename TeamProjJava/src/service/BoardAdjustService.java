@@ -15,12 +15,12 @@ public class BoardAdjustService implements Service{
 		System.out.println("Board Adjusting");
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();
-		String title = request.getParameter("title");
-		String content = request.getParameter("content");
-		String id = request.getParameter("id");
+		PrintWriter out  = response.getWriter();
+		String title 	 = request.getParameter("title");
+		String content 	 = request.getParameter("content");
+		String id 		 = request.getParameter("id");
 		String tablename = request.getParameter("tablename");
-		String xdate = request.getParameter("xdate");
+		String xdate 	 = request.getParameter("xdate");
 		long no = Long.parseLong(request.getParameter("no"));
 		out.print("title:" + title + "<br/>");
 		out.print("내용:" + content + "<br/>");
@@ -48,11 +48,11 @@ public class BoardAdjustService implements Service{
 				out.print("Data Input Success! 수정 성공");
 			} else {
 				sqlSession.rollback();
-				out.print("Data Input Failed! 입력 실패");
+				out.print("Data Input Failed! 수정 실패");
 				return false;
 			}
 		} catch (Exception e) {
-			System.err.println("입력하려는 데이터나 구문에 문제가 있습니다.");
+			System.err.println("수정하려는 데이터나 구문에 문제가 있습니다.");
 			e.printStackTrace();
 			return false;
 		}
