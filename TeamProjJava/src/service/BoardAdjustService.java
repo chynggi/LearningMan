@@ -23,11 +23,11 @@ public class BoardAdjustService implements Service{
 		String content = request.getParameter("content");
 		String id = request.getParameter("id");
 		String tablename = request.getParameter("tablename");
-		String xdate = request.getParameter("xdate");
+		String date = request.getParameter("xdate");
 		long no = Long.parseLong(request.getParameter("no"));
 		out.print("title:" + title + "<br/>");
 		out.print("내용:" + content + "<br/>");
-		out.print("날짜: " + xdate + "<br/>");
+		out.print("날짜: " + date + "<br/>");
 		out.print("ID:" + id + "<br/>");
 		
 
@@ -37,7 +37,7 @@ public class BoardAdjustService implements Service{
 		vo.setContent(content);
 		vo.setId(id);
 		vo.setTitle(title);
-		vo.setDate(xdate);
+		vo.setDate(date);
 		HashMap<String,Object> para = new HashMap<String,Object>();
 		para.put("dbname", tablename);
 		para.put("board",vo);
