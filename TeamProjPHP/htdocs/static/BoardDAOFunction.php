@@ -4,7 +4,7 @@ function dbConnect()
 {
     $tns = "
     (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)
-    (HOST = 192.168.0.9)(PORT = 1521)) )
+    (HOST = 192.168.0.23)(PORT = 1521)) )
     (CONNECT_DATA = (SERVICE_NAME = xe) )
  ) ";
     try {
