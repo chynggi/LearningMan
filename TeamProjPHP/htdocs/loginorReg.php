@@ -72,8 +72,8 @@
 						<span class="subheading">Team Project</span>
 						<h1>Learning Man</h1>
 						<p class="M_btn">
-							<a class="col-lg-8 col-md-10 mx-auto" href="#">로그인</a> <a
-								class="col-lg-8 col-md-10 mx-auto" href="#">회원가입</a>
+							<a class="col-lg-8 col-md-10 mx-auto" href="loginorReg.php">로그인</a> <a
+								class="col-lg-8 col-md-10 mx-auto" href="loginorReg.php">회원가입</a>
 						</p>
 					</div>
 				</div>
@@ -171,7 +171,11 @@
 
 			</div>
 		</div>
-
+		<div class="col-sm-8 col-sm-offset-2">
+        				<div class="footer-border"></div>
+        				<p>Login/Register form Originally Made by Anli Zaimi at <a href="http://azmind.com" target="_blank"><strong>AZMIND</strong></a> 
+        					having a lot of fun. <i class="fa fa-smile-o"></i></p>
+        			</div>
 	</div>
 
 	<!-- Footer -->
