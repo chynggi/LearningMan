@@ -31,7 +31,7 @@ List<Board> data = (List<Board>)request.getAttribute("data");
     <th scope="row"><%=post.getNo()%></th>
       <td><a href="./Info.do?no=<%=post.getNo()%>"><%=post.getTitle()%></a></td>
       <td><%=post.getId()%></td>
-      <td><%=post.getXdate()%></td>
+      <td><%=post.getDate()%></td>
          </tr>  
      <%} %>
 

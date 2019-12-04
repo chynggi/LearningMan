@@ -6,9 +6,8 @@ public class Buser {
 	private String name;
 	private String phone;
 	private String date;
-	public String getId() {
-		return id;
-	}
+	
+	
 	public Buser(String id, String password, String name, String phone, String date) {
 		super();
 		this.id = id;
@@ -17,11 +16,9 @@ public class Buser {
 		this.phone = phone;
 		this.date = date;
 	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+	
+	public String getId() {
+		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
@@ -38,20 +35,24 @@ public class Buser {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public String getDate() {
 		return date;
 	}
 	public void setDate(String date) {
 		this.date = date;
 	}
+	
+	
 	@Override
 	public String toString() {
 		return "Buser [id=" + id + ", password=" + password + ", name=" + name + ", phone=" + phone + ", date=" + date
 				+ "]";
 	}
-	
-	
-	
 	
 }

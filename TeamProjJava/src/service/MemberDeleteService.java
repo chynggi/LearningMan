@@ -30,7 +30,7 @@ public class MemberDeleteService implements Service {
 		RequestDispatcher rd = request.getRequestDispatcher("./MyInfoUpdate.jsp");
 		try {
 			Buser vo = dao.selectById(id);			
-			if (vo.getPw().equals(pw)) {
+			if (vo.getPassword().equals(pw)) {
 				dao.delete(id);
 				
 				response.sendRedirect("../main.do");

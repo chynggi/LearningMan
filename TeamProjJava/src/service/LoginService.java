@@ -19,7 +19,7 @@ public class LoginService implements Service {
 		// 파라미터/응답 인코딩 방식 지정
 		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("id");
-		String password = request.getParameter("pw");
+		String password = request.getParameter("password");
 		
 		System.out.println(id);
 		System.out.println(password);
@@ -36,7 +36,7 @@ public class LoginService implements Service {
 		Buser mem = null;
 		try {
 			mem = dao.selectById(id);
-			if (mem.getPw().equals(password)) {
+			if (mem.getPassword().equals(password)) {
 				session.setAttribute("loginOK", "OK");
 				session.setAttribute("id", id);
 				session.setAttribute("name", mem.getName());
@@ -53,7 +53,6 @@ public class LoginService implements Service {
 			e.printStackTrace();
 			message = "회원정보가 존재하지 않습니다.";
 			session.setAttribute("message", message);
-//			response.sendRedirect("./loginorReg.jsp");
 			response.sendRedirect("./Login.jsp");
 			return false;
 		}

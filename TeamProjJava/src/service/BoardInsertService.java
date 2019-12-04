@@ -21,10 +21,11 @@ public class BoardInsertService implements Service {
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		String title = request.getParameter("title");
-		String xdate = request.getParameter("xdate");
+		String date = request.getParameter("date");
 		String content = request.getParameter("content");
 		String id = request.getParameter("id");
-		String tablename = request.getParameter("tablename");
+		String tablename = (String)request.getAttribute("tablename");
+		System.out.println(tablename);
 		out.print("title:" + title + "<br/>");
 		out.print("내용:" + content + "<br/>");
 		out.print("ID:" + id + "<br/>");
@@ -34,7 +35,7 @@ public class BoardInsertService implements Service {
 		vo.setContent(content);
 		vo.setId(id);
 		vo.setTitle(title);
-		vo.setXdate(xdate);
+		vo.setDate(date);
 
 		
 		out.print(vo + "<br/>");
@@ -61,9 +62,7 @@ public class BoardInsertService implements Service {
 			return false;
 		}
 
-		out.print("<a href=\"form_Board.jsp\">계속 작업</a>");
-		out.print("<button type=\"button\" onclick=\"location.href='datadisp.jsp'\">입력자료출력</button>");
-
+		response.sendRedirect("./board_list.jsp");
 		return true;
 	}
 

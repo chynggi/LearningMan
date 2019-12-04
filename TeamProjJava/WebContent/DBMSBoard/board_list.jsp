@@ -7,7 +7,6 @@
 <%@ page import="org.apache.ibatis.session.SqlSession" %>
 
 <html lang="ko">
-
 <head>
 
   <meta charset="utf-8">
@@ -18,15 +17,15 @@
   <title>게시판</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
   <!-- Custom styles for this template -->
-  <link href="css/clean-blog.min.css" rel="stylesheet">
+  <link href="../static/css/clean-blog.min.css" rel="stylesheet">
 
 <style>
 .M_btn>a {
@@ -77,15 +76,15 @@
 
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/dbms3.png')">
+  <header class="masthead" style="background-image: url('../img/dbms3.png')">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-md-10 mx-auto">
 					<div class="site-heading">
 						<p class="M_btn"  >
-							<a class="col-lg-8 col-md-10 mx-auto" href="loginorReg.jsp" style="font-family:GyeonggiBatangOTF">로그인</a> 
-							<a class="col-lg-8 col-md-10 mx-auto" href="loginorReg.jsp" style="font-family:GyeonggiBatangOTF">회원가입</a>
+							<a class="col-lg-8 col-md-10 mx-auto" href="../login/Login.jsp" style="font-family:GyeonggiBatangOTF">로그인</a> 
+							<a class="col-lg-8 col-md-10 mx-auto" href="../member/signup.jsp" style="font-family:GyeonggiBatangOTF">회원가입</a>
 						</p>
 					</div>
 				</div>
@@ -111,7 +110,7 @@
          		<% 
 	         		SqlSession sqlSession = MBUtils.getSession();
 	        		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
-         			List<Board> list = dao.selectAll();
+         			List<Board> list = dao.selectAll("DBMSBOARD");
          			for(int i=0; i<list.size(); i++){
          		%>
          	
@@ -119,7 +118,7 @@
         			<td ><%= list.get(i).getNo() %></td>
         			<td><%= list.get(i).getTitle() %></td>
         			<td><%= list.get(i).getId() %></td>
-        			<td><%= list.get(i).getXdate()%></td>
+        			<td><%= list.get(i).getDate()%></td>
          		</tr>
     
           	</tbody>
@@ -135,14 +134,14 @@
 
   <hr>
 
-<%@ include file ="static/footer.jsp" %>
+<%@ include file ="../static/footer.jsp" %>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/clean-blog.min.js"></script>
+  <script src="../static/js/clean-blog.min.js"></script>
 
 </body>
 

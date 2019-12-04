@@ -30,9 +30,9 @@ public class MemberInfoService implements Service {
 			Buser vo = dao.selectById(id);
 			request.setAttribute("id", id);
 			request.setAttribute("name", vo.getName());
-			request.setAttribute("password", vo.getPw());
+			request.setAttribute("password", vo.getPassword());
 			request.setAttribute("phone", vo.getPhone());
-			request.setAttribute("xdate", vo.getXdate());
+			request.setAttribute("xdate", vo.getDate());
 			rd.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
