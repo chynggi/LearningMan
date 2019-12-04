@@ -25,8 +25,8 @@ include "../static/header.php"
             
             
         ?>
-        
-     <table id="dataTable" class="table table-bordered" border="1" align = "center" style="width:60%;"> 
+        <div class="container">
+     <table id="dataTable" class="table table-bordered" border="1" align = "center"> 
      <thead>
 			<th align = "center" bgcolor = "#3e5baa" style="width:10%;"><font color = "white">#</font></th>
 			<th align = "center" bgcolor = "#3e5baa" style="width:65%;"><font color = "white">제목</font></th>
@@ -52,6 +52,7 @@ include "../static/header.php"
             	</td>           	
             </tr>           
         </table>     
+        </div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
 	<br>
 <?php
