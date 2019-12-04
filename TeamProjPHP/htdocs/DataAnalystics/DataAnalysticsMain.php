@@ -1,89 +1,34 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-
+  <title>러닝맨 데이터 분석</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
-  <title>Learning Man</title>
-
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link href="css/clean-blog.min.css" rel="stylesheet">
+  
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
+  <link href="./css/boost.css" rel='stylesheet' type='text/css'>
 
 </head>
 
 <body>
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Learning Man</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.php">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="OOP_Board/oop_B_index.php">OOP</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="post.html">DBMS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Server Side</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Frame Works</a>
-          </li>
-          
-          <li class="nav-item dropdown dmenu" >
-      		<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-     	 	Data Analystics
-      		</a>
-      		<div class="dropdown-menu sm-menu">
-        		<a class="dropdown-item" href="DataAnalysticsMain.php">데이터 분석이란?</a>
-        		<a class="dropdown-item" href="DataAnalysticsBoardList.php">질문 게시판</a>     			
-      		</div>
-     	  </li>  
-
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url('DataAnalysticsImg/빅데이터.png')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>Learning Man Data Analystics</h1>
-            <span class="subheading">made by Eom Yun Hwan</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
+  <?php
+  include "../static/header.php"
+  ?>
+  <hr>
   <!-- Main Content -->
   <div class="container">
 		<div class="row">
 			<div class="embed-responsive embed-responsive-16by9">
-				<iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=acOazuUJUoU"></iframe>			
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/aasrgF5LWdU"></iframe>			
 			</div>	
 		</div>	
-	</div>
+  </div>
+  <hr>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
@@ -114,7 +59,7 @@
         <h3>데이터 분석 실습</h3>
         <p>교육은 R언어로 진행되어 2019년 신년사 텍스트 데이터를 Crawling을 활용해 Word Cloud를 표를 나타냈다.</p>
         <table align = "center">
-	        <tr colspan = "3">
+	        <tr colspan = "2">
     		    <td>
         			<img src="./DataAnalysticsImg/텍스트데이터분석워드클라우딩.jpg" style="max-width: 100%; height: auto;">        
         		</td>
@@ -122,12 +67,7 @@
         		<td>
         			<img src="./DataAnalysticsImg/텍스트데이터분석원형그래프.png" style="max-width: 100%; height: auto;">        
         		</td>
-        	
-        		<td>
-        			<img src="./DataAnalysticsImg/텍스트데이터분석막대그래프.png" style="max-width: 100%; height: auto;">        
-        		</td>
-        		
-        	</tr>
+			</tr>
         </table>
         <br>
 		<p></p>	
@@ -136,7 +76,8 @@
         <div class="container">
     		<div class="row">
       			<div class="col-lg-8 col-md-10 mx-auto" align = "center">
-        			<a class="btn btn-primary" href="./DataAnalysticsBoardList.php"> 질문 게시판 이동</a>
+        			<a class="btn btn-primary" href="./DataAnalysticsBoardAdd.php"> 질문 하기</a>
+        			<a class="btn btn-primary" href="./DataAnalysticsBoardList.php"> 질문 게시판</a>
         		</div>
         	</div>
         </div>
@@ -198,7 +139,9 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/clean-blog.min.js"></script>
-
+  <?php
+  include "../static/footer.php"
+  ?>
 </body>
 
 </html>

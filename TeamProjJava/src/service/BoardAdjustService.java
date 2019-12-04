@@ -2,12 +2,9 @@ package service;
 
 import java.io.PrintWriter;
 import java.util.HashMap;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.apache.ibatis.session.SqlSession;
-
 import common.MBUtils;
 import dao.BoardDAO;
 import dto.Board;
@@ -18,26 +15,24 @@ public class BoardAdjustService implements Service{
 		System.out.println("Board Adjusting");
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();
-		String title = request.getParameter("title");
-		String content = request.getParameter("content");
-		String id = request.getParameter("id");
+		PrintWriter out  = response.getWriter();
+		String title 	 = request.getParameter("title");
+		String content 	 = request.getParameter("content");
+		String id 		 = request.getParameter("id");
 		String tablename = request.getParameter("tablename");
-		String xdate = request.getParameter("xdate");
+		String xdate 	 = request.getParameter("xdate");
 		long no = Long.parseLong(request.getParameter("no"));
 		out.print("title:" + title + "<br/>");
 		out.print("내용:" + content + "<br/>");
 		out.print("날짜: " + xdate + "<br/>");
-		out.print("ID:" + id + "<br/>");
-		
-
+		out.print("ID:" + id + "<br/>");		
 		//
 		Board vo = new Board();
 		vo.setNo(no);
 		vo.setContent(content);
 		vo.setId(id);
 		vo.setTitle(title);
-		vo.setXdate(xdate);
+		vo.setDate(xdate);
 		HashMap<String,Object> para = new HashMap<String,Object>();
 		para.put("dbname", tablename);
 		para.put("board",vo);
@@ -53,19 +48,16 @@ public class BoardAdjustService implements Service{
 				out.print("Data Input Success! 수정 성공");
 			} else {
 				sqlSession.rollback();
-				out.print("Data Input Failed! 입력 실패");
+				out.print("Data Input Failed! 수정 실패");
 				return false;
 			}
 		} catch (Exception e) {
-			System.err.println("입력하려는 데이터나 구문에 문제가 있습니다.");
+			System.err.println("수정하려는 데이터나 구문에 문제가 있습니다.");
 			e.printStackTrace();
 			return false;
 		}
-
-		response.sendRedirect("./List.do");
+		response.sendRedirect("./Info.do?no="+no);
 
 		return true;
 	}
-
-
 }

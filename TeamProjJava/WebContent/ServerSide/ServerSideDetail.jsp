@@ -8,8 +8,6 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	Board post = (Board)request.getAttribute("data");
-
-
 %>
 
 

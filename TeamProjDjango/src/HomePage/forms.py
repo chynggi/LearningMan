@@ -3,7 +3,7 @@ from HomePage.models import *
 class Form(ModelForm):
     class Meta:
         model = Buser
-        fields =['id','pw','name']
+        fields =['id','pw','name','phone']
         
 class FormSS(ModelForm):
     class Meta:

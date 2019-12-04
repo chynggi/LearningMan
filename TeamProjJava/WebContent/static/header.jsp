@@ -54,7 +54,7 @@
 	</nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('../static/img/home-bg.jpg')">
+  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -76,7 +76,7 @@
             
             <p class="M_btn">
             	<a class="col-lg-8 col-md-10 mx-auto"><strong><%=user_name%></strong>님 환영합니다.</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="../member/MemberInfo.do">본인정보 수정</a>           	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="../member/MyInfoUpdate.jsp">본인정보 수정</a>           	
             	<a class="col-lg-8 col-md-10 mx-auto" href="../login/logout.do">로그아웃</a>           	
             </p>
             <%

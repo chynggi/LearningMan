@@ -184,10 +184,7 @@
     		}else{
     			return true;
     		}
-
     	}
-
-
     	function checkId(id) {
     		var f = document.memberForm;
     		if(id.length < 4){
@@ -269,14 +266,10 @@
       </div>
     </div>
   </footer>
-
   <!-- Bootstrap core JavaScript -->
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../js/jquery-3.4.1.min.js"></script>
-
   <!-- Custom scripts for this template -->
   <script src="../js/clean-blog.min.js"></script>
-
 </body>
-
 </html>

@@ -16,15 +16,13 @@
         </div>
         <hr>
         <%
-        if (session.getAttribute("message") != null)
-        {
-        	%>
+        if (session.getAttribute("message") != null){
+        %>
         <div class="alert alert-danger" role="alert">
-  <strong><%=session.getAttribute("message") %></strong>
+  <strong><%=session.getAttribute("message")%></strong>
 </div>
-        	<%
-        }
-        
+        <%
+        }        
         %>
         <div class="loginForm_box">
         	<form name="loginForm" action="./login.do" method="post">

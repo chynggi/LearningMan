@@ -2,6 +2,11 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
 <jsp:include page="../static/header.jsp"></jsp:include>
 <!-- Main Content -->
   <div class="container">
@@ -14,7 +19,7 @@
         </div>
         <hr>
         <div class="memberForm_box">
-        	<form name="memberForm" action="./Delete.do"  onSubmit="return insertOk(this)" method="post">
+        	<form name="memberForm" action="./member_delete_action.php"  onSubmit="return insertOk(this)" method="post">
         		<div class="ID_form">
         			<input class="id" id="id" type="text" name="memId" placeholder="&nbsp;&nbsp;아이디">
         		</div>
@@ -59,7 +64,6 @@
 
     	}
 
-
     	function checkId(id) {
     		var f = document.memberForm;
     		if(id.length < 4){
@@ -82,3 +86,6 @@
     		}
     	}
 	</script>
+<jsp:include page="../static/footer.html"></jsp:include>
+</body>
+</html>

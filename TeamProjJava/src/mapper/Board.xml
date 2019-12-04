@@ -21,7 +21,7 @@ NO,TITLE,CONTENT,ID,XDATE
 	>
 	
 	INSERT INTO ${dbname} (<include refid= "basecolumns"></include>) 
-	VALUES(SSBOARD_SEQ.NEXTVAL,${board.title},${board.content},${board.id},SYSDATE)
+	VALUES(SSBOARD_SEQ.NEXTVAL,#{board.title},#{board.content},#{board.id},SYSDATE)
 	
 
 </insert>
@@ -45,7 +45,5 @@ NO,TITLE,CONTENT,ID,XDATE
 	SELECT COUNT(*) FROM SSBOARD
 	]]>
 </select>
-
-
 
 </mapper>

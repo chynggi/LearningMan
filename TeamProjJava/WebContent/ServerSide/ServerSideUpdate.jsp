@@ -8,8 +8,6 @@
 <%
 	String title = request.getParameter("title");
 	String content = request.getParameter("title");
-
-
 %>
 <div class="container">
 	<form action="new.do" method="POST">

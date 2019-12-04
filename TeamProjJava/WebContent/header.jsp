@@ -1,33 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
-<html lang="ko">
-
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+<meta charset="UTF-8">
+<title>Clean Blog - Start Bootstrap Theme</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
   <!-- Custom styles for this template -->
-  <link href="css/clean-blog.css" rel="stylesheet">
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/clean-blog.min.js"></script>
-
+  <link href="../static/css/clean-blog.css" rel="stylesheet">
+  <link href="../static/css/login.css" rel="stylesheet">
+  <link href="../static/css/member.css" rel="stylesheet">
 
 </head>
 
@@ -50,13 +40,13 @@
 					</li>
 					<li class="nav-item"><a class="nav-link"
 						href="OOP_Board/oop_B_index.php">OOP</a></li>
-					<li class="nav-item"><a class="nav-link" href="dbms_Board.jsp">DBMS</a>
+					<li class="nav-item"><a class="nav-link" href="post">DBMS</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="contact">Server
+					<li class="nav-item"><a class="nav-link" href="../ServerSide/List.do">Server
 							Side</a></li>
 					<li class="nav-item"><a class="nav-link" href="contact">Frame
 							Works</a></li>
-					<li class="nav-item"><a class="nav-link" href="DataAnalysticsMain.jsp">Data
+					<li class="nav-item"><a class="nav-link" href="contact">Data
 							Analystics</a></li>
 				</ul>
 			</div>
@@ -64,30 +54,49 @@
 	</nav>
 
   <!-- Page Header -->
-  <header class="masthead"
-		style="background-image: url('img/home-bg.jpg')">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-md-10 mx-auto">
-					<div class="site-heading">
-						<span class="subheading">Team Project</span>
-						<h1>Learning Man</h1>
-						<p class="M_btn">
-							<a class="col-lg-8 col-md-10 mx-auto" href="loginorReg.jsp">로그인</a> <a
-								class="col-lg-8 col-md-10 mx-auto" href="loginorReg.jsp">회원가입</a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-  <script src="./vendor/jquery/jquery.min.js"></script>
-  <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="./js/clean-blog.min.js"type="text/javascript" charset="utf-8"></script>
-  <script src="./js/contents_any.js" type="text/javascript" charset="utf-8"></script>
-
-
-</html>
+  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <span class="subheading">Team Project</span>
+            <h1>Learning Man</h1>
+            
+            <%if(session.getAttribute("name") == null || session.getAttribute("name").equals(""))
+            	{%>
+            <p class="M_btn">
+            	<a class="col-lg-8 col-md-10 mx-auto" href="../login/Login.jsp">로그인</a>
+            	<a class="col-lg-8 col-md-10 mx-auto" href="../member/member.jsp">회원가입</a>            	
+            </p>
+            <%}
+            else { String user_name = (String)session.getAttribute("name");
+            	%>
+            
+            
+            <p class="M_btn">
+            	<a class="col-lg-8 col-md-10 mx-auto"><strong><%=user_name%></strong>님 환영합니다.</a>
+            	<a class="col-lg-8 col-md-10 mx-auto" href="../member/MyInfoUpdate.jsp">본인정보 수정</a>           	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="../login/logout.do">로그아웃</a>           	
+            </p>
+            <%
+            }
+            %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+	<style>
+		.M_btn>a {
+			text-decoration: none;
+			color:#fff;
+		}
+        .M_btn>p {
+			text-decoration: none;
+			color:#fff;
+		}
+		.M_btn>a:hover {
+			color:#000;
+		}
+	</style>

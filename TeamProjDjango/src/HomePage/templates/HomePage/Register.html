@@ -27,19 +27,19 @@
         	<form name="memberForm" action=""  onSubmit="return insertOk(this)" method="post">
         		{% csrf_token %}
         		<div class="ID_form">
-        			<input class="id" id="id" type="text" name="memId" placeholder="&nbsp;&nbsp;아이디">
+        			<input class="id" id="id" type="text" name="id" placeholder="&nbsp;&nbsp;아이디">
         		</div>
         		<div class="PW_form">
-        			<input class="pw" id="pw" type="password" name="memPw" placeholder="&nbsp;&nbsp;비밀번호">
+        			<input class="pw" id="pw" type="password" name="pw" placeholder="&nbsp;&nbsp;비밀번호">
         		</div>
         		<div class="PWC_form">
-        			<input class="pwc" id="pwc" type="password" name="memPwc" placeholder="&nbsp;&nbsp;비밀번호확인">
+        			<input class="pwc" id="pwc" type="password" name="pwc" placeholder="&nbsp;&nbsp;비밀번호확인">
         		</div>
         		<div class="NAME_form">
-        			<input class="name" id="name" type="text" name="memName" placeholder="&nbsp;&nbsp;이름">
+        			<input class="name" id="name" type="text" name="name" placeholder="&nbsp;&nbsp;이름">
         		</div>
         		<div class="PN_form">
-        			<input class="phone" id="phone" type="text" name="memPhone" placeholder="&nbsp;&nbsp;전화번호 (-없이)">
+        			<input class="phone" id="phone" type="text" name="phone" placeholder="&nbsp;&nbsp;전화번호 (-없이)">
         		</div>
         		<div class="subM_form">
         			<input class="memBtn" type="submit" value="회원가입">

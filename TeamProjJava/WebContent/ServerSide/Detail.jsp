@@ -13,7 +13,7 @@
 %>
 <article>
     <div class="container">
-	<form action = "ServerSideUpdate.jsp">
+	<form action = "./Update.jsp">
 		<div class="input-group mb-3">
 		
 			<div class="input-group-prepend">

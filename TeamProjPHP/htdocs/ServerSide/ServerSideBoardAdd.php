@@ -24,6 +24,10 @@ include "../static/header.php"
 	<input type="hidden" name = "board_id" value=" <?=$_SESSION["id"]?> ">
 	<input type="hidden" name = "dbname" value="SSBOARD">
 	<button class="btn btn-success" type="submit">저장</button>
+<<<<<<< HEAD
+	<a class="btn btn-secondary" href="./ServerSideBoardList.php"> 리스트로 돌아가기</a>
+=======
+>>>>>>> refs/remotes/origin/master
 	</form>
 	</div>
 	

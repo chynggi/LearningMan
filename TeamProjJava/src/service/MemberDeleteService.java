@@ -1,20 +1,16 @@
 package service;
 
 import java.io.PrintWriter;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.apache.ibatis.session.SqlSession;
-
 import common.MBUtils;
 import dao.BuserDAO;
 import dto.Buser;
 
 public class MemberDeleteService implements Service {
-
 	@Override
 	public boolean execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("UTF-8");
@@ -30,7 +26,7 @@ public class MemberDeleteService implements Service {
 		RequestDispatcher rd = request.getRequestDispatcher("./MyInfoUpdate.jsp");
 		try {
 			Buser vo = dao.selectById(id);			
-			if (vo.getPw().equals(pw)) {
+			if (vo.getPassword().equals(pw)) {
 				dao.delete(id);
 				
 				response.sendRedirect("../main.do");
@@ -44,8 +40,7 @@ public class MemberDeleteService implements Service {
 		} catch (Exception e) {
 			e.printStackTrace();
 			message = "회원정보가 존재하지 않습니다.";
-			session.setAttribute("message", message);
-			
+			session.setAttribute("message", message);			
 			sqlsession.close();
 			response.sendRedirect("./MyInfoDelete.jsp");
 			return false;
@@ -53,5 +48,4 @@ public class MemberDeleteService implements Service {
 		sqlsession.close();
 		return true;
 	}
-
 }

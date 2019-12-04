@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Learning Man</title>
-
-  <!-- Bootstrap core CSS -->
+  <title>러닝맨 로그인</title>
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom fonts for this template -->
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-  <!-- Custom styles for this template -->
   <link href="../css/clean-blog.css" rel="stylesheet">
   <link href="../css/login.css" rel="stylesheet">
   <link href="../css/member.css" rel="stylesheet">
-
 </head>
 
 <body>
-
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
@@ -52,15 +44,9 @@
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Frame Works</a>
           </li>
-          <li class="nav-item dropdown dmenu" >
-      		<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-     	 	Data Analystics
-      		</a>
-      		<div class="dropdown-menu sm-menu">
-        		<a class="dropdown-item" href="../DataAnalysticsMain.php">데이터 분석이란?</a>
-        		<a class="dropdown-item" href="../DataAnalysticsBoardList.php">질문 게시판</a>     			
-      		</div>
-     	  </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Data Analystics</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -123,23 +109,6 @@
             </h2>
         </div>
         <hr>
-
-		<form action="loginAction.php" method="post" style="text-align: center;">
-			<div>
-				<label for="id" id="board_user" text = "text">ID</label>&nbsp;&nbsp;&nbsp;
-				<input type="text" name="id">
-			</div>
-			<div>
-				<label for="pw" id="board_pw" text = "password">PW</label>&nbsp;
-				<input type="text" name="pw">
-			</div>
-			<div style="margin-left: 206px;">
-				<input type="submit" value="로그인">
-			</div>
-		</form>
-        
-        
-
         <div class="loginForm_box">
         	<form name="loginForm" action="./login_action.php" method="post">
         		<div class="ID_form">
@@ -155,57 +124,6 @@
         </div>
       </div>
 	</div>
-        
-        
-  <!-- Footer -->
-  <footer style="background: #aaa;>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <ul class="list-inline text-center">
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
-          <p class="copyright text-muted">Copyright &copy; Your Website 2019</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="../js/clean-blog.min.js"></script>
-
-</body>
-
-</html>
-
   <?php
-include "../static/footer.php"
-?>
-
+  include "../static/footer.php"
+  ?>

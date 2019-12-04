@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>회원정보 수정</title>
+  <title>회원정보수정</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -200,10 +200,7 @@
     		}else{
     			return true;
     		}
-
     	}
-
-
     	function checkId(id) {
     		var f = document.memberForm;
     		if(id.length < 4){
@@ -286,14 +283,10 @@
       </div>
     </div>
   </footer>
-
   <!-- Bootstrap core JavaScript -->
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
   <!-- Custom scripts for this template -->
   <script src="../js/clean-blog.min.js"></script>
-
 </body>
-
 </html>

@@ -2,9 +2,9 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>member_insert_action.php</title>
+	<title>회원정보수정 시스템</title>
 </head>
-<body> <h1>memberAddAction.php</h1>
+<body>
 <?php
     //board_add_form.php 페이지에서 넘어온 글 번호값 저장 및 출력
     $user_id = $_POST["memId"];

@@ -1,98 +1,92 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
         <title>러닝맨 데이터 분석 게시판 게시글 내용</title>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  		<meta name="description" content="">
+  		<meta name="author" content="">
+        
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
+  		<link href="./css/boost.css" rel='stylesheet' type='text/css'>
+        
         <link rel="stylesheet" href="./css/bootstrap.css">
         <script type="text/javascript" src="./js/bootstrap.js"></script>
-        <link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
-		<link href="./css/boost.css" rel='stylesheet' type='text/css'>
-		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="./css/bootstrap.css">
-		<script type="text/javascript" src="./js/bootstrap.js"></script>
+	
     	<style>
             table {
                 table-layout: fixed;
                 word-wrap: break-word;
             }
-        </style>
+        </style>        
     </head>
 
     <body>
-        <h1 class="display-4">데이터 분석 게시판 게시글 내용</h1>
-        
-     <!--   $conn = oci_connect("localhost", "root", "", "team"); -->
-        <?php 
-        $conn = oci_connect("team", "team", "localhost");
-        
-	   if($conn){ // 커넥션 객체 생성 여부 확인
-            echo "연결 성공<br>";	    
-        } else {
-            die("연결 실패 - ".oci_error());
-        }
-        $NO = $_GET["NO"];
-        echo $NO."번재 글 내용<br>";
-        
-        $sql = "SELECT NO, Title, Content, ID, XDate FROM board WHERE NO = '".$NO."'";
-        $result = oci_query($conn, $sql);
-        
-        if($result){
-            echo "조회 성공<br>";            
-        } else {
-            echo "조회 실패 - ".oci_error($conn);
-        }        
-    ?>
-        <table class="table table-bordered" style="width:50%">
-            <?php
-		      if($row = oci_fetch_array($result)){ // resilt 변수에 담긴 값을 row 값에 저장하여 테이블에 출력
-		      ?>
-            <tr>
+        <?php
+        include "../static/header.php"
+        ?>
+  		<hr>
+  		<div class="container">
+  		<?php
+            require_once('../static/BoardDAOFunction.php');
+            $key    = $_GET["board_no"];            
+            $oneRow = selectOne($key,"SSBOARD");            
+        ?>
+  			<table class="table table-bordered" style="width:100%">
+  		<?php
+            //result 변수에 담긴 값을 row 변수에 저장하여 테이블에 출력
+            if($oneRow != null) {
+        ?>
+        	<tr>
                 <td style="width:5%">작성자</td>
                 <td style="width:40%" colspan="5">
                     <?php
-                        echo $row["ID"];
+                        echo $oneRow["ID"];
                     ?>
                 </td>
             </tr>
             <tr>
-                <td style="width:5%">글 제목</td>
+                <td style="width:5%">제목</td>
                 <td style="width:24%">
                     <?php
-                        echo $row["Title"];
+                        echo $oneRow["TITLE"];
                     ?>
                 </td>
-                <td style="width:5%">글 번호</td>
+                <td style="width:5%">번호</td>
                 <td style="width:3%">
-                        <?php
-                            echo $row["NO"];
-                        ?>
+                    <?php
+                        echo $oneRow["NO"];
+                    ?>
                 </td>
-                <td  style="width:5%">작성 일자</td>
+                <td  style="width:5%">작성일</td>
                 <td  style="width:3%">
                     <?php
-                        echo $row["XDate"];
+                        echo $oneRow["XDATE"];
                     ?>
                 </td>
-                
             </tr>
-            <tr>
-                <td colspan="6">
-                    <?=$row["Content"]?>
+  			<tr>
+                <td colspan="6">               
+                    <?=$oneRow["CONTENT"]?>                   
                 </td>
             </tr>
             <?php
-             }
-             //oci_close($conn);
+            }
             ?>
-        </table>
-        <br>
-        &nbsp;&nbsp;&nbsp;
-        <a href='./DataAnalysticsBoardUpdate.php?NO=<?=$row["NO"]?>'>수정</a>
-		<a href='./DataAnalysticsBoardDelete.php?NO=<?=$row["NO"]?>'>삭제</a>
-        <a class="btn btn-primary" href="./DataAnalysticsBoardList.php">
-        	리스트로 돌아가기
-        </a>
+            </table>  		
+  			<br>
+        	&nbsp;&nbsp;&nbsp;
+        	<a class="btn btn-primary2" href="./DataAnalysticsBoardList.php?board_no=<?=$oneRow["NO"]?>">수정</a>
+			<a class="btn btn-primary2" href="./DataAnalysticsBoardList.php?board_no=<?=$oneRow["NO"]?>">삭제</a>
+        	<a class="btn btn-primary2" href="./DataAnalysticsBoardList.php.php">
+        	리스트 이동
+        	</a>
+        	<?php
+            include "../static/footer.php"
+            ?>    
+        </div>  
     </body>
 </html>
