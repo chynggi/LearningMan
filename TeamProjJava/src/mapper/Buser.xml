@@ -8,10 +8,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <resultMap id ="result" type="buser"> 
 
 	<result property = "id" column = "ID"/> 	<!-- 아이디 -->
-	<result property = "pw" column = "PW"/>  	<!-- 비밀번호 -->
+	<result property = "password" column = "PW"/>  	<!-- 비밀번호 -->
 	<result property = "name" column = "NAME"/> <!-- 이름 -->
 	<result property = "phone" column = "PHONE"/> <!-- 폰번호 -->
-	<result property = "xdate" column = "XDATE"/> <!-- 가입날짜 -->
+	<result property = "date" column = "XDATE"/> <!-- 가입날짜 -->
 
 </resultMap>
 	
