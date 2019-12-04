@@ -4,22 +4,19 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.apache.ibatis.session.SqlSession;
-
 import common.MBUtils;
 import dao.BuserDAO;
 import dto.Buser;
 
 public class LoginService implements Service {
-
 	@Override
 	public boolean execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		// 파라미터/응답 인코딩 방식 지정
 		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("id");
-		String password = request.getParameter("pw");
+		String password = request.getParameter("password");
 		
 		System.out.println(id);
 		System.out.println(password);
@@ -46,19 +43,40 @@ public class LoginService implements Service {
 				message = "비밀번호가 일치하지 않습니다.";
 				session.setAttribute("message", message);
 				response.sendRedirect("./Login.jsp");
-
-
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			message = "회원정보가 존재하지 않습니다.";
+<<<<<<< Upstream, based on origin/master
 			session.setAttribute("message", message);
-//			response.sendRedirect("./loginorReg.jsp");
 			response.sendRedirect("./Login.jsp");
+=======
+			session.setAttribute("message", message);
+			response.sendRedirect("./Login.jsp");
+>>>>>>> 42c7f6f 2019-12-04  15:00
 			return false;
 		}
 		sqlsession.close();
 		writer.close();
 		return true;
-	}
+	}/*
+		 * <%
+		 * 
+		 * request.setCharacterEncoding("UTF-8"); String id =
+		 * request.getParameter("id"); String password =
+		 * request.getParameter("password"); MyMemberDAO dao = new MyMemberDAO();
+		 * Connection conn = ConnectionFactory.getConnection(); PrintWriter writer =
+		 * response.getWriter(); MyMember mem = null; try{ mem = dao.select(conn, id);
+		 * if(mem.getPassword().equals(password)) {
+		 * writer.print("<h1>LOGIN SUCCESS! WELCOME!</h1>"); session.setAttribute("id",
+		 * id);
+		 * 
+		 * writer.print("<button type='button' onclick="+
+		 * "location.href='../homebook/form_homebook.jsp'" +">Homebook Input</button>");
+		 * 
+		 * } else { writer.print("<h1>LOGIN FAILED! CHECK YOUR PASSWORD!</h1>"); }
+		 * 
+		 * } catch (Exception e) { writer.print("<h1>LOGIN FAILED! CHECK YOUR ID!</h1>");
+		 * e.printStackTrace(); } %>
+		 */
 }

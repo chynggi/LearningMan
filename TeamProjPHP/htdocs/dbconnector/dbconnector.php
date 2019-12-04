@@ -16,7 +16,11 @@ OK?
 <?php
 $tns = " 
     (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)
-    (HOST = 192.168.0.9)(PORT = 1521)) ) 
+<<<<<<< HEAD
+    (HOST = 192.168.0.23)(PORT = 1521)) ) 
+=======
+    (HOST = 192.168.0.98)(PORT = 1521)) ) 
+>>>>>>> a4d2d9044e9578551a63e9b4006a556a0bce85b3
     (CONNECT_DATA = (SERVICE_NAME = xe) )
  ) "; 
 try { 
