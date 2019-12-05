@@ -16,11 +16,7 @@ urlpatterns=[
     path('delete',views.delete,name='delete'),
     path('sspost/<int:no>',views.SSpost,name='sspost'),
     path('about',views.about,name='about'),
-    
-    
-    
-    
-    
+       
     #DABOARD
     path('dalist',views.DAlist,name='dalist'),
     path('dawrite',views.DAwrite,name='dawrite'),   
