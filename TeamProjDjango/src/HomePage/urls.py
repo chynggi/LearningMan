@@ -16,4 +16,12 @@ urlpatterns=[
     path('delete',views.update,name='delete'),
     path('sspost/<int:no>',views.SSpost,name='sspost'),
     path('about',views.about,name='about'),
+       
+    #DABOARD
+    path('dalist',views.DAlist,name='dalist'),
+    path('dawrite',views.DAwrite,name='dawrite'),   
+    path('daupdate/<int:no>',views.DAupdate,name='daupdate'),   
+    path('dadelete/<int:no>',views.DAdelete,name='dadelete'),
+    path('dapost/<int:no>',views.DApost,name='dapost'), 
+    path('damain',views.DAmain,name='damain'),   
 ]

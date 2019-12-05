@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<div class="container">
+{% csrf_token %}
+		<hr>
+		<form class = "form-horizontal" action = " " method = "post">		
+		<table class="table table-bordered" align = "center" style="width:50%">                             
+                <tr>
+                    <td align = "center" bgcolor = "#0085a1" style="width:10%"><font color = "white">제목</font></td>
+                    <td style="width:50%">
+                    	<input class = "form-control" type="text" id="title" name = "board_title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder = "제목을 입력하세요">
+                    </td>
+                </tr> 
+                <tr>
+                    <td align = "center" bgcolor = "#0085a1" style="width:10%"><font color = "white">내용</font></td>
+                    <td style="width:50%">
+                    	<textarea class = "form-control" name = "board_content" id = "content" rows = "5" cols = "50" placeholder = "질문 내용을 입력하세요" aria-label="With textarea"></textarea>
+                    </td>
+                </tr> 
+                
+                <tr>
+                	<td align = "center" colspan = "2">
+                		&nbsp;&nbsp;&nbsp;
+            			<input type="hidden" name = "id" value="{{user.id}}">
+            			<button class = "btn btn-primary2" type = "submit">완료</button>
+            			&nbsp;&nbsp;&nbsp;
+            			<button class = "btn btn-primary2" type = "reset">삭제</button>
+						&nbsp;&nbsp;&nbsp;        			
+            			<a class="btn btn-primary2" href="{% url 'HomePage:dalist' %}">취소</a>
+                	</td>
+                </tr>
+			</table>	
+		</form>
+	
+		
+</div>
+{% if post %}
+<script>
+document.getElementById('title').value = "{{post.title}}";
+document.getElementById('content').value = "{{post.content}}";
+</script>
+  {% else %}
+  
+  {% endif %}
+<hr>
+{% endblock content %}

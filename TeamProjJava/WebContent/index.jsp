@@ -68,15 +68,15 @@
 						href="OOP_Board/oop_B_index.php">OOP</a></li>
 					<li class="nav-item"><a class="nav-link" href="post">DBMS</a>
 					</li>
-<<<<<<< HEAD
+
 					<li class="nav-item"><a class="nav-link" href="./ServerSide/List.do">Server
-=======
+
 					<li class="nav-item"><a class="nav-link" href="./ServerSide/ServerSideList.do">Server
->>>>>>> refs/remotes/origin/master
+
 							Side</a></li>
 					<li class="nav-item"><a class="nav-link" href="contact">Frame
 							Works</a></li>
-					<li class="nav-item"><a class="nav-link" href="contact">Data
+					<li class="nav-item"><a class="nav-link" href="./DataAnalystics/DataAnalysticsMain.jsp">Data
 							Analystics</a></li>
 				</ul>
 			</div>
