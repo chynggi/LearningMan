@@ -69,7 +69,7 @@
           <tr>
           	  <td colspan = "2">
           	  	<input type="hidden" name = "id" value="<%=session.getAttribute("id")%>">
-				<input type="hidden" name = "tablename" value="SSBOARD">
+				<input type="hidden" name = "tablename" value="DABOARD">
 				<button class="btn btn-success" type="submit">저장</button>
           	  </td>
           </tr>

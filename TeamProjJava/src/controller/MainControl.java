@@ -129,7 +129,7 @@ public class MainControl extends HttpServlet {
 		case "/DataAnalystics/new.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
-				request.setAttribute("tablename", "SSBOARD");
+				request.setAttribute("tablename", "DABOARD");
 				service = new BoardInsertService();
 				boolean res = service.execute(request, response);
 				System.out.println(res);
@@ -138,9 +138,9 @@ public class MainControl extends HttpServlet {
 			} break;	
 		case "/DataAnalystics/List.do":
 			System.out.println(command+"를 처리합니다.");
-			request.setAttribute("tablename","SSBOARD");
+			request.setAttribute("tablename","DABOARD");
 			try {
-				request.setAttribute("tablename", "SSBOARD");
+				request.setAttribute("tablename", "DABOARD");
 				boolean res = new BoardListService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
@@ -148,9 +148,9 @@ public class MainControl extends HttpServlet {
 			} break;
 		case "/DataAnalystics/Info.do":
 			System.out.println(command+"를 처리합니다.");
-			request.setAttribute("tablename","SSBOARD");
+			request.setAttribute("tablename","DABOARD");
 			try {
-				request.setAttribute("tablename", "SSBOARD");
+				request.setAttribute("tablename", "DABOARD");
 				boolean res = new BoardInfoService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
@@ -158,9 +158,9 @@ public class MainControl extends HttpServlet {
 			} break;
 		case "/DataAnalystics/delete.do":
 			System.out.println(command+"를 처리합니다.");
-			request.setAttribute("tablename","SSBOARD");
+			request.setAttribute("tablename","DABOARD");
 			try {
-				request.setAttribute("tablename", "SSBOARD");
+				request.setAttribute("tablename", "DABOARD");
 				boolean res = new BoardDeleteService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
@@ -176,9 +176,9 @@ public class MainControl extends HttpServlet {
 			} break; //Login처리부분
 		case "/DataAnalystics/adjust.do":
 			System.out.println(command+"를 처리합니다.");
-			request.setAttribute("tablename","SSBOARD");
+			request.setAttribute("tablename","DABOARD");
 			try {
-				request.setAttribute("tablename", "SSBOARD");
+				request.setAttribute("tablename", "DABOARD");
 				boolean res = new BoardAdjustService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {

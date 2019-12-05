@@ -31,7 +31,7 @@
         		</td>
                 <tr>  
                 	<td align = "center" >
-                	<input type="hidden" name = "dbname" value="SSBOARD">             	
+                	<input type="hidden" name = "dbname" value="DABOARD">             	
         			<input type="hidden" name="board_no" value="<?php echo "$board_no"; ?>">        			
         			<button class="btn btn-primary" type="submit">삭제</button>
         			<a class="btn btn-primary" href="./DataAnalystics/DataAnalysticsBoardList.php">취소</a>

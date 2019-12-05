@@ -40,7 +40,7 @@
     ?>
 	<?php 
 	require_once('../static/BoardDAOFunction.php');
-	$Rows = selectAll('SSBOARD');		
+	$Rows = selectAll('DABOARD');		
   	?>
   	<table id="dataTable" class="table table-bordered" border="1" align = "center" style="width:60%;"> 
      	<thead>

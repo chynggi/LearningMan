@@ -33,7 +33,7 @@
   		<?php
             require_once('../static/BoardDAOFunction.php');
             $key    = $_GET["board_no"];            
-            $oneRow = selectOne($key,"SSBOARD");            
+            $oneRow = selectOne($key,"DABOARD");            
         ?>
   			<table class="table table-bordered" style="width:100%">
   		<?php

@@ -73,7 +73,7 @@
             	<td align = "center" colspan = "2">
                 	<input class = "btn btn-primary2" type = "hidden" name = "id" value="<%=session.getAttribute("id")%>">
 						&nbsp;&nbsp;&nbsp;
-					<input class = "btn btn-primary2" type = "hidden" name = "tablename" value="SSBOARD">
+					<input class = "btn btn-primary2" type = "hidden" name = "tablename" value="DABOARD">
 						&nbsp;&nbsp;&nbsp;
 					<button class = "btn btn-primary2" type = "submit">저장</button>
 						&nbsp;&nbsp;&nbsp;

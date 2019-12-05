@@ -31,7 +31,7 @@
                     <td style="width:50%">
                     	<input type="hidden" name = "board_id" value=" value="<?php echo "$id"; ?>">
                    		<p><?php echo "$id"; ?></p>
-						<input type="hidden" name = "dbname" value="SSBOARD">                     
+						<input type="hidden" name = "dbname" value="DABOARD">                     
                     </td>
                 </tr>               
                 <tr>
@@ -50,7 +50,7 @@
                 <tr>
                 	<td align = "center" colspan = "2">
                 		<input type="hidden" name = "board_id" value=" <?=$_SESSION["id"]?> ">
-						<input type="hidden" name = "dbname" value="SSBOARD"> 
+						<input type="hidden" name = "dbname" value="DABOARD"> 
                 		&nbsp;&nbsp;&nbsp;
             			<button class="btn btn-primary2" type="submit">완료</button>
             			&nbsp;&nbsp;&nbsp;

@@ -29,7 +29,7 @@
         <?php
             require_once('../static/BoardDAOFunction.php');
             $key = $_GET["board_no"];
-            $oneRow = selectOne($key,"SSBOARD");
+            $oneRow = selectOne($key,"DABOARD");
             if($oneRow){
         ?>
         <hr>
@@ -56,7 +56,7 @@
   			<br>
 			<input type="hidden" name = "board_id" value=" <?=$_SESSION["id"]?> ">
 			<input type="hidden" name = "board_no" value="<?php echo $oneRow["NO"]?>">
-			<input type="hidden" name = "dbname" value="SSBOARD">
+			<input type="hidden" name = "dbname" value="DABOARD">
 			<button class="btn btn-success" type="submit">수정</button>
 	            &nbsp;&nbsp;&nbsp;
      		<a class="btn btn-secondary" href="./DataAnalysticsBoardList.php"> 리스트로 돌아가기</a>
