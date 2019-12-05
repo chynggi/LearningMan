@@ -16,24 +16,11 @@ public class BoardInsertService implements Service {
 		System.out.println("Board Adjusting");
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-<<<<<<< Upstream, based on origin/master
 		PrintWriter out  = response.getWriter();
 		String title     = request.getParameter("title");
 		String content   = request.getParameter("content");
 		String id 		 = request.getParameter("id");
 		String tablename = request.getParameter("tablename");
-=======
-		PrintWriter out = response.getWriter();
-		String title = request.getParameter("title");
-		String date = request.getParameter("date");
-		String content = request.getParameter("content");
-		String id = request.getParameter("id");
-		String tablename = (String)request.getAttribute("tablename");
-		System.out.println(tablename);
-<<<<<<< HEAD
->>>>>>> 42c7f6f 2019-12-04  15:00
-=======
->>>>>>> refs/remotes/origin/ssy
 		out.print("title:" + title + "<br/>");
 		out.print("내용:" + content + "<br/>");
 		out.print("ID:" + id + "<br/>");
@@ -42,14 +29,6 @@ public class BoardInsertService implements Service {
 		vo.setContent(content);
 		vo.setId(id);
 		vo.setTitle(title);
-<<<<<<< HEAD
-<<<<<<< Upstream, based on origin/master
-=======
-=======
->>>>>>> refs/remotes/origin/ssy
-		vo.setDate(date);
-
->>>>>>> 42c7f6f 2019-12-04  15:00
 		
 		out.print(vo + "<br/>");
 		HashMap<String,Object> para = new HashMap<String,Object>();
@@ -74,16 +53,8 @@ public class BoardInsertService implements Service {
 			e.printStackTrace();
 			return false;
 		}
-<<<<<<< Upstream, based on origin/master
 			
 		response.sendRedirect("./List.do");
-=======
-
-		response.sendRedirect("./board_list.jsp");
-<<<<<<< HEAD
->>>>>>> 42c7f6f 2019-12-04  15:00
-=======
->>>>>>> refs/remotes/origin/ssy
 		return true;
 	}
 }
