@@ -130,7 +130,7 @@ def SSwrite(request):
                 Ssboardobj.content = form.cleaned_data['content']
                 Ssboardobj.id = form.cleaned_data['id']
                 Ssboardobj.save()
-                return HttpResponseRedirect(reverse('HomePage:sslist'))        
+                return HttpResponseRedirect(reverse('HomePage:olist'))        
             else:
                 message = "ERROR"        
     else:
@@ -144,7 +144,7 @@ def SSupdate(request,no):
     message = None;
     post = Ssboard.objects.get(no=no)
     if request.method == 'POST':        
-            form = FormSS(request.POST)
+            form = FormSS(request.POST,instance=post)
             if form.is_valid():                
                 print('aaa')
                 message = None;
@@ -163,7 +163,7 @@ def SSupdate(request,no):
 
 def SSdelete(request,no):
     Ssboard.objects.get(no=no).delete()    
-    return HttpResponseRedirect(reverse('HomePage:sslist'))
+    return HttpResponseRedirect(reverse('HomePage:list'))
 
 
 ##OOPBOARD
@@ -177,7 +177,7 @@ def OOPwrite(request):
                 message = None;
                 Oopboardobj = Oopboard()
                 cursor = connection.cursor()
-                cursor.execute("SELECT %s.nextval FROM DUAL;" % ('SSBOARD_SEQ'))
+                cursor.execute("SELECT %s.nextval FROM DUAL;" % ('OOPBOARD_SEQ'))
                 row = cursor.fetchone()
                 print(row[0])
                 Oopboardobj.no = row[0]
@@ -185,13 +185,18 @@ def OOPwrite(request):
                 Oopboardobj.content = form.cleaned_data['content']
                 Oopboardobj.id = form.cleaned_data['id']
                 Oopboardobj.save()
-                return HttpResponseRedirect(reverse('HomePage:sslist'))        
+                return HttpResponseRedirect(reverse('HomePage:ooplist'))        
             else:
                 message = "ERROR"        
     else:
         form = FormSS()
-    if request.session['userid'] is None:
-        return HttpResponseRedirect(reverse('HomePage:index'))
+    try:
+        if request.session['userid'] is None:
+            return HttpResponseRedirect(reverse('HomePage:index'))
+    except:
+        return HttpResponseRedirect(reverse('HomePage:index')) 
+    
+    
     user = Buser.objects.get(id=request.session['userid'])
     return render(request, 'homepage/oopwrite.html', {'user':user,'message':message})
 
@@ -199,14 +204,14 @@ def OOPupdate(request,no):
     message = None;
     post = Oopboard.objects.get(no=no)
     if request.method == 'POST':        
-            form = FormSS(request.POST)
+            form = FormSS(request.POST,instance=post)
             if form.is_valid():                
                 print('aaa')
                 message = None;
                 post.title = form.cleaned_data['title']
                 post.content = form.cleaned_data['content']                
                 post.save()
-                return HttpResponseRedirect(reverse('HomePage:sslist'))        
+                return HttpResponseRedirect(reverse('HomePage:ooplist'))        
             else:
                 message = "ERROR"        
     else:
@@ -222,7 +227,7 @@ def OOPdelete(request,no):
 
 def OOPpost(request, no):
     post = Oopboard.objects.get(no=no)
-    return render(request, 'homepage/post_server.html', {'post':post})
+    return render(request, 'homepage/oop_detail.html', {'post':post})
 
 
 

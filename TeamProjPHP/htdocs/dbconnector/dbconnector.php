@@ -1,5 +1,5 @@
-<?php
-$tns = " (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)
+<?php $tns = " (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)
+>>>>>>> refs/remotes/origin/master
 (HOST = 192.168.0.98)(PORT = 1521)) ) (CONNECT_DATA = (SERVICE_NAME = xe) ) ) "; 
 try { 
     $conn = new PDO("oci:dbname=".$tns.";charset=utf8", "team", "team"); 
