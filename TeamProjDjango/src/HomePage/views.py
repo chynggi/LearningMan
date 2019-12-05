@@ -165,9 +165,6 @@ def SSdelete(request,no):
 
 
 
-
-
-
 ##DABOARD
 def DApost(request, no): # 게시글 보기
     post = Daboard.objects.get(no=no)
