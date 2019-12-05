@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block content %}
 <div class = "container">
-<table id = "dataTable" class = "table table-bordered" border = "1" align = "center" style = "width:60%;"> 
+<table id = "dataTable" class = "table table-bordered" border = "1" align = "center"> 
      	<thead>
 			<th align = "center" bgcolor = "#3e5baa" style = "width:10%;"><font color = "white">#</font></th>
 			<th align = "center" bgcolor = "#3e5baa" style = "width:65%;"><font color = "white">제목</font></th>
@@ -25,7 +25,7 @@
 		</tbody>	
 			<tr>            	
             	<td align = "center" colspan = "20">
-            		<a class = "btn btn-primary2" href = "{% url 'HomePage:dawrite' %}" >
+            		<a href = "{% url 'HomePage:dawrite' %}" >
   					질문하기					
   					</a>
             	</td>           	

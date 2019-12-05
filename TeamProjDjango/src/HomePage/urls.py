@@ -23,5 +23,5 @@ urlpatterns=[
     path('daupdate/<int:no>',views.DAupdate,name='daupdate'),   
     path('dadelete/<int:no>',views.DAdelete,name='dadelete'),
     path('dapost/<int:no>',views.DApost,name='dapost'), 
-    path('damain/<int:no>',views.DAmain,name='damain'),   
+    path('damain',views.DAmain,name='damain'),   
 ]

@@ -2,19 +2,10 @@
 {% load staticfiles %}
 {% block content %}
 <div class="container">
-			{% if posts %}
-  			{% for post in posts %}
+{% csrf_token %}
 		<hr>
 		<form class = "form-horizontal" action = " " method = "post">		
-		<table class="table table-bordered" align = "center" style="width:50%">
-                <tr>
-                    <td align = "center" bgcolor = "#0085a1" style="width:10%"><font color = "white">작성자</font></td>
-                    <td style="width:50%">
-                    	<input type="hidden" name = "board_id" value="{{ post.id }}">
-                   		<p>{{ post.id }}</p>
-						<input type="hidden" name = "dbname" value="SSBOARD">                     
-                    </td>
-                </tr>               
+		<table class="table table-bordered" align = "center" style="width:50%">                             
                 <tr>
                     <td align = "center" bgcolor = "#0085a1" style="width:10%"><font color = "white">제목</font></td>
                     <td style="width:50%">
@@ -31,6 +22,7 @@
                 <tr>
                 	<td align = "center" colspan = "2">
                 		&nbsp;&nbsp;&nbsp;
+            			<input type="hidden" name = "id" value="{{user.id}}">
             			<button class = "btn btn-primary2" type = "submit">완료</button>
             			&nbsp;&nbsp;&nbsp;
             			<button class = "btn btn-primary2" type = "reset">삭제</button>
@@ -41,39 +33,15 @@
 			</table>	
 		</form>
 	
-		<script type = "text/javascript">
-			$("#title").change(function(){
-				checkTitle($('#title').val());
-			});
-			$("#content").change(function(){
-				checkContent($('#content').val());
-			});
-			
-			function checkTitle(title){
-				if(title.length < 2){
-					alert("제목을 2자 이상 설정하시오");
-					$('#title').val('').focus();
-					return false;
-				} else {
-					return true;
-				}
-			}
-
-			function checkContent(content){
-				if(content.length < 2){
-					alert("내용을 2자 이상 설정하시오");
-					$('#content').val('').focus();
-					return false;
-				} else {
-					return true;
-				}
-			}		
-		</script>
+		
 </div>
-  <hr>
-
+{% if post %}
+<script>
+document.getElementById('title').value = "{{post.title}}";
+document.getElementById('content').value = "{{post.content}}";
+</script>
+  {% else %}
+  
+  {% endif %}
+<hr>
 {% endblock content %}
-{% block datatable %}
-
-  <script src="/static/js/demo/datatables-demo.js"></script>
-{% endblock datatable %}

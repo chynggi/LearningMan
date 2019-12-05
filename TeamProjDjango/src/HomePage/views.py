@@ -202,7 +202,7 @@ def DAwrite(request): # 게시글 작성
     if request.session['userid'] is None:
         return HttpResponseRedirect(reverse('HomePage:index'))
     user = Buser.objects.get(id=request.session['userid'])
-    return render(request, 'homepage/dalist.html', {'user':user,'message':message})
+    return render(request, 'homepage/dawrite.html', {'user':user,'message':message})
 
 def DAupdate(request,no): # 게시글 수정
     message = None;
