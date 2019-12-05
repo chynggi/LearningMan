@@ -99,11 +99,10 @@ def delete(request):
     form = None;
     message = None;    
     if request.method == 'POST':
-        user = Buser.objects.get(id=request.POST.get('id',''))
+        user = Buser.objects.get(id=form.cleaned_data['id'],pw=form.cleaned_data['pw'])
         form = Form(request.POST,instance=user)        
         if form.is_valid():
-            message = None;    
-            user = Buser.objects.get(id=form.cleaned_data['id'],pw=form.cleaned_data['pw'])        
+            message = None;            
             user.delete();  
             return HttpResponseRedirect(reverse('HomePage:index'))
         else:

@@ -13,7 +13,7 @@ urlpatterns=[
     path('login',views.login,name='login'),
     path('register',views.register,name='register'),
     path('update',views.update,name='update'),
-    path('delete',views.delete,name='delete'),
+    path('delete',views.update,name='delete'),
     path('sspost/<int:no>',views.SSpost,name='sspost'),
     path('about',views.about,name='about'),
     
