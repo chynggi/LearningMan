@@ -165,4 +165,90 @@ def SSupdate(request,no):
 def SSdelete(request,no):
     Ssboard.objects.get(no=no).delete()    
     return HttpResponseRedirect(reverse('HomePage:sslist'))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##DABOARD
+
+
+
+def DApost(request, no):
+    post = Daboard.objects.get(no=no)
+    return render(request, 'homepage/post_server.html', {'post':post})
+
+
+
+
+def DAlist(request):
+    posts = Daboard.objects.all()
+    return render(request, 'homepage/write.html', {'posts':posts})
+
+
+def DAwrite(request):   
+    message = None;
+    if request.method == 'POST':        
+            form = FormSS(request.POST)
+            if form.is_valid():                
+                print('aaa')
+                message = None;
+                Daboardobj = Daboard()
+                cursor = connection.cursor()
+                cursor.execute("SELECT %s.nextval FROM DUAL;" % ('DABOARD_SEQ'))
+                row = cursor.fetchone()
+                print(row[0])
+                Daboardobj.no = row[0]
+                Daboardobj.title = form.cleaned_data['title']
+                Daboardobj.content = form.cleaned_data['content']
+                Daboardobj.id = form.cleaned_data['id']
+                Daboardobj.save()
+                return HttpResponseRedirect(reverse('HomePage:dalist'))        
+            else:
+                message = "ERROR"        
+    else:
+        form = FormSS()
+    if request.session['userid'] is None:
+        return HttpResponseRedirect(reverse('HomePage:index'))
+    user = Buser.objects.get(id=request.session['userid'])
+    return render(request, 'homepage/list.html', {'user':user,'message':message})
+
+def DAupdate(request,no):   
+    message = None;
+    post = Daboard.objects.get(no=no)
+    if request.method == 'POST':        
+            form = FormSS(request.POST)
+            if form.is_valid():                
+                print('aaa')
+                message = None;
+                post.title = form.cleaned_data['title']
+                post.content = form.cleaned_data['content']                
+                post.save()
+                return HttpResponseRedirect(reverse('HomePage:dalist'))        
+            else:
+                message = "ERROR"        
+    else:
+        form = FormSS()
+    if request.session['userid'] is None:
+        return HttpResponseRedirect(reverse('HomePage:index'))
+    user = Buser.objects.get(id=request.session['userid'])
+    return render(request, 'homepage/list.html', {'user':user,'message':message,'post':post})
+
+def DAdelete(request,no):
+    Daboard.objects.get(no=no).delete()    
+    return HttpResponseRedirect(reverse('HomePage:dalist'))
+
+
     

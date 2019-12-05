@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+
+<div class="container">
+<table id="dataTable" class="table table-bordered" border="1" align = "center" style="width:60%;"> 
+     	<thead>
+			<th align = "center" bgcolor = "#3e5baa" style="width:10%;"><font color = "white">#</font></th>
+			<th align = "center" bgcolor = "#3e5baa" style="width:65%;"><font color = "white">제목</font></th>
+			<th align = "center" bgcolor = "#3e5baa" style="width:13%;"><font color = "white">작성자</font></th>
+			<th align = "center" bgcolor = "#3e5baa" style="width:12%;"><font color = "white">작성일</font></th>
+		</thead>	
+		<tbody>
+	  {% if posts %}
+  {% for post in posts %}
+		<tr>
+			
+			<td align = "center" style="width:10%;"><font color = "black">{{ post.no }}</font></td>
+			<td align = "center" style="width:65%;"><font color = "black"><a href="dapost/{{ post.no }}">{{ post.title }}</a></font></td>
+			<td align = "center" style="width:13%;"><font color = "black">{{ post.id.name }}</font></td>
+			<td align = "center" style="width:12%;"><font color = "black">{{ post.xdate }}</font></td>			
+		</tr>
+	 {% endfor %}	
+	{% else %}
+		자료가 없습니다.
+	{% endif %}  
+		</tbody>	
+			<tr>            	
+            	<td align = "center" colspan = "20">
+            		<a class="btn btn-primary2" href="{% url 'HomePage:dawrite' %}" >
+  					
+  					</a>
+            	</td>           	
+            </tr>           
+        </table> 
+
+
+</div>
+
+
+  <hr>
+
+{% endblock content %}
+{% block datatable %}
+
+  <script src="/static/js/demo/datatables-demo.js"></script>
+{% endblock datatable %}

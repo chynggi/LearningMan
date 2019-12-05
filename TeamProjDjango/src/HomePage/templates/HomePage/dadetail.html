@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}	
+  		<div class="container">
+  		{% if posts %}
+  		{% for post in posts %}
+  		<table class="table table-bordered" style="width:100%">
+        	<tr>
+                <td style="width:5%">작성자</td>
+                <td style="width:40%" colspan="5">
+                    {{ post.id }}
+                </td>
+            </tr>
+            <tr>
+                <td style="width:5%">제목</td>
+                <td style="width:24%">
+                    {{ post.title }}
+                </td>
+                <td style="width:5%">번호</td>
+                <td style="width:3%">
+                    {{ post.no }}
+                </td>
+                <td  style="width:5%">작성일</td>
+                <td  style="width:3%">
+                    {{ post.xdate }}
+                </td>
+            </tr>
+  			<tr>
+                <td colspan="6">               
+                    {{ post.content }}                   
+                </td>
+            </tr>
+
+            </table>  		
+  			<br>
+        	&nbsp;&nbsp;&nbsp;
+        	<a class="btn btn-primary2" href="{%url 'HomePage:daupdate'?{{ post.no }} =<? ={{ post.no }} %}">수정</a>
+			<a class="btn btn-primary2" href="{%url 'HomePage:dadelete'?{{ post.no }} =<? ={{ post.no }} %}">삭제</a>
+        	<a class="btn btn-primary2" href="{% url 'HomePage:dalist' %}">
+        	리스트 이동
+        	</a>
+        </div>
+
+{% endblock content %}
+{% block datatable %}
+
+  <script src="/static/js/demo/datatables-demo.js"></script>
+{% endblock datatable %}
