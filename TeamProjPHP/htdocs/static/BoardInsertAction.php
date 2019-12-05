@@ -9,11 +9,8 @@
         require 'BoardDAOFunction.php';
         $dbname = $_POST["dbname"];
         insert($dbname);
-            //헤더함수를 이용하여 리스트 페이지로 리다이렉션
-<<<<<<< HEAD
-            header("Location: ./DataAnalystics/DataAnalysticsBoardList.php");
-        ?>
-=======
+          
+      /*   
         if($dbname == "OOPBOARD"){
             header("Location: ../OOP_Board/oop_B_index.php");
         }elseif ($dbname == "SSBOARD"){
@@ -27,9 +24,8 @@
         }
         else{
             header("Location: ../index.php");
-        }
-            
-            ?>
->>>>>>> refs/remotes/origin/master
+        } */
+        ?>
+           
     </body>
 </html>
