@@ -21,17 +21,8 @@ NO,TITLE,CONTENT,ID,XDATE
 	>
 	
 	INSERT INTO ${dbname} (<include refid= "basecolumns"></include>) 
-<<<<<<< HEAD
-<<<<<<< Upstream, based on origin/master
-	VALUES(SSBOARD_SEQ.NEXTVAL,#{board.title},#{board.content},#{board.id},SYSDATE)
-=======
-	VALUES(${dbname}_SEQ.NEXTVAL,#{board.title},#{board.content},#{board.id},SYSDATE)
->>>>>>> 42c7f6f 2019-12-04  15:00
-=======
-	VALUES(${dbname}_SEQ.NEXTVAL,#{board.title},#{board.content},#{board.id},SYSDATE)
->>>>>>> refs/remotes/origin/ssy
-	
 
+	VALUES(${dbname}_SEQ.NEXTVAL,#{board.title},#{board.content},#{board.id},SYSDATE)
 </insert>
 <update id = "update" parameterType="hashmap">
 	UPDATE ${dbname} SET

@@ -36,11 +36,6 @@ public class MainControl extends HttpServlet {
 		// aaaa/bbbb/xxxx.do
 		Service service = null; // Created Interface
 		PrintWriter out = null;
-		
-<<<<<<< HEAD
-=======
-		
->>>>>>> refs/remotes/origin/ssy
 		switch (command) {
 		
 		case "/login/login.do":
@@ -60,11 +55,10 @@ public class MainControl extends HttpServlet {
 				System.out.println(res);
 			} catch (Exception e) {
 				e.printStackTrace();
-<<<<<<< HEAD
 			} break;
-=======
-			}
-			break;
+
+			
+			
 		/*
 		 * case "/mymember/joinConfirm.do":
 		 * System.out.println("joinConfirm.do를 처리합니다."); // 가입정보를 보여주고, 수정할게 있으면 수정하게 //
@@ -72,8 +66,6 @@ public class MainControl extends HttpServlet {
 		 * exe(service); 
 		 * break;
 		 */
-			
->>>>>>> refs/remotes/origin/ssy
 		case "/member/MemberInfo.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -83,6 +75,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} break;
+			
 		case "/member/confirmId.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -194,10 +187,10 @@ public class MainControl extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		case "/DBMSBoard/new.do":
+		case "/FRBOARD/new.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
-				request.setAttribute("tablename", "DBMSBOARD");
+				request.setAttribute("tablename", "FRBOARD");
 				service = new BoardInsertService();
 				boolean res = service.execute(request, response);
 				System.out.println(res);
@@ -206,10 +199,10 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;			
-		case "/DBMSBoard/info.do":
+		case "/FRBOARD/info.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
-				request.setAttribute("tablename", "DBMSBOARD");
+				request.setAttribute("tablename", "FRBOARD");
 				boolean res = new BoardInfoService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
@@ -217,10 +210,10 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/DBMSBoard/Delete.do":
+		case "/FRBOARD/Delete.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
-				request.setAttribute("tablename", "DBMSBOARD");
+				request.setAttribute("tablename", "FRBOARD");
 				boolean res = new BoardDeleteService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {
@@ -228,10 +221,10 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;		
-		case "/DBMSBoard/adjust.do":
+		case "/FRBOARD/adjust.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
-				request.setAttribute("tablename", "DBMSBOARD");
+				request.setAttribute("tablename", "FRBOARD");
 				boolean res = new BoardAdjustService().execute(request, response);
 				System.out.println(res);
 			} catch (Exception e) {

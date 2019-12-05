@@ -1,15 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< Upstream, based on origin/master
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dao.BuserDAO">
-<resultMap id="result" type="buser">
-	<result property = "id" column = "ID"/>
-	<result property = "name" column = "NAME"/>
-	<result property = "password" column = "PW"/>
-	<result property = "phone" column = "PHONE"/>
-	<result property = "xdate" column = "XDATE"/>
-</resultMap>
-=======
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
@@ -24,9 +13,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<result property = "date" column = "XDATE"/> <!-- 가입날짜 -->
 
 </resultMap>
-	
-
->>>>>>> 42c7f6f 2019-12-04  15:00
 <select id = "selectAll" resultMap="result">
 <![CDATA[
 	SELECT * FROM buser

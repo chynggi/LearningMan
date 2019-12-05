@@ -5,84 +5,32 @@ public class Buser {
 	private String name;
 	private String password;
 	private String phone;
-<<<<<<< HEAD
-<<<<<<< Upstream, based on origin/master
-	private String xdate;
-	public Buser(String id, String name, String password, String phone, String xdate) {
+	private String date;
+	public Buser(String id, String name, String password, String phone, String date) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.password = password;
 		this.phone = phone;
-		this.xdate = xdate;
+		this.date = date;
 	}
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
-=======
-=======
->>>>>>> refs/remotes/origin/ssy
-	private String date;
-	
-	
-	public Buser(String id, String password, String name, String phone, String date) {
-		super();
->>>>>>> 42c7f6f 2019-12-04  15:00
 		this.id = id;
-	}
-	
-	public String getId() {
-		return id;
-	}
-	public String getXdate() {
-		return xdate;
-	}
-	public void setXdate(String xdate) {
-		this.xdate = xdate;
-	}
-	@Override
-	public String toString() {
-		return "Buser [id=" + id + ", name=" + name + ", password=" + password + ", phone=" + phone + ", xdate=" + xdate
-				+ "]";
 	}
 	public String getName() {
 		return name;
 	}
-	
 	public void setName(String name) {
 		this.name = name;
-<<<<<<< HEAD
-=======
-		this.phone = phone;
-		this.date = date;
-	}
-	
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
->>>>>>> refs/remotes/origin/ssy
 	}
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
-<<<<<<< Upstream, based on origin/master
-	}	
-	public Buser() {
-		super();
-	}	
-}
-=======
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
 	}
 	public String getPhone() {
 		return phone;
@@ -96,13 +44,14 @@ public class Buser {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	
-	
 	@Override
 	public String toString() {
-		return "Buser [id=" + id + ", password=" + password + ", name=" + name + ", phone=" + phone + ", date=" + date
+		return "Buser [id=" + id + ", name=" + name + ", password=" + password + ", phone=" + phone + ", date=" + date
 				+ "]";
 	}
 	
+	
+	
+	
+	
 }
->>>>>>> 42c7f6f 2019-12-04  15:00

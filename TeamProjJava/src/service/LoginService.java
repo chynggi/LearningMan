@@ -47,13 +47,9 @@ public class LoginService implements Service {
 		} catch (Exception e) {
 			e.printStackTrace();
 			message = "회원정보가 존재하지 않습니다.";
-<<<<<<< Upstream, based on origin/master
 			session.setAttribute("message", message);
 			response.sendRedirect("./Login.jsp");
-=======
-			session.setAttribute("message", message);
-			response.sendRedirect("./Login.jsp");
->>>>>>> 42c7f6f 2019-12-04  15:00
+			
 			return false;
 		}
 		sqlsession.close();
