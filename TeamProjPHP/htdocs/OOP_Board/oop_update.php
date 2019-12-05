@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -25,7 +23,6 @@
   <link href="../css/OOP.css" rel="stylesheet">
 
 </head>
-
 <body>
 
   <!-- Navigation -->
@@ -108,12 +105,6 @@
 			color:#000;
 		}
 	</style>
-	
-	 <?php
-            require_once('../static/BoardDAOFunction.php');
-            $Rows = selectAll('OOPBOARD');
-        ?>
-	
   <!-- Main Content -->
   <div class="container">
     <div class="row">
@@ -127,28 +118,39 @@
             </h3>
         </div>
         <hr>
-		<div class="container">
-			<form class = "form-horizontal" action = "../static/BoardInsertAction.php" method = "post">		
+        <?php
+            require_once('../static/BoardDAOFunction.php');
+            $key = $_GET["board_no"];
+            $oneRow = selectOne($key,"OOPBOARD");
+            if($oneRow){
+        ?>
+        <div class="container">
+			<form class = "form-horizontal" action="../static/BoardUpdateAction.php" method = "post">		
 				<div class="input-group mb-3">
 				<div class="input-group-prepend">
 					<span class="input-group-text" id="inputGroup-sizing-default">제목</span>
 					</div>
         			<input type="text" id="title" name = "board_title" class="form-control"
         				aria-label="Sizing example input"
-        				aria-describedby="inputGroup-sizing-default">
+        				aria-describedby="inputGroup-sizing-default" value="<?php echo $oneRow["TITLE"]?>">
 				</div>
 				<div class="input-group">
     				<div class="input-group-prepend">
     					<span class="input-group-text">내용</span>
     				</div>
-  					<textarea rows="20" id = "content" name = "board_content" class="form-control" aria-label="With textarea"></textarea>
+  					<textarea rows="20" id = "content" name = "board_content" class="form-control" aria-label="With textarea"><?php echo trim($oneRow["CONTENT"])?></textarea>
   				</div>
 				<input type="hidden" name = "board_id" value=" <?=$_SESSION["id"]?> ">
+				<input type="hidden" name = "board_no" value="<?php echo $oneRow["NO"]?>">
 				<input type="hidden" name = "dbname" value="OOPBOARD">
 				<button class="btn btn-success" type="submit">저장</button>
-				<a class="btn btn-secondary" href="./ServerSideBoardList.php"> 리스트로 돌아가기</a>
+				<a class="btn btn-secondary" href="./oop_B_index.php"> 리스트로 돌아가기</a>
 			</form>
 		</div>
+		        <?php
+            }
+        ?>
+        
 	</div>
   </div>
         
@@ -199,5 +201,4 @@
   <script src="../js/clean-blog.min.js"></script>
 
 </body>
-
 </html>

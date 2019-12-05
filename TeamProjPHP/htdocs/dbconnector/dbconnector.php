@@ -7,3 +7,4 @@ catch(PDOException $e)
 { echo "Failed to obtain database handle " . $e->getMessage(); } ?>
 
 OK?
+
