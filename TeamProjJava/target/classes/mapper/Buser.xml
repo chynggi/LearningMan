@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< Upstream, based on origin/master
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dao.BuserDAO">
-<resultMap id="result" type="buser">
-	<result property = "id" column = "ID"/>
-	<result property = "name" column = "NAME"/>
-	<result property = "password" column = "PW"/>
-	<result property = "phone" column = "PHONE"/>
-	<result property = "xdate" column = "XDATE"/>
-</resultMap>
-=======
-<!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <!--Interface DAO를 사용하는 경우 -->
 <!--아래 태그의 ID는 인터페이스의 추상메소드명과 일치시켜야 ! -->
 <mapper namespace="dao.BuserDAO"> 
@@ -25,13 +12,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 </resultMap>
 	
-
->>>>>>> 42c7f6f 2019-12-04  15:00
 <select id = "selectAll" resultMap="result">
 <![CDATA[
 	SELECT * FROM buser
 	]]>
 </select>
+
 <insert id = "insert" parameterType="buser"
 	>
 	<![CDATA[
@@ -40,15 +26,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	]]>
 
 </insert>
+
 <update id = "update" parameterType="buser">
 	UPDATE buser SET
 	 NAME = #{name}, PW = #{password},PHONE = #{phone}
 	 WHERE ID = #{id}
 </update>
-<delete id = "delete" parameterType="String">
-	DELETE FROM buser WHERE ID = #{id}
 
+<delete id = "delete" parameterType="String">
+	DELETE FROM buser WHERE ID = #{id}	
 </delete>
+
 <select id = "selectById" parameterType="String" resultMap="result">
 <![CDATA[
 	SELECT * FROM buser WHERE ID = #{id}

@@ -36,11 +36,6 @@ public class MainControl extends HttpServlet {
 		// aaaa/bbbb/xxxx.do
 		Service service = null; // Created Interface
 		PrintWriter out = null;
-		
-<<<<<<< HEAD
-=======
-		
->>>>>>> refs/remotes/origin/ssy
 		switch (command) {
 		
 		case "/login/login.do":
@@ -60,11 +55,7 @@ public class MainControl extends HttpServlet {
 				System.out.println(res);
 			} catch (Exception e) {
 				e.printStackTrace();
-<<<<<<< HEAD
 			} break;
-=======
-			}
-			break;
 		/*
 		 * case "/mymember/joinConfirm.do":
 		 * System.out.println("joinConfirm.do를 처리합니다."); // 가입정보를 보여주고, 수정할게 있으면 수정하게 //
@@ -73,7 +64,6 @@ public class MainControl extends HttpServlet {
 		 * break;
 		 */
 			
->>>>>>> refs/remotes/origin/ssy
 		case "/member/MemberInfo.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -83,6 +73,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} break;
+			
 		case "/member/confirmId.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -91,6 +82,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} break;
+			
 		case "/member/delete.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -99,6 +91,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} break;
+			
 		case "/member/MemberInfoAdjust.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -108,6 +101,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} break;
+			
 		case "/main.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -117,6 +111,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} break;
+			
 		case "/member/memberList.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -125,7 +120,8 @@ public class MainControl extends HttpServlet {
 				System.out.println(res);
 			} catch (Exception e) {
 				e.printStackTrace();
-			} break;		
+			} break;	
+			
 		case "/Logout.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -135,6 +131,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} break;
+			
 		case "/DataAnalystics/new.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -145,6 +142,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} break;	
+			
 		case "/DataAnalystics/List.do":
 			System.out.println(command+"를 처리합니다.");
 			request.setAttribute("tablename","SSBOARD");
@@ -155,6 +153,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} break;
+			
 		case "/DataAnalystics/Info.do":
 			System.out.println(command+"를 처리합니다.");
 			request.setAttribute("tablename","SSBOARD");
@@ -165,6 +164,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} break;
+			
 		case "/DataAnalystics/delete.do":
 			System.out.println(command+"를 처리합니다.");
 			request.setAttribute("tablename","SSBOARD");
@@ -175,6 +175,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} break;
+			
 		case "/password.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
@@ -183,6 +184,7 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();			
 			} break; //Login처리부분
+			
 		case "/DataAnalystics/adjust.do":
 			System.out.println(command+"를 처리합니다.");
 			request.setAttribute("tablename","SSBOARD");
@@ -194,6 +196,8 @@ public class MainControl extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			break;	
+			
 		case "/DBMSBoard/new.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -205,7 +209,8 @@ public class MainControl extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			break;			
+			break;	
+			
 		case "/DBMSBoard/info.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
@@ -217,6 +222,7 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+			
 		case "/DBMSBoard/Delete.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
@@ -227,7 +233,8 @@ public class MainControl extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			break;		
+			break;
+			
 		case "/DBMSBoard/adjust.do":
 			System.out.println(command+"를 처리합니다.");
 			try {
