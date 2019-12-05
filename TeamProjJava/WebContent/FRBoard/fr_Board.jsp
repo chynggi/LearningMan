@@ -4,8 +4,7 @@
 <html lang="ko">
 
 <head>
-
-  <meta charset="utf-8">
+   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -22,8 +21,8 @@
 
   <!-- Custom styles for this template -->
   <link href="../static/css/clean-blog.min.css" rel="stylesheet">
-
-<style>
+  
+ <style>
 .M_btn>a {
 	text-decoration: none;
 	color: #fff;
@@ -34,14 +33,10 @@
 </style>
   
 </head>
-<% 
-	String id = null;
-	if(session.getAttribute("id") != null){
-		id = (String) session.getAttribute("id");		
-	}
-	
-%>
+
 <body>
+
+
 
   <!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="font-family:GyeonggiBatangOTF;">
@@ -54,29 +49,34 @@
 				Menu <i class="fas fa-bars"></i>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto" >
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="index">About</a></li>
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="OOP_Board/oop_B_index.php">OOP</a></li>
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="board_list.jsp">DBMS</a></li>
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="contact">ServerSide</a></li>
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="contact">FrameWorks</a></li>
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="contact">DataAnalystics</a></li>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a class="nav-link" href="index">About</a>
+					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="OOP_Board/oop_B_index.php">OOP</a></li>
+					<li class="nav-item"><a class="nav-link" href="board_list.jsp">DBMS</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="contact">Server
+							Side</a></li>
+					<li class="nav-item"><a class="nav-link" href="board_s.jsp">Frame
+							Works</a></li>
+					<li class="nav-item"><a class="nav-link" href="contact">Data
+							Analystics</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
-
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('../img/dbms3.png')">
+  <header class="masthead" style="background-image: url('../img/FR.jpg')">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-md-10 mx-auto">
 					<div class="site-heading">
 						<p class="M_btn"  >
-							<a class="col-lg-8 col-md-10 mx-auto" href="../login/Login.jsp" style="font-family:GyeonggiBatangOTF">로그인</a> 
-							<a class="col-lg-8 col-md-10 mx-auto" href="../member/signup.jsp" style="font-family:GyeonggiBatangOTF">회원가입</a>
+							<a class="col-lg-8 col-md-10 mx-auto" href="loginorReg.jsp" style="font-family:">로그인</a> 
+							<a class="col-lg-8 col-md-10 mx-auto" href="loginorReg.jsp" style="font-family:">회원가입</a>
 						</p>
 					</div>
 				</div>
@@ -87,34 +87,33 @@
   <!-- Main Content -->
   <div class="container" >
       <div class="row">
-      <form method="post" action="./new.do" style=" width:100%;height: 100%; font-family:GyeonggiBatangOTF;font-size: 15px;">
+      <form method="post" action="./FRBoard/new.do" style=" width:100%;height: 100%; ">
 		<table class="table table-striped" style="text-align: center; ">
 			<thead>
 				<tr>
-					<th colspan="2" style="border-radius: 12px; border: none; color:#ffffff; background-color:#AC5E50 ; text-align: center;">글작성</th>		
+					<th colspan="2" style="border-radius: 12px; border: none; color:#000;text-align: center;">글작성</th>		
 				</tr>
 			</thead>
 		
-			<tbody style="border: none; background-color:#DAAB8C;" >
-					<tr style="width:100%;height: 5px; border: none;  background-color: #ffffff;"><td style="border: none;"></td></tr>
+			<tbody>
 					<tr >
-						<td style="color:#ffffff; border: none; border-radius: 7px 0px 0px 0px;">제목 : </td>
-						<td style="border: none; border-radius: 0px 7px 0px 0px;">
+						<td style="color:#000; border: none; border-radius: 7px 0px 0px 0px;">제목 : </td>
+						<td>
 						<input type="text" style="width:100%;height: 40px; border: none; border-radius: 5px;" class="form-control" 
 							   placeholder="  글 제목" name="title" maxlength="100"></td>
 					</tr>
 					<tr>
-						<td style="color:#ffffff; border: none;border-radius: 0px 0px 0px 25px;">내용 : </td>
-						<td style="border: none;">
+						<td >내용 : </td>
+						<td >
 						<textarea class="farm-control" placeholder="  글 내용" name="content" maxlength="2048" style="width:100%;height: 350px;border-radius: 5px;"></textarea>
 						</td>
 					</tr>
 				</tbody>				
 		</table>
-		<input type="hidden" name="id" value="<%=id%>">
+		<input type="hidden" name="id" value="null">
 			<form>
-				<input type="submit" class="btn btn-primary pull-right" style="border-radius: 12px; border: none; background-color: #AC5E50; font-family:GyeonggiBatangOTF" value="작성">
-				<input type="button" class="btn btn-primary pull-right" style="border-radius: 12px; border: none; background-color: #AC5E50; font-family:GyeonggiBatangOTF" value="돌아가기" onClick="history.go(-1)">
+				<input type="submit" class="btn btn-primary pull-right" style="border-radius: 12px; border: none; background-color: #000; font-family:GyeonggiBatangOTF" value="작성">
+				<input type="button" class="btn btn-primary pull-right" style="border-radius: 12px; border: none; background-color: #000; font-family:GyeonggiBatangOTF" value="돌아가기" onClick="history.go(-1)">
 	     	</form>
       </form>
 
@@ -125,12 +124,12 @@
   </div>
 
   <hr>
-  <!-- Bootstrap core JavaScript -->
-  <script src="../static/vendor/jquery/jquery.min.js"></script>
-  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="../static/js/clean-blog.min.js"></script>
+  <script src="js/clean-blog.min.js"></script>
 
 </body>
 </html>
