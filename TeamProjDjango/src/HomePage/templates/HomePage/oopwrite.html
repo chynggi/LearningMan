@@ -17,12 +17,13 @@
         </div>
         <hr>
 		<div class="container">
-			<form class = "form-horizontal" action = "../static/BoardInsertAction.php" method = "post">		
+			<form class = "form-horizontal" action = "" method = "post">
+			{% csrf_token %}		
 				<div class="input-group mb-3">
 				<div class="input-group-prepend">
 					<span class="input-group-text" id="inputGroup-sizing-default">제목</span>
 					</div>
-        			<input type="text" id="title" name = "board_title" class="form-control"
+        			<input type="text" id="title" name = "title" class="form-control"
         				aria-label="Sizing example input"
         				aria-describedby="inputGroup-sizing-default">
 				</div>
@@ -34,7 +35,7 @@
   				</div>
 				<input type="hidden" name = "id" value="{{user.id}}">
 				<button class="btn btn-success" type="submit">저장</button>
-				<a class="btn btn-secondary" href="./ServerSideBoardList.php"> 리스트로 돌아가기</a>
+				<a class="btn btn-secondary" href="{% url 'HomePage:oopwrite' %}"> 리스트로 돌아가기</a>
 			</form>
 		</div>
 	</div>
