@@ -4,7 +4,7 @@
 <html>
 <jsp:include page="../static/header.jsp"></jsp:include>
 <div class="container">
-	<form action="" method="POST">
+	<form action="new.do" method="POST">
 	
 		<div class="input-group mb-3">
 			<div class="input-group-prepend">

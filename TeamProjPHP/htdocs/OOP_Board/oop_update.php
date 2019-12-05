@@ -127,27 +127,27 @@
             </h3>
         </div>
         <hr>
-		<div class="OOP_board_box">
-			<div class="b_header">
-				<p class="OOP_no">글 번호</p>
-				<p class="OOP_title"> 제목</p>
-				<p class="OOP_id">글쓴이</p>
-				<p class="OOP_date">게시일</p>
-			</div>
-		<?php foreach($Rows as $key => $val){?>
-		
-			<div class="b_content">
-				<p class="OOP_no"><?=$val["NO"]?></p>
-				<p class="OOP_title"><a href="./OOP_detail.php?board_no=<?=$val['NO']?>"><?=$val["TITLE"]?></a></font></p>
-				<p class="OOP_id"><?=$val["ID"]?></p>
-				<p class="OOP_date"><?=$val["XDATE"]?></p>
-			</div>
-		<?php }?>
-			<div>
-				<p>
-					<a href="#">글쓰기</a>
-				</p>			
-			</div>
+		<div class="container">
+			<form class = "form-horizontal" action = "../static/BoardInsertAction.php" method = "post">		
+				<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="inputGroup-sizing-default">제목</span>
+					</div>
+        			<input type="text" id="title" name = "board_title" class="form-control"
+        				aria-label="Sizing example input"
+        				aria-describedby="inputGroup-sizing-default">
+				</div>
+				<div class="input-group">
+    				<div class="input-group-prepend">
+    					<span class="input-group-text">내용</span>
+    				</div>
+  					<textarea rows="20" id = "content" name = "board_content" class="form-control" aria-label="With textarea"></textarea>
+  				</div>
+				<input type="hidden" name = "board_id" value=" <?=$_SESSION["id"]?> ">
+				<input type="hidden" name = "dbname" value="OOPBOARD">
+				<button class="btn btn-success" type="submit">저장</button>
+				<a class="btn btn-secondary" href="./ServerSideBoardList.php"> 리스트로 돌아가기</a>
+			</form>
 		</div>
 	</div>
   </div>

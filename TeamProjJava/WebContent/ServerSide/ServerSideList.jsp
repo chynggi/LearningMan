@@ -8,7 +8,6 @@
 <% 
 request.setCharacterEncoding("UTF-8");
 List<Board> list = (List<Board>)request.getAttribute("data");
-
 %>
 <!-- Main Content -->
   <div class="container">

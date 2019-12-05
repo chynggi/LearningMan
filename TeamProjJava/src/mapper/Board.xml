@@ -15,20 +15,28 @@ NO,TITLE,CONTENT,ID,XDATE
 <select id = "selectAll" parameterType="String" resultMap="result">
 
 	SELECT <include refid= "basecolumns"></include> FROM ${Tablename}
-
+ 
 </select>
 <insert id = "insert" parameterType="hashmap"
 	>
 	
 	INSERT INTO ${dbname} (<include refid= "basecolumns"></include>) 
-	VALUES(SSBOARD_SEQ.NEXTVAL,${board.title},${board.content},${board.id},SYSDATE)
+<<<<<<< HEAD
+<<<<<<< Upstream, based on origin/master
+	VALUES(SSBOARD_SEQ.NEXTVAL,#{board.title},#{board.content},#{board.id},SYSDATE)
+=======
+	VALUES(${dbname}_SEQ.NEXTVAL,#{board.title},#{board.content},#{board.id},SYSDATE)
+>>>>>>> 42c7f6f 2019-12-04  15:00
+=======
+	VALUES(${dbname}_SEQ.NEXTVAL,#{board.title},#{board.content},#{board.id},SYSDATE)
+>>>>>>> refs/remotes/origin/ssy
 	
 
 </insert>
 <update id = "update" parameterType="hashmap">
 	UPDATE ${dbname} SET
-	 ID = ${board.id}, TITLE = ${board.title}, CONTENT = ${board.content},XDATE = ${board.date}, 
-	 WHERE NO = ${board.no}
+	 ID = #{board.id}, TITLE = #{board.title}, CONTENT = #{board.content},XDATE = #{board.date}, 
+	 WHERE NO = #{board.no}
 </update>
 <delete id = "delete" parameterType="hashmap">
 	DELETE FROM ${dbname} WHERE NO = #{no}
@@ -45,7 +53,5 @@ NO,TITLE,CONTENT,ID,XDATE
 	SELECT COUNT(*) FROM SSBOARD
 	]]>
 </select>
-
-
 
 </mapper>

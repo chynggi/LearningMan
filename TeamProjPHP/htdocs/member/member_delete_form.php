@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Learning Man</title>
+  <title>회원탈퇴</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -141,7 +141,6 @@
     		checkPw($('#pw').val());
     		formCheck($('#pw').val());
     	});
-
     	//
     	function insertOk(frm) {
     		var f = document.memberForm;
@@ -159,10 +158,7 @@
     		}else{
     			return true;
     		}
-
     	}
-
-
     	function checkId(id) {
     		var f = document.memberForm;
     		if(id.length < 4){
@@ -222,14 +218,10 @@
       </div>
     </div>
   </footer>
-
   <!-- Bootstrap core JavaScript -->
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../js/jquery-3.4.1.min.js"></script>
-
   <!-- Custom scripts for this template -->
   <script src="../js/clean-blog.min.js"></script>
-
 </body>
-
 </html>

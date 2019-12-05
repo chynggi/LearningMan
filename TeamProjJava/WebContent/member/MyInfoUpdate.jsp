@@ -44,7 +44,7 @@
         		</div>
         		<div class="subM_form">
         			<input class="upBtn" type="submit" value="수정">
-        			<button type="button" onclick="location.href='./member_delete_form.php'" class="deBtn">회원탈퇴</button>
+        			<button type="button" onclick="location.href='./MyInfoDelete.jsp'" class="deBtn">회원탈퇴</button>
         		</div>
 			</form>
         </div>
@@ -95,10 +95,7 @@
     		}else{
     			return true;
     		}
-
     	}
-
-
     	function checkId(id) {
     		var f = document.memberForm;
     		if(id.length < 4){
@@ -138,7 +135,7 @@
     			alert("휴대폰 번호은 10자 이상 입력하여야 합니다.");
     			$('#phone').val('').focus();
     			return false;
-    		}else{
+    		} else {
     			return true;
     		}
     	}

@@ -14,27 +14,25 @@
       <div class="col-lg-12 col-md-10 mx-auto">
         <div class="post-preview">
             <h2 class="post-title">
-				LOGIN
+				로그인
             </h2>
         </div>
         <hr>
-		<form action="#" method="post" style="text-align: center;">
-			<div>
-				<label for="id">ID</label>&nbsp;&nbsp;&nbsp;
-				<input type="text" name="id">
-			</div>
-			<div>
-				<label for="pw">PW</label>&nbsp;
-				<input type="text" name="pw">
-			</div>
-			<div style="margin-left: 206px;">
-				<input type="submit" value="로그인">
-			</div>
-		</form>
-        
-        
+        <div class="loginForm_box">
+        	<form name="loginForm" action="./login_action.php" method="post">
+        		<div class="ID_form">
+        			<input class="id" type="text" name="id" placeholder="&nbsp;&nbsp;아이디">
+        		</div>
+        		<div class="PW_form">
+        			<input class="pw" type="password" name="pw" placeholder="&nbsp;&nbsp;비밀번호">
+        		</div>
+        		<div class="subM_form">
+        			<input class="loginBtn" type="submit" value="로그인">
+        		</div>
+			</form>
+        </div>
       </div>
-      </div>
-      </div>
+	</div>
+	</div>
 	{% endblock content %}
 	

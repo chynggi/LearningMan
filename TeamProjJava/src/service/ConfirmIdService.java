@@ -1,23 +1,15 @@
 package service;
 
 import java.io.PrintWriter;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.apache.ibatis.session.SqlSession;
-
 import common.MBUtils;
 import dao.BuserDAO;
 import dto.Buser;
 
 public class ConfirmIdService implements Service {
-	/*
-	 *
-	 * 
-	 * 
-	 */
 	@Override
 	public boolean execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		try {
@@ -41,9 +33,7 @@ public class ConfirmIdService implements Service {
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
-		}
-		
+		}		
 		return true;
 	}
-
 }

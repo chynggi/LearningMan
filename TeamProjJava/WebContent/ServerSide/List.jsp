@@ -38,7 +38,7 @@ List<Board> data = (List<Board>)request.getAttribute("data");
   </tbody>
 </table>
 	<div class="clearfix">
-          <a class="btn btn-primary float-right" href="{% url 'HomePage:sswrite' %}">글쓰기 </a>
+          <a class="btn btn-primary float-right" href="./Insert.jsp">글쓰기 </a>
      </div>
   </div>
 
