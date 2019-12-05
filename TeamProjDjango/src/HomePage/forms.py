@@ -17,6 +17,11 @@ class FormSS(ModelForm):
         '''
         fields =['title','content','id']
         
+class FormOOP(ModelForm):
+    class Meta:
+        model = Oopboard        
+        fields =['title','content','id']        
+        
         
 class FormDA(ModelForm):
     class Meta:

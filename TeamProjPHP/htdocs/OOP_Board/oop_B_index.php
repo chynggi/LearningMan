@@ -8,18 +8,21 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Clean Blog - Start Bootstrap Theme</title>
+  <title>OOP 게시판</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="../vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
   <!-- Custom styles for this template -->
   <link href="../css/clean-blog.css" rel="stylesheet">
+  <link href="../css/login.css" rel="stylesheet">
+  <link href="../css/member.css" rel="stylesheet">
+  <link href="../css/OOP.css" rel="stylesheet">
 
 </head>
 
@@ -36,10 +39,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="../index.php">About</a>
+            <a class="nav-link" href="./index.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../OOP_Board/oop_B_index.php">OOP</a>
+            <a class="nav-link" href="OOP_Board/oop_B_index.php">OOP</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="post.html">DBMS</a>
@@ -67,10 +70,26 @@
           <div class="site-heading">
             <span class="subheading">Team Project</span>
             <h1>Learning Man</h1>
+            <?php
+            session_start();
+            if(!isset($_SESSION['id'])){
+            ?>
             <p class="M_btn">
-            	<a class="col-lg-8 col-md-10 mx-auto" href="#">로그인</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="#">회원가입</a>            	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="../login/login.php">로그인</a>
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member.php">회원가입</a>            	
             </p>
+            <?php     
+            }else {
+                $user_name = $_SESSION['name'];
+            ?>
+            <p class="M_btn">
+            	<a class="col-lg-8 col-md-10 mx-auto"><strong><?php echo "$user_name"; ?></strong>님 환영합니다.</a>
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member_update_form.php">본인정보 수정</a>           	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="../login/logout.php">로그아웃</a>           	
+            </p>
+            <?php
+            }
+            ?>
           </div>
         </div>
       </div>
@@ -81,10 +100,20 @@
 			text-decoration: none;
 			color:#fff;
 		}
+        .M_btn>p {
+			text-decoration: none;
+			color:#fff;
+		}
 		.M_btn>a:hover {
 			color:#000;
 		}
 	</style>
+	
+		<?php
+            require_once('../static/BoardDAOFunction.php');
+            $Rows = selectAll('OOPBOARD');
+        ?>
+	
   <!-- Main Content -->
   <div class="container">
     <div class="row">
@@ -97,9 +126,31 @@
               	객체지향 프로그래밍
             </h3>
         </div>
+    	<div class="add_btn">
+			<p>
+				<a href="./oop_add.php">글쓰기</a>
+			</p>			
+		</div>
         <hr>
-
-        
+		<div class="OOP_board_box">
+			<div class="b_header">
+				<p class="OOP_no">글 번호</p>
+				<p class="OOP_title"> 제목</p>
+				<p class="OOP_id">글쓴이</p>
+				<p class="OOP_date">게시일</p>
+			</div>
+		<?php foreach($Rows as $key => $val){?>
+		
+			<div class="b_content">
+				<p class="OOP_no"><?=$val["NO"]?></p>
+				<p class="OOP_title"><a href="./OOP_detail.php?board_no=<?=$val['NO']?>"><?=$val["TITLE"]?></a></font></p>
+				<p class="OOP_id"><?=$val["ID"]?></p>
+				<p class="OOP_date"><?=$val["XDATE"]?></p>
+			</div>
+		<?php }?>
+		</div>
+	</div>
+  </div>
         
         
         
@@ -139,14 +190,10 @@
       </div>
     </div>
   </footer>
-
   <!-- Bootstrap core JavaScript -->
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
   <!-- Custom scripts for this template -->
   <script src="../js/clean-blog.min.js"></script>
-
 </body>
-
 </html>

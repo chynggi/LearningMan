@@ -25,7 +25,15 @@ public class PasswordSeekService implements Service {
 		Buser mem = null;
 		try {
 			mem = dao.selectById(id);
+<<<<<<< Upstream, based on origin/master
 			if(mem!=null) {
+=======
+			if(mem!=null)
+			{
+<<<<<<< HEAD
+>>>>>>> 42c7f6f 2019-12-04  15:00
+=======
+>>>>>>> refs/remotes/origin/ssy
 			message = "비밀번호는 "+mem.getPassword()+" 입니다.";
 			session.setAttribute("message", message);
 			response.sendRedirect("./loginorReg.jsp");				

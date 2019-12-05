@@ -3,12 +3,17 @@
 
 <head>
   <title>Learning Man</title>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
+  <link href="./css/boost.css" rel='stylesheet' type='text/css'>
+  <title>Learning Man</title>
+  <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -17,69 +22,20 @@
   <link href="css/clean-blog.css" rel="stylesheet">
   <link href="css/login.css" rel="stylesheet">
   <link href="css/member.css" rel="stylesheet">
-  
   <script src="vendor/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
 
   <script src="js/clean-blog.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/contents_any.js" type="text/javascript" charset="utf-8"></script>
 
+  <script>
+	$(document).ready(function() {			
+		$('#head_div').load('header.php');
+	});
+  </script>
 </head>
-
 <body>
-
-
-<<<<<<< HEAD
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <span class="subheading">Team Project</span>
-            <h1>Learning Man</h1>
-            <?php
-            session_start();
-            if(!isset($_SESSION['id'])){
-            ?>
-            <p class="M_btn">
-            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/login.php">로그인</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member.php">회원가입</a>            	
-            </p>
-            <?php     
-            }else {
-                $user_name = $_SESSION['name'];
-            ?>
-            <p class="M_btn">
-            	<a class="col-lg-8 col-md-10 mx-auto"><strong><?php echo "$user_name"; ?></strong>님 환영합니다.</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member_update_form.php">본인정보 수정</a>           	
-            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/logout.php">로그아웃</a>           	
-            </p>
-            <?php
-            }
-            ?>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-	<style>
-		.M_btn>a {
-			text-decoration: none;
-			color:#fff;
-		}
-        .M_btn>p {
-			text-decoration: none;
-			color:#fff;
-		}
-		.M_btn>a:hover {
-			color:#000;
-		}
-	</style>
-=======
   <div id="head_div"></div>
->>>>>>> refs/remotes/origin/master
   <!-- Main Content -->
   <div class="container">
     <div class="row">
@@ -222,6 +178,12 @@
     </div>
   </footer>
 
-</body>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/contents_any.js" type="text/javascript" charset="utf-8"></script>
 
+</body>
 </html>

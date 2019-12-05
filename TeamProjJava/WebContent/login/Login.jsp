@@ -30,7 +30,7 @@
         			<input class="id" type="text" name="id" placeholder="&nbsp;&nbsp;아이디">
         		</div>
         		<div class="PW_form">
-        			<input class="pw" type="password" name="pw" placeholder="&nbsp;&nbsp;비밀번호">
+        			<input class="pw" type="password" name="password" placeholder="&nbsp;&nbsp;비밀번호">
         		</div>
         		<div class="subM_form">
         			<input class="loginBtn" type="submit" value="로그인">
