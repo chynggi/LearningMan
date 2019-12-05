@@ -7,10 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-<<<<<<< Upstream, based on origin/master
-
-=======
-  
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -18,7 +14,6 @@
   <link href="./css/boost.css" rel='stylesheet' type='text/css'>
   <title>Learning Man</title>
   <!-- Bootstrap core CSS -->
->>>>>>> 61a32aa dddd
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -27,88 +22,20 @@
   <link href="css/clean-blog.css" rel="stylesheet">
   <link href="css/login.css" rel="stylesheet">
   <link href="css/member.css" rel="stylesheet">
-<<<<<<< HEAD
-<<<<<<< Upstream, based on origin/master
-  
   <script src="vendor/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
 
   <script src="js/clean-blog.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/contents_any.js" type="text/javascript" charset="utf-8"></script>
 
-=======
-=======
->>>>>>> refs/remotes/origin/ssy
   <script>
 	$(document).ready(function() {			
 		$('#head_div').load('header.php');
 	});
   </script>
-<<<<<<< HEAD
->>>>>>> 61a32aa dddd
-=======
->>>>>>> refs/remotes/origin/ssy
 </head>
 <body>
-<<<<<<< HEAD
-<<<<<<< Upstream, based on origin/master
-
-
-<<<<<<< HEAD
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <span class="subheading">Team Project</span>
-            <h1>Learning Man</h1>
-            <?php
-            session_start();
-            if(!isset($_SESSION['id'])){
-            ?>
-            <p class="M_btn">
-            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/login.php">로그인</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member.php">회원가입</a>            	
-            </p>
-            <?php     
-            }else {
-                $user_name = $_SESSION['name'];
-            ?>
-            <p class="M_btn">
-            	<a class="col-lg-8 col-md-10 mx-auto"><strong><?php echo "$user_name"; ?></strong>님 환영합니다.</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member_update_form.php">본인정보 수정</a>           	
-            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/logout.php">로그아웃</a>           	
-            </p>
-            <?php
-            }
-            ?>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-	<style>
-		.M_btn>a {
-			text-decoration: none;
-			color:#fff;
-		}
-        .M_btn>p {
-			text-decoration: none;
-			color:#fff;
-		}
-		.M_btn>a:hover {
-			color:#000;
-		}
-	</style>
-=======
-=======
->>>>>>> 61a32aa dddd
-=======
->>>>>>> refs/remotes/origin/ssy
   <div id="head_div"></div>
->>>>>>> refs/remotes/origin/master
   <!-- Main Content -->
   <div class="container">
     <div class="row">
@@ -250,21 +177,13 @@
       </div>
     </div>
   </footer>
-<<<<<<< HEAD
-<<<<<<< Upstream, based on origin/master
 
-=======
-=======
->>>>>>> refs/remotes/origin/ssy
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
   <!-- Custom scripts for this template -->
   <script src="js/clean-blog.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/contents_any.js" type="text/javascript" charset="utf-8"></script>
-<<<<<<< HEAD
->>>>>>> 61a32aa dddd
-=======
->>>>>>> refs/remotes/origin/ssy
+
 </body>
 </html>

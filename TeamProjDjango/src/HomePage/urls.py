@@ -15,5 +15,10 @@ urlpatterns=[
     path('update',views.update,name='update'),
     path('delete',views.update,name='delete'),
     path('sspost/<int:no>',views.SSpost,name='sspost'),
-    path('about',views.about,name='about'),
+    path('about',views.about,name='about'),#OOPBOARD
+    path('ooplist',views.OOPlist,name='ooplist'),
+    path('oopwrite',views.OOPwrite,name='oopwrite'),   
+    path('oopupdate/<int:no>',views.OOPupdate,name='oopupdate'),   
+    path('oopdelete/<int:no>',views.OOPdelete,name='oopdelete'), 
+    path('ooppost/<int:no>',views.OOPpost,name='ooppost'), 
 ]
