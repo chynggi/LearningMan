@@ -183,20 +183,13 @@ def SSdelete(request,no):
 
 
 ##DABOARD
-
-
-
 def DApost(request, no):
     post = Daboard.objects.get(no=no)
-    return render(request, 'homepage/post_server.html', {'post':post})
-
-
-
+    return render(request, 'homepage/dadetail.html', {'post':post})
 
 def DAlist(request):
     posts = Daboard.objects.all()
-    return render(request, 'homepage/write.html', {'posts':posts})
-
+    return render(request, 'homepage/dalist.html', {'posts':posts})
 
 def DAwrite(request):   
     message = None;
@@ -223,7 +216,7 @@ def DAwrite(request):
     if request.session['userid'] is None:
         return HttpResponseRedirect(reverse('HomePage:index'))
     user = Buser.objects.get(id=request.session['userid'])
-    return render(request, 'homepage/list.html', {'user':user,'message':message})
+    return render(request, 'homepage/dalist.html', {'user':user,'message':message})
 
 def DAupdate(request,no):   
     message = None;
@@ -244,11 +237,8 @@ def DAupdate(request,no):
     if request.session['userid'] is None:
         return HttpResponseRedirect(reverse('HomePage:index'))
     user = Buser.objects.get(id=request.session['userid'])
-    return render(request, 'homepage/list.html', {'user':user,'message':message,'post':post})
+    return render(request, 'homepage/dalist.html', {'user':user,'message':message,'post':post})
 
 def DAdelete(request,no):
     Daboard.objects.get(no=no).delete()    
-    return HttpResponseRedirect(reverse('HomePage:dalist'))
-
-
-    
+    return HttpResponseRedirect(reverse('HomePage:dalist'))    
