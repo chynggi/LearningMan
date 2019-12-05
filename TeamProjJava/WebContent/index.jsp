@@ -40,7 +40,7 @@
 					</li>
 					<li class="nav-item"><a class="nav-link"
 						href="OOP_Board/oop_B_index.php">OOP</a></li>
-					<li class="nav-item"><a class="nav-link" href="../DBMS/board_list.jsp">DBMS</a>
+					<li class="nav-item"><a class="nav-link" href="DBMSBoard/board_list.jsp">DBMS</a>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="../ServerSide/List.do">Server
 							Side</a></li>

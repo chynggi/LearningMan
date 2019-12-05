@@ -122,7 +122,7 @@ public class MainControl extends HttpServlet {
 				e.printStackTrace();
 			} break;	
 			
-		case "/Logout.do":
+		case "/login/Logout.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
 				service = new LogoutService();

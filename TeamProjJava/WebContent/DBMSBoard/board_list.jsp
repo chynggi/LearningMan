@@ -156,7 +156,7 @@
 						<tr
 							style="background-color: #766f6d; font-size: 15px; color: #fff; border: none;">
 							<td><%=list.get(i).getNo()%></td>
-							<td><%=list.get(i).getTitle()%></td>
+							<td><a href="./info.do?no=<%=list.get(i).getNo()%>"><%=list.get(i).getTitle()%></a></td>
 							<td><%=list.get(i).getId()%></td>
 							<td><%=list.get(i).getDate()%></td>
 						</tr>

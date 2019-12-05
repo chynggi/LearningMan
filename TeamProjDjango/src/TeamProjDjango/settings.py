@@ -89,11 +89,7 @@ DATABASES = {
         'NAME': 'xe',
         'USER':'team',
         'PASSWORD':'team',
-<<<<<<< HEAD
-        'HOST':'192.168.0.24',
-=======
         'HOST':'192.168.0.98',
->>>>>>> refs/remotes/origin/master
         'PORT':'1521',
         
     }

@@ -165,4 +165,79 @@ def SSupdate(request,no):
 def SSdelete(request,no):
     Ssboard.objects.get(no=no).delete()    
     return HttpResponseRedirect(reverse('HomePage:sslist'))
+
+
+
+
+
+##DBMSBOARD==================================================================================
+##===========================================================================================
+def DBpost(request, no):  # 정보?
+    post = Dbmsboard.objects.get(no=no)
+    return render(request, 'homepage/dbms_post_server.html', {'post':post})
+
+
+
+
+def DBlist(request): # 글목록
+    posts = Dbmsboard.objects.all()
+    return render(request, 'HomePage/dbmslist.html', {'posts':posts})    
+
+def DBwrite(request): # 글쓰기
+    message = None;
+    if request.method == 'POST':        
+            form = FormSS(request.POST)
+            if form.is_valid():                
+                print('aaa')
+                message = None;
+                dbboardobj = Dbmsboard()
+                cursor = connection.cursor()
+                cursor.execute("SELECT %s.nextval FROM DUAL;" % ('DBMSBOARD_SEQ'))
+                row = cursor.fetchone()
+                print(row[0])
+                dbboardobj.no = row[0]
+                dbboardobj.title = form.cleaned_data['title']
+                dbboardobj.content = form.cleaned_data['content']
+                dbboardobj.id = form.cleaned_data['id']
+                dbboardobj.save()
+                return HttpResponseRedirect(reverse('HomePage:dbmslist'))        
+            else:
+                message = "ERROR"        
+    else:
+        form = FormSS() 
+    try:
+        if request.session['userid'] is None:
+            return HttpResponseRedirect(reverse('HomePage:index'))
+    except:
+        return HttpResponseRedirect(reverse('HomePage:index'))
+    
+    user = Buser.objects.get(id=request.session['userid'])
+    return render(request, 'HomePage/dbmswrite.html', {'user':user,'message':message})
+
+def DBupdate(request,no):   # 수정
+    message = None;
+    post = Dbmsboard.objects.get(no=no)
+    if request.method == 'POST':        
+            form = FormSS(request.POST)
+            if form.is_valid():                
+                print('aaa')
+                message = None;
+                post.title = form.cleaned_data['title']
+                post.content = form.cleaned_data['content']                
+                post.save()
+                return HttpResponseRedirect(reverse('HomePage:dbmswrite'))        
+            else:
+                message = "ERROR"        
+    else:
+        form = FormSS()
+    if request.session['userid'] is None:
+        return HttpResponseRedirect(reverse('HomePage:index'))
+    user = Buser.objects.get(id=request.session['userid'])
+    return render(request, 'HomePage/dbmslist.html', {'user':user,'message':message,'post':post})
+
+def DBdelete(request,no):  # 삭제
+    Dbmsboard.objects.get(no=no).delete()    
+    return HttpResponseRedirect(reverse('HomePage:dbmslist'))
+    
+    
     

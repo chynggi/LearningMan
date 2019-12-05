@@ -16,4 +16,11 @@ urlpatterns=[
     path('delete',views.delete,name='delete'),
     path('sspost/<int:no>',views.SSpost,name='sspost'),
     path('about',views.about,name='about'),
+    
+    #DBMSBOARD
+    path('dbmslist',views.DBlist,name='dbmslist'),
+    path('dbmswrite',views.DBwrite,name='dbmswrite'),   
+    path('dbmsupdate/<int:no>',views.DBupdate,name='dbmsupdate'),   
+    path('dbmsdelete/<int:no>',views.DBdelete,name='dbmsdelete'), 
+    path('dbmspost/<int:no>',views.DBpost,name='dbmspost'),
 ]
