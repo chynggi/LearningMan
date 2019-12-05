@@ -3,8 +3,8 @@
 {% block content %}	
 {% if posts %}
 {% for post in posts %}
-        
         <form class = "form-horizontal" action=" " method="post">
+      {% csrf_token %}  
            <div class="container">
 			<div class="input-group mb-3">
 			<div class="input-group-prepend">

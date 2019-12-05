@@ -20,45 +20,19 @@ public class BoardAdjustService implements Service{
 		String content 	 = request.getParameter("content");
 		String id 		 = request.getParameter("id");
 		String tablename = request.getParameter("tablename");
-<<<<<<< HEAD
-<<<<<<< Upstream, based on origin/master
 		String xdate 	 = request.getParameter("xdate");
-=======
-		String date = request.getParameter("date");
->>>>>>> 42c7f6f 2019-12-04  15:00
-=======
-		String date = request.getParameter("date");
->>>>>>> refs/remotes/origin/ssy
 		long no = Long.parseLong(request.getParameter("no"));
 		out.print("title:" + title + "<br/>");
 		out.print("내용:" + content + "<br/>");
-<<<<<<< HEAD
-<<<<<<< Upstream, based on origin/master
 		out.print("날짜: " + xdate + "<br/>");
 		out.print("ID:" + id + "<br/>");		
-=======
-=======
->>>>>>> refs/remotes/origin/ssy
-		out.print("날짜: " + date + "<br/>");
-		out.print("ID:" + id + "<br/>");
-		
-
->>>>>>> 42c7f6f 2019-12-04  15:00
 		//
 		Board vo = new Board();
 		vo.setNo(no);
 		vo.setContent(content);
 		vo.setId(id);
 		vo.setTitle(title);
-<<<<<<< HEAD
-<<<<<<< Upstream, based on origin/master
 		vo.setDate(xdate);
-=======
-		vo.setDate(date);
->>>>>>> 42c7f6f 2019-12-04  15:00
-=======
-		vo.setDate(date);
->>>>>>> refs/remotes/origin/ssy
 		HashMap<String,Object> para = new HashMap<String,Object>();
 		para.put("dbname", tablename);
 		para.put("board",vo);
