@@ -22,5 +22,6 @@ urlpatterns=[
     path('dawrite',views.DAwrite,name='dawrite'),   
     path('daupdate/<int:no>',views.DAupdate,name='daupdate'),   
     path('dadelete/<int:no>',views.DAdelete,name='dadelete'),
-    path('dapost/<int:no>',views.DApost,name='dapost'),    
+    path('dapost/<int:no>',views.DApost,name='dapost'), 
+    path('damain/<int:no>',views.DAmain,name='damain'),   
 ]

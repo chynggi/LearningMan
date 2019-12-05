@@ -228,3 +228,6 @@ def DAupdate(request,no): # 게시글 수정
 def DAdelete(request,no): # 게시글 삭제
     Daboard.objects.get(no=no).delete()    
     return HttpResponseRedirect(reverse('HomePage:dalist'))    
+
+def DAmain(request):
+    return render(request, 'homepage/damain.html')
