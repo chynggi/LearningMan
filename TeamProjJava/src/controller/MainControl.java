@@ -36,11 +36,6 @@ public class MainControl extends HttpServlet {
 		// aaaa/bbbb/xxxx.do
 		Service service = null; // Created Interface
 		PrintWriter out = null;
-		
-<<<<<<< HEAD
-=======
-		
->>>>>>> refs/remotes/origin/ssy
 		switch (command) {
 		
 		case "/login/login.do":
@@ -60,9 +55,6 @@ public class MainControl extends HttpServlet {
 				System.out.println(res);
 			} catch (Exception e) {
 				e.printStackTrace();
-<<<<<<< HEAD
-			} break;
-=======
 			}
 			break;
 		/*
@@ -73,7 +65,6 @@ public class MainControl extends HttpServlet {
 		 * break;
 		 */
 			
->>>>>>> refs/remotes/origin/ssy
 		case "/member/MemberInfo.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
