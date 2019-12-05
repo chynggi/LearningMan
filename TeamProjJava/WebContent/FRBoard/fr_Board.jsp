@@ -68,7 +68,7 @@
 	</nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('../img/FR.jpg')">
+  <header class="masthead" style="background-image: url('../img/FR.png')">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -97,15 +97,15 @@
 		
 			<tbody>
 					<tr >
-						<td style="color:#000; border: none; border-radius: 7px 0px 0px 0px;">제목 : </td>
+						<td style="color:#000; border: none; border-radius: 0px 0px 0px 0px;">제목 : </td>
 						<td>
-						<input type="text" style="width:100%;height: 40px; border: none; border-radius: 5px;" class="form-control" 
+						<input type="text" style="width:100%;height: 40px; border: none; border-radius: 0px;" class="form-control" 
 							   placeholder="  글 제목" name="title" maxlength="100"></td>
 					</tr>
 					<tr>
 						<td >내용 : </td>
 						<td >
-						<textarea class="farm-control" placeholder="  글 내용" name="content" maxlength="2048" style="width:100%;height: 350px;border-radius: 5px;"></textarea>
+						<textarea class="farm-control" placeholder="  글 내용" name="content" maxlength="2048" style="width:100%;height: 350px;border-radius: 0px;"></textarea>
 						</td>
 					</tr>
 				</tbody>				
