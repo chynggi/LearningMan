@@ -210,7 +210,7 @@ def DAupdate(request,no): # 게시글 수정
     if request.method == 'POST':        
             form = FormSS(request.POST)
             if form.is_valid():                
-                print('aaa')
+                print('eom')
                 message = None;
                 post.title = form.cleaned_data['title']
                 post.content = form.cleaned_data['content']                
