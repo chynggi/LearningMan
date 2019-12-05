@@ -25,15 +25,7 @@
         ?>
 		<hr>
 		<form class = "form-horizontal" action = "../static/BoardInsertAction.php" method = "post">		
-		<table class="table table-bordered" align = "center" style="width:50%">
-                <tr>
-                    <td align = "center" bgcolor = "#0085a1" style="width:10%"><font color = "white">작성자</font></td>
-                    <td style="width:50%">
-                    	<input type="hidden" name = "board_id" value=" value="<?php echo "$id"; ?>">
-                   		<p><?php echo "$id"; ?></p>
-						<input type="hidden" name = "dbname" value="DABOARD">                     
-                    </td>
-                </tr>               
+		<table class="table table-bordered" align = "center" style="width:50%">                              
                 <tr>
                     <td align = "center" bgcolor = "#0085a1" style="width:10%"><font color = "white">제목</font></td>
                     <td style="width:50%">
