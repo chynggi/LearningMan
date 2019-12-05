@@ -16,3 +16,9 @@ class FormSS(ModelForm):
         xdate = models.DateField(blank=True, null=True)
         '''
         fields =['title','content','id']
+        
+        
+class FormDA(ModelForm):
+    class Meta:
+        model = Daboard
+        fields =['title','content','id']
