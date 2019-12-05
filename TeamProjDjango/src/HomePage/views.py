@@ -229,5 +229,5 @@ def DAdelete(request,no): # 게시글 삭제
     Daboard.objects.get(no=no).delete()    
     return HttpResponseRedirect(reverse('HomePage:dalist'))    
 
-def DAmain(request):
+def DAmain(request): # 메인 화면
     return render(request, 'homepage/damain.html')
