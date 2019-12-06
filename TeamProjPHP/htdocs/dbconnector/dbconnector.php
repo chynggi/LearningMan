@@ -3,8 +3,8 @@
 try { 
     $conn = new PDO("oci:dbname=".$tns.";charset=utf8", "team", "team"); 
 }
-catch(PDOException $e) 
-{ echo "Failed to obtain database handle " . $e->getMessage(); } ?>
-
-OK?
+catch(PDOException $e){
+    echo "Failed to obtain database handle " . $e->getMessage(); 
+}
+?>
 

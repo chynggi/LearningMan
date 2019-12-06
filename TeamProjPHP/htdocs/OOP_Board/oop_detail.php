@@ -190,7 +190,8 @@
         <a class="btn btn-secondary" href="./oop_B_index.php">
         	리스트로 돌아가기
         </a>
-        </div></div>
+        </div>
+      </div>
 	</div>
   </div>
         
@@ -241,5 +242,4 @@
   <script src="../js/clean-blog.min.js"></script>
 
 </body>
-
 </html>
