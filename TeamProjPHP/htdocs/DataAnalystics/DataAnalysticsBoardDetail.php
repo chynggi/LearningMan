@@ -80,6 +80,9 @@
             </table>  		
   			<br>
   			
+  		<input type="hidden" name = "board_id" value=" <?=$_SESSION["id"]?> ">
+		<input type="hidden" name = "board_no" value="<?php echo $oneRow["NO"]?>">
+		<input type="hidden" name = "dbname" value="DABOARD">
   		<a class="btn btn-primary2" href="./DataAnalysticsBoardUpdate.php?board_no=<?=$oneRow["NO"]?>">수정</a>
 		&nbsp;&nbsp;&nbsp;
 		<a class="btn btn-primary2" href="./DataAnalysticsBoardDelete.php?board_no=<?=$oneRow["NO"]?>">삭제</a>
