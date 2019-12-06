@@ -14,8 +14,7 @@
   		<link href="./css/boost.css" rel='stylesheet' type='text/css'>
         
         <link rel="stylesheet" href="./css/bootstrap.css">
-        <script type="text/javascript" src="./js/bootstrap.js"></script>
-	
+        <script type="text/javascript" src="./js/bootstrap.js"></script>	
     	<style>
             table {
                 table-layout: fixed;
