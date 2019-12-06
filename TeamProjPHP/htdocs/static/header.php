@@ -51,7 +51,7 @@
 							Side</a></li>
 					<li class="nav-item"><a class="nav-link" href="contact">Frame
 							Works</a></li>
-					<li class="nav-item"><a class="nav-link" href="contact">Data
+					<li class="nav-item"><a class="nav-link" href="../DataAnalystics/DataAnalysticsMain">Data
 							Analystics</a></li>
 				</ul>
 			</div>
