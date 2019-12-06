@@ -90,7 +90,7 @@ DATABASES = {
         'USER':'team',
         'PASSWORD':'team',
         'HOST':'192.168.0.98',
-        'PORT':'1521',        
+        'PORT':'1521',      
     }
 }
 

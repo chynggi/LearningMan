@@ -133,4 +133,5 @@ function selectOne($key, $dbname)
     $oneRow = $pdoStatement->fetch();
     return $oneRow;
 }
+
 ?>
