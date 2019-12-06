@@ -32,9 +32,15 @@ public class BoardInfoService implements Service {
 		
 		para.put("dbname", tablename);
 		para.put("no",no);
-		RequestDispatcher rd = request.getRequestDispatcher("./DataAnalysticsDetail.jsp");
+		RequestDispatcher rd = null;
+		if(tablename.equals("OOPBOARD")) {
+			rd = request.getRequestDispatcher("./OOP_Detail.jsp");	
+		}else if (tablename.equals("DABOARD")) {
+			rd = request.getRequestDispatcher("./DataAnalysticsList.jsp");
+		}
 		try {
 			data = dao.info(para);
+			
 			request.setAttribute("data", data);
 			rd.forward(request, response);
 		} catch (Exception e) {

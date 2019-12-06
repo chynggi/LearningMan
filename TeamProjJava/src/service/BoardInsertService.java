@@ -20,7 +20,7 @@ public class BoardInsertService implements Service {
 		String title     = request.getParameter("title");
 		String content   = request.getParameter("content");
 		String id 		 = request.getParameter("id");
-		String tablename = request.getParameter("tablename");
+		String tablename = (String)request.getAttribute("tablename");
 		out.print("title:" + title + "<br/>");
 		out.print("내용:" + content + "<br/>");
 		out.print("ID:" + id + "<br/>");
