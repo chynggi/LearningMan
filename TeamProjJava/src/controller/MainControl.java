@@ -33,7 +33,6 @@ public class MainControl extends HttpServlet {
 		System.out.println(contextPath);
 		String command = uri.substring(contextPath.length());
 		System.out.println(command);
-		// aaaa/bbbb/xxxx.do
 		Service service = null; // Created Interface
 		PrintWriter out = null;
 		switch (command) {

@@ -17,7 +17,7 @@ public class LoginService implements Service {
 		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("id");
 		String password = request.getParameter("pw");
-		
+
 		System.out.println(id);
 		System.out.println(password);
 		String message = null;

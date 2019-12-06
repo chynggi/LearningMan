@@ -24,12 +24,10 @@ public class BoardInsertService implements Service {
 		out.print("title:" + title + "<br/>");
 		out.print("내용:" + content + "<br/>");
 		out.print("ID:" + id + "<br/>");
-		//
 		Board vo = new Board();		
 		vo.setContent(content);
 		vo.setId(id);
-		vo.setTitle(title);
-		
+		vo.setTitle(title);		
 		out.print(vo + "<br/>");
 		HashMap<String,Object> para = new HashMap<String,Object>();
 		para.put("dbname", tablename);

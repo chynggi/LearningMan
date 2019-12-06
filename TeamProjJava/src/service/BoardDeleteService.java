@@ -13,8 +13,7 @@ public class BoardDeleteService implements Service{
 	public boolean execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("Board Adjusting");
 		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=UTF-8");
-		
+		response.setContentType("text/html;charset=UTF-8");		
 		String tablename = (String)request.getAttribute("tablename");
 		PrintWriter out = response.getWriter();
 		long no = Long.parseLong(request.getParameter("no"));
