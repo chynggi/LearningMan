@@ -40,7 +40,7 @@ public class BoardDeleteService implements Service{
 			System.err.println("삭제하려는 데이터나 구문에 문제가 있습니다.");
 			e.printStackTrace();
 			return false;
-		} response.sendRedirect("./List.do");
+		} response.sendRedirect("./board_list.jsp");
 		return true;
 	}
 }
