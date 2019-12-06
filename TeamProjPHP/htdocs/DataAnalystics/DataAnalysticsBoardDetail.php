@@ -70,7 +70,9 @@
             </tr>
   			<tr>
                 <td colspan="6">               
-                    <?=$oneRow["CONTENT"]?>                   
+                    <?php 
+                        echo $oneRow["CONTENT"]
+                    ?>                   
                 </td>
             </tr>
             <?php
@@ -79,8 +81,8 @@
             </table>  		
   			<br>
         	&nbsp;&nbsp;&nbsp;
-        	<a class="btn btn-primary2" href="./DataAnalysticsBoardList.php?board_no=<?=$oneRow["NO"]?>">수정</a>
-			<a class="btn btn-primary2" href="./DataAnalysticsBoardList.php?board_no=<?=$oneRow["NO"]?>">삭제</a>
+        	<a class="btn btn-primary2" href="./DataAnalysticsBoardUpdate.php?board_no=<?=$oneRow["NO"]?>">수정</a>
+			<a class="btn btn-primary2" href="./DataAnalysticsBoardDelete.php?board_no=<?=$oneRow["NO"]?>">삭제</a>
         	<a class="btn btn-primary2" href="./DataAnalysticsBoardList.php.php">
         	리스트 이동
         	</a>

@@ -16,7 +16,7 @@ public class LoginService implements Service {
 		// 파라미터/응답 인코딩 방식 지정
 		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("id");
-		String password = request.getParameter("password");
+		String password = request.getParameter("pw");
 		
 		System.out.println(id);
 		System.out.println(password);
@@ -49,7 +49,6 @@ public class LoginService implements Service {
 			message = "회원정보가 존재하지 않습니다.";
 			session.setAttribute("message", message);
 			response.sendRedirect("./Login.jsp");
-			
 			return false;
 		}
 		sqlsession.close();

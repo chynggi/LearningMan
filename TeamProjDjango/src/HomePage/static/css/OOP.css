@@ -1,0 +1,120 @@
+body,html{
+	margin:0;
+	padding:0;
+}
+	.container > .row > div{
+		text-align: right;	
+	} 
+	.container > .row > div > .add_btn{
+			display:inline-block;
+			margin:0;
+			text-align: center;
+		}	
+	.container > .row > div > .add_btn > p{
+			width: 70px;
+			height: 45px;
+			margin:0;
+			padding:0px;
+			border-radius:13px;
+				background: #0095a1;
+			}	
+			.container > .row > div > .add_btn > p > a{
+				display:inline-block;
+				width: 70px;
+				height:45px;
+				margin:0;
+				padding:13px;
+				color: #fff;
+				font-size:12px;
+				font-weight:bold;
+				border-radius:13px;
+				text-decoration: none;
+			}	
+			.container > .row > div > .add_btn > p > a:hover{
+				color: #0095a1;
+				background:#fff;
+				border: 1px solid #0095a1;
+			}
+			
+			
+.container > .row > div > .OOP_board_box{
+	width:100%;
+	height:auto;
+	margin:0 0 50px 0;
+	padding:0;
+	text-align:center;	
+	}
+	.container > .row > div > .OOP_board_box > .b_header{
+		width:100%;
+		height:60px;
+		margin:0;
+		padding:0;
+		font-weight:bold;
+		border-top:1px solid #0085A1;	
+		border-bottom:1px solid #0085A1;
+		}
+		.container > .row > div > .OOP_board_box > .b_header > p{
+			float: left;
+			margin:0;
+			padding:17px 0 0 0;
+		}
+		.container > .row > div > .OOP_board_box > .b_header > .OOP_no{
+			width:20%;
+			height:100%;
+		}	
+		.container > .row > div > .OOP_board_box > .b_header > .OOP_title{
+			width:40%;
+			height:100%;
+		}	
+		.container > .row > div > .OOP_board_box > .b_header > .OOP_id{
+			width:20%;
+			height:100%;
+		}	
+		.container > .row > div > .OOP_board_box > .b_header > .OOP_date{
+			width:20%;
+			height:100%;
+		}	
+		
+		
+	.container > .row > div > .OOP_board_box > .b_content{
+		width:100%;
+		height:60px;
+		margin:0;
+		padding:0;
+		font-weight:bold;
+		border-bottom:1px solid #55d9f6;
+		}
+		.container > .row > div > .OOP_board_box > .b_content > p{
+			float: left;
+			margin:0;
+			padding:17px 0 0 0;
+		}
+		.container > .row > div > .OOP_board_box > .b_content > .OOP_no{
+			width:20%;
+			height:100%;
+		}	
+		.container > .row > div > .OOP_board_box > .b_content > .OOP_title{
+			width:40%;
+			height:100%;
+			}	
+			.container > .row > div > .OOP_board_box > .b_content > .OOP_title > a{
+			text-decoration: none;
+		}
+		.container > .row > div > .OOP_board_box > .b_content > .OOP_id{
+			width:20%;
+			height:100%;
+		}	
+		.container > .row > div > .OOP_board_box > .b_content > .OOP_date{
+			width:20%;
+			height:100%;
+		}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -34,7 +34,7 @@ NO,TITLE,CONTENT,ID,XDATE
 	DELETE FROM ${dbname} WHERE NO = #{no}
 
 </delete>
-<select id = "info" parameterType="hashmap" resultType="board">
+<select id = "info" parameterType="hashmap" resultMap="result">
 <![CDATA[
 	SELECT * FROM ${dbname} WHERE NO = #{no}
 	]]>

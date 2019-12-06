@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+
+ <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-10 mx-auto">
+        <div class="post-preview">
+            <h2 class="post-title">
+				OOP
+            </h2>
+            <h3 class="post-subtitle" style="margin-bottom: 80px;">
+              	객체지향 프로그래밍
+            </h3>
+        </div>
+    	<div class="add_btn">
+			<p>
+				<a href="{% url 'HomePage:oopwrite' %}">글쓰기</a>
+			</p>			
+		</div>
+        <hr>
+		<div class="OOP_board_box">
+			<div class="b_header">
+				<p class="OOP_no">글 번호</p>
+				<p class="OOP_title"> 제목</p>
+				<p class="OOP_id">글쓴이</p>
+				<p class="OOP_date">게시일</p>
+			</div>
+		{% if posts %}
+  {% for post in posts %}
+		
+			<div class="b_content">
+				<p class="OOP_no">{{ post.no }}</p>
+				<p class="OOP_title"><a href="ooppost/{{ post.no }}">{{ post.title }}</a></font></p>
+				<p class="OOP_id">{{ post.id.name }}</p>
+				<p class="OOP_date">{{ post.xdate }}</p>
+			</div>
+		{% endfor %}	
+	{% else %}
+		자료가 없습니다.
+	{% endif %} 
+		</div>
+	</div>
+  </div>
+
+
+
+
+  
+
+  <hr>
+
+{% endblock content %}
+{% block datatable %}
+
+  <script src="/static/js/demo/datatables-demo.js"></script>
+{% endblock datatable %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+  		<div class="container">
+  		<table class="table table-bordered" style="width:100%">
+        	<tr>
+                <td style="width:5%">작성자</td>
+                <td style="width:40%" colspan="5">
+                <input type="text" name = "id" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly value="{{post.id.name}}">               
+                </td>
+            </tr>
+            <tr>
+                <td style="width:5%">제목</td>
+                <td style="width:24%">
+                <input type="text" name = "title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly value="{{post.title}}">
+                </td>
+                <td style="width:5%">번호</td>
+                <td style="width:3%">
+                <input type="text" name = "no" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly value="{{post.no}}">
+                </td>
+                <td  style="width:5%">작성일</td>
+                <td  style="width:3%">
+                <input type="text" name = "xdate" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly value="{{post.xdate}}">
+                </td>
+            </tr>
+  			<tr>
+                <td colspan="6">    
+                <textarea rows="20" readonly name = "content" class="form-control" aria-label="With textarea">{{ post.content }}</textarea>                              
+                </td>
+            </tr>
+
+            </table>  		
+  			<br>
+  				<br>
+			{% if request.session.userid == post.id.id %}
+	 		<a class="btn btn-primary" href="{% url 'HomePage:daupdate' post.no %}">수정</a>
+			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">삭제</button>
+	 		{% elif request.session.userid == 'admin' %}
+	 		<a class="btn btn-primary" href="{% url 'HomePage:daupdate' post.no %}">수정</a>	
+			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">삭제</button>
+			{% else %}
+			{% endif %}
+</div>
+  			
+  <hr>
+  
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">삭제를 진행 하시겠습니까?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        	삭제가 진행되면 복구가 불가능합니다.
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary" href="{% url 'HomePage:dadelete' post.no %}">삭제</a>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">취소</button>
+      </div>
+    </div>
+  </div>
+</div>
+        
+        
+
+{% endblock content %}
+{% block datatable %}
+
+  <script src="/static/js/demo/datatables-demo.js"></script>
+{% endblock datatable %}

@@ -24,7 +24,16 @@ public class BoardListService implements Service {
 		SqlSession sqlSession = MBUtils.getSession();
 		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
 		List<Board> data = new ArrayList<>();
-		RequestDispatcher rd = request.getRequestDispatcher("./DataAnalysticsList.jsp");
+		RequestDispatcher rd = null;
+		if(tablename.equals("OOPBOARD")) {
+			rd = request.getRequestDispatcher("./OOP_List.jsp");	
+		}else if (tablename.equals("DABOARD")) {
+			rd = request.getRequestDispatcher("./DataAnalysticsList.jsp");
+		}
+		
+		
+		
+		
 		try {
 			data = dao.selectAll(tablename);
 			request.setAttribute("data", data);

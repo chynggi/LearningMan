@@ -68,13 +68,12 @@ include "../static/header.php"
         </table>
         <br>
         &nbsp;&nbsp;&nbsp;
-<<<<<<< HEAD
         <a class="btn btn-primary" href="./ServerSideBoardUpdate.php?board_no=<?=$oneRow["NO"]?>">수정</a>
 		<a class="btn btn-danger" href="./ServerSideBoardDelete.php?board_no=<?=$oneRow["NO"]?>">삭제</a>
-=======
+
         <a class="btn btn-primary" href='./ServerSideBoardUpdate.php?board_no=<?=$oneRow["no"]?>'>수정</a>
 		<a class="btn btn-danger" href='./ServerSideBoardDelete.php?board_no=<?=$oneRow["no"]?>'>삭제</a>
->>>>>>> refs/remotes/origin/master
+
         <a class="btn btn-secondary" href="./ServerSideBoardList.php">
         	리스트로 돌아가기
         </a>

@@ -35,9 +35,9 @@ public class MemberJoinService implements Service {
 		} else {
 		session.close();
 
-		String password = request.getParameter("password");
-		String password2 = request.getParameter("password2");
-		if(!password.equals(password2)){
+		String mpassword = request.getParameter("pw");
+		String mpassword2 = request.getParameter("pw2");
+		if(!mpassword.equals(mpassword2)){
 
 			message = "비밀번호 재확인 [비밀번호 랑 비밀번호 확인 이 일치하지 않음]";
 			httpsession.setAttribute("message", message);

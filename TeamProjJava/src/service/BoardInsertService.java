@@ -17,29 +17,23 @@ public class BoardInsertService implements Service {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out  = response.getWriter();
-		String title = request.getParameter("title");
-		String date = request.getParameter("date");
-		String content = request.getParameter("content");
-		String id = request.getParameter("id");
+		String title     = request.getParameter("title");
+		String content   = request.getParameter("content");
+		String id 		 = request.getParameter("id");
 		String tablename = (String)request.getAttribute("tablename");
-		System.out.println(tablename);
-		
 		out.print("title:" + title + "<br/>");
 		out.print("내용:" + content + "<br/>");
 		out.print("ID:" + id + "<br/>");
-				
+		//
 		Board vo = new Board();		
 		vo.setContent(content);
 		vo.setId(id);
 		vo.setTitle(title);
-		vo.setDate(date);
+		
 		out.print(vo + "<br/>");
-		
 		HashMap<String,Object> para = new HashMap<String,Object>();
-		
 		para.put("dbname", tablename);
 		para.put("board",vo);
-		
 		SqlSession sqlSession = MBUtils.getSession();
 		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
 
@@ -59,7 +53,8 @@ public class BoardInsertService implements Service {
 			e.printStackTrace();
 			return false;
 		}
-		response.sendRedirect("./board_list.jsp");
+			
+		response.sendRedirect("./List.do");
 		return true;
 	}
 }
