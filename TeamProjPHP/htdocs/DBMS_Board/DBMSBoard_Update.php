@@ -33,10 +33,8 @@ include "./header_dbms.php"
 	<input type="hidden" name = "board_no" value="<?php echo $Rows["NO"]?>">
 	<input type="hidden" name = "dbname" value="DBMSBOARD">
 	<button class="btn btn-success" type="submit">저장</button>
-	            &nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary" type="submit">글 수정</button>
             &nbsp;&nbsp;
-            <a class="btn btn-primary" href="./DBMSBoard_list.php"> 리스트로 돌아가기</a>
+            <a class="btn btn-primary" href="./board_list.php">목록</a>
         </form>
         </div>
 	

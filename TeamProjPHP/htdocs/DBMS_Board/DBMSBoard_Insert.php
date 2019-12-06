@@ -9,14 +9,14 @@ include "./header_dbms.php"
     			<label for="exampleInputTitle1" class="col-sm-2 control-label">글 제목	:</label>
     			<div class="col-sm-10">
     			     <!-- 글 제목 입력 상자 -->
-    				<input class="form-control"name="boardTitle" id="title" type="text" placeholder="Title"/>
+    				<input class="form-control"name="board_title" id="title" type="text" placeholder="Title"/>
     			</div>
     		</div>
     		<div class="form-group">
     			<label for="exampleInputContent1" class="col-sm-2 control-label">글 내용 :</label>
     			<div class="col-sm-10">
     			     <!-- 글 내용 입력 텍스트영역 -->
-    				<textarea class="form-control"name="boardContent" 
+    				<textarea class="form-control"name="board_content" 
     				id="content" rows="5" cols="50" placeholder="Content"></textarea>
     			</div>
     		</div>
@@ -32,7 +32,9 @@ include "./header_dbms.php"
         		<button class="btn btn-primary" type="reset" value="초기화">초기화</button>
         		&nbsp;
         		<!-- 리스트로 돌아가는 버튼 -->
-        		<a class="btn btn-primary" href="./DBMSBoard_list.php">리스트로 돌아가기</a>
+        		<input type="button" class="btn btn-primary pull-right" 
+         			style="border-radius: 12px; border: none; background-color: #000; 
+         			font-family:GyeonggiBatangOTF" value="돌아가기" onClick="history.go(-1)">
         		
     		</div>    		
     	</form>
