@@ -61,7 +61,7 @@ for(Board x:list) { %>
                 </tr>
                 <tr align = "center">
                     <td><button class="btn btn-primary" type="submit">삭제</button>
-                    <a class="btn btn-primary" href="./DataAnalysticsList.jsp">취소</a></td>
+                    <a class="btn btn-primary" href="List.do">취소</a></td>
                 </tr>
             </table>
         </form>    

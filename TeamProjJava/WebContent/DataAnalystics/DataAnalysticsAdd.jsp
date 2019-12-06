@@ -78,7 +78,7 @@
 						&nbsp;&nbsp;&nbsp;
 					<button class = "btn btn-primary2" type = "reset">초기화</button>
 						&nbsp;&nbsp;&nbsp;
-					<a class="btn btn-primary2" href="./DataAnalysticsList.jsp">취소</a>
+					<a class="btn btn-primary2" href="List.do">취소</a>
 				</td>
 			</tr>
 		</table>		

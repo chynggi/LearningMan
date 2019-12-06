@@ -74,7 +74,7 @@
 	<% }
 	} catch (Exception e) {		
 	} %>
-		<a class="btn btn-primary" href="./DataAnalysticsList.do">리스트로 돌아가기</a>
+		<a class="btn btn-primary" href="./List.do">리스트로 돌아가기</a>
 	</form>	
 	</div>
 </article>
