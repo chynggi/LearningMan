@@ -58,8 +58,7 @@
 			<input type="hidden" name = "board_no" value="<?php echo $oneRow["NO"]?>">
 			<input type="hidden" name = "dbname" value="DABOARD">
 			<button class="btn btn-success" type="submit">수정</button>
-	            &nbsp;&nbsp;&nbsp;
-     		<a class="btn btn-secondary" href="./DataAnalysticsBoardList.php"> 리스트로 돌아가기</a>
+	            &nbsp;&nbsp;&nbsp;    		
            </div>
         </form>
         

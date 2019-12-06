@@ -44,9 +44,7 @@
                 		&nbsp;&nbsp;&nbsp;
             			<button class="btn btn-primary2" type="submit">완료</button>
             			&nbsp;&nbsp;&nbsp;
-            			<button class = "btn btn-primary2" type = "reset">삭제</button>
-						&nbsp;&nbsp;&nbsp;        			
-            			<a class="btn btn-primary2" href="./DataAnalysticsBoardList.php">취소</a>
+            			<button class = "btn btn-primary2" type = "reset">삭제</button>						
                 	</td>
                 </tr>
 			</table>	
