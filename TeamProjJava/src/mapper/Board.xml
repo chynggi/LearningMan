@@ -27,7 +27,7 @@ NO,TITLE,CONTENT,ID,XDATE
 </insert>
 <update id = "update" parameterType="hashmap">
 	UPDATE ${dbname} SET
-	 ID = #{board.id}, TITLE = #{board.title}, CONTENT = #{board.content},XDATE = #{board.date}, 
+	 ID = #{board.id}, TITLE = #{board.title}, CONTENT = #{board.content}
 	 WHERE NO = #{board.no}
 </update>
 <delete id = "delete" parameterType="hashmap">

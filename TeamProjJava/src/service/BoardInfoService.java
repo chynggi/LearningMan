@@ -37,7 +37,7 @@ public class BoardInfoService implements Service {
 		
 		if(tablename.equals("DBMSBOARD"))
 		{
-			rd = request.getRequestDispatcher("./dbms_Board.jsp");
+			rd = request.getRequestDispatcher("./dbms_WBoard.jsp");
 			
 		}
 		else if(tablename.equals("SSBOARD"))

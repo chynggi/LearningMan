@@ -7,17 +7,27 @@
 	{% csrf_token %}
 		<div class="input-group mb-3">
 			<div class="input-group-prepend">
-				<span class="input-group-text" id="inputGroup-sizing-default">제목</span>
+				<span class="input-group-text" id="inputGroup-sizing-default"
+				style="height:40px;border-radius: 25px 0px 0px 25px; border: none; color: #483D8B; background-color: #D2D2FF;  
+				font-size: 15px; font-family: GyeonggiBatangOTF"
+				>제목 </span>
 			</div>
 			<input type="text" id="title" name = "title" class="form-control"
 				aria-label="Sizing example input"
-				aria-describedby="inputGroup-sizing-default">
+				aria-describedby="inputGroup-sizing-default"
+				style="height:40px;border-radius: 0px 25px 25px px; border: none; color: #483D8B; background-color: #D2D2FF;  
+				font-size: 15px; font-family: GyeonggiBatangOTF"
+				>
 		</div>
 		<div class="input-group">
   <div class="input-group-prepend">
-    <span class="input-group-text">내용</span>
+    <span class="input-group-text"
+    style="border-radius: 25px 0px 0px 25px; border: none; color: #483D8B; background-color: #D2D2FF;  font-size: 15px; font-family: GyeonggiBatangOTF"
+    >내용</span>
   </div>
-  <textarea rows="20" id = "content" name = "content" class="form-control" aria-label="With textarea">
+  <textarea rows="20" id = "content" name = "content" class="form-control" aria-label="With textarea"
+  style=" color:#483D8B; background-color: #fdf9fd; font-family: GyeonggiBatangOTF"
+  >
   
   
   </textarea>
@@ -25,7 +35,9 @@
 </div>
 <br>
 	<input type="hidden" name = "id" value="{{user.id}}">
-	<button class="btn btn-success" type="submit">저장</button>
+	<button class="btn btn-success" type="submit"
+	style="border-radius: 12px; border: none; color: #483D8B; background-color: #D2D2FF;  font-size: 15px; font-family: GyeonggiBatangOTF"
+	>저장</button>
 	</form>
 
 </div>

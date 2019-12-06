@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Clean Blog - Start Bootstrap Theme</title>
+  <title>TeamProject</title>
 
   <!-- Bootstrap core CSS -->
 <link href="/static/vendor/bootstrap/css/bootstrap.min.css"
@@ -48,7 +48,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top"
 		id="mainNav" style="font-family: GyeonggiBatangOTF;">
 		<div class="container">
-			<a class="navbar-brand" href="index.jsp">Learning Man</a>
+			<a class="navbar-brand" href="{% url 'HomePage:index' %}">Learning Man</a>
 			<button class="navbar-toggler navbar-toggler-right" type="button"
 				data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false"
@@ -88,16 +88,16 @@
 							<a class="col-lg-8 col-md-10 mx-auto"
 								style="font-family: GyeonggiBatangOTF;"><strong>{{request.session.userid}}</strong>님
 								환영합니다.</a> <a class="col-lg-8 col-md-10 mx-auto"
-								href="../member/MemberInfo.do"
-								style="font-family: GyeonggiBatangOTF;">본인정보 수정</a> <a
-								class="col-lg-8 col-md-10 mx-auto" href="../login/logout.do"
+								href="{% url 'HomePage:update' %}"
+								style="font-family: GyeonggiBatangOTF;">회원정보 수정</a> <a
+								class="col-lg-8 col-md-10 mx-auto" href="{% url 'HomePage:logout' %}"
 								style="font-family: GyeonggiBatangOTF;">로그아웃</a>
 						</p>
 						{% else %}
 						<p class="M_btn">
-							<a class="col-lg-8 col-md-10 mx-auto" href="../login/Login.jsp"
+							<a class="col-lg-8 col-md-10 mx-auto" href="{% url 'HomePage:login' %}"
 								style="font-family: GyeonggiBatangOTF;">로그인</a> <a
-								class="col-lg-8 col-md-10 mx-auto" href="../member/member.jsp"
+								class="col-lg-8 col-md-10 mx-auto" href="{% url 'HomePage:register' %}"
 								style="font-family: GyeonggiBatangOTF;">회원가입</a>
 						</p>
 						

@@ -135,7 +135,8 @@
 		<div class="container">
 			<div class="row">
 				<table class="table table-striped"
-					style="font-size: 15px; font-family: GyeonggiBatangOTF; text-align: center; border: 1xp solid #dddddd">
+					style="font-size: 15px; font-family: GyeonggiBatangOTF; 
+					text-align: center; border: 1xp solid #dddddd">
 					<thead style="color: #fff; background-color: #382825;">
 						<tr>
 							<th style="text-align: center;">번호</th>

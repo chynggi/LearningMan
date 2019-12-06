@@ -8,9 +8,9 @@
 		<div class="container">
 			<div class="row">
 				<table class="table table-striped"
-					style="font-size: 15px; font-family: GyeonggiBatangOTF; text-align: center; border: 1xp solid #dddddd">
+					style="font-size: 15px; font-family: GyeonggiBatangOTF; text-align: center; ">
 					<thead style="color: #fff; background-color: #382825;">
-						<tr>
+						<tr >
 							<th style="text-align: center;">번호</th>
 							<th style="text-align: center;">제목</th>
 							<th style="text-align: center;">작성자</th>
@@ -24,7 +24,7 @@
 						<tr
 							style="background-color: #766f6d; font-size: 15px; color: #fff; border: none;">
 							<td>{{ post.no }}</td>
-							<td><a href="dbmspost/{{ post.no }}">{{ post.title }}</a></td>
+							<td><a href="dbmspost/{{ post.no }}" style="color: #fff;">{{ post.title }}</a></td>
 							<td>{{ post.id.name }}</td>
       						<td>{{ post.xdate }}</td>
 						</tr>
