@@ -37,10 +37,6 @@ public class MainControl extends HttpServlet {
 		Service service = null; // Created Interface
 		PrintWriter out = null;
 		
-<<<<<<< HEAD
-=======
-		
->>>>>>> refs/remotes/origin/ssy
 		switch (command) {
 		
 		case "/login/login.do":
@@ -60,11 +56,7 @@ public class MainControl extends HttpServlet {
 				System.out.println(res);
 			} catch (Exception e) {
 				e.printStackTrace();
-<<<<<<< HEAD
 			} break;
-=======
-			}
-			break;
 		/*
 		 * case "/mymember/joinConfirm.do":
 		 * System.out.println("joinConfirm.do를 처리합니다."); // 가입정보를 보여주고, 수정할게 있으면 수정하게 //
@@ -73,7 +65,6 @@ public class MainControl extends HttpServlet {
 		 * break;
 		 */
 			
->>>>>>> refs/remotes/origin/ssy
 		case "/member/MemberInfo.do":
 			System.out.println(command + "를 처리합니다.");
 			try {
@@ -237,6 +228,52 @@ public class MainControl extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} break;
+		case "/oop/new.do":
+			try {
+				request.setAttribute("tablename", "OOPBOARD");
+				service = new BoardInsertService();
+				boolean res = service.execute(request, response);
+				System.out.println(res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} break;	
+		case "/oop/List.do":
+			System.out.println(command+"를 처리합니다.");
+			try {
+				request.setAttribute("tablename", "OOPBOARD");
+				boolean res = new BoardListService().execute(request, response);
+				System.out.println(res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} break;
+		case "/oop/Info.do":
+			System.out.println(command+"를 처리합니다.");
+			try {
+				request.setAttribute("tablename", "OOPBOARD");
+				boolean res = new BoardInfoService().execute(request, response);
+				System.out.println(res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} break;
+		case "/oop/delete.do":
+			System.out.println(command+"를 처리합니다.");
+			try {
+				request.setAttribute("tablename", "OOPBOARD");
+				boolean res = new BoardDeleteService().execute(request, response);
+				System.out.println(res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} break;		
+		case "/oop/adjust.do":
+			System.out.println(command+"를 처리합니다.");
+			try {
+				request.setAttribute("tablename", "OOPBOARD");
+				boolean res = new BoardAdjustService().execute(request, response);
+				System.out.println(res);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 }

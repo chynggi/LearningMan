@@ -134,7 +134,7 @@
 
   <hr>
 
-<%@ include file ="../static/footer.jsp" %>
+<%@ include file ="../static/footer.html" %>
 
   <!-- Bootstrap core JavaScript -->
   <script src="../static/vendor/jquery/jquery.min.js"></script>
