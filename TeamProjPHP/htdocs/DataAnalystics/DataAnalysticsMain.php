@@ -12,7 +12,6 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
   <link href="./css/boost.css" rel='stylesheet' type='text/css'>
-
 </head>
 
 <body>

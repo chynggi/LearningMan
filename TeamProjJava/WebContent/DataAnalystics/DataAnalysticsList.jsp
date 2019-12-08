@@ -26,7 +26,6 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
-
 		<style type="text/css">
 			.jumbotron {
 			background-image: url('./DataAnalysticsImg/jumbotronBackground.jpg');
@@ -61,12 +60,12 @@ List<Board> list = (List<Board>)request.getAttribute("data");
     </tr> 
   </thead>
   <tbody>
-	<% for(Board x:list) { %>             
+	<% for(Board post:list) { %>             
     <tr>
-		<td scope="col"><%=x.getNo()%></td>
-		<td scope="col"><a href="./Info.do?no=<%=x.getNo()%>"><%=x.getTitle()%></td>
-		<td scope="col"><%=x.getId()%></td>		
-		<td scope="col"><%=x.getDate()%></td>					
+		<td scope="col"><%=post.getNo()%></td>
+		<td scope="col"><a href="./Info.do?no=<%=post.getNo()%>"><%=post.getTitle()%></td>
+		<td scope="col"><%=post.getId()%></td>		
+		<td scope="col"><%=post.getDate()%></td>					
 	</tr>
 	<% } %>    	
 	<tr>

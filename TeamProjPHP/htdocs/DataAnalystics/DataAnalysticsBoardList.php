@@ -31,7 +31,6 @@
         cursor: pointer;
       }
 </style>
-
 </head>
 
 <body>
@@ -40,7 +39,7 @@
     ?>
 	<?php 
 	require_once('../static/BoardDAOFunction.php');
-	$Rows = selectAll('SSBOARD');		
+	$Rows = selectAll('DABOARD');		
   	?>
   	<table id="dataTable" class="table table-bordered" border="1" align = "center" style="width:60%;"> 
      	<thead>
@@ -51,8 +50,7 @@
 		</thead>	
 		<tbody>
 	<?php foreach($Rows as $key => $val){?>
-		<tr>
-			
+		<tr>			
 			<td align = "center" style="width:10%;"><font color = "black"><?=$val["NO"]?></font></td>
 			<td align = "center" style="width:65%;"><font color = "black"><a href="./DataAnalysticsBoardDetail.php?board_no=<?=$val['NO']?>"><?=$val["TITLE"]?></a></font></td>
 			<td align = "center" style="width:13%;"><font color = "black"><?=$val["ID"]?></font></td>
@@ -71,9 +69,5 @@
     <?php
     include "../static/footer.php"
     ?> 
-  	
-  	
-	
 </body>
-
 </html>

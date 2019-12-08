@@ -18,8 +18,7 @@ public class BoardListService implements Service {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 		String tablename = (String)request.getAttribute("tablename");
-		System.out.println(tablename);
-		
+		System.out.println(tablename);		
 		PrintWriter out = response.getWriter();
 		SqlSession sqlSession = MBUtils.getSession();
 		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);

@@ -26,7 +26,6 @@ public class BoardAdjustService implements Service{
 		out.print("내용:" + content + "<br/>");
 		out.print("날짜: " + xdate + "<br/>");
 		out.print("ID:" + id + "<br/>");		
-		//
 		Board vo = new Board();
 		vo.setNo(no);
 		vo.setContent(content);
@@ -57,7 +56,6 @@ public class BoardAdjustService implements Service{
 			return false;
 		}
 		response.sendRedirect("./Info.do?no="+no);
-
 		return true;
 	}
 }

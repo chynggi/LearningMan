@@ -46,7 +46,7 @@
 					<li class="nav-item"><a class="nav-link" href="./ServerSide/List.do">ServerSide</a></li>
 					<li class="nav-item"><a class="nav-link" href="contact">Frame
 							Works</a></li>
-					<li class="nav-item"><a class="nav-link" href="contact">Data
+					<li class="nav-item"><a class="nav-link" href="./DataAnalystics/DataAnalysticsMain.jsp">Data
 							Analystics</a></li>
 				</ul>
 			</div>
@@ -74,9 +74,7 @@
             </p>
             <%}
             else { String user_name = (String)session.getAttribute("name");
-            	%>
-            
-            
+            	%>                     
             <p class="M_btn">
             	<a class="col-lg-8 col-md-10 mx-auto"><strong><%=user_name%></strong>님 환영합니다.</a>
             	<a class="col-lg-8 col-md-10 mx-auto" href="../member/member_update_form.php">본인정보 수정</a>           	

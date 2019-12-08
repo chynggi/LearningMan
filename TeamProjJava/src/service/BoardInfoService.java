@@ -19,8 +19,7 @@ public class BoardInfoService implements Service {
 	public boolean execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("Board Info. Display");
 		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=UTF-8");
-		
+		response.setContentType("text/html;charset=UTF-8");		
 		HttpSession session = request.getSession();
 		long no = Long.parseLong(request.getParameter("no"));
 		PrintWriter out = response.getWriter();
@@ -28,8 +27,7 @@ public class BoardInfoService implements Service {
 		SqlSession sqlSession = MBUtils.getSession();
 		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
 		Board data = new Board();
-		HashMap<String,Object> para = new HashMap<String,Object>();
-		
+		HashMap<String,Object> para = new HashMap<String,Object>();		
 		para.put("dbname", tablename);
 		para.put("no",no);
 		RequestDispatcher rd = null;

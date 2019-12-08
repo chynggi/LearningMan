@@ -24,7 +24,6 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
-
 		<style type="text/css">
 			.jumbotron {
 			background-image: url('./DataAnalysticsImg/jumbotronBackground.jpg');
@@ -73,13 +72,13 @@
             	<td align = "center" colspan = "2">
                 	<input class = "btn btn-primary2" type = "hidden" name = "id" value="<%=session.getAttribute("id")%>">
 						&nbsp;&nbsp;&nbsp;
-					<input class = "btn btn-primary2" type = "hidden" name = "tablename" value="SSBOARD">
+					<input class = "btn btn-primary2" type = "hidden" name = "tablename" value="DABOARD">
 						&nbsp;&nbsp;&nbsp;
 					<button class = "btn btn-primary2" type = "submit">저장</button>
 						&nbsp;&nbsp;&nbsp;
 					<button class = "btn btn-primary2" type = "reset">초기화</button>
 						&nbsp;&nbsp;&nbsp;
-					<a class="btn btn-primary2" href="./DataAnalysticsList.jsp">취소</a>
+					<a class="btn btn-primary2" href="List.do">취소</a>
 				</td>
 			</tr>
 		</table>		
