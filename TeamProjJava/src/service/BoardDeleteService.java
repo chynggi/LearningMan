@@ -13,8 +13,7 @@ public class BoardDeleteService implements Service{
 	public boolean execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("Board Adjusting");
 		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=UTF-8");
-		
+		response.setContentType("text/html;charset=UTF-8");		
 		String tablename = (String)request.getAttribute("tablename");
 		PrintWriter out = response.getWriter();
 		long no = Long.parseLong(request.getParameter("no"));
@@ -40,7 +39,32 @@ public class BoardDeleteService implements Service{
 			System.err.println("삭제하려는 데이터나 구문에 문제가 있습니다.");
 			e.printStackTrace();
 			return false;
-		} response.sendRedirect("./List.do");
+		} 
+				if(tablename.equals("SSBOARD"))
+		{
+			response.sendRedirect("./List.jsp");
+		}
+		else if(tablename.equals("DBMSBOARD"))
+		{
+			response.sendRedirect("./board_list.jsp");
+		}
+		else if(tablename.equals("FRBOARD"))
+		{
+			response.sendRedirect("./board_list.jsp");
+		}
+		else if(tablename.equals("DABOARD"))
+		{
+			response.sendRedirect("./DataAnalysticsList.jsp");
+		}
+		else if(tablename.equals("OOPBOARD"))
+		{
+			response.sendRedirect("./OOP_List.jsp");
+		}
+		else
+		{
+			response.sendRedirect("../index.jsp");
+		}
+		
 		return true;
 	}
 }

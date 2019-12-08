@@ -6,27 +6,10 @@
 <html>
 <head>
 	<title>러닝맨 데이터 분석 게시판 리스트</title>
-  		<meta charset="utf-8">
-  		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  		<meta name="description" content="">
-  		<meta name="author" content="">
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="./css/boost.css" rel='stylesheet' type='text/css'>
+<jsp:include page="../static/header.jsp"></jsp:include>
 
-		<link rel ="stylesheet" href = "./css/bootstrap.css">
-  		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
- 		<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
- 		<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
- 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  		<link href="css/clean-blog.min.css" rel="stylesheet">   
-		<link href="./css/boost.css" rel='stylesheet' type='text/css'>
-		<link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
-		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
-		<script type="text/javascript" src="./js/bootstrap.js"></script>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
-
+		
 		<style type="text/css">
 			.jumbotron {
 			background-image: url('./DataAnalysticsImg/jumbotronBackground.jpg');
@@ -61,12 +44,12 @@ List<Board> list = (List<Board>)request.getAttribute("data");
     </tr> 
   </thead>
   <tbody>
-	<% for(Board x:list) { %>             
+	<% for(Board post:list) { %>             
     <tr>
-		<td scope="col"><%=x.getNo()%></td>
-		<td scope="col"><a href="./Info.do?no=<%=x.getNo()%>"><%=x.getTitle()%></td>
-		<td scope="col"><%=x.getId()%></td>		
-		<td scope="col"><%=x.getDate()%></td>					
+		<td scope="col"><%=post.getNo()%></td>
+		<td scope="col"><a href="./Info.do?no=<%=post.getNo()%>"><%=post.getTitle()%></td>
+		<td scope="col"><%=post.getId()%></td>		
+		<td scope="col"><%=post.getDate()%></td>					
 	</tr>
 	<% } %>    	
 	<tr>

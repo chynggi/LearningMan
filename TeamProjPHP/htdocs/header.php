@@ -45,7 +45,7 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div id="head_div"></div>
     <div class="container">
-      <a class="navbar-brand" href="index.html">Learning Man</a>
+      <a class="navbar-brand" href="index.php">Learning Man</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -54,7 +54,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link" href="./index.php">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="./OOP_Board/oop_B_index.php">객체 지향 프로그래밍</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">데이터베이스</a></li>
+          <li class="nav-item"><a class="nav-link" href="./DBMS_Board/board_list.php">데이터베이스</a></li>
           <li class="nav-item"><a class="nav-link" href="#">서버 사이드</a></li>
           <li class="nav-item"><a class="nav-link" href="#">프레임 워크</a></li>
           <li class="nav-item"><a class="nav-link" href="./DataAnalysticsMain.php">데이터 분석</a></li>									

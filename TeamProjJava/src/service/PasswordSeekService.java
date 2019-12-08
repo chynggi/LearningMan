@@ -25,20 +25,21 @@ public class PasswordSeekService implements Service {
 		Buser mem = null;
 		try {
 			mem = dao.selectById(id);
-			if(mem!=null) {
+			if(mem!=null)
+			{
 			message = "비밀번호는 "+mem.getPassword()+" 입니다.";
 			session.setAttribute("message", message);
-			response.sendRedirect("./loginorReg.jsp");				
+			response.sendRedirect("./Login.jsp");				
 			} else {
 				message = "FATAL ERROR: 일치하는 아이디가 없습니다.";
 				session.setAttribute("message", message);
-				response.sendRedirect("./loginorReg.jsp");
+				response.sendRedirect("./Login.jsp");
 			}			
 		} catch(Exception e) {
 			e.printStackTrace();
 			message = "FATAL ERROR: 일치하는 아이디가 없습니다.";
 			session.setAttribute("message", message);
-			response.sendRedirect("./loginorReg.jsp");
+			response.sendRedirect("./Login.jsp");
 		} sqlsession.close();
 		return true;
 	}
