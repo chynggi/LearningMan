@@ -15,13 +15,13 @@ NO,TITLE,CONTENT,ID,XDATE
 <select id = "selectAll" parameterType="String" resultMap="result">
 
 	SELECT <include refid= "basecolumns"></include> FROM ${Tablename}
-
+ 
 </select>
 <insert id = "insert" parameterType="hashmap"
 	>
 	
 	INSERT INTO ${dbname} (<include refid= "basecolumns"></include>) 
-	VALUES(SSBOARD_SEQ.NEXTVAL,#{board.title},#{board.content},#{board.id},SYSDATE)
+	VALUES(${dbname}_SEQ.NEXTVAL,#{board.title},#{board.content},#{board.id},SYSDATE)
 	
 
 </insert>

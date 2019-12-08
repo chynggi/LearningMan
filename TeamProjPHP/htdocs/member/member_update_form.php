@@ -122,7 +122,7 @@
             $user_pw = $_SESSION['pw'];
             $user_name = $_SESSION['name'];
             $user_phone = $_SESSION['phone'];
-            $user_date = $_SESSION['date'];
+            $user_date = $_SESSION['xdate'];
         ?>
         
         <div class="memberForm_box">

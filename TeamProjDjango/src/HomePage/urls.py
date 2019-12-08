@@ -16,7 +16,7 @@ urlpatterns=[
     path('delete',views.update,name='delete'),
     path('sspost/<int:no>',views.SSpost,name='sspost'),
     path('about',views.about,name='about'),
-	#DABOARD
+    #DABOARD
     path('dalist',views.DAlist,name='dalist'),
     path('dawrite',views.DAwrite,name='dawrite'),   
     path('daupdate/<int:no>',views.DAupdate,name='daupdate'),   
@@ -30,4 +30,10 @@ urlpatterns=[
     path('oopupdate/<int:no>',views.OOPupdate,name='oopupdate'),   
     path('oopdelete/<int:no>',views.OOPdelete,name='oopdelete'), 
     path('ooppost/<int:no>',views.OOPpost,name='ooppost'), 
+    #DBMSBOARD
+    path('dbmslist',views.DBlist,name='dbmslist'),
+    path('dbmswrite',views.DBwrite,name='dbmswrite'),   
+    path('dbmsupdate/<int:no>',views.DBupdate,name='dbmsupdate'),   
+    path('dbmsdelete/<int:no>',views.DBdelete,name='dbmsdelete'), 
+    path('dbmspost/<int:no>',views.DBpost,name='dbmspost'),
 ]

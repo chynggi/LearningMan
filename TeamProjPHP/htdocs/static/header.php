@@ -45,7 +45,7 @@
 					</li>
 					<li class="nav-item"><a class="nav-link"
 						href="OOP_Board/oop_B_index.php">OOP</a></li>
-					<li class="nav-item"><a class="nav-link" href="post">DBMS</a>
+					<li class="nav-item"><a class="nav-link" href="../DBMS_Board/board_list.php">DBMS</a>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="../ServerSide/ServerSideBoardList.php">Server
 							Side</a></li>
