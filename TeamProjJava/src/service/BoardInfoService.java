@@ -30,15 +30,43 @@ public class BoardInfoService implements Service {
 		HashMap<String,Object> para = new HashMap<String,Object>();		
 		para.put("dbname", tablename);
 		para.put("no",no);
+		
 		RequestDispatcher rd = null;
-		if(tablename.equals("OOPBOARD")) {
-			rd = request.getRequestDispatcher("./OOP_Detail.jsp");	
-		}else if (tablename.equals("DABOARD")) {
-			rd = request.getRequestDispatcher("./DataAnalysticsList.jsp");
+		
+		if(tablename.equals("DBMSBOARD"))
+		{
+			rd = request.getRequestDispatcher("./dbms_WBoard.jsp");
+			
 		}
+		else if(tablename.equals("SSBOARD"))
+		{
+			
+			rd = request.getRequestDispatcher("./DataAnalysticsDetail.jsp");
+		}
+		else if(tablename.equals("OOPBOARD"))
+		{
+			rd = request.getRequestDispatcher("./DataAnalysticsDetail.jsp");
+			
+		}
+		else if(tablename.equals("FRBOARD"))
+		{
+			rd = request.getRequestDispatcher("./DataAnalysticsDetail.jsp");
+			
+		}
+		else
+		{
+			rd = request.getRequestDispatcher("./DataAnalysticsDetail.jsp");
+			
+		}
+		
+		
+		
+		
+		
+		
+		
 		try {
 			data = dao.info(para);
-			
 			request.setAttribute("data", data);
 			rd.forward(request, response);
 		} catch (Exception e) {

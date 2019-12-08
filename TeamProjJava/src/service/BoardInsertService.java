@@ -52,7 +52,7 @@ public class BoardInsertService implements Service {
 			return false;
 		}
 			
-		response.sendRedirect("./List.do");
+		response.sendRedirect("./board_list.jsp");
 		return true;
 	}
 }

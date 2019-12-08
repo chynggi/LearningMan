@@ -35,11 +35,15 @@
   
 </head>
 <% 
+request.setCharacterEncoding("UTF-8");
 	String id = null;
 	if(session.getAttribute("id") != null){
 		id = (String) session.getAttribute("id");		
 	}
-	
+	String title = request.getParameter("title");
+	String content = request.getParameter("content");
+
+
 %>
 <body>
 
@@ -108,7 +112,7 @@
   <!-- Main Content -->
   <div class="container" >
       <div class="row">
-      <form method="post" action="./new.do" style=" width:100%;height: 100%; font-family:GyeonggiBatangOTF;font-size: 15px;">
+      <form method="post" action="./adjust.do" style=" width:100%;height: 100%; font-family:GyeonggiBatangOTF;font-size: 15px;">
 		<table class="table table-striped" style="text-align: center; ">
 			<thead>
 				<tr>
@@ -122,16 +126,17 @@
 						<td style="color:#ffffff; border: none; border-radius: 7px 0px 0px 0px;">제목 : </td>
 						<td style="border: none; border-radius: 0px 7px 0px 0px;">
 						<input type="text" style="width:100%;height: 40px; border: none; border-radius: 5px;" class="form-control" 
-							   placeholder="  글 제목" name="title" maxlength="100"></td>
+							   placeholder="  글 제목" name="title" maxlength="100" value="<%=title%>"></td>
 					</tr>
 					<tr>
 						<td style="color:#ffffff; border: none;border-radius: 0px 0px 0px 25px;">내용 : </td>
 						<td style="border: none;">
-						<textarea class="farm-control" placeholder="  글 내용" name="content" maxlength="2048" style="width:100%;height: 350px;border-radius: 5px;"></textarea>
+						<textarea class="farm-control" placeholder="  글 내용" name="content" maxlength="2048" style="width:100%;height: 350px;border-radius: 5px;"><%=content%></textarea>
 						</td>
 					</tr>
 				</tbody>				
 		</table>
+				<input type="hidden" name = "no" value="<%=request.getParameter("no")%>">
 				<input type="hidden" name = "id" value="<%=session.getAttribute("id")%>">
 				<input type="hidden" name = "tablename" value="DBMSBOARD">
 				<input type="button" class="btn btn-primary pull-right" style="border-radius: 12px; border: none; background-color: #AC5E50; font-family:GyeonggiBatangOTF" value="돌아가기" onClick="history.go(-1)">
