@@ -45,12 +45,12 @@
 					<li class="nav-item"><a class="nav-link" href="index">About</a>
 					</li>
 					<li class="nav-item"><a class="nav-link"
-						href="OOP_Board/oop_B_index.php">OOP</a></li>
+						href="{% url 'HomePage:ooplist' %}">OOP</a></li>
 					<li class="nav-item"><a class="nav-link" href="{% url 'HomePage:dbmslist' %}">DBMS</a>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="{% url 'HomePage:sslist' %}">Server
 							Side</a></li>
-					<li class="nav-item"><a class="nav-link" href="contact">Frame
+					<li class="nav-item"><a class="nav-link" href="{% url 'HomePage:frlist' %}">Frame
 							Works</a></li>
 					<li class="nav-item"><a class="nav-link" href="{% url 'HomePage:damain' %}">Data
 							Analystics</a></li>

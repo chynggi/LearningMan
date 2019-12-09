@@ -57,18 +57,19 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="index">About</a>
+					</li>
 					<li class="nav-item"><a class="nav-link"
-						style="font-size: 13px;" href="index">About</a></li>
-					<li class="nav-item"><a class="nav-link"
-						style="font-size: 13px;" href="contact">OOP</a></li>
-					<li class="nav-item"><a class="nav-link"
-						style="font-size: 13px;" href="{% url 'HomePage:dbmslist' %}">DBMS</a></li>
-					<li class="nav-item"><a class="nav-link"
-						style="font-size: 13px;" href="contact">ServerSide</a></li>
-					<li class="nav-item"><a class="nav-link"
-						style="font-size: 13px;" href="contact">FrameWorks</a></li>
-					<li class="nav-item"><a class="nav-link"
-						style="font-size: 13px;" href="contact">DataAnalystics</a></li>
+						style="font-size: 13px;" href="{% url 'HomePage:ooplist' %}">OOP</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="{% url 'HomePage:dbmslist' %}">DBMS</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="{% url 'HomePage:sslist' %}">Server
+							Side</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="{% url 'HomePage:frlist' %}">Frame
+							Works</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="{% url 'HomePage:damain' %}">Data
+							Analystics</a></li>
+					
 				</ul>
 			</div>
 		</div>
