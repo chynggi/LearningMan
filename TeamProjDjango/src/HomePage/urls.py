@@ -23,8 +23,15 @@ urlpatterns=[
     path('dadelete/<int:no>',views.DAdelete,name='dadelete'),
     path('dapost/<int:no>',views.DApost,name='dapost'), 
     path('damain',views.DAmain,name='damain'),   
-
-    path('about',views.about,name='about'),#OOPBOARD
+    #FRBOARD
+    path('frlist',views.FRlist,name='frlist'),
+    path('frwrite',views.FRwrite,name='frwrite'),   
+    path('frupdate/<int:no>',views.FRupdate,name='frupdate'),   
+    path('frdelete/<int:no>',views.FRdelete,name='frdelete'),
+    path('frpost/<int:no>',views.FRpost,name='frpost'), 
+    path('frmain',views.FRmain,name='frmain'),   
+    path('about',views.about,name='about'),
+    #OOPBOARD
     path('ooplist',views.OOPlist,name='ooplist'),
     path('oopwrite',views.OOPwrite,name='oopwrite'),   
     path('oopupdate/<int:no>',views.OOPupdate,name='oopupdate'),   

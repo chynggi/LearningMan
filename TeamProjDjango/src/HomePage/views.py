@@ -305,6 +305,70 @@ def DAmain(request): # 메인 화면
     
 
 
+##FRBOARD
+def FRpost(request, no): # 게시글 보기
+    post = Frboard.objects.get(no=no)
+    return render(request, 'homepage/frpost.html', {'post':post})
+
+def FRlist(request): # 게시판 목록
+    posts = Frboard.objects.all()
+    return render(request, 'homepage/frlist.html', {'posts':posts})
+
+def FRwrite(request): # 게시글 작성
+    message = None;
+    if request.method == 'POST':        
+            form = FormSS(request.POST)
+            if form.is_valid():                
+                print('aaa')
+                message = None;
+                Daboardobj = Daboard()
+                cursor = connection.cursor()
+                cursor.execute("SELECT %s.nextval FROM DUAL;" % ('DABOARD_SEQ'))
+                row = cursor.fetchone()
+                print(row[0])
+                Daboardobj.no = row[0]
+                Daboardobj.title = form.cleaned_data['title']
+                Daboardobj.content = form.cleaned_data['content']
+                Daboardobj.id = form.cleaned_data['id']
+                Daboardobj.save()
+                return HttpResponseRedirect(reverse('HomePage:dalist'))        
+            else:
+                message = "ERROR"        
+    else:
+        form = FormSS()
+    if request.session['userid'] is None:
+        return HttpResponseRedirect(reverse('HomePage:index'))
+    user = Buser.objects.get(id=request.session['userid'])
+    return render(request, 'homepage/frwrite.html', {'user':user,'message':message})
+
+def FRupdate(request,no): # 게시글 수정
+    message = None;
+    post = Frboard.objects.get(no=no)
+    if request.method == 'POST':        
+            form = FormSS(request.POST)
+            if form.is_valid():                
+                print('aaa')
+                message = None;
+                post.title = form.cleaned_data['title']
+                post.content = form.cleaned_data['content']                
+                post.save()
+                return HttpResponseRedirect(reverse('HomePage:dalist'))        
+            else:
+                message = "ERROR"        
+    else:
+        form = FormSS()
+    if request.session['userid'] is None:
+        return HttpResponseRedirect(reverse('HomePage:index'))
+    user = Buser.objects.get(id=request.session['userid'])
+    return render(request, 'homepage/frwrite.html', {'user':user,'message':message,'post':post})
+
+def FRdelete(request,no): # 게시글 삭제
+    Frboard.objects.get(no=no).delete()    
+    return HttpResponseRedirect(reverse('HomePage:dalist'))    
+
+def FRmain(request): # 메인 화면
+    return render(request, 'homepage/frmain.html')
+
 
 
 ##DBMSBOARD==================================================================================
