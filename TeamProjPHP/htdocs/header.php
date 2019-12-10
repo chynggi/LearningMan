@@ -57,7 +57,7 @@
           <li class="nav-item"><a class="nav-link" href="#">데이터베이스</a></li>
           <li class="nav-item"><a class="nav-link" href="#">서버 사이드</a></li>
           <li class="nav-item"><a class="nav-link" href="#">프레임 워크</a></li>
-          <li class="nav-item"><a class="nav-link" href="./DataAnalysticsMain.php">데이터 분석</a></li>									
+          <li class="nav-item"><a class="nav-link" href="./DataAnalystics/DataAnalysticsMain.php">데이터 분석</a></li>									
         </ul>
       </div>
     </div>
