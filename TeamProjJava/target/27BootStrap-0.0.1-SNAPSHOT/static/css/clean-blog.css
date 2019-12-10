@@ -21,6 +21,7 @@ body {
   color: #212529;
   font-family: 'Nanum Gothic', 'Dotum', serif;
   font: "나눔 고딕", "Nanum Gothic", "돋움", Dotum, Sans-Serief; color: #555; 
+
 }
 
 p {
@@ -453,6 +454,19 @@ header.masthead .post-heading .meta a {
 	height:auto;
 }
 
+.post-preview > a > .sevSi_container > .sevSi_txt{
+	display:none;
+	position: absolute;
+	top:290px;
+	left:50px;
+	width:auto;
+	height:auto;
+}
+.post-preview > a > .sevSi_container > .sevSi_txt > img{
+	width:550px;
+	height:auto;
+}
+
 
 
 .post-preview > a > .FW_container {
@@ -644,18 +658,6 @@ header.masthead .post-heading .meta a {
 	width:600px;
 	height:auto;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media only screen and (min-width: 768px) {
   .post-preview > a > .post-title {
