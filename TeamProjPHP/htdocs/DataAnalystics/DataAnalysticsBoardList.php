@@ -7,14 +7,6 @@
   <meta name="viewport" content="wIDth=device-wIDth, initial-scale=1, shrink-to-fit=NO">
   <meta name="description" content="">
   <meta name="author" content="">
-  
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" ID="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
-  <link href="./css/boost.css" rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="./css/bootstrap.css">
-  <script type="text/javascript" src="./js/bootstrap.js"></script>
 
 <style type="text/css">
 .jumbotron {
@@ -31,7 +23,6 @@
         cursor: pointer;
       }
 </style>
-
 </head>
 
 <body>
@@ -40,7 +31,7 @@
     ?>
 	<?php 
 	require_once('../static/BoardDAOFunction.php');
-	$Rows = selectAll('SSBOARD');		
+	$Rows = selectAll('DABOARD');		
   	?>
   	<table id="dataTable" class="table table-bordered" border="1" align = "center" style="width:60%;"> 
      	<thead>
@@ -51,8 +42,7 @@
 		</thead>	
 		<tbody>
 	<?php foreach($Rows as $key => $val){?>
-		<tr>
-			
+		<tr>			
 			<td align = "center" style="width:10%;"><font color = "black"><?=$val["NO"]?></font></td>
 			<td align = "center" style="width:65%;"><font color = "black"><a href="./DataAnalysticsBoardDetail.php?board_no=<?=$val['NO']?>"><?=$val["TITLE"]?></a></font></td>
 			<td align = "center" style="width:13%;"><font color = "black"><?=$val["ID"]?></font></td>
@@ -71,9 +61,5 @@
     <?php
     include "../static/footer.php"
     ?> 
-  	
-  	
-	
 </body>
-
 </html>

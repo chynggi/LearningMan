@@ -68,13 +68,35 @@ function delete($dbname)
         // 삭제대상자료가 있는 지 확인
         $pdoStatement = $conn->prepare("SELECT * FROM ".$dbname." WHERE no= :no");
         $pdoStatement->bindValue(":no", $board_no);
-        $pdoStatement->execute();
+        $res = $pdoStatement->execute();
+        if($res)
+        {
+            print("success");
+        }
+        else
+        {
+            print_r($conn->errorInfo());
+            print("fail");
+        }
+        
+        $pdoStatement->debugDumpParams();
         // 패스워드가 맞는 해당 자료가 있으면
         if ($row = $pdoStatement->fetch()) {
             // 지우는 작업
             $pdoStatement = $conn->prepare("DELETE FROM ".$dbname." WHERE no= :no");
             $pdoStatement->bindValue(":no", $board_no);
-            $pdoStatement->execute();
+            $res = $pdoStatement->execute();
+            if($res)
+            {
+                print("success");
+            }
+            else
+            {
+                print_r($conn->errorInfo());
+                print("fail");
+            }
+            
+            $pdoStatement->debugDumpParams();
         } // 패스워드가 맞는 해당 자료가 없으면
         else {
             echo "삭제 실패! ";

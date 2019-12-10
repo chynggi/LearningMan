@@ -1,0 +1,54 @@
+{% extends "base_Dbms.html" %}
+{% load staticfiles %}
+{% block content %}
+
+
+<!-- Post Content -->
+	<article>
+		<div class="container">
+			<div class="row">
+				<table class="table table-striped"
+					style="font-size: 15px; font-family: GyeonggiBatangOTF; text-align: center; ">
+					<thead style="color: #fff; background-color: #382825;">
+						<tr >
+							<th style="text-align: center;">번호</th>
+							<th style="text-align: center;">제목</th>
+							<th style="text-align: center;">작성자</th>
+							<th style="text-align: center;">날짜</th>
+						</tr>
+					</thead>
+
+					<tbody style="background-color: #766f6d;">
+						{% if posts %}
+ 						{% for post in posts %}
+						<tr
+							style="background-color: #766f6d; font-size: 15px; color: #fff; border: none;">
+							<td>{{ post.no }}</td>
+							<td><a href="dbmspost/{{ post.no }}" style="color: #fff;">{{ post.title }}</a></td>
+							<td>{{ post.id.name }}</td>
+      						<td>{{ post.xdate }}</td>
+						</tr>
+
+					</tbody>
+					  
+					    {% endfor %}	
+						{% else %}
+							자료가 없습니다.
+						{% endif %} 
+				</table>
+
+				<a href="{% url 'HomePage:dbmswrite' %}" class="btn btn-primary float-right"
+					style="border-radius: 12px; border: none; background-color: #382825; font-size: 15px; font-family: GyeonggiBatangOTF">글쓰기</a>
+			</div>
+		</div>
+	</article>
+
+
+
+  <hr>
+
+{% endblock content %}
+{% block datatable %}
+
+  <script src="/static/js/demo/datatables-demo.js"></script>
+{% endblock datatable %}

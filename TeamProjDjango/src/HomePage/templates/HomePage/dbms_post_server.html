@@ -1,0 +1,71 @@
+{% extends "base_Dbms.html" %}
+{% block content %}
+
+ <!-- Post Content -->
+  <article>
+    <div class="container">
+	
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default" style="height: 40px; color:#ffffff; background-color:#8B4513; border: none; font-family:GyeonggiBatangOTF; border-radius: 25px 0px 0px 25px;">제목</span>
+			</div>
+			<input type="text" name = "title" class="form-control"
+				aria-label="Sizing example input"
+				aria-describedby="inputGroup-sizing-default" readonly value="{{post.title}}"
+				style="height: 40px; background-color:#FFFCFA;font-family:GyeonggiBatangOTF; color:#8B4513">
+		</div>
+		<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" style="color:#ffffff; background-color:#8B4513; border: none; font-family:GyeonggiBatangOTF; border-radius: 25px 0px 0px 25px;">내용</span>
+  	
+  </div> 
+  	<textarea rows="20" readonly name = "content" class="form-control" aria-label="With textarea" style="background-color:#FFFCFA;font-family:GyeonggiBatangOTF; color:#8B4513"
+  >{{ post.content }}</textarea>
+
+  
+</div>
+
+	<br>
+	
+	{% if request.session.userid == post.id.id %}
+	 <a class="btn btn-primary" href="{% url 'HomePage:dbmsupdate' post.no %}" style="border-radius: 12px; border: none; background-color: #8B4513;font-size: 15px; font-family: GyeonggiBatangOTF">
+	  수정</a>
+	  
+	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" style="border-radius: 12px; border: none; background-color: #CD0000; font-size: 15px; font-family: GyeonggiBatangOTF"
+	>삭제</button>	
+	
+	 {% elif request.session.userid == 'admin' %}
+	 <a class="btn btn-primary" href="{% url 'HomePage:dbmsupdate' post.no %}" style="border-radius: 12px; border: none; background-color: #8B4513; font-size: 15px; font-family: GyeonggiBatangOTF"
+	 >수정</a>	
+	 
+	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" style="border-radius: 12px; border: none; background-color: #CD0000;  font-size: 15px; font-family: GyeonggiBatangOTF"
+	>삭제</button>
+	{% else %}
+	{% endif %}
+	
+</div>
+  </article>
+  	
+	
+  <hr>
+  
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel" style="font-family:GyeonggiBatangOTF;">정말로 삭제 하시겠습니까?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="font-family:GyeonggiBatangOTF;">
+        	삭제한 뒤에는 복구할 수 없습니다.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-family:GyeonggiBatangOTF;">취소</button>
+        <a class="btn btn-danger" href="{% url 'HomePage:dbmsdelete' post.no %}" style="font-family:GyeonggiBatangOTF;">삭제</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

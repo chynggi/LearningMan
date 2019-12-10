@@ -20,19 +20,15 @@ public class BoardAdjustService implements Service{
 		String content 	 = request.getParameter("content");
 		String id 		 = request.getParameter("id");
 		String tablename = request.getParameter("tablename");
-		String xdate 	 = request.getParameter("xdate");
 		long no = Long.parseLong(request.getParameter("no"));
 		out.print("title:" + title + "<br/>");
 		out.print("내용:" + content + "<br/>");
-		out.print("날짜: " + xdate + "<br/>");
 		out.print("ID:" + id + "<br/>");		
-		//
 		Board vo = new Board();
 		vo.setNo(no);
 		vo.setContent(content);
 		vo.setId(id);
 		vo.setTitle(title);
-		vo.setDate(xdate);
 		HashMap<String,Object> para = new HashMap<String,Object>();
 		para.put("dbname", tablename);
 		para.put("board",vo);
@@ -57,7 +53,6 @@ public class BoardAdjustService implements Service{
 			return false;
 		}
 		response.sendRedirect("./Info.do?no="+no);
-
 		return true;
 	}
 }

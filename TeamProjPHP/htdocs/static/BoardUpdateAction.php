@@ -17,9 +17,9 @@
         }elseif ($dbname == "FRBOARD"){
             header("Location: ../ServerSide/ServerSideBoardList.php");
         }elseif ($dbname == "DBMSBOARD"){
-            header("Location: ../ServerSide/ServerSideBoardList.php");
+            header("Location: ../DBMS_Board/board_list.php");
         }elseif($dbname == "DABOARD"){
-            header("Location: ../ServerSide/ServerSideBoardList.php");
+            header("Location: ../DataAnalystics/DataAnalysticsBoardList.php");
         }
         else{
             header("Location: ../index.php");

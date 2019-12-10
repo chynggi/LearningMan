@@ -4,15 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Clean Blog - Start Bootstrap Theme</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="./static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<title>LearningMan</title>
 
   <!-- Custom fonts for this template -->
   <link href="./static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<!-- Bootstrap core CSS -->
+  <link href="./static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="./static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="./static/css/clean-blog.css" rel="stylesheet">
@@ -20,14 +21,13 @@
   <link href="./static/css/member.css" rel="stylesheet">
 
 </head>
-
 <body>
 
   <!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top"
 		id="mainNav">
 		<div class="container">
-			<a class="navbar-brand" href="index.php">Learning Man</a>
+			<a class="navbar-brand" href="index.jsp">Learning Man</a>
 			<button class="navbar-toggler navbar-toggler-right" type="button"
 				data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false"
@@ -36,25 +36,19 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="index">About</a>
-					</li>
-					<li class="nav-item"><a class="nav-link"
-						href="oop/List.do">OOP</a></li>
-					<li class="nav-item"><a class="nav-link" href="post">DBMS</a>
-					</li>
-
-					<li class="nav-item"><a class="nav-link" href="./ServerSide/List.do">ServerSide</a></li>
-					<li class="nav-item"><a class="nav-link" href="contact">Frame
-							Works</a></li>
-					<li class="nav-item"><a class="nav-link" href="contact">Data
-							Analystics</a></li>
+					<li class="nav-item"><a class="nav-link" href="./index.jsp">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="./oop/List.do">OOP</a></li>
+					<li class="nav-item"><a class="nav-link" href="./DBMSBoard/board_list.jsp">DBMS</a>	</li>
+					<li class="nav-item"><a class="nav-link" href="./ServerSide/List.do">Server Side</a></li>
+					<li class="nav-item"><a class="nav-link" href="./FRAMEWORK/board_list.jsp">Frame Works</a></li>
+					<li class="nav-item"><a class="nav-link" href="./DataAnalystics/DataAnalysticsMain.jsp">Data Analystics</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+  <header class="masthead" style="background-image: url('./static/img/home-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -62,25 +56,20 @@
           <div class="site-heading">
             <span class="subheading">Team Project</span>
             <h1>Learning Man</h1>
-            <?php
-            session_start();
-            if(!isset($_SESSION['id'])){
-            ?>
+            
             <%if(session.getAttribute("name") == null || session.getAttribute("name").equals(""))
             	{%>
             <p class="M_btn">
-            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/login.php">로그인</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="../member/member.php">회원가입</a>            	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/Login.jsp">로그인</a>
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/member.jsp">회원가입</a>            	
             </p>
             <%}
             else { String user_name = (String)session.getAttribute("name");
-            	%>
-            
-            
+            	%>                     
             <p class="M_btn">
             	<a class="col-lg-8 col-md-10 mx-auto"><strong><%=user_name%></strong>님 환영합니다.</a>
-            	<a class="col-lg-8 col-md-10 mx-auto" href="../member/member_update_form.php">본인정보 수정</a>           	
-            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/logout.php">로그아웃</a>           	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./member/MemberInfo.do">본인정보 수정</a>           	
+            	<a class="col-lg-8 col-md-10 mx-auto" href="./login/logout.do">로그아웃</a>          
             </p>
             <%
             }
@@ -205,7 +194,8 @@
       </div>
   	</div>
   </div>
-	<!-- Footer -->
+
+<!-- Footer -->
   <footer>
     <div class="container">
       <div class="row">
@@ -227,7 +217,7 @@
   <script src="./static/js/clean-blog.min.js"></script>
   <script src="./static/js/contents_any.js"></script>
   <script src="./static/js/demo/datatables-demo.js"></script>
-
+  
 </body>
-
 </html>
+

@@ -55,12 +55,12 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto" >
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="index">About</a></li>
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="OOP_Board/oop_B_index.php">OOP</a></li>
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="board_list.jsp">DBMS</a></li>
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="contact">ServerSide</a></li>
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="contact">FrameWorks</a></li>
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="contact">DataAnalystics</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="../index.jsp">About</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="../oop/List.do">OOP</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="../DBMSBoard/board_list.jsp">DBMS</a>	</li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="../ServerSide/List.do">Server Side</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="../FRAMEWORK/board_list.jsp">Frame Works</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="../DataAnalystics/DataAnalysticsMain.jsp">Data Analystics</a></li>
 				</ul>
 			</div>
 		</div>
@@ -68,22 +68,43 @@
 
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('../img/dbms3.png')">
+<header class="masthead"
+		style="background-image: url('dbms3.png')">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-md-10 mx-auto">
 					<div class="site-heading">
-						<p class="M_btn"  >
-							<a class="col-lg-8 col-md-10 mx-auto" href="../login/Login.jsp" style="font-family:GyeonggiBatangOTF">로그인</a> 
-							<a class="col-lg-8 col-md-10 mx-auto" href="../member/signup.jsp" style="font-family:GyeonggiBatangOTF">회원가입</a>
+						<%
+							if (session.getAttribute("name") == null || session.getAttribute("name").equals("")) {
+						%>
+						<p class="M_btn">
+							<a class="col-lg-8 col-md-10 mx-auto" href="../login/Login.jsp"
+								style="font-family: GyeonggiBatangOTF;">로그인</a> <a
+								class="col-lg-8 col-md-10 mx-auto" href="../member/member.jsp"
+								style="font-family: GyeonggiBatangOTF;">회원가입</a>
 						</p>
+						<%
+							} else {
+								String user_name = (String) session.getAttribute("name");
+						%>
+						<p class="M_btn">
+							<a class="col-lg-8 col-md-10 mx-auto"
+								style="font-family: GyeonggiBatangOTF;"><strong><%=user_name%></strong>님
+								환영합니다.</a> <a class="col-lg-8 col-md-10 mx-auto"
+								href="../member/MemberInfo.do"
+								style="font-family: GyeonggiBatangOTF;">본인정보 수정</a> <a
+								class="col-lg-8 col-md-10 mx-auto" href="../login/logout.do"
+								style="font-family: GyeonggiBatangOTF;">로그아웃</a>
+						</p>
+						<%
+							}
+						%>
 					</div>
 				</div>
 			</div>
 		</div>
 	</header>
-
   <!-- Main Content -->
   <div class="container" >
       <div class="row">
@@ -111,26 +132,13 @@
 					</tr>
 				</tbody>				
 		</table>
-		<input type="hidden" name="id" value="<%=id%>">
-			<form>
-				<input type="submit" class="btn btn-primary pull-right" style="border-radius: 12px; border: none; background-color: #AC5E50; font-family:GyeonggiBatangOTF" value="작성">
+				<input type="hidden" name = "id" value="<%=session.getAttribute("id")%>">
+				<input type="hidden" name = "tablename" value="DBMSBOARD">
 				<input type="button" class="btn btn-primary pull-right" style="border-radius: 12px; border: none; background-color: #AC5E50; font-family:GyeonggiBatangOTF" value="돌아가기" onClick="history.go(-1)">
-	     	</form>
+				<button class="btn btn-success" type="submit" style="border-radius: 12px; border: none; background-color: #AC5E50; font-family:GyeonggiBatangOTF" >저장</button>
+				
       </form>
-
-       
-
-
         </div>
   </div>
 
-  <hr>
-  <!-- Bootstrap core JavaScript -->
-  <script src="../static/vendor/jquery/jquery.min.js"></script>
-  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="../static/js/clean-blog.min.js"></script>
-
-</body>
-</html>
+  <hr><jsp:include page="../static/footer.html"></jsp:include>

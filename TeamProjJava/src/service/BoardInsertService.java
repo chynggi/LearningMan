@@ -24,12 +24,10 @@ public class BoardInsertService implements Service {
 		out.print("title:" + title + "<br/>");
 		out.print("내용:" + content + "<br/>");
 		out.print("ID:" + id + "<br/>");
-		//
 		Board vo = new Board();		
 		vo.setContent(content);
 		vo.setId(id);
-		vo.setTitle(title);
-		
+		vo.setTitle(title);		
 		out.print(vo + "<br/>");
 		HashMap<String,Object> para = new HashMap<String,Object>();
 		para.put("dbname", tablename);
@@ -54,7 +52,30 @@ public class BoardInsertService implements Service {
 			return false;
 		}
 			
-		response.sendRedirect("./List.do");
+		if(tablename.equals("SSBOARD"))
+		{
+			response.sendRedirect("./List.jsp");
+		}
+		else if(tablename.equals("DBMSBOARD"))
+		{
+			response.sendRedirect("./board_list.jsp");
+		}
+		else if(tablename.equals("FRBOARD"))
+		{
+			response.sendRedirect("./board_list.jsp");
+		}
+		else if(tablename.equals("DABOARD"))
+		{
+			response.sendRedirect("./DataAnalysticsList.jsp");
+		}
+		else if(tablename.equals("OOPBOARD"))
+		{
+			response.sendRedirect("./OOP_List.jsp");
+		}
+		else
+		{
+			response.sendRedirect("../index.jsp");
+		}
 		return true;
 	}
 }

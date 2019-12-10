@@ -19,8 +19,7 @@ public class BoardInfoService implements Service {
 	public boolean execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("Board Info. Display");
 		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=UTF-8");
-		
+		response.setContentType("text/html;charset=UTF-8");		
 		HttpSession session = request.getSession();
 		long no = Long.parseLong(request.getParameter("no"));
 		PrintWriter out = response.getWriter();
@@ -28,19 +27,47 @@ public class BoardInfoService implements Service {
 		SqlSession sqlSession = MBUtils.getSession();
 		BoardDAO dao = sqlSession.getMapper(BoardDAO.class);
 		Board data = new Board();
-		HashMap<String,Object> para = new HashMap<String,Object>();
-		
+		HashMap<String,Object> para = new HashMap<String,Object>();		
 		para.put("dbname", tablename);
 		para.put("no",no);
+		
 		RequestDispatcher rd = null;
-		if(tablename.equals("OOPBOARD")) {
-			rd = request.getRequestDispatcher("./OOP_Detail.jsp");	
-		}else if (tablename.equals("DABOARD")) {
-			rd = request.getRequestDispatcher("./DataAnalysticsList.jsp");
+		
+		if(tablename.equals("DBMSBOARD"))
+		{
+			rd = request.getRequestDispatcher("./dbms_WBoard.jsp");
+			
 		}
+		else if(tablename.equals("SSBOARD"))
+		{
+			
+			rd = request.getRequestDispatcher("./Detail.jsp");
+		}
+		else if(tablename.equals("OOPBOARD"))
+		{
+			rd = request.getRequestDispatcher("./OOP_Detail.jsp");
+			
+		}
+		else if(tablename.equals("FRBOARD"))
+		{
+			rd = request.getRequestDispatcher("./fr_WBoard.jsp");
+			
+		}
+		else 
+		{
+			rd = request.getRequestDispatcher("./DataAnalysticsDetail.jsp");
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
 		try {
 			data = dao.info(para);
-			
 			request.setAttribute("data", data);
 			rd.forward(request, response);
 		} catch (Exception e) {

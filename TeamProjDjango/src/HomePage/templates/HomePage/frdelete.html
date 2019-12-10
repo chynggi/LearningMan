@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}	
+<div class="container">
+			{% if posts %}
+  			{% for post in posts %}
+        <form action=" " method="post">    
+            <table class="table table-bordered" align = "center" style="width:55%">
+                <td align = "center" >{{ post.no }}번 게시글을 삭제하면 복구 할 수 없습니다.</td>
+                <tr>  
+                	<td align = "center" >
+                	<input type="hidden" name = "dbname" value="SSBOARD">             	
+        			<input type="hidden" name="board_no" value="{{ post.no }}">        			
+        			<button class="btn btn-primary" type="submit">삭제</button>
+        			<a class="btn btn-primary" href="{% url 'HomePage:dalist' %}">취소</a>
+        			</td>
+        		</tr>        		         		 					
+            </table>           
+        </form>   
+</div>
+
+{% endblock content %}
+{% block datatable %}
+
+  <script src="/static/js/demo/datatables-demo.js"></script>
+{% endblock datatable %}
