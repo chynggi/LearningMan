@@ -56,12 +56,12 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto" >
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="index">About</a></li>
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="OOP_Board/oop_B_index.php">OOP</a></li>
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="board_list.jsp">DBMS</a></li>
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="contact">ServerSide</a></li>
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="contact">FrameWorks</a></li>
-					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="contact">DataAnalystics</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="../index.jsp">About</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="../oop/List.do">OOP</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="../DBMSBoard/board_list.jsp">DBMS</a>	</li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="../ServerSide/List.do">Server Side</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="../FRAMEWORK/board_list.jsp">Frame Works</a></li>
+					<li class="nav-item"><a class="nav-link" style="font-size: 13px;" href="../DataAnalystics/DataAnalysticsMain.jsp">Data Analystics</a></li>
 				</ul>
 			</div>
 		</div>

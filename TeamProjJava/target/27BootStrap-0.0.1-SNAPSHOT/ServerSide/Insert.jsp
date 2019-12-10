@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <jsp:include page="../static/header.jsp"></jsp:include>
+
 <div class="container">
 	<form action="new.do" method="POST">
 	

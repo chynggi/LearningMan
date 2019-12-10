@@ -26,27 +26,27 @@ public class BoardListService implements Service {
 		RequestDispatcher rd = null;
 		if(tablename.equals("SSBOARD"))
 		{
-			response.sendRedirect("./List.jsp");
+			rd = request.getRequestDispatcher("./List.jsp");
 		}
 		else if(tablename.equals("DBMSBOARD"))
 		{
-			response.sendRedirect("./board_list.jsp");
+			rd = request.getRequestDispatcher("./board_list.jsp");
 		}
 		else if(tablename.equals("FRBOARD"))
 		{
-			response.sendRedirect("./board_list.jsp");
+			rd = request.getRequestDispatcher("./board_list.jsp");
 		}
 		else if(tablename.equals("DABOARD"))
 		{
-			response.sendRedirect("./DataAnalysticsList.jsp");
+			rd = request.getRequestDispatcher("./DataAnalysticsList.jsp");
 		}
 		else if(tablename.equals("OOPBOARD"))
 		{
-			response.sendRedirect("./OOP_List.jsp");
+			rd = request.getRequestDispatcher("./OOP_List.jsp");
 		}
 		else
 		{
-			response.sendRedirect("../index.jsp");
+			rd = request.getRequestDispatcher("../index.jsp");
 		}
 		
 		

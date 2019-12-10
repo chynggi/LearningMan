@@ -4,8 +4,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Clean Blog - Start Bootstrap Theme</title>
-
   <!-- Bootstrap core CSS -->
   <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -27,7 +25,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top"
 		id="mainNav">
 		<div class="container">
-			<a class="navbar-brand" href="index.php">Learning Man</a>
+			<a class="navbar-brand" href="../index.jsp">Learning Man</a>
 			<button class="navbar-toggler navbar-toggler-right" type="button"
 				data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false"
@@ -36,25 +34,19 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="index">About</a>
-					</li>
-					<li class="nav-item"><a class="nav-link"
-						href="OOP_Board/oop_B_index.php">OOP</a></li>
-					<li class="nav-item"><a class="nav-link" href="post">DBMS</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="../ServerSide/List.do">Server
-							Side</a></li>
-					<li class="nav-item"><a class="nav-link" href="contact">Frame
-							Works</a></li>
-					<li class="nav-item"><a class="nav-link" href="contact">Data
-							Analystics</a></li>
+					<li class="nav-item"><a class="nav-link" href="../index.jsp">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="../oop/List.do">OOP</a></li>
+					<li class="nav-item"><a class="nav-link" href="../DBMSBoard/board_list.jsp">DBMS</a>	</li>
+					<li class="nav-item"><a class="nav-link" href="../ServerSide/List.do">Server Side</a></li>
+					<li class="nav-item"><a class="nav-link" href="../FRAMEWORK/board_list.jsp">Frame Works</a></li>
+					<li class="nav-item"><a class="nav-link" href="../DataAnalystics/DataAnalysticsMain.jsp">Data Analystics</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+  <header class="masthead" style="background-image: url('../static/img/home-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">

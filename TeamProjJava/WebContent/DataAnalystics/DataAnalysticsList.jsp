@@ -27,7 +27,6 @@
 		</style>
 </head>
 <body>
-<jsp:include page="../static/header.jsp"></jsp:include>
 <hr>
 <%
 request.setCharacterEncoding("UTF-8");
